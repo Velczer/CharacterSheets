@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
 
 @font-face {
-  font-family: 'village';
+  font-family: 'Belgrad';
   src: url('https://raw.githubusercontent.com/Wastus2/CharacterSheets/master/Frostpunk/Fonts/Belgrad.ttf');
 }
 
@@ -59,7 +59,7 @@
 /* Custom modules */
 
 .character-sheet {
-  background-image: url(https://raw.githubusercontent.com/Wastus2/CharacterSheets/master/Vaesen/img/bg-card.jpg);
+  background-image: url(https://raw.githubusercontent.com/Wastus2/CharacterSheets/master/Frostpunk/img/sheet-bg.jpg);
   background-size: cover;
   background-position: top center;
   max-width: 1220px;
@@ -105,7 +105,7 @@
   bottom: -5px;
 }
 .character-sheet .title {
-  font-family: 'Village';
+  font-family: 'Belgrad';
   font-size: 64px;
   color: #483517;
   text-align: center;
@@ -410,7 +410,7 @@
   font-weight: bold;
 }
 .sheet-rolltemplate-vaesen .sheet-template-subtitle {
-  font-family: 'Village';
+  font-family: 'Belgrad';
   color: #fff;
   font-size: 22px;
   padding: 10px 0;
@@ -444,7 +444,7 @@
   text-align: center;
   line-height: 35px;
   background: transparent;
-  font-family: 'Village';
+  font-family: 'Belgrad';
   font-size: 18px;
   /* color: #483517; */
   color: #f1f0ee;
