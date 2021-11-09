@@ -9,20 +9,53 @@
       </div>
 
       <div class="row">
-        <div class="col-7">
-          <h1 class="title">VAESEN</h1>
-          <div class="line"></div>
-          <h2 class="subtitle">Mityczne istoty</h2>
-          <div style="height:200px"></div>
-          <input type="text" name="attr_character_name" title="@{character_name}" spellcheck="false">
+        <div class="col-8">
+          <h1 class="title"><img src="https://raw.githubusercontent.com/Wastus2/CharacterSheets/master/Vaesen/img/symbol.png" alt=""> VAESEN <img src="https://raw.githubusercontent.com/Wastus2/CharacterSheets/master/Vaesen/img/symbol.png" alt=""></h1>
+          <!-- <div class="line"></div> -->
+          <h2 class="subtitle">Character Sheet</h2>
+          <div style="height:20px"></div>
+          
 
             <div class="character-details">
+                <label class="character-details-label">
+                    <span>Name</span>
+                    <input type="text" name="attr_character_name" title="@{character_name}" spellcheck="false">
+                </label>
                 
+                <div class="row">
+                    <div class="col-4" style="padding: 0 15px;">
+                        <label class="character-details-label">
+                            <span>Age/Age group</span>
+                            <input type="text" name="attr_age" title="@{age}" spellcheck="false">
+                        </label>
+                    </div>
+                    <div class="col-8" style="padding: 0 15px;">
+                        <label class="character-details-label">
+                            <span>Archetype</span>
+                            <input type="text" name="attr_archetype" title="@{archetype}" spellcheck="false">
+                        </label>
+                    </div>
+                </div>
+
+                <label class="character-details-label">
+                    <span>Motivation</span>
+                    <input type="text" name="attr_motivation" title="@{motivation}" spellcheck="false">
+                </label>
+
+                <label class="character-details-label">
+                    <span>Trauma</span>
+                    <input type="text" name="attr_trauma" title="@{trauma}" spellcheck="false">
+                </label>
+
+                <label class="character-details-label">
+                    <span>Dark Secret</span>
+                    <input type="text" name="attr_dark_secret" title="@{dark_secret}" spellcheck="false">
+                </label>
             </div>
 
         </div>
 
-        <div class="col-5">
+        <div class="col-4" style="padding-left: 10px;">
           <div style="text-align: right;">
             <label class="secret-roll"><input type="checkbox" class="numbered-box" value="/w gm" name="attr_secret_roll"> Make the roll secret</label>
           </div>
