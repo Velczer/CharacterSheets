@@ -10,7 +10,7 @@
 
       <div class="row">
         <div class="col-8">
-          <h1 class="title"><img src="https://raw.githubusercontent.com/Wastus2/CharacterSheets/master/Vaesen/img/symbol.png" alt=""> VAESEN <img src="https://raw.githubusercontent.com/Wastus2/CharacterSheets/master/Vaesen/img/symbol.png" alt=""></h1>
+          <h1 class="title"><img src="https://raw.githubusercontent.com/Wastus2/CharacterSheets/master/Vaesen/img/symbol.png" alt="">VAESEN<img src="https://raw.githubusercontent.com/Wastus2/CharacterSheets/master/Vaesen/img/symbol.png" alt=""></h1>
           <!-- <div class="line"></div> -->
           <h2 class="subtitle">Character Sheet</h2>
           <div style="height:20px"></div>
@@ -51,13 +51,22 @@
                     <span>Dark Secret</span>
                     <input type="text" name="attr_dark_secret" title="@{dark_secret}" spellcheck="false">
                 </label>
+
+                <h2 class="details-title">Relationships</h2>
+
+                <div class="box-input">
+                    <label><span>PC 1</span> <input type="text" name="attr_relations_1" title="@{relations_1}" spellcheck="false"></label>
+                    <label><span>PC 2</span> <input type="text" name="attr_relations_2" title="@{relations_2}" spellcheck="false"></label>
+                    <label><span>PC 3</span> <input type="text" name="attr_relations_3" title="@{relations_3}" spellcheck="false"></label>
+                    <label><span>PC 4</span> <input type="text" name="attr_relations_4" title="@{relations_4}" spellcheck="false"></label>
+                </div>
             </div>
 
         </div>
 
-        <div class="col-4" style="padding-left: 10px;">
+        <div class="col-4" style="padding-left: 25px;">
           <div style="text-align: right;">
-            <label class="secret-roll"><input type="checkbox" class="numbered-box" value="/w gm" name="attr_secret_roll"> Make the roll secret</label>
+            <label class="secret-roll"><input type="checkbox" value="/w gm" name="attr_secret_roll"> Make the roll secret</label>
           </div>
 
           <div class="card-box">
@@ -82,6 +91,60 @@
               <input type="text" name="attr_empathy">
             </div>
 
+          </div>
+
+          <div class="card-box">
+            <div class="attribute-box">
+                <button type="roll" name="resources" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=resources }}  {{base-dice=[[@{resources} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Resources</button>
+                <input type="text" name="attr_resources">
+              </div>
+          </div>
+
+          <div class="card-box">
+            <div class="card-title">Conditions</div>
+
+            <table class="character-sheet-table">
+                <tr>
+                    <td>PHYSICAL</td>
+                    <td>Exhausted</td>
+                    <td><input type="checkbox" name="attr_cond_exhausted"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Battered</td>
+                    <td><input type="checkbox" name="attr_cond_battered"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Wounded</td>
+                    <td><input type="checkbox" name="attr_cond_wounded"></td>
+                </tr>
+                <tr class="border-bottom">
+                    <td></td>
+                    <td>Broken</td>
+                    <td><input type="checkbox" name="attr_cond_ph_broken"></td>
+                </tr>
+                <tr>
+                    <td>MENTAL</td>
+                    <td>Angry</td>
+                    <td><input type="checkbox" name="attr_cond_angry"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Frightened</td>
+                    <td><input type="checkbox" name="attr_cond_frightened"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Hopeless</td>
+                    <td><input type="checkbox" name="attr_cond_hopeless"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Broken</td>
+                    <td><input type="checkbox" name="attr_cond_ml_broken"></td>
+                </tr>
+            </table>
           </div>
         </div>
       </div>
