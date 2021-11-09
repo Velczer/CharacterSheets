@@ -6,23 +6,36 @@
 }
 
 /* Defaults  */
-.row {
+.character-sheet .row {
   display: flex;
+}
+.col-10 {
+  width: 83%;
+  padding: 0 15px;
 }
 .col-8 {
   width: 66%;
+  padding: 0 15px;
 }
 .col-7 {
   width: 58%;
+  padding: 0 15px;
 }
 .col-6 {
   width: 50%;
+  padding: 0 15px;
 }
 .col-5 {
   width: 41%;
+  padding: 0 15px;
 }
 .col-4 {
   width: 33%;
+  padding: 0 15px;
+}
+.col-2 {
+  width: 17%;
+  padding: 0 15px;
 }
 
 
@@ -35,7 +48,13 @@
   font-size: 20px;
   color: #000;
 }
+.character-sheet input[type="checkbox"] {
+  box-shadow: 2px 2px 0px 0px #00000057;
+}
 
+.charactersheet {
+  padding: 0;
+}
 
 /* Custom modules */
 
@@ -43,14 +62,14 @@
   background-image: url(https://raw.githubusercontent.com/Wastus2/CharacterSheets/master/Vaesen/img/bg-card.jpg);
   background-size: cover;
   background-position: top center;
-  max-width: 1050px;
+  max-width: 1220px;
   padding: 20px;
   font-family: 'Roboto Slab', serif;
   border: 2px solid #483517;
   min-width: 740px;
 }
 .character-sheet-inside {
-  padding: 40px;
+  padding: 27px;
   border: 3px solid #483517;
   position: relative;
 }
@@ -61,6 +80,7 @@
   margin: auto;
   margin-bottom: 10px;
 }
+
 
 
 
@@ -120,9 +140,13 @@
   position: relative;
 	z-index: 1;
 	border: 2px solid #483517;
-  border-radius: 51px 0;
+  border-radius: 51px 0 0 0;
   padding: 16px 26px;
   padding-bottom: 24px;
+  margin-bottom: 32px;
+}
+.character-details.with-down-corner {
+  border-radius: 51px 0 28px 0;
 }
 
 .character-details::before {
@@ -136,7 +160,7 @@
   z-index: -1;
   background-repeat: no-repeat;
 }
-.character-details::after {
+.character-details.with-down-corner::after {
   content: "";
   background-image: url(https://raw.githubusercontent.com/Wastus2/CharacterSheets/master/Vaesen/img/card-element-down-2.png);
   width: 100%;
@@ -146,6 +170,7 @@
   position: absolute;
   z-index: -1;
   background-repeat: no-repeat;
+  transform: rotate(-180deg);
 }
 .character-details-label {
   position: relative;
@@ -172,7 +197,8 @@
   letter-spacing: 1px;
   font-weight: 400;
   color: #483517;
-  font-size: 24px;
+  font-size: 22px;
+  line-height: normal;
 }
 .character-details .box-input {
   background: #Fff;
@@ -198,6 +224,34 @@
   border: 0;
   box-shadow: none;
   border-radius: 0;
+  font-size: 16px;
+}
+
+.character-details .input-box input {
+  width: 40px;
+}
+
+.mini-title {
+  font-weight: bold;
+  text-transform: uppercase;
+  display: block;
+  text-align: center;
+	line-height: 29px;
+  font-size: 11px;
+	color: #000;
+}
+
+
+/* sidebar */
+
+.character-sheet .secret-roll {
+  display: inline-block;
+  width: auto;
+  cursor: pointer;
+}
+.character-sheet .secret-roll input {
+  vertical-align: baseline;
+  margin-right: 4px;
 }
 
 .character-sheet-table {
@@ -224,10 +278,10 @@
   position: relative;
   z-index: 1;
   margin: 10px;
-  border-radius: 29px 0;
+  border-radius: 28px 0 54px 0;
   background: rgb(0 0 0 / 7%);
   margin-bottom: 40px;
-  border: 1px solid #483517;
+  border: 2px solid #483517;
 }
 .card-box:before {
   content: "";
@@ -272,7 +326,7 @@
   margin-bottom: 10px;
 }
 .charsheet .character-sheet button[type="roll"] {
-  background-color: #e9dad4;
+  background-color: #dfd9d2;
   font-size: 16px;
   text-align: left;
   padding: 6px 12px;
@@ -281,7 +335,8 @@
   box-shadow: 4px 4px 0px 0px #00000057;
   color: #000;
   background-image: none;
-  width: 55%;
+  width: 72%;
+  overflow: hidden;
 }
 .charsheet .character-sheet button[type="roll"]::before {
   color: #000;
@@ -294,14 +349,28 @@
   text-align: center;
 }
 
-.character-sheet .secret-roll {
-  display: inline-block;
-  width: auto;
-  cursor: pointer;
+
+
+.label-with-checkboxes {
+  background: #dfd9d2;
+  border: 1px solid #483517;
+  box-shadow: 4px 4px 0px 0px #00000057;
+  border-radius: 5px;
+  padding: 5px 10px;
+  text-align: center;
+  padding-bottom: 15px;
+  margin-bottom: 10px;
 }
-.character-sheet .secret-roll input {
-  vertical-align: baseline;
-  margin-right: 4px;
+.label-with-checkboxes span {
+  display: block;
+  text-align: center;
+  font-size: 22px;
+	color: #483517;
+  line-height: normal;
+}
+.label-with-checkboxes input {
+  transform: scale(1.5);
+  margin: 5px;
 }
 
 
@@ -377,7 +446,8 @@
   background: transparent;
   font-family: 'Village';
   font-size: 18px;
-  color: #483517;
+  /* color: #483517; */
+  color: #f1f0ee;
 }
 .sheet-rolltemplate-vaesen .sheet-template-base-success > span {
   font-size: 11px;
@@ -387,14 +457,18 @@
   padding-left: 3px;
   margin-top: 0;
   display: block;
+  color: #483517;
 }
 .sheet-rolltemplate-vaesen .sheet-template-base-success {
   height: 35px;
   width: 35px;
   border-radius: 5px;
   border: 1px solid #483517;
-  background-image: url("https://raw.githubusercontent.com/Wastus2/CharacterSheets/master/Vaesen/img/dice.PNG");
-  background-size: 100% 100%;
+  background-color: #f1f0ee;
+	background-image: url(https://imgsrv.roll20.net?src=https%3A//raw.githubusercontent.com/Wastus2/CharacterSheets/master/Vaesen/img/symbol.png);
+	background-size: 90%;
+	background-repeat: no-repeat;
+	background-position: center;
   box-shadow: 4px 4px 0px 0px rgb(0 0 0 / 60%);
 }
 .sheet-rolltemplate-vaesen span.inlinerollresult.fullcrit {
