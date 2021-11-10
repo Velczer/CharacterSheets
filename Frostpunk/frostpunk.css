@@ -6,6 +6,10 @@
 }
 
 /* Defaults  */
+.ui-dialog .charsheet {
+	padding: 0;
+}
+
 .character-sheet .row {
   display: flex;
 }
@@ -55,7 +59,9 @@
 }
 
 .charsheet .character-sheet button[type="roll"] {
-  background-color: #fff;
+  /* background-color: #b9dff3; */
+  background-image: none;
+	background: linear-gradient(-90deg,#3e5f76 0%, #ffffff 100%);
   font-size: 16px;
   text-align: left;
   padding: 6px 12px;
@@ -63,7 +69,6 @@
   border: 3px solid #3e5f76;
   box-shadow: 4px 4px 0px 0px #00000057;
   color: #000;
-  background-image: none;
   width: 72%;
   overflow: hidden;
 }
@@ -87,7 +92,6 @@
   background-image: url(https://raw.githubusercontent.com/Wastus2/CharacterSheets/master/Frostpunk/img/sheet-bg.jpg);
   background-size: cover;
   background-position: top center;
-  max-width: 1220px;
   padding: 20px;
   font-family: 'Josefin Sans', sans-serif;
 	border: 3px solid #000000;
@@ -106,28 +110,47 @@
 	background: rgba(0,0,0, 0.1);
 }
 
-/* .character-sheet .logo {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
+.logo {
 	text-align: center;
-	z-index: -1;
-} */
+}
+.logo img {
+	margin: -14px auto;
+}
 
+.character-details-label {
+  position: relative;
+}
+.character-details-label span {
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: absolute;
+  left: 10px;
+	top: 3px;
+	color: #3e5f76;
+}
+.character-details-label input {
+  padding-top: 13px;
+	padding-left: 10px;
+	font-size: 16px;
+  line-height: 27px;
+	width: 100%;
+}
 
 .sheet-box {
 	background: rgb(0 0 0 / 67%);
 	padding: 10px;
 	color: #fff;
 	margin-bottom: 20px;
+	box-shadow: 2px 2px 8px 1px rgb(0 0 0 / 50%);
 }
+
 .box-title {
 	font-family: 'Belgrad';
 	text-transform: uppercase;
 	color: #fff;
 	background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(62,95,118,1) 60%, rgba(0,181,255,0) 100%);
-	font-size: 20px;
+	font-size: 18px;
 	padding: 6px 20px;
 	border-radius: 20px 0 0 0;
 }
@@ -160,6 +183,47 @@
 }
 
 
+.box-input {
+  background: #Fff;
+	border: 3px solid #3e5f76;
+	box-shadow: 4px 4px 0px 0px #00000057;
+  padding: 5px;
+}
+ .box-input label {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 0;
+  border-bottom: 1px solid #3e5f76;
+	padding: 0;
+	color: #3e5f76;
+}
+.box-input label span {
+  white-space: nowrap;
+	line-height: 36px;
+	padding: 0 5px;
+}
+.box-input label input {
+  width: 100%;
+  border: 0;
+  box-shadow: none;
+  border-radius: 0;
+  font-size: 16px;
+	line-height: 27px;
+}
+
+.character-sheet-table {
+	width: 100%;
+	background: #fff;
+	color: #000;
+	margin-bottom: 10px;
+	border: 3px solid #3e5f76;
+	box-shadow: 4px 4px 0px 0px #00000057;
+}
+.character-sheet-table td {
+	font-size: 16px;
+	padding: 10px;
+}
 
 .label-with-checkboxes {
   background: #dfd9d2;
@@ -183,7 +247,52 @@
   margin: 5px;
 }
 
+.conditions-box {
+	display: flex;
+	flex-wrap: nowrap;
+}
+.character-sheet .checkbox-label {
+	display: block;
+	width: 100%;
+	margin: 0;
+	white-space: nowrap;
+	padding: 0;
+	cursor: pointer;
+	position: relative;
+	z-index: 1;
+}
+.checkbox-label input {
+	opacity: 0;
+	position: absolute;
+}
+.checkbox-label span {
+	border: 2px solid #3e5f76;
+	padding: 8px;
+	/* background: #878787; */
+	background: radial-gradient(circle at center, rgb(255 255 255 / 20%), #6f8899);
+	color: #fff;
+	transition: .3s all ease;
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	box-sizing: border-box;
+}
 
+.checkbox-label span:before {
+	content: "";
+	background: radial-gradient(circle at center, #1ea297 30%, #2e65c4);
+	z-index: -1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	transition: .3s all ease;
+	transform: scale(0);
+}
+.checkbox-label input:checked + span:before {
+	transform: scale(1);
+}
 
 /* Roll Template */
 .sheet-rolltemplate-vaesen .sheet-template-wrap {
@@ -298,6 +407,8 @@
 	margin: auto auto 0;
 	width: 300px;
 	max-width: calc(100% - 30px);
+	padding: 3px 0;
+	margin-bottom: 10px;
 }
 .character-sheet  .bar-input {
 	opacity: 0;
@@ -324,6 +435,7 @@
 .bar-input:checked ~ .bar-view:nth-child(6) .bar-button:before {
 	transition-delay: 0.21s;
 }
+
 .bar-input:checked ~ .bar-view:nth-child(4):after {
 	transition-delay: 0.25s;
 }
@@ -358,7 +470,7 @@
 	top: calc(50% - 1px);
 	transition: transform 0.06s cubic-bezier(0, 0.72, 0.58, 1);
 	transform: scaleX(0);
-	background: #FFB732;
+	background: #000;
 	transform-origin: left;
 	z-index: 1;
 }
@@ -371,31 +483,35 @@
 .bar-view:not(:last-child):before {
 	height: 6px;
 	top: calc(50% - 3px);
-	background: #3C6997;
+	background: #3e5f76;
 }
 .bar-view:not(:last-child):nth-child(2):after {
 	transition-delay: 0s;
 }
 .bar-view:not(:last-child):nth-child(2) .bar-button:before {
 	transition-delay: 0.06s;
+	background: radial-gradient(circle at center, #051ae9, #5e27ce);
 }
 .bar-view:not(:last-child):nth-child(4):after {
 	transition-delay: 0.1s;
 }
 .bar-view:not(:last-child):nth-child(4) .bar-button:before {
 	transition-delay: 0.16s;
+	background: radial-gradient(circle at center, #2e65c4, #051ae9);
 }
 .bar-view:not(:last-child):nth-child(6):after {
 	transition-delay: 0.2s;
 }
 .bar-view:not(:last-child):nth-child(6) .bar-button:before {
 	transition-delay: 0.26s;
+	background: radial-gradient(circle at center, #1ea297, #2e65c4);
 }
 .bar-view:not(:last-child):nth-child(8):after {
 	transition-delay: 0.3s;
 }
 .bar-view:not(:last-child):nth-child(8) .bar-button:before {
 	transition-delay: 0.36s;
+	background: radial-gradient(circle at center, #6f8899, #1ea297);
 }
 .bar-view:not(:last-child):nth-child(10):after {
 	transition-delay: 0.4s;
@@ -409,7 +525,7 @@
 	height: 24px;
 	margin: auto;
 	border-radius: 50%;
-	border: 3px solid #3C6997;
+	border: 3px solid #3e5f76;
 	position: relative;
 	cursor: pointer;
 	box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.3), 2px 2px 8px rgba(0, 0, 0, 0.1);
@@ -424,7 +540,7 @@
 	width: 100%;
 	height: 100%;
 	border-radius: 50%;
-	background: radial-gradient(circle at center, #FFDD4A, #FE9000);
+	background: radial-gradient(circle at center, #ffffff, #6f8899);
 	transform: scale(0.3);
 	opacity: 0;
 	transition-property: transform, opacity;
