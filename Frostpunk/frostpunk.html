@@ -11,23 +11,26 @@
 
 
           <div class="attribute-box">
-            <button type="roll" name="strength" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=strength }}  {{base-dice=[[@{strength} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Strength</button>
-            <input type="text" name="attr_strength" title="@{strength}">
+            <button type="roll" name="strength" value="@{secret_roll} &{template:frostpunk} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=strength }}  {{base-dice=[[@{strength} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }}">Strength</button>
+            <input type="number" name="attr_strength" title="@{strength}" min="0" max="5">
           </div>
 
           <div class="attribute-box">
-            <button type="roll" name="agility" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=agility }}  {{base-dice=[[@{agility} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Agility</button>
-            <input type="text" name="attr_agility" title="@{agility}">
+            <button type="roll" name="agility" value="@{secret_roll} &{template:frostpunk} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=agility }}  {{base-dice=[[@{agility} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Agility</button>
+            <input type="number" name="attr_agility" title="@{agility}" onchange="calcAttribute(this);" min="0" max="5">
+
           </div>
 
           <div class="attribute-box">
-            <button type="roll" name="wits" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=wits }}  {{base-dice=[[@{wits} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Wits</button>
-            <input type="text" name="attr_wits" title="@{wits}">
+            <button type="roll" name="wits" value="@{secret_roll} &{template:frostpunk} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=wits }}  {{base-dice=[[@{wits} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Wits</button>
+            <input type="number" name="attr_wits" title="@{wits}" onchange="calcAttribute(this);" min="0" max="5">
+
           </div>
 
           <div class="attribute-box">
-            <button type="roll" name="empathy" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=empathy }}  {{base-dice=[[@{empathy} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Empathy</button>
-            <input type="text" name="attr_empathy" title="@{empathy}">
+            <button type="roll" name="empathy" value="@{secret_roll} &{template:frostpunk} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=empathy }}  {{base-dice=[[@{empathy} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Empathy</button>
+            <input type="number" name="attr_empathy" title="@{empathy}" onchange="calcAttribute(this);" min="0" max="5">
+
           </div>
 
           
@@ -37,62 +40,62 @@
         <div class="box-title">Skills</div>
         <div class="sheet-box">
           <div class="attribute-box">
-            <button type="roll" name="endure" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=endure }}  {{base-dice=[[@{endure} + @{strength} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Endure <span>(Strength)</span></button>
+            <button type="roll" name="endure" value="@{secret_roll} &{template:frostpunk} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=endure }}  {{base-dice=[[@{endure} + @{strength} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Endure <span>(Strength)</span></button>
             <input type="text" name="attr_endure">
           </div>
 
           <div class="attribute-box">
-            <button type="roll" name="force" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=force }}  {{base-dice=[[@{force} + @{strength} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Force <span>(Strength)</span></button>
+            <button type="roll" name="force" value="@{secret_roll} &{template:frostpunk} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=force }}  {{base-dice=[[@{force} + @{strength} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Force <span>(Strength)</span></button>
             <input type="text" name="attr_force">
           </div>
 
           <div class="attribute-box">
-            <button type="roll" name="fight" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=fight }}  {{base-dice=[[@{fight} + @{strength} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Fight <span>(Strength)</span></button>
+            <button type="roll" name="fight" value="@{secret_roll} &{template:frostpunk} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=fight }}  {{base-dice=[[@{fight} + @{strength} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Fight <span>(Strength)</span></button>
             <input type="text" name="attr_fight">
           </div>
 
           <div class="attribute-box">
-            <button type="roll" name="sneak" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=sneak }}  {{base-dice=[[@{sneak} + @{agility} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Sneak <span>(Agility)</span></button>
+            <button type="roll" name="sneak" value="@{secret_roll} &{template:frostpunk} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=sneak }}  {{base-dice=[[@{sneak} + @{agility} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Sneak <span>(Agility)</span></button>
             <input type="text" name="attr_sneak">
           </div>
 
           <div class="attribute-box">
-            <button type="roll" name="move" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=move }}  {{base-dice=[[@{move} + @{agility} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Move <span>(Agility)</span></button>
+            <button type="roll" name="move" value="@{secret_roll} &{template:frostpunk} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=move }}  {{base-dice=[[@{move} + @{agility} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Move <span>(Agility)</span></button>
             <input type="text" name="attr_move">
           </div>
 
           <div class="attribute-box">
-            <button type="roll" name="shoot" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=shoot }}  {{base-dice=[[@{shoot} + @{agility} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Shoot <span>(Agility)</span></button>
+            <button type="roll" name="shoot" value="@{secret_roll} &{template:frostpunk} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=shoot }}  {{base-dice=[[@{shoot} + @{agility} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Shoot <span>(Agility)</span></button>
             <input type="text" name="attr_shoot">
           </div>
 
           <div class="attribute-box">
-            <button type="roll" name="scout" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=scout }}  {{base-dice=[[@{scout} + @{wits} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Scout <span>(Wits)</span></button>
+            <button type="roll" name="scout" value="@{secret_roll} &{template:frostpunk} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=scout }}  {{base-dice=[[@{scout} + @{wits} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Scout <span>(Wits)</span></button>
             <input type="text" name="attr_scout">
           </div>
 
           <div class="attribute-box">
-            <button type="roll" name="comprehend" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=comprehend }}  {{base-dice=[[@{comprehend} + @{wits} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Comprehend <span>(Wits)</span></button>
+            <button type="roll" name="comprehend" value="@{secret_roll} &{template:frostpunk} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=comprehend }}  {{base-dice=[[@{comprehend} + @{wits} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Comprehend <span>(Wits)</span></button>
             <input type="text" name="attr_comprehend">
           </div>
 
           <div class="attribute-box">
-            <button type="roll" name="know_the_zone" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=know_the_zone }}  {{base-dice=[[@{know_the_zone} + @{wits} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Know The Zone <span>(Wits)</span></button>
+            <button type="roll" name="know_the_zone" value="@{secret_roll} &{template:frostpunk} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=know_the_zone }}  {{base-dice=[[@{know_the_zone} + @{wits} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Know The Zone <span>(Wits)</span></button>
             <input type="text" name="attr_know_the_zone">
           </div>
 
           <div class="attribute-box">
-            <button type="roll" name="sense_emotion" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=sense_emotion }}  {{base-dice=[[@{sense_emotion} + @{empathy} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Sense Emotion <span>(Empathy)</span></button>
+            <button type="roll" name="sense_emotion" value="@{secret_roll} &{template:frostpunk} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=sense_emotion }}  {{base-dice=[[@{sense_emotion} + @{empathy} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Sense Emotion <span>(Empathy)</span></button>
             <input type="text" name="attr_sense_emotion">
           </div>
 
           <div class="attribute-box">
-            <button type="roll" name="manipulate" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=manipulate }}  {{base-dice=[[@{manipulate} + @{empathy} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Manipulate <span>(Empathy)</span></button>
+            <button type="roll" name="manipulate" value="@{secret_roll} &{template:frostpunk} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=manipulate }}  {{base-dice=[[@{manipulate} + @{empathy} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Manipulate <span>(Empathy)</span></button>
             <input type="text" name="attr_manipulate">
           </div>
 
           <div class="attribute-box">
-            <button type="roll" name="heal" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=heal }}  {{base-dice=[[@{heal} + @{empathy} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Heal <span>(Empathy)</span></button>
+            <button type="roll" name="heal" value="@{secret_roll} &{template:frostpunk} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=heal }}  {{base-dice=[[@{heal} + @{empathy} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Heal <span>(Empathy)</span></button>
             <input type="text" name="attr_heal">
           </div>
 
@@ -107,115 +110,121 @@
         <div class="box-title">Attributes Damage</div>
         <div class="sheet-box">
           <label style="color:#fff;margin:0;">Reset</label>
-          <div class="flex">
+          <div class="flex margin-b-10">
             <label class="reset-radio">
               <input type="radio" name="attr_strength_damage" value="0">
             </label>
+            <input type="hidden" name="attr_strength_calc" class="bar-calc-view" value="0">
             <div class="bar">
-              <input class="bar-input" type="radio" name="attr_strength_damage" id="strength_damage_1" value="1"/>
+              <input class="bar-input" type="radio" name="attr_strength_damage" id="strength_damage_5" value="5"/>
               <div class="bar-view">
-                <label class="bar-button" for="strength_damage_1"></label>
-              </div>
-              <input class="bar-input" type="radio" name="attr_strength_damage" id="strength_damage_2" value="2"/>
-              <div class="bar-view">
-                <label class="bar-button" for="strength_damage_2"></label>
-              </div>
-              <input class="bar-input" type="radio" name="attr_strength_damage" id="strength_damage_3" value="3"/>
-              <div class="bar-view">
-                <label class="bar-button" for="strength_damage_3"></label>
+                <label class="bar-button" for="strength_damage_5"></label>
               </div>
               <input class="bar-input" type="radio" name="attr_strength_damage" id="strength_damage_4" value="4"/>
               <div class="bar-view">
                 <label class="bar-button" for="strength_damage_4"></label>
               </div>
-              <input class="bar-input" type="radio" name="attr_strength_damage" id="strength_damage_5" value="5"/>
+              <input class="bar-input" type="radio" name="attr_strength_damage" id="strength_damage_3" value="3"/>
               <div class="bar-view">
-                <label class="bar-button" for="strength_damage_5"></label>
+                <label class="bar-button" for="strength_damage_3"></label>
+              </div>
+              <input class="bar-input" type="radio" name="attr_strength_damage" id="strength_damage_2" value="2"/>
+              <div class="bar-view">
+                <label class="bar-button" for="strength_damage_2"></label>
+              </div>
+              <input class="bar-input" type="radio" name="attr_strength_damage" id="strength_damage_1" value="1"/>
+              <div class="bar-view">
+                <label class="bar-button" for="strength_damage_1"></label>
               </div>
             </div>
           </div>
 					
-          <div class="flex">
+          <div class="flex margin-b-10">
             <label class="reset-radio">
               <input type="radio" name="attr_agility_damage" value="0">
             </label>
+            <input type="hidden" name="attr_agility_calc" class="bar-calc-view" value="0">
+
             <div class="bar">
-              <input class="bar-input" type="radio" name="attr_agility_damage" id="agility_damage_1" value="1"/>
+              <input class="bar-input" type="radio" name="attr_agility_damage" id="agility_damage_5" value="5"/>
               <div class="bar-view">
-                <label class="bar-button" for="agility_damage_1"></label>
-              </div>
-              <input class="bar-input" type="radio" name="attr_agility_damage" id="agility_damage_2" value="2"/>
-              <div class="bar-view">
-                <label class="bar-button" for="agility_damage_2"></label>
-              </div>
-              <input class="bar-input" type="radio" name="attr_agility_damage" id="agility_damage_3" value="3"/>
-              <div class="bar-view">
-                <label class="bar-button" for="agility_damage_3"></label>
+                <label class="bar-button" for="agility_damage_5"></label>
               </div>
               <input class="bar-input" type="radio" name="attr_agility_damage" id="agility_damage_4" value="4"/>
               <div class="bar-view">
                 <label class="bar-button" for="agility_damage_4"></label>
               </div>
-              <input class="bar-input" type="radio" name="attr_agility_damage" id="agility_damage_5" value="5"/>
+              <input class="bar-input" type="radio" name="attr_agility_damage" id="agility_damage_3" value="3"/>
               <div class="bar-view">
-                <label class="bar-button" for="agility_damage_5"></label>
+                <label class="bar-button" for="agility_damage_3"></label>
+              </div>
+              <input class="bar-input" type="radio" name="attr_agility_damage" id="agility_damage_2" value="2"/>
+              <div class="bar-view">
+                <label class="bar-button" for="agility_damage_2"></label>
+              </div>
+              <input class="bar-input" type="radio" name="attr_agility_damage" id="agility_damage_1" value="1"/>
+              <div class="bar-view">
+                <label class="bar-button" for="agility_damage_1"></label>
               </div>
             </div>
           </div>
           
-          <div class="flex">
+          <div class="flex margin-b-10">
             <label class="reset-radio">
               <input type="radio" name="attr_wits_damage" value="0">
             </label>
+            <input type="hidden" name="attr_wits_calc" class="bar-calc-view" value="0">
+
             <div class="bar">
-              <input class="bar-input" type="radio" name="attr_wits_damage" id="wits_damage_1" value="1"/>
+              <input class="bar-input" type="radio" name="attr_wits_damage" id="wits_damage_5" value="5"/>
               <div class="bar-view">
-                <label class="bar-button" for="wits_damage_1"></label>
-              </div>
-              <input class="bar-input" type="radio" name="attr_wits_damage" id="wits_damage_2" value="2"/>
-              <div class="bar-view">
-                <label class="bar-button" for="wits_damage_2"></label>
-              </div>
-              <input class="bar-input" type="radio" name="attr_wits_damage" id="wits_damage_3" value="3"/>
-              <div class="bar-view">
-                <label class="bar-button" for="wits_damage_3"></label>
+                <label class="bar-button" for="wits_damage_5"></label>
               </div>
               <input class="bar-input" type="radio" name="attr_wits_damage" id="wits_damage_4" value="4"/>
               <div class="bar-view">
                 <label class="bar-button" for="wits_damage_4"></label>
               </div>
-              <input class="bar-input" type="radio" name="attr_wits_damage" id="wits_damage_5" value="5"/>
+              <input class="bar-input" type="radio" name="attr_wits_damage" id="wits_damage_3" value="3"/>
               <div class="bar-view">
-                <label class="bar-button" for="wits_damage_5"></label>
+                <label class="bar-button" for="wits_damage_3"></label>
+              </div>
+              <input class="bar-input" type="radio" name="attr_wits_damage" id="wits_damage_2" value="2"/>
+              <div class="bar-view">
+                <label class="bar-button" for="wits_damage_2"></label>
+              </div>
+              <input class="bar-input" type="radio" name="attr_wits_damage" id="wits_damage_1" value="1"/>
+              <div class="bar-view">
+                <label class="bar-button" for="wits_damage_1"></label>
               </div>
             </div>
           </div>
           
-          <div class="flex">
+          <div class="flex margin-b-10">
             <label class="reset-radio">
               <input type="radio" name="attr_empathy_damage" value="0">
             </label>
+            <input type="hidden" name="attr_empathy_calc" class="bar-calc-view" value="0">
 
             <div class="bar">
-              <input class="bar-input" type="radio" name="attr_empathy_damage" id="empathy_damage_1" value="1"/>
+              <input class="bar-input" type="radio" name="attr_empathy_damage" id="empathy_damage_5" value="5"/>
               <div class="bar-view">
-                <label class="bar-button" for="empathy_damage_1"></label>
-              </div>
-              <input class="bar-input" type="radio" name="attr_empathy_damage" id="empathy_damage_2" value="2"/>
-              <div class="bar-view">
-                <label class="bar-button" for="empathy_damage_2"></label>
-              </div>
-              <input class="bar-input" type="radio" name="attr_empathy_damage" id="empathy_damage_3" value="3"/>
-              <div class="bar-view">
-                <label class="bar-button" for="empathy_damage_3"></label>
+                <label class="bar-button" for="empathy_damage_5"></label>
               </div>
               <input class="bar-input" type="radio" name="attr_empathy_damage" id="empathy_damage_4" value="4"/>
               <div class="bar-view">
                 <label class="bar-button" for="empathy_damage_4"></label>
               </div>
-              <input class="bar-input" type="radio" name="attr_empathy_damage" id="empathy_damage_5" value="5"/>
+              <input class="bar-input" type="radio" name="attr_empathy_damage" id="empathy_damage_3" value="3"/>
               <div class="bar-view">
-                <label class="bar-button" for="empathy_damage_5"></label>
+                <label class="bar-button" for="empathy_damage_3"></label>
+              </div>
+              <input class="bar-input" type="radio" name="attr_empathy_damage" id="empathy_damage_2" value="2"/>
+              <div class="bar-view">
+                <label class="bar-button" for="empathy_damage_2"></label>
+              </div>
+              <input class="bar-input" type="radio" name="attr_empathy_damage" id="empathy_damage_1" value="1"/>
+              <div class="bar-view">
+                <label class="bar-button" for="empathy_damage_1"></label>
               </div>
             </div>
           </div>
@@ -315,6 +324,8 @@
 						<label>Critical Injuries: <input type="text" name="attr_c_injures_1" title="@{c_injures_1}" spellcheck="false"></label>
 						<label><input type="text" name="attr_c_injures_2" title="@{c_injures_2}" spellcheck="false"></label>
 						<label><input type="text" name="attr_c_injures_3" title="@{c_injures_3}" spellcheck="false"></label>
+						<label><input type="text" name="attr_c_injures_4" title="@{c_injures_4}" spellcheck="false"></label>
+
 					</div>
 
 				</div>
@@ -336,127 +347,132 @@
      
 
 
-
-
   </div>
 
     
 
 <!-- Roll Templates -->
 
-  <rolltemplate class="sheet-rolltemplate-vaesen">
+<rolltemplate class="sheet-rolltemplate-frostpunk">
     <div class="template-wrap">
       <div class="template-header">
         {{#character_name}}
-        <div class="template-header template-grid-item sheet-template-span-six">
           {{#character_id}}[{{character_name}}](https://journal.roll20.net/character/{{character_id}}){{/character_id}}
           {{^character_id}}{{character_name}}{{/character_id}}
-        </div>
-        {{#name}}
-        <div class="template-grid-item template-span-six template-header" style="width: 15px; z-index: 0; margin: 2px 2px 5px 2px;">
-          ◇
-        </div>
-        {{/name}} {{/character_name}} {{#name}}
-        <div class="template-grid-item template-span-six template-header">
-          {{#name_link}}[{{name}}]({{name_link}}){{/name_link}} {{^name_link}}{{name}}{{/name_link}}
-        </div>
-        {{/name}}
+        {{/character_name}}
       </div>
 
       <div class="template-subtitle">
         {{roll-name}}
       </div>
+
+	  <div class="template-grid">
+		  <table>
+			  <tr>
+				  <td>
+					{{#rollGreater() base-dice 0}} <!-- BASE DIE ONE -->
+					<div class="template-grid-item">
+						{{#rollBetween() base-roll-one 1 5}}
+							<div class="template-base-between">{{base-roll-one}}</div>
+						{{/rollBetween() base-roll-one 1 5}}
+						{{#rollWasCrit() base-roll-one}}
+							<div class="template-base-success">{{base-roll-one}} &#10052; </div>
+						{{/rollWasCrit() base-roll-one}}
+					</div>
+					{{/rollGreater() base-dice 0}}
+
+					{{#rollGreater() base-dice 1}} <!-- BASE DIE TWO -->
+					<div class="template-grid-item">
+						{{#rollBetween() base-roll-two 1 5}}
+							<div class="template-base-between">{{base-roll-two}}</div>
+						{{/rollBetween() base-roll-two 1 5}}
+						{{#rollWasCrit() base-roll-two}}
+							<div class="template-base-success">{{base-roll-two}}</div>
+						{{/rollWasCrit() base-roll-two}}
+					</div>
+					{{/rollGreater() base-dice 1}}
+
+					{{#rollGreater() base-dice 2}} <!-- BASE DIE THREE -->
+					<div class="template-grid-item">
+						{{#rollBetween() base-roll-three 1 5}}
+							<div class="template-base-between">{{base-roll-three}}</div>
+						{{/rollBetween() base-roll-three 1 5}}
+						{{#rollWasCrit() base-roll-three}}
+							<div class="template-base-success hit">{{base-roll-three}}</div>
+						{{/rollWasCrit() base-roll-three}}
+					</div>
+					{{/rollGreater() base-dice 2}}
+					
+					{{#rollGreater() base-dice 3}} <!-- BASE DIE FOUR -->
+					<div class="template-grid-item">
+						{{#rollBetween() base-roll-four 1 5}}
+							<div class="template-base-between">{{base-roll-four}}</div>
+						{{/rollBetween() base-roll-four 1 5}}
+						{{#rollWasCrit() base-roll-four}}
+							<div class="template-base-success hit">{{base-roll-four}}</div>
+						{{/rollWasCrit() base-roll-four}}
+					</div>
+					{{/rollGreater() base-dice 3}}
+					
+					{{#rollGreater() base-dice 4}} <!-- BASE DIE FIVE -->
+					<div class="template-grid-item">
+						{{#rollBetween() base-roll-five 1 5}}
+							<div class="template-base-between">{{base-roll-five}}</div>
+						{{/rollBetween() base-roll-five 1 5}}
+						{{#rollWasCrit() base-roll-five}}
+							<div class="template-base-success hit">{{base-roll-five}}</div>
+						{{/rollWasCrit() base-roll-five}}
+					</div>
+					{{/rollGreater() base-dice 4}}
+					
+					{{#rollGreater() base-dice 5}} <!-- BASE DIE SIX -->
+					<div class="template-grid-item">
+						{{#rollBetween() base-roll-six 1 5}}
+							<div class="template-base-between">{{base-roll-six}}</div>
+						{{/rollBetween() base-roll-six 1 5}}
+						{{#rollWasCrit() base-roll-six}}
+							<div class="template-base-success hit">{{base-roll-six}}</div>
+						{{/rollWasCrit() base-roll-six}}
+					</div>
+					{{/rollGreater() base-dice 5}}
+					
+					{{#rollGreater() base-dice 6}} <!-- BASE DIE SEVEN -->
+					<div class="template-grid-item">
+						{{#rollBetween() base-roll-seven 1 5}}
+							<div class="template-base-between">{{base-roll-seven}}</div>
+						{{/rollBetween() base-roll-seven 1 5}}
+						{{#rollWasCrit() base-roll-seven}}
+							<div class="template-base-success hit">{{base-roll-seven}}</div>
+						{{/rollWasCrit() base-roll-seven}}
+					</div>
+					{{/rollGreater() base-dice 6}}
+
+				  </td>
+				  <td>
+
+				  </td>
+				  <td></td>
+			  </tr>
+			  <tr>
+				  <td colspan="3" style="height: 10px;"></td>
+			  </tr>
+			  <tr>
+					<td style="width:33%" class="dice-pool-name">Base Dice</td>
+					<td style="width:33%" class="dice-pool-name">Skill dice</td>
+					<td style="width:33%" class="dice-pool-name">Equipment dice</td>
+			  </tr>
+		  </table>
+		  
+	  </div>
       
       <div class="template-grid dice-grid">
 
 
-        {{#rollGreater() base-dice 0}} <!-- BASE DIE ONE -->
-        <div class="template-grid-item template-span-one">
-            {{#rollBetween() base-roll-one 1 5}}
-                <div class="template-base-between">{{base-roll-one}}</div>
-            {{/rollBetween() base-roll-one 1 5}}
-            {{#rollWasCrit() base-roll-one}}
-                <div class="template-base-success">{{base-roll-one}}</div>
-            {{/rollWasCrit() base-roll-one}}
-        </div>
-        {{/rollGreater() base-dice 0}}
         
-        {{#rollGreater() base-dice 1}} <!-- BASE DIE TWO -->
-        <div class="template-grid-item template-span-two">
-            {{#rollBetween() base-roll-two 1 5}}
-                <div class="template-base-between">{{base-roll-two}}</div>
-            {{/rollBetween() base-roll-two 1 5}}
-            {{#rollWasCrit() base-roll-two}}
-                <div class="template-base-success">{{base-roll-two}}</div>
-            {{/rollWasCrit() base-roll-two}}
-        </div>
-        {{/rollGreater() base-dice 1}}
         
-        {{#rollGreater() base-dice 2}} <!-- BASE DIE THREE -->
-        <div class="template-grid-item template-span-three">
-            {{#rollBetween() base-roll-three 1 5}}
-                <div class="template-base-between">{{base-roll-three}}</div>
-            {{/rollBetween() base-roll-three 1 5}}
-            {{#rollWasCrit() base-roll-three}}
-                <div class="template-base-success hit">{{base-roll-three}}</div>
-            {{/rollWasCrit() base-roll-three}}
-        </div>
-        {{/rollGreater() base-dice 2}}
+       
         
-        {{#rollGreater() base-dice 3}} <!-- BASE DIE FOUR -->
-        <div class="template-grid-item template-span-four">
-            {{#rollBetween() base-roll-four 1 5}}
-                <div class="template-base-between">{{base-roll-four}}</div>
-            {{/rollBetween() base-roll-four 1 5}}
-            {{#rollWasCrit() base-roll-four}}
-                <div class="template-base-success hit">{{base-roll-four}}</div>
-            {{/rollWasCrit() base-roll-four}}
-        </div>
-        {{/rollGreater() base-dice 3}}
         
-        {{#rollGreater() base-dice 4}} <!-- BASE DIE FIVE -->
-        <div class="template-grid-item template-span-five">
-            {{#rollBetween() base-roll-five 1 5}}
-                <div class="template-base-between">{{base-roll-five}}</div>
-            {{/rollBetween() base-roll-five 1 5}}
-            {{#rollWasCrit() base-roll-five}}
-                <div class="template-base-success hit">{{base-roll-five}}</div>
-            {{/rollWasCrit() base-roll-five}}
-        </div>
-        {{/rollGreater() base-dice 4}}
-        
-        {{#rollGreater() base-dice 5}} <!-- BASE DIE SIX -->
-        <div class="template-grid-item template-span-shix">
-            {{#rollBetween() base-roll-six 1 5}}
-                <div class="template-base-between">{{base-roll-six}}</div>
-            {{/rollBetween() base-roll-six 1 5}}
-            {{#rollWasCrit() base-roll-six}}
-                <div class="template-base-success hit">{{base-roll-six}}</div>
-            {{/rollWasCrit() base-roll-six}}
-        </div>
-        {{/rollGreater() base-dice 5}}
-        
-        {{#rollGreater() base-dice 6}} <!-- BASE DIE SEVEN -->
-        <div class="template-grid-item template-span-one">
-            {{#rollBetween() base-roll-seven 1 5}}
-                <div class="template-base-between">{{base-roll-seven}}</div>
-            {{/rollBetween() base-roll-seven 1 5}}
-            {{#rollWasCrit() base-roll-seven}}
-                <div class="template-base-success hit">{{base-roll-seven}}</div>
-            {{/rollWasCrit() base-roll-seven}}
-        </div>
-        {{/rollGreater() base-dice 6}}
-        
-        {{#rollGreater() base-dice 7}} <!-- BASE DIE EIGHT -->
-        <div class="template-grid-item template-span-two">
-            {{#rollBetween() base-roll-eight 1 5}}
-                <div class="template-base-between">{{base-roll-eight}}</div>
-            {{/rollBetween() base-roll-eight 1 5}}
-            {{#rollWasCrit() base-roll-eight}}
-                <div class="template-base-success hit">{{base-roll-eight}}</div>
-            {{/rollWasCrit() base-roll-eight}}
-        </div>
-        {{/rollGreater() base-dice 7}}
         
         {{#rollGreater() base-dice 8}} <!-- BASE DIE NINE -->
         <div class="template-grid-item template-span-three">
@@ -558,7 +574,39 @@
         {{/rollGreater() base-dice 16}}
 
       </div>
-    </div>
-  </rolltemplate>
-    
 
+    </div>
+</rolltemplate>
+    
+<script type="text/worker">
+
+
+	const stats = ["strength", "agility", "wits", "empathy"];
+
+	stats.forEach(stat => {
+		on(`change:${stat}`, () => {
+			getAttrs([stat], values => {
+				const stat_base = values[stat]; 
+				
+				getAttrs([`${stat}_calc`], function(test) {
+					console.log(test)
+					console.log(stat_base)
+					setAttrs({
+						[`${stat}_calc`]: stat_base
+					}); 
+				});
+				
+			});
+		});
+	});
+</script>
+<!--
+
+
+ setAttrs({
+	[`attr_${stat}_calc`]: stat_base
+}); 
+
+
+
+-->

@@ -126,37 +126,40 @@
                 </div>
                 <div class="col-6">
                     <div class="character-details with-down-corner">
-                        <div class="row">
-                            <div class="col-10">
-                                <h2 class="details-title">Equipment</h2>
+                        <table class="character-sheet-table">
+                            <tr>
+                                <td style="width:82%">
+                                    <h2 class="details-title">Equipment</h2>
 
-                                <div class="box-input">
-                                    <label><input type="text" name="attr_equipment_1" title="@{equipment_1}" spellcheck="false"></label>
-                                    <label><input type="text" name="attr_equipment_2" title="@{equipment_2}" spellcheck="false"></label>
-                                    <label><input type="text" name="attr_equipment_3" title="@{equipment_3}" spellcheck="false"></label>
-                                    <label><input type="text" name="attr_equipment_4" title="@{equipment_4}" spellcheck="false"></label>
-                                    <label><input type="text" name="attr_equipment_5" title="@{equipment_5}" spellcheck="false"></label>
-                                    <label><input type="text" name="attr_equipment_6" title="@{equipment_6}" spellcheck="false"></label>
-                                    <label><input type="text" name="attr_equipment_7" title="@{equipment_7}" spellcheck="false"></label>
-                                    <label><input type="text" name="attr_equipment_8" title="@{equipment_8}" spellcheck="false"></label>
-                                    <label><input type="text" name="attr_equipment_9" title="@{equipment_9}" spellcheck="false"></label>
-                                </div>
-                            </div>
-                            <div class="col-2" style="padding-left: 0;">
-                                <span class="mini-title">Bonus</span>
-                                <div class="box-input center-inputs">
-                                    <label><input type="text" name="attr_equipment_bonus_1" title="@{equipment_bonus_1}" spellcheck="false"></label>
-                                    <label><input type="text" name="attr_equipment_bonus_2" title="@{equipment_bonus_2}" spellcheck="false"></label>
-                                    <label><input type="text" name="attr_equipment_bonus_3" title="@{equipment_bonus_3}" spellcheck="false"></label>
-                                    <label><input type="text" name="attr_equipment_bonus_4" title="@{equipment_bonus_4}" spellcheck="false"></label>
-                                    <label><input type="text" name="attr_equipment_bonus_5" title="@{equipment_bonus_5}" spellcheck="false"></label>
-                                    <label><input type="text" name="attr_equipment_bonus_6" title="@{equipment_bonus_6}" spellcheck="false"></label>
-                                    <label><input type="text" name="attr_equipment_bonus_7" title="@{equipment_bonus_7}" spellcheck="false"></label>
-                                    <label><input type="text" name="attr_equipment_bonus_8" title="@{equipment_bonus_8}" spellcheck="false"></label>
-                                    <label><input type="text" name="attr_equipment_bonus_9" title="@{equipment_bonus_9}" spellcheck="false"></label>
-                                </div>
-                            </div>
-                        </div>
+                                    <div class="box-input">
+                                        <label><input type="text" name="attr_equipment_1" title="@{equipment_1}" spellcheck="false"></label>
+                                        <label><input type="text" name="attr_equipment_2" title="@{equipment_2}" spellcheck="false"></label>
+                                        <label><input type="text" name="attr_equipment_3" title="@{equipment_3}" spellcheck="false"></label>
+                                        <label><input type="text" name="attr_equipment_4" title="@{equipment_4}" spellcheck="false"></label>
+                                        <label><input type="text" name="attr_equipment_5" title="@{equipment_5}" spellcheck="false"></label>
+                                        <label><input type="text" name="attr_equipment_6" title="@{equipment_6}" spellcheck="false"></label>
+                                        <label><input type="text" name="attr_equipment_7" title="@{equipment_7}" spellcheck="false"></label>
+                                        <label><input type="text" name="attr_equipment_8" title="@{equipment_8}" spellcheck="false"></label>
+                                        <label><input type="text" name="attr_equipment_9" title="@{equipment_9}" spellcheck="false"></label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="mini-title">Bonus</span>
+                                    <div class="box-input center-inputs">
+                                        <label><input type="text" name="attr_equipment_bonus_1" title="@{equipment_bonus_1}" spellcheck="false"></label>
+                                        <label><input type="text" name="attr_equipment_bonus_2" title="@{equipment_bonus_2}" spellcheck="false"></label>
+                                        <label><input type="text" name="attr_equipment_bonus_3" title="@{equipment_bonus_3}" spellcheck="false"></label>
+                                        <label><input type="text" name="attr_equipment_bonus_4" title="@{equipment_bonus_4}" spellcheck="false"></label>
+                                        <label><input type="text" name="attr_equipment_bonus_5" title="@{equipment_bonus_5}" spellcheck="false"></label>
+                                        <label><input type="text" name="attr_equipment_bonus_6" title="@{equipment_bonus_6}" spellcheck="false"></label>
+                                        <label><input type="text" name="attr_equipment_bonus_7" title="@{equipment_bonus_7}" spellcheck="false"></label>
+                                        <label><input type="text" name="attr_equipment_bonus_8" title="@{equipment_bonus_8}" spellcheck="false"></label>
+                                        <label><input type="text" name="attr_equipment_bonus_9" title="@{equipment_bonus_9}" spellcheck="false"></label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                       
                         
                         
                     </div>
@@ -429,6 +432,230 @@
                 </div>
             </div>
         </div>
+
+        <div class="character-details">
+            <div class="title-with-input" style="padding: 5px 20px;">Upgrades</div>
+
+            <table class="character-sheet-table no-background">
+                <tr>
+                    <td class="table-title">Facilities</td>
+                    <td></td>
+                    <td class="table-title">Discovered Facilities</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="box-input">
+                            <label><input type="text" name="attr_facility_one_1" title="@{facility_one_1}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Function</span> <input type="text" name="attr_facility_two_1" title="@{facility_two_1}" spellcheck="false"></label>
+                            <label><input type="text" name="attr_facility_three_1" title="@{facility_three_1}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Asset</span> <input type="text" name="attr_facility_four_1" title="@{facility_four_1}" spellcheck="false"></label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="box-input">
+                            <label><input type="text" name="attr_facility_one_2" title="@{facility_one_2}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Function</span> <input type="text" name="attr_facility_two_2" title="@{facility_two_2}" spellcheck="false"></label>
+                            <label><input type="text" name="attr_facility_three_2" title="@{facility_three_2}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Asset</span> <input type="text" name="attr_facility_four_2" title="@{facility_four_2}" spellcheck="false"></label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="box-input">
+                            <label><input type="text" name="attr_facility_one_3" title="@{facility_one_3}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Function</span> <input type="text" name="attr_facility_two_3" title="@{facility_two_3}" spellcheck="false"></label>
+                            <label><input type="text" name="attr_facility_three_3" title="@{facility_three_3}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Asset</span> <input type="text" name="attr_facility_four_3" title="@{facility_four_3}" spellcheck="false"></label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="box-input">
+                            <label><input type="text" name="attr_facility_one_4" title="@{facility_one_4}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Function</span> <input type="text" name="attr_facility_two_4" title="@{facility_two_4}" spellcheck="false"></label>
+                            <label><input type="text" name="attr_facility_three_4" title="@{facility_three_4}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Asset</span> <input type="text" name="attr_facility_four_4" title="@{facility_four_4}" spellcheck="false"></label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="box-input">
+                            <label><input type="text" name="attr_facility_one_5" title="@{facility_one_5}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Function</span> <input type="text" name="attr_facility_two_5" title="@{facility_two_5}" spellcheck="false"></label>
+                            <label><input type="text" name="attr_facility_three_5" title="@{facility_three_5}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Asset</span> <input type="text" name="attr_facility_four_5" title="@{facility_four_5}" spellcheck="false"></label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="box-input">
+                            <label><input type="text" name="attr_facility_one_6" title="@{facility_one_6}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Function</span> <input type="text" name="attr_facility_two_6" title="@{facility_two_6}" spellcheck="false"></label>
+                            <label><input type="text" name="attr_facility_three_6" title="@{facility_three_6}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Asset</span> <input type="text" name="attr_facility_four_6" title="@{facility_four_6}" spellcheck="false"></label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="box-input">
+                            <label><input type="text" name="attr_facility_one_7" title="@{facility_one_7}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Function</span> <input type="text" name="attr_facility_two_7" title="@{facility_two_7}" spellcheck="false"></label>
+                            <label><input type="text" name="attr_facility_three_7" title="@{facility_three_7}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Asset</span> <input type="text" name="attr_facility_four_7" title="@{facility_four_7}" spellcheck="false"></label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="box-input">
+                            <label><input type="text" name="attr_facility_one_8" title="@{facility_one_8}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Function</span> <input type="text" name="attr_facility_two_8" title="@{facility_two_8}" spellcheck="false"></label>
+                            <label><input type="text" name="attr_facility_three_8" title="@{facility_three_8}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Asset</span> <input type="text" name="attr_facility_four_8" title="@{facility_four_8}" spellcheck="false"></label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="box-input">
+                            <label><input type="text" name="attr_facility_one_9" title="@{facility_one_9}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Function</span> <input type="text" name="attr_facility_two_9" title="@{facility_two_9}" spellcheck="false"></label>
+                            <label><input type="text" name="attr_facility_three_9" title="@{facility_three_9}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Asset</span> <input type="text" name="attr_facility_four_9" title="@{facility_four_9}" spellcheck="false"></label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="box-input">
+                            <label><input type="text" name="attr_facility_one_10" title="@{facility_one_10}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Function</span> <input type="text" name="attr_facility_two_10" title="@{facility_two_10}" spellcheck="false"></label>
+                            <label><input type="text" name="attr_facility_three_10" title="@{facility_three_10}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Asset</span> <input type="text" name="attr_facility_four_10" title="@{facility_four_10}" spellcheck="false"></label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="box-input">
+                            <label><input type="text" name="attr_facility_one_11" title="@{facility_one_11}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Function</span> <input type="text" name="attr_facility_two_11" title="@{facility_two_11}" spellcheck="false"></label>
+                            <label><input type="text" name="attr_facility_three_11" title="@{facility_three_11}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Asset</span> <input type="text" name="attr_facility_four_11" title="@{facility_four_11}" spellcheck="false"></label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="box-input">
+                            <label><input type="text" name="attr_facility_one_12" title="@{facility_one_12}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Function</span> <input type="text" name="attr_facility_two_12" title="@{facility_two_12}" spellcheck="false"></label>
+                            <label><input type="text" name="attr_facility_three_12" title="@{facility_three_12}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Asset</span> <input type="text" name="attr_facility_four_12" title="@{facility_four_12}" spellcheck="false"></label>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="table-title">Contacts</td>
+                    <td></td>
+                    <td class="table-title">Personel</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="box-input">
+                            <label><input type="text" name="attr_facility_one_13" title="@{facility_one_13}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Function</span> <input type="text" name="attr_facility_two_13" title="@{facility_two_13}" spellcheck="false"></label>
+                            <label><input type="text" name="attr_facility_three_13" title="@{facility_three_13}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Asset</span> <input type="text" name="attr_facility_four_13" title="@{facility_four_13}" spellcheck="false"></label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="box-input">
+                            <label><input type="text" name="attr_facility_one_14" title="@{facility_one_14}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Function</span> <input type="text" name="attr_facility_two_14" title="@{facility_two_14}" spellcheck="false"></label>
+                            <label><input type="text" name="attr_facility_three_14" title="@{facility_three_14}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Asset</span> <input type="text" name="attr_facility_four_14" title="@{facility_four_14}" spellcheck="false"></label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="box-input">
+                            <label><input type="text" name="attr_facility_one_15" title="@{facility_one_15}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Function</span> <input type="text" name="attr_facility_two_15" title="@{facility_two_15}" spellcheck="false"></label>
+                            <label><input type="text" name="attr_facility_three_15" title="@{facility_three_15}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Asset</span> <input type="text" name="attr_facility_four_15" title="@{facility_four_15}" spellcheck="false"></label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="box-input">
+                            <label><input type="text" name="attr_facility_one_16" title="@{facility_one_16}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Function</span> <input type="text" name="attr_facility_two_16" title="@{facility_two_16}" spellcheck="false"></label>
+                            <label><input type="text" name="attr_facility_three_16" title="@{facility_three_16}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Asset</span> <input type="text" name="attr_facility_four_16" title="@{facility_four_16}" spellcheck="false"></label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="box-input">
+                            <label><input type="text" name="attr_facility_one_17" title="@{facility_one_17}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Function</span> <input type="text" name="attr_facility_two_17" title="@{facility_two_17}" spellcheck="false"></label>
+                            <label><input type="text" name="attr_facility_three_17" title="@{facility_three_17}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Asset</span> <input type="text" name="attr_facility_four_17" title="@{facility_four_17}" spellcheck="false"></label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="box-input">
+                            <label><input type="text" name="attr_facility_one_18" title="@{facility_one_18}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Function</span> <input type="text" name="attr_facility_two_18" title="@{facility_two_18}" spellcheck="false"></label>
+                            <label><input type="text" name="attr_facility_three_18" title="@{facility_three_18}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Asset</span> <input type="text" name="attr_facility_four_18" title="@{facility_four_18}" spellcheck="false"></label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="box-input">
+                            <label><input type="text" name="attr_facility_one_19" title="@{facility_one_19}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Function</span> <input type="text" name="attr_facility_two_19" title="@{facility_two_19}" spellcheck="false"></label>
+                            <label><input type="text" name="attr_facility_three_19" title="@{facility_three_19}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Asset</span> <input type="text" name="attr_facility_four_19" title="@{facility_four_19}" spellcheck="false"></label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="box-input">
+                            <label><input type="text" name="attr_facility_one_20" title="@{facility_one_20}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Function</span> <input type="text" name="attr_facility_two_20" title="@{facility_two_20}" spellcheck="false"></label>
+                            <label><input type="text" name="attr_facility_three_20" title="@{facility_three_20}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Asset</span> <input type="text" name="attr_facility_four_20" title="@{facility_four_20}" spellcheck="false"></label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="box-input">
+                            <label><input type="text" name="attr_facility_one_21" title="@{facility_one_21}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Function</span> <input type="text" name="attr_facility_two_21" title="@{facility_two_21}" spellcheck="false"></label>
+                            <label><input type="text" name="attr_facility_three_21" title="@{facility_three_21}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Asset</span> <input type="text" name="attr_facility_four_21" title="@{facility_four_21}" spellcheck="false"></label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="box-input">
+                            <label><input type="text" name="attr_facility_one_22" title="@{facility_one_22}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Function</span> <input type="text" name="attr_facility_two_22" title="@{facility_two_22}" spellcheck="false"></label>
+                            <label><input type="text" name="attr_facility_three_22" title="@{facility_three_22}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Asset</span> <input type="text" name="attr_facility_four_22" title="@{facility_four_22}" spellcheck="false"></label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="box-input">
+                            <label><input type="text" name="attr_facility_one_23" title="@{facility_one_23}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Function</span> <input type="text" name="attr_facility_two_23" title="@{facility_two_23}" spellcheck="false"></label>
+                            <label><input type="text" name="attr_facility_three_23" title="@{facility_three_23}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Asset</span> <input type="text" name="attr_facility_four_23" title="@{facility_four_23}" spellcheck="false"></label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="box-input">
+                            <label><input type="text" name="attr_facility_one_24" title="@{facility_one_24}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Function</span> <input type="text" name="attr_facility_two_24" title="@{facility_two_24}" spellcheck="false"></label>
+                            <label><input type="text" name="attr_facility_three_24" title="@{facility_three_24}" spellcheck="false"></label>
+                            <label class="character-details-label"><span>Asset</span> <input type="text" name="attr_facility_four_24" title="@{facility_four_24}" spellcheck="false"></label>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
 </div>
 
@@ -460,7 +687,7 @@
       <div class="template-grid dice-grid">
 
         {{#rollGreater() base-dice 0}} <!-- BASE DIE ONE -->
-        <div class="template-grid-item template-span-one">
+        <div class="template-grid-item">
             {{#rollBetween() base-roll-one 1 5}}
                 <div class="template-base-between">{{base-roll-one}}</div>
             {{/rollBetween() base-roll-one 1 5}}
@@ -471,7 +698,7 @@
         {{/rollGreater() base-dice 0}}
         
         {{#rollGreater() base-dice 1}} <!-- BASE DIE TWO -->
-        <div class="template-grid-item template-span-two">
+        <div class="template-grid-item">
             {{#rollBetween() base-roll-two 1 5}}
                 <div class="template-base-between">{{base-roll-two}}</div>
             {{/rollBetween() base-roll-two 1 5}}
@@ -482,7 +709,7 @@
         {{/rollGreater() base-dice 1}}
         
         {{#rollGreater() base-dice 2}} <!-- BASE DIE THREE -->
-        <div class="template-grid-item template-span-three">
+        <div class="template-grid-item">
             {{#rollBetween() base-roll-three 1 5}}
                 <div class="template-base-between">{{base-roll-three}}</div>
             {{/rollBetween() base-roll-three 1 5}}
@@ -493,7 +720,7 @@
         {{/rollGreater() base-dice 2}}
         
         {{#rollGreater() base-dice 3}} <!-- BASE DIE FOUR -->
-        <div class="template-grid-item template-span-four">
+        <div class="template-grid-item">
             {{#rollBetween() base-roll-four 1 5}}
                 <div class="template-base-between">{{base-roll-four}}</div>
             {{/rollBetween() base-roll-four 1 5}}
@@ -504,7 +731,7 @@
         {{/rollGreater() base-dice 3}}
         
         {{#rollGreater() base-dice 4}} <!-- BASE DIE FIVE -->
-        <div class="template-grid-item template-span-five">
+        <div class="template-grid-item">
             {{#rollBetween() base-roll-five 1 5}}
                 <div class="template-base-between">{{base-roll-five}}</div>
             {{/rollBetween() base-roll-five 1 5}}
@@ -515,7 +742,7 @@
         {{/rollGreater() base-dice 4}}
         
         {{#rollGreater() base-dice 5}} <!-- BASE DIE SIX -->
-        <div class="template-grid-item template-span-shix">
+        <div class="template-grid-item">
             {{#rollBetween() base-roll-six 1 5}}
                 <div class="template-base-between">{{base-roll-six}}</div>
             {{/rollBetween() base-roll-six 1 5}}
@@ -526,7 +753,7 @@
         {{/rollGreater() base-dice 5}}
         
         {{#rollGreater() base-dice 6}} <!-- BASE DIE SEVEN -->
-        <div class="template-grid-item template-span-one">
+        <div class="template-grid-item">
             {{#rollBetween() base-roll-seven 1 5}}
                 <div class="template-base-between">{{base-roll-seven}}</div>
             {{/rollBetween() base-roll-seven 1 5}}
@@ -537,7 +764,7 @@
         {{/rollGreater() base-dice 6}}
         
         {{#rollGreater() base-dice 7}} <!-- BASE DIE EIGHT -->
-        <div class="template-grid-item template-span-two">
+        <div class="template-grid-item">
             {{#rollBetween() base-roll-eight 1 5}}
                 <div class="template-base-between">{{base-roll-eight}}</div>
             {{/rollBetween() base-roll-eight 1 5}}
@@ -548,7 +775,7 @@
         {{/rollGreater() base-dice 7}}
         
         {{#rollGreater() base-dice 8}} <!-- BASE DIE NINE -->
-        <div class="template-grid-item template-span-three">
+        <div class="template-grid-item">
             {{#rollBetween() base-roll-nine 1 5}}
                 <div class="template-base-between">{{base-roll-nine}}</div>
             {{/rollBetween() base-roll-nine 1 5}}
@@ -559,7 +786,7 @@
         {{/rollGreater() base-dice 8}}
         
         {{#rollGreater() base-dice 9}} <!-- BASE DIE TEN -->
-        <div class="template-grid-item template-span-four">
+        <div class="template-grid-item">
             {{#rollBetween() base-roll-ten 1 5}}
                 <div class="template-base-between">{{base-roll-ten}}</div>
             {{/rollBetween() base-roll-ten 1 5}}
@@ -570,7 +797,7 @@
         {{/rollGreater() base-dice 9}}
         
         {{#rollGreater() base-dice 10}} <!-- BASE DIE ELEVEN -->
-        <div class="template-grid-item template-span-five">
+        <div class="template-grid-item">
             {{#rollBetween() base-roll-eleven 1 5}}
                 <div class="template-base-between">{{base-roll-eleven}}</div>
             {{/rollBetween() base-roll-eleven 1 5}}
@@ -581,7 +808,7 @@
         {{/rollGreater() base-dice 10}}
         
         {{#rollGreater() base-dice 11}} <!-- BASE DIE TWELVE -->
-        <div class="template-grid-item template-span-shix">
+        <div class="template-grid-item">
             {{#rollBetween() base-roll-twelve 1 5}}
                 <div class="template-base-between">{{base-roll-twelve}}</div>
             {{/rollBetween() base-roll-twelve 1 5}}
@@ -592,7 +819,7 @@
         {{/rollGreater() base-dice 11}}
         
         {{#rollGreater() base-dice 12}} <!-- BASE DIE THIRTEEN -->
-        <div class="template-grid-item template-span-one">
+        <div class="template-grid-item">
             {{#rollBetween() base-roll-thirteen 1 5}}
                 <div class="template-base-between">{{base-roll-thirteen}}</div>
             {{/rollBetween() base-roll-thirteen 1 5}}
@@ -603,7 +830,7 @@
         {{/rollGreater() base-dice 12}}
         
         {{#rollGreater() base-dice 13}} <!-- BASE DIE FOURTEEN -->
-        <div class="template-grid-item template-span-two">
+        <div class="template-grid-item">
             {{#rollBetween() base-roll-fourteen 1 5}}
                 <div class="template-base-between">{{base-roll-fourteen}}</div>
             {{/rollBetween() base-roll-fourteen 1 5}}
@@ -614,7 +841,7 @@
         {{/rollGreater() base-dice 13}}
         
         {{#rollGreater() base-dice 14}} <!-- BASE DIE FIFTEEN -->
-        <div class="template-grid-item template-span-three">
+        <div class="template-grid-item">
             {{#rollBetween() base-roll-fifteen 1 5}}
                 <div class="template-base-between">{{base-roll-fifteen}}</div>
             {{/rollBetween() base-roll-fifteen 1 5}}
@@ -625,7 +852,7 @@
         {{/rollGreater() base-dice 14}}
         
         {{#rollGreater() base-dice 15}} <!-- BASE DIE SIXTEEN -->
-        <div class="template-grid-item template-span-four">
+        <div class="template-grid-item">
             {{#rollBetween() base-roll-sixteen 1 5}}
                 <div class="template-base-between">{{base-roll-sixteen}}</div>
             {{/rollBetween() base-roll-sixteen 1 5}}
@@ -636,7 +863,7 @@
         {{/rollGreater() base-dice 15}}
         
         {{#rollGreater() base-dice 16}} <!-- BASE DIE SEVENTEEN -->
-        <div class="template-grid-item template-span-five">
+        <div class="template-grid-item">
             {{#rollBetween() base-roll-seventeen 1 5}}
                 <div class="template-base-between">{{base-roll-seventeen}}</div>
             {{/rollBetween() base-roll-seventeen 1 5}}

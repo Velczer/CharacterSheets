@@ -233,13 +233,20 @@
 	line-height: 36px;
 	padding: 0 5px;
 }
-.character-details .box-input label input {
+.character-details .box-input label.character-details-label span {
+  line-height: normal;
+  left: 0;
+}
+.character-details .box-input label input, .character-details .box-input label select {
   width: 100%;
   border: 0;
   box-shadow: none;
   border-radius: 0;
   font-size: 16px;
   line-height: 26px;
+}
+.character-details .box-input label select {
+  font-size: 13px;
 }
 .character-details .box-input.center-inputs input {
   text-align: center;
@@ -264,10 +271,8 @@
   background-color: #b09d8d;
   border: 1px solid #483517;
   color: #483517;
-  padding: 0 18px;
   font-size: 22px;
   font-weight: bold;
-  margin-bottom: 10px;
   box-shadow: 4px 4px 0px 0px #00000057;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -293,6 +298,13 @@
   margin:0;
   width: 100%;
 }
+.character-sheet-table .table-title {
+  font-weight: bold;
+  color: #000;
+  font-size: 18px;
+  padding-top: 10px;
+	text-transform: uppercase;
+}
 .character-sheet-table td {
   color: #000;
   font-size: 16px;
@@ -305,12 +317,21 @@
 .character-sheet-table tr:nth-child(even) {
   background: rgb(0 0 0 / 7%);
 }
+.character-sheet-table.no-background tr:nth-child(even) {
+  background: transparent;
+}
 .character-sheet-table td input[type="checkbox"] {
   transform: scale(1.5);
   width: auto;
 }
 .character-sheet-table td input {
   width: 100%;
+}
+.character-sheet-table .box-input {
+  margin-bottom: 10px;
+}
+.charsheet .character-sheet .character-sheet-table button[type="roll"] {
+  width: auto;
 }
 
 .card-box {

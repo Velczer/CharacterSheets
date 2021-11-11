@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
 
 @font-face {
-  font-family: 'Belgrad';
-  src: url('https://raw.githubusercontent.com/Wastus2/CharacterSheets/master/Frostpunk/Fonts/Belgrad.ttf');
+	font-family: 'Belgrad';
+	src: url('https://raw.githubusercontent.com/Wastus2/CharacterSheets/master/Frostpunk/Fonts/Belgrad.ttf');
 }
 
 /* Defaults  */
@@ -11,35 +11,35 @@
 }
 
 .character-sheet .row {
-  display: flex;
+	display: flex;
 }
 .col-10 {
-  width: 83%;
-  padding: 0 15px;
+	width: 83%;
+	padding: 0 15px;
 }
 .col-8 {
-  width: 66%;
-  padding: 0 15px;
+	width: 66%;
+	padding: 0 15px;
 }
 .col-7 {
-  width: 58%;
-  padding: 0 15px;
+	width: 58%;
+	padding: 0 15px;
 }
 .col-6 {
-  width: 50%;
-  padding: 0 15px;
+	width: 50%;
+	padding: 0 15px;
 }
 .col-5 {
-  width: 41%;
-  padding: 0 15px;
+	width: 41%;
+	padding: 0 15px;
 }
 .col-4 {
-  width: 33%;
-  padding: 0 15px;
+	width: 33%;
+	padding: 0 15px;
 }
 .col-2 {
-  width: 17%;
-  padding: 0 15px;
+	width: 17%;
+	padding: 0 15px;
 }
 .flex {
 	display: flex;
@@ -47,8 +47,8 @@
 }
 
 .character-sheet input {
-  font-family: 'Josefin Sans', sans-serif;
-  background:#Fff;
+	font-family: 'Josefin Sans', sans-serif;
+	background:#Fff;
 	border: 3px solid #3e5f76;
 	box-shadow: 4px 4px 0px 0px #00000057;
 	display: inline-block;
@@ -58,49 +58,58 @@
 	line-height: 22px;
 }
 .character-sheet input[type="checkbox"] {
-  box-shadow: 2px 2px 0px 0px #00000057;
+	box-shadow: 2px 2px 0px 0px #00000057;
+}
+.margin-b-10 {
+	margin-bottom: 10px;
 }
 
 .charsheet .character-sheet button[type="roll"] {
   /* background-color: #b9dff3; */
-  background-image: none;
-	background: linear-gradient(-90deg,#3e5f76 0%, #ffffff 100%);
-  font-size: 16px;
-  text-align: left;
-  padding: 6px 12px;
-  line-height: normal;
-  border: 3px solid #3e5f76;
-  box-shadow: 4px 4px 0px 0px #00000057;
-  color: #000;
-  width: 72%;
-  overflow: hidden;
+	background-image: none;
+	/* background: linear-gradient(-90deg,#3e5f76 0%, #ffffff 100%); */
+	background: linear-gradient(90deg,#3e5f76 30%, #ffffff 100%);
+	font-size: 16px;
+	text-align: left;
+	padding: 9px 12px;
+	line-height: normal;
+	/* border: 3px solid #3e5f76; */
+	border: 0;
+	box-shadow: 4px 4px 0px 0px #00000057;
+	color: #fff;
+	width: 72%;
+	overflow: hidden;
+	text-shadow: none;
+}
+.charsheet .character-sheet .attribute-box input[type="number"] {
+	width: 55px;
 }
 .charsheet .character-sheet button[type="roll"] span {
 	font-size: 13px;
 }
 .charsheet .character-sheet button[type="roll"]::before {
-  color: #000;
-  font-size: 20px;
-  vertical-align: bottom;
-  margin-right: 5px;
+	color: #fff;
+	font-size: 20px;
+	vertical-align: bottom;
+	margin-right: 5px;
 }
 
 .charactersheet {
-  padding: 0;
+  	padding: 0;
 }
 
 /* Custom modules */
 
 .character-sheet {
-  background-image: url(https://raw.githubusercontent.com/Wastus2/CharacterSheets/master/Frostpunk/img/sheet-bg.jpg);
-  background-size: cover;
-  background-position: top center;
-  padding: 20px;
-  font-family: 'Josefin Sans', sans-serif;
+	background-image: url(https://raw.githubusercontent.com/Wastus2/CharacterSheets/master/Frostpunk/img/sheet-bg.jpg);
+	background-size: cover;
+	background-position: top center;
+	padding: 20px;
+	font-family: 'Josefin Sans', sans-serif;
 	border: 3px solid #000000;
-  min-width: 920px;
-  position: relative;
-  z-index: 1; 
+	min-width: 1020px;
+	position: relative;
+	z-index: 1; 
 }
 .character-sheet::before {
 	content: "";
@@ -117,26 +126,26 @@
 	text-align: center;
 }
 .logo img {
-	margin: -14px auto;
+	margin: -5px auto;
 }
 
 .character-details-label {
-  position: relative;
+  	position: relative;
 }
 .character-details-label span {
-  font-size: 12px;
-  font-weight: bold;
-  text-transform: uppercase;
-  position: absolute;
-  left: 10px;
+	font-size: 12px;
+	font-weight: bold;
+	text-transform: uppercase;
+	position: absolute;
+	left: 10px;
 	top: 3px;
 	color: #3e5f76;
 }
 .character-details-label input {
-  padding-top: 13px;
+  	padding-top: 13px;
 	padding-left: 10px;
 	font-size: 16px;
-  line-height: 27px;
+  	line-height: 27px;
 	width: 100%;
 }
 
@@ -159,69 +168,70 @@
 }
 
 .character-sheet .title {
-  font-family: 'Belgrad';
-  font-size: 64px;
-  color: #483517;
-  text-align: center;
-  margin:0;
-  letter-spacing: 8px;
-  line-height: normal;
-  text-transform: uppercase;
-  display: flex;
+	font-family: 'Belgrad';
+	font-size: 64px;
+	color: #3e5f76;
+	text-align: center;
+	margin:0;
+	letter-spacing: 8px;
+	line-height: normal;
+	text-transform: uppercase;
+	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
 .character-sheet .reset-radio {
 	width: auto;
-	line-height: 32px;
+	line-height: 34px;
 	margin: 0;
 	padding: 0 12px;
 }
 .reset-radio input {
-	transform: scale(1.5);
 	box-shadow: none;
+	margin-top: 12px;
+	display: inherit;
 }
 
 .attribute-box {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 10px;
 }
 
 .attribute-box input {
-  width: 40px;
-  text-align: center;
+	width: 55px;
+	text-align: center;
 }
 
 
 .box-input {
-  background: #Fff;
+ 	background: #Fff;
 	border: 3px solid #3e5f76;
 	box-shadow: 4px 4px 0px 0px #00000057;
-  padding: 5px;
+  	padding: 5px;
 }
  .box-input label {
-  position: relative;
-  display: flex;
-  flex-wrap: nowrap;
-  margin: 0;
-  border-bottom: 1px solid #3e5f76;
+	position: relative;
+	display: flex;
+	flex-wrap: nowrap;
+	margin: 0;
+	border-bottom: 1px solid #3e5f76;
 	padding: 0;
 	color: #3e5f76;
 }
 .box-input label span {
-  white-space: nowrap;
+ 	white-space: nowrap;
 	line-height: 36px;
 	padding: 0 5px;
 }
 .box-input label input {
-  width: 100%;
-  border: 0;
-  box-shadow: none;
-  border-radius: 0;
-  font-size: 16px;
+	width: 100%;
+	border: 0;
+	box-shadow: none;
+	border-radius: 0;
+	font-size: 16px;
 	line-height: 27px;
 }
 
@@ -239,25 +249,25 @@
 }
 
 .label-with-checkboxes {
-  background: #dfd9d2;
-  border: 1px solid #483517;
-  box-shadow: 4px 4px 0px 0px #00000057;
-  border-radius: 5px;
-  padding: 5px 10px;
-  text-align: center;
-  padding-bottom: 15px;
-  margin-bottom: 10px;
+	background: #dfd9d2;
+	border: 1px solid #3e5f76;
+	box-shadow: 4px 4px 0px 0px #00000057;
+	border-radius: 5px;
+	padding: 5px 10px;
+	text-align: center;
+	padding-bottom: 15px;
+	margin-bottom: 10px;
 }
 .label-with-checkboxes span {
-  display: block;
-  text-align: center;
-  font-size: 22px;
-	color: #483517;
-  line-height: normal;
+	display: block;
+	text-align: center;
+	font-size: 22px;
+	color: #3e5f76;
+  	line-height: normal;
 }
 .label-with-checkboxes input {
-  transform: scale(1.5);
-  margin: 5px;
+	transform: scale(1.5);
+	margin: 5px;
 }
 
 .conditions-box {
@@ -279,10 +289,10 @@
 	position: absolute;
 }
 .checkbox-label span {
-	border: 2px solid #3e5f76;
+	border: 3px solid #3e5f76;
 	padding: 8px;
 	/* background: #878787; */
-	background: radial-gradient(circle at center, rgb(255 255 255 / 20%), #6f8899);
+	background: radial-gradient(circle at center, transparent, #6f8899);
 	color: #b9b9b9;
 	transition: .3s all ease;
 	display: inline-block;
@@ -305,114 +315,113 @@
 }
 .checkbox-label input:checked + span {
 	color: #fff;
+	background: radial-gradient(circle at center, transparent, rgb(111 136 153 / 30%));
 }
 .checkbox-label input:checked + span:before {
 	transform: scale(1);
 }
 
 /* Roll Template */
-.sheet-rolltemplate-vaesen .sheet-template-wrap {
-  background-image: url(https://raw.githubusercontent.com/Wastus2/CharacterSheets/master/Vaesen/img/vaesen-castle.jpg);
-  background-position: top center;
-  background-size: cover;
-  border: 3px solid #483517;
-  padding-top: 8px;
-  margin: 0 5px;
+.sheet-rolltemplate-frostpunk .sheet-template-wrap {
+	background-image: url(https://raw.githubusercontent.com/Wastus2/CharacterSheets/master/Frostpunk/img/roll-bg.jpg);
+	background-position: top center;
+	background-size: cover;
+	border: 3px solid #3e5f76;
+	margin: 0;
 }
 
-.sheet-rolltemplate-vaesen .sheet-template-header {
-  display: flex;
-  justify-content: space-evenly;
-  justify-self: center;
-  width: 105%;
-  margin: 2px -9px 2px -9px;
-  padding: 0 5px 0 5px;
-  word-break: break-word;
-  color: #fff;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 9px;
-  border-bottom-left-radius: 9px;
-  background-color: #000;
+.sheet-rolltemplate-frostpunk .sheet-template-header {
+	width: 100%;
+	padding: 7px 5px;
+	color: #fff;
+	background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(62,95,118,1) 60%, rgba(0,181,255,0) 100%);
+	font-family: 'Belgrad';
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 18px;
 }
-.sheet-rolltemplate-vaesen .sheet-template-grid-item.sheet-template-span-six.sheet-template-header {
-  margin-bottom: 5px;
-  box-shadow: 0 2px 7px #000;
-  font-weight: bold;
+.sheet-rolltemplate-frostpunk .sheet-template-header a {
+	color: #fff;
 }
-.sheet-rolltemplate-vaesen .sheet-template-grid-item.sheet-template-span-six.sheet-template-header a {
-  color: #fff;
-  font-weight: bold;
-}
-.sheet-rolltemplate-vaesen .sheet-template-subtitle {
-  font-family: 'Belgrad';
-  color: #fff;
-  font-size: 22px;
-  padding: 10px 0;
-  text-align: center;
+.sheet-rolltemplate-frostpunk .sheet-template-subtitle {
+	font-family: 'Belgrad';
+	color: #000000;
+	font-size: 20px;
+	padding: 10px 0;
+	text-align: center;
+	text-shadow: 1px 1px 3px #ffffff;
+	text-transform: uppercase;
 }
 
-.sheet-rolltemplate-vaesen .sheet-template-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.sheet-rolltemplate-frostpunk .sheet-template-grid {
+	text-align: center;
 }
-.sheet-rolltemplate-vaesen .sheet-dice-grid .sheet-template-grid-item {
-  margin: 4px;
+.sheet-rolltemplate-frostpunk .sheet-template-grid-item {
+  	display: inline-block;
 }
 
-.sheet-rolltemplate-vaesen .sheet-template-base-between {
-  height: 35px;
-  width: 35px;
-  background-color:#f1f0ee;
-  border: 1px solid #483517;
-  border-radius: 5px;
-  background-size: cover;
-  box-shadow: 4px 4px 0px 0px rgb(0 0 0 / 60%);
+.sheet-rolltemplate-frostpunk .sheet-template-base-between {
+	height: 31px;
+	width: 31px;
+	background-color:#fff;
+	border: 1px solid #3e5f76;
+	border-radius: 5px;
+	background-size: cover;
+	box-shadow: 4px 4px 0px 0px rgb(0 0 0 / 60%);
+	margin: 3px 0;
 }
-.sheet-rolltemplate-vaesen .sheet-template-base-between > span, .sheet-rolltemplate-vaesen .sheet-template-base-success > span {
-  width: 100%;
-  display: inline-block;
-  margin: 0;
-  border: 0;
-  padding: 0;
-  text-align: center;
-  line-height: 35px;
-  background: transparent;
-  font-family: 'Belgrad';
-  font-size: 18px;
-  /* color: #483517; */
-  color: #f1f0ee;
+.sheet-rolltemplate-frostpunk .sheet-template-base-between > span, .sheet-rolltemplate-frostpunk .sheet-template-base-success > span {
+	width: 100%;
+	display: inline-block;
+	margin: 0;
+	border: 0;
+	padding: 0;
+	text-align: center;
+	line-height: 35px;
+	background: transparent;
+	font-family: 'Belgrad';
+	font-size: 18px;
+	/* color: #3e5f76; */
+	color: #fff;
 }
-.sheet-rolltemplate-vaesen .sheet-template-base-success > span {
-  font-size: 11px;
-  text-align: left;
-  line-height: normal;
-  height: 35px;
-  padding-left: 3px;
-  margin-top: 0;
-  display: block;
-  color: #483517;
+.sheet-rolltemplate-frostpunk .sheet-template-base-success > span {
+	font-size: 11px;
+	text-align: left;
+	line-height: normal;
+	height: 35px;
+	padding-left: 3px;
+	margin-top: 0;
+	display: block;
+	color: #3e5f76;
 }
-.sheet-rolltemplate-vaesen .sheet-template-base-success {
-  height: 35px;
-  width: 35px;
-  border-radius: 5px;
-  border: 1px solid #483517;
-  background-color: #f1f0ee;
-	background-image: url(https://imgsrv.roll20.net?src=https%3A//raw.githubusercontent.com/Wastus2/CharacterSheets/master/Vaesen/img/symbol.png);
+.sheet-rolltemplate-frostpunk .sheet-template-base-success {
+	height: 35px;
+	width: 35px;
+	border-radius: 5px;
+	border: 1px solid #3e5f76;
+	background-color: #f1f0ee;
 	background-size: 90%;
-	background-repeat: no-repeat;
-	background-position: center;
-  box-shadow: 4px 4px 0px 0px rgb(0 0 0 / 60%);
+ 	box-shadow: 4px 4px 0px 0px rgb(0 0 0 / 60%);
 }
-.sheet-rolltemplate-vaesen span.inlinerollresult.fullcrit {
-  border: 0;
+.sheet-rolltemplate-frostpunk .sheet-template-base-success:before {
+	content: "";
+	
 }
-.sheet-rolltemplate-vaesen span.inlinerollresult.fullfail {
-  border: 0;
+.sheet-rolltemplate-frostpunk span.inlinerollresult.fullcrit {
+ 	border: 0;
+}
+.sheet-rolltemplate-frostpunk span.inlinerollresult.fullfail {
+ 	border: 0;
 }
 
+.sheet-rolltemplate-frostpunk .sheet-dice-pool-name {
+	font-size: 12px;
+	padding: 5px;
+	text-align: center;
+	background: #000;
+	color: #fff;
+}
 
 
 /* Progress effect  */
@@ -420,11 +429,11 @@
 .character-sheet .bar {
 	display: flex;
 	flex-direction: row-reverse;
-	margin: auto auto 0;
+	margin: 0;
 	width: 300px;
 	max-width: calc(100% - 30px);
 	padding: 3px 0;
-	margin-bottom: 10px;
+	justify-content: flex-end;
 }
 .character-sheet  .bar-input {
 	opacity: 0;
@@ -476,10 +485,12 @@
 	-webkit-animation: bouncing 0.6s cubic-bezier(0, 0, 0.74, 1.04) infinite;
 					animation: bouncing 0.6s cubic-bezier(0, 0, 0.74, 1.04) infinite;
 }
-.character-sheet .bar-view {
-	display: flex;
+.bar-view {
+	display: none;
 	flex-grow: 1;
 	position: relative;
+	padding: 0 10px;
+	max-width: 38px;
 }
 .character-sheet .bar-view:after {
 	height: 2px;
@@ -562,4 +573,21 @@
 	transition-property: transform, opacity;
 	transition-duration: 0.2s;
 	transition-timing-function: cubic-bezier(0, 0.72, 0.58, 1);
+}
+
+
+input.bar-calc-view[value="1"] ~ .bar .bar-view:nth-child(n+10) {
+	display: flex;
+}
+input.bar-calc-view[value="2"] ~ .bar .bar-view:nth-child(n+8) {
+	display: flex;
+}
+input.bar-calc-view[value="3"] ~ .bar .bar-view:nth-child(n+6) {
+	display: flex;
+}
+input.bar-calc-view[value="4"] ~ .bar .bar-view:nth-child(n+4) {
+	display: flex;
+}
+input.bar-calc-view[value="5"] ~ .bar .bar-view:nth-child(n+2) {
+	display: flex;
 }
