@@ -14,6 +14,10 @@
   padding: 0 15px;
 }
 .col-8 {
+  width: 75%;
+  padding: 0 15px;
+}
+.col-8 {
   width: 66%;
   padding: 0 15px;
 }
@@ -33,6 +37,10 @@
   width: 33%;
   padding: 0 15px;
 }
+.col-3 {
+  width: 25%;
+  padding: 0 15px;
+}
 .col-2 {
   width: 17%;
   padding: 0 15px;
@@ -47,6 +55,12 @@
   display: inline-block;
   font-size: 20px;
   color: #000;
+  box-sizing: border-box;
+}
+.character-sheet textarea {
+  box-sizing: border-box;
+  margin: 0;
+  display: block;
 }
 .character-sheet input[type="checkbox"] {
   box-shadow: 2px 2px 0px 0px #00000057;
@@ -62,7 +76,7 @@
   background-image: url(https://raw.githubusercontent.com/Wastus2/CharacterSheets/master/Vaesen/img/bg-card.jpg);
   background-size: cover;
   background-position: top center;
-  max-width: 1220px;
+  max-width: 1310px;
   padding: 20px;
   font-family: 'Roboto Slab', serif;
   border: 2px solid #483517;
@@ -225,6 +239,10 @@
   box-shadow: none;
   border-radius: 0;
   font-size: 16px;
+  line-height: 26px;
+}
+.character-details .box-input.center-inputs input {
+  text-align: center;
 }
 
 .character-details .input-box input {
@@ -239,8 +257,25 @@
 	line-height: 29px;
   font-size: 11px;
 	color: #000;
+  display: block;
 }
 
+.title-with-input {
+  background-color: #b09d8d;
+  border: 1px solid #483517;
+  color: #483517;
+  padding: 0 18px;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  box-shadow: 4px 4px 0px 0px #00000057;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: flex;
+	justify-content: space-between;
+  align-items: center;
+	padding: 10px 20px;
+}
 
 /* sidebar */
 
@@ -262,6 +297,7 @@
   color: #000;
   font-size: 16px;
   line-height: 36px;
+  padding: 0 5px;
 }
 .character-sheet-table tr.border-bottom {
   border-bottom: 2px solid #483517;
@@ -269,8 +305,12 @@
 .character-sheet-table tr:nth-child(even) {
   background: rgb(0 0 0 / 7%);
 }
-.character-sheet-table td input {
+.character-sheet-table td input[type="checkbox"] {
   transform: scale(1.5);
+  width: auto;
+}
+.character-sheet-table td input {
+  width: 100%;
 }
 
 .card-box {
@@ -280,7 +320,7 @@
   margin: 10px;
   border-radius: 28px 0 54px 0;
   background: rgb(0 0 0 / 7%);
-  margin-bottom: 40px;
+  margin-bottom: 44px;
   border: 2px solid #483517;
 }
 .card-box:before {
@@ -307,7 +347,7 @@
 	background-repeat: no-repeat;
 }
 .card-box .card-title {
-  background-color: #c5ada3;
+  background-color: #b09d8d;
   border: 1px solid #483517;
   color: #483517;
   padding: 0 18px;
@@ -348,7 +388,25 @@
   width: 40px;
   text-align: center;
 }
+.attribute-box button span {
+  font-size: 13px;
+}
 
+.character-sheet textarea {
+  background-attachment: local;
+  background-color: #Fff;
+  background-image:
+      linear-gradient(to right, white 5px, transparent 5px),
+      linear-gradient(to left, white 5px, transparent 5px),
+      repeating-linear-gradient(white, white 35px, #483517 35px, #483517 36px, white 36px);
+  line-height: 36px;
+  font-size: 16px;
+  padding: 5px;
+	border: 1px solid #483517;
+	box-shadow: 4px 4px 0px 0px #00000057;
+  height: 300px;
+  resize: vertical;
+}
 
 
 .label-with-checkboxes {
@@ -383,6 +441,7 @@
   border: 3px solid #483517;
   padding-top: 8px;
   margin: 0 5px;
+  counter-reset: hit;
 }
 
 .sheet-rolltemplate-vaesen .sheet-template-header {
@@ -473,7 +532,46 @@
 }
 .sheet-rolltemplate-vaesen span.inlinerollresult.fullcrit {
   border: 0;
+  counter-increment: hit;
 }
 .sheet-rolltemplate-vaesen span.inlinerollresult.fullfail {
   border: 0;
+}
+
+
+.sheet-rolltemplate-vaesen .sheet-dice-stats {
+  display: flex;
+  justify-content: space-around;
+}
+.sheet-rolltemplate-vaesen .sheet-dice-stats > div {
+  width: 50%;
+  padding: 6px;
+	background-color: rgb(0 0 0 / 60%);
+  color: #fff;
+  text-align: center;
+  margin-top: 10px;
+}
+.sheet-rolltemplate-vaesen .sheet-dice-stats span {
+  display: inline-block;
+	border: 0;
+	background: transparent;
+	padding: 0;
+  font-weight: bold;
+}
+.sheet-rolltemplate-vaesen .sheet-success-stat::after {
+  content: counter(hit);
+  font-weight: bold;
+}
+
+
+/* Display variants */
+
+input.tab-sheet[value="Headquarter"] ~ .character-tab,
+input.tab-sheet[value="Character"] ~ .headquarter-tab {
+	display: none;
+}
+
+input.tab-sheet[value="Character"] ~ .character-tab,
+input.tab-sheet[value="Headquarter"] ~ .headquarter-tab {
+	display: block;
 }

@@ -1,20 +1,23 @@
+<input type="hidden" class="tab-sheet" name="attr_tab_sheet">
+<button type="action" name="act_tab_character" value="Character">Character</button>
+<button type="action" name="act_tab_headquarter" value="Headquarter">Headquarter</button>
 
-  <div class="character-sheet">
+<div class="character-sheet character-tab">
     <div class="character-sheet-inside">
-      <div class="corners">
+        <div class="corners">
         <span class="top-left"><img src="corner-element.png" alt=""></span>
         <span class="top-right"><img src="corner-element.png" alt=""></span>
         <span class="bottom-left"><img src="corner-element.png" alt=""></span>
         <span class="bottom-right"><img src="corner-element.png" alt=""></span>
-      </div>
+        </div>
 
-      <div class="row" style="margin:0">
+        <div class="row" style="margin:0">
         <div class="col-8" style="padding:0;">
-          <h1 class="title"><img src="https://raw.githubusercontent.com/Wastus2/CharacterSheets/master/Vaesen/img/symbol.png" alt="">VAESEN<img src="https://raw.githubusercontent.com/Wastus2/CharacterSheets/master/Vaesen/img/symbol.png" alt=""></h1>
-          <!-- <div class="line"></div> -->
-          <h2 class="subtitle">Character Sheet</h2>
-          <div style="height:20px"></div>
-          
+            <h1 class="title"><img src="https://raw.githubusercontent.com/Wastus2/CharacterSheets/master/Vaesen/img/symbol.png" alt=""><span style="margin-right: -14px;">V</span>AESEN<img src="https://raw.githubusercontent.com/Wastus2/CharacterSheets/master/Vaesen/img/symbol.png" alt=""></h1>
+            <!-- <div class="line"></div> -->
+            <h2 class="subtitle">Character Sheet</h2>
+            <div style="height:20px"></div>
+            
 
             <div class="character-details with-down-corner">
                 <label class="character-details-label">
@@ -101,6 +104,25 @@
                             <label><input type="text" name="attr_talents_5" title="@{talents_5}" spellcheck="false"></label>
                         </div>
                     </div>
+
+                    <div class="character-details">
+                        <table class="character-sheet-table">
+                            <tr>
+                                <td style="width: 66%;">
+                                    <h2 class="details-title">Armor</h2>
+                                    <input type="text" name="attr_armor" title="@{armor}" spellcheck="false" style="width:100%">
+                                </td>
+                                <td>
+                                    <span class="mini-title">Protection</span>
+                                    <input type="text" name="attr_armor_prot" title="@{armor_prot}" spellcheck="false">
+                                </td>
+                                <td>
+                                    <span class="mini-title">Agility</span>
+                                    <input type="text" name="attr_armor_agility" title="@{armor_agility}" spellcheck="false">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
                 <div class="col-6">
                     <div class="character-details with-down-corner">
@@ -114,16 +136,24 @@
                                     <label><input type="text" name="attr_equipment_3" title="@{equipment_3}" spellcheck="false"></label>
                                     <label><input type="text" name="attr_equipment_4" title="@{equipment_4}" spellcheck="false"></label>
                                     <label><input type="text" name="attr_equipment_5" title="@{equipment_5}" spellcheck="false"></label>
+                                    <label><input type="text" name="attr_equipment_6" title="@{equipment_6}" spellcheck="false"></label>
+                                    <label><input type="text" name="attr_equipment_7" title="@{equipment_7}" spellcheck="false"></label>
+                                    <label><input type="text" name="attr_equipment_8" title="@{equipment_8}" spellcheck="false"></label>
+                                    <label><input type="text" name="attr_equipment_9" title="@{equipment_9}" spellcheck="false"></label>
                                 </div>
                             </div>
                             <div class="col-2" style="padding-left: 0;">
                                 <span class="mini-title">Bonus</span>
-                                <div class="box-input">
+                                <div class="box-input center-inputs">
                                     <label><input type="text" name="attr_equipment_bonus_1" title="@{equipment_bonus_1}" spellcheck="false"></label>
                                     <label><input type="text" name="attr_equipment_bonus_2" title="@{equipment_bonus_2}" spellcheck="false"></label>
                                     <label><input type="text" name="attr_equipment_bonus_3" title="@{equipment_bonus_3}" spellcheck="false"></label>
                                     <label><input type="text" name="attr_equipment_bonus_4" title="@{equipment_bonus_4}" spellcheck="false"></label>
                                     <label><input type="text" name="attr_equipment_bonus_5" title="@{equipment_bonus_5}" spellcheck="false"></label>
+                                    <label><input type="text" name="attr_equipment_bonus_6" title="@{equipment_bonus_6}" spellcheck="false"></label>
+                                    <label><input type="text" name="attr_equipment_bonus_7" title="@{equipment_bonus_7}" spellcheck="false"></label>
+                                    <label><input type="text" name="attr_equipment_bonus_8" title="@{equipment_bonus_8}" spellcheck="false"></label>
+                                    <label><input type="text" name="attr_equipment_bonus_9" title="@{equipment_bonus_9}" spellcheck="false"></label>
                                 </div>
                             </div>
                         </div>
@@ -133,104 +163,98 @@
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-8">
-                    <div class="character-details">
-
-                        <div class="row">
-                            <div class="col-8" style="padding-right:0">
-                                <h2 class="details-title">Armor</h2>
-                                <input type="text" name="attr_armor" title="@{armor}" spellcheck="false" style="width:100%">
-                            </div>
-                            <div class="col-2" style="padding-right:0">
-                                <span class="mini-title">Protection</span>
-                                <div class="input-box">
-                                    <input type="text" name="attr_armor_prot" title="@{armor_prot}" spellcheck="false">
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <span class="mini-title">Agility</span>
-                                <div class="input-box">
-                                    <input type="text" name="attr_armor_agility" title="@{armor_agility}" spellcheck="false">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-4">
-                    <div class="character-details with-down-corner">
-                        <h2 class="details-title">Memento</h2>
-                        <textarea name="" id="" cols="30" rows="3" style="resize:vertical"></textarea>
-                    </div>
-                </div>
-            </div>
 
             <div class="character-details">
-                <div class="row">
-                    <div class="col-6" style="padding-right:0">
-                        <h2 class="details-title">Weapons</h2>
-                        <input type="text" name="attr_weapon_name_1" title="@{weapon_name_1}" spellcheck="false" style="width:100%">
-                    </div>
-                    <div class="col-2" style="padding-right:0">
-                        <span class="mini-title">Damage</span>
-                        <div class="input-box">
-                            <input type="text" name="attr_weapon_damage_1" title="@{armor_weapon_damage_1}" spellcheck="false">
-                        </div>
-                    </div>
-                    <div class="col-2" style="padding-right:0">
-                        <span class="mini-title">Range</span>
-                        <div class="input-box">
-                            <input type="text" name="attr_weapon_range_1" title="@{armor_weapon_range_1}" spellcheck="false">
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <span class="mini-title">Bonus</span>
-                        <div class="input-box">
-                            <input type="text" name="attr_weapon_bonus_1" title="@{armor_weapon_bonus_1}" spellcheck="false">
-                        </div>
-                    </div>
-                </div>
+                <table class="character-sheet-table">
+                    <tr>
+                        <td style="width: 40%;">
+                            <h2 class="details-title">Weapon</h2>
+                            <div class="box-input">
+                                <label><input type="text" name="attr_weapon_name_1" title="@{weapon_name_1}" spellcheck="false"></label>
+                                <label><input type="text" name="attr_weapon_name_2" title="@{weapon_name_2}" spellcheck="false"></label>
+                                <label><input type="text" name="attr_weapon_name_3" title="@{weapon_name_3}" spellcheck="false"></label>
+                                <label><input type="text" name="attr_weapon_name_4" title="@{weapon_name_4}" spellcheck="false"></label>
+                            </div>  
+                        </td>
+                        <td>
+                            <span class="mini-title">Damage</span>
+                            <div class="box-input center-inputs">
+                                <label><input type="text" name="attr_weapon_damage_1" title="@{weapon_damage_1}" spellcheck="false"></label>
+                                <label><input type="text" name="attr_weapon_damage_2" title="@{weapon_damage_2}" spellcheck="false"></label>
+                                <label><input type="text" name="attr_weapon_damage_3" title="@{weapon_damage_3}" spellcheck="false"></label>
+                                <label><input type="text" name="attr_weapon_damage_4" title="@{weapon_damage_4}" spellcheck="false"></label>
+                            </div> 
+                        </td>
+                        <td>
+                            <span class="mini-title">Range</span>
+                            <div class="box-input center-inputs">
+                                <label><input type="text" name="attr_weapon_range_1" title="@{weapon_range_1}" spellcheck="false"></label>
+                                <label><input type="text" name="attr_weapon_range_2" title="@{weapon_range_2}" spellcheck="false"></label>
+                                <label><input type="text" name="attr_weapon_range_3" title="@{weapon_range_3}" spellcheck="false"></label>
+                                <label><input type="text" name="attr_weapon_range_4" title="@{weapon_range_4}" spellcheck="false"></label>
+                            </div> 
+                        </td>
+                        <td>
+                            <span class="mini-title">Bonus</span>
+                            <div class="box-input center-inputs">
+                                <label><input type="text" name="attr_weapon_bonus_1" title="@{weapon_bonus_1}" spellcheck="false"></label>
+                                <label><input type="text" name="attr_weapon_bonus_2" title="@{weapon_bonus_2}" spellcheck="false"></label>
+                                <label><input type="text" name="attr_weapon_bonus_3" title="@{weapon_bonus_3}" spellcheck="false"></label>
+                                <label><input type="text" name="attr_weapon_bonus_4" title="@{weapon_bonus_4}" spellcheck="false"></label>
+                            </div>
+                        </td>
+                        <td style="width: 38%;padding-left: 20px;">
+                            <h2 class="details-title">Memento</h2>
+                            <textarea name="attr_memento" id="" cols="30" rows="8" spellcheck="false" style="height: 153px;"></textarea>
+                            <!-- <div class="box-input">
+                                <label><input type="text" name="attr_memento_1" title="@{memento_1}" spellcheck="false"></label>
+                                <label><input type="text" name="attr_memento_2" title="@{memento_2}" spellcheck="false"></label>
+                                <label><input type="text" name="attr_memento_3" title="@{memento_3}" spellcheck="false"></label>
+                                <label><input type="text" name="attr_memento_4" title="@{memento_4}" spellcheck="false"></label>
+                            </div> -->
+                        </td>
+                    </tr>
+                </table>
             </div>
         </div>
 
         <div class="col-4" style="padding-left: 25px;padding-right:0;">
-          <div style="text-align: right;">
+            <div style="text-align: right;">
             <label class="secret-roll"><input type="checkbox" value="/w gm" name="attr_secret_roll"> Make the roll secret</label>
-          </div>
+            </div>
 
-          <div class="card-box">
+            <div class="card-box">
             <div class="card-title">Attributes</div>
             <div class="attribute-box">
-              <button type="roll" name="physique" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=physique }}  {{base-dice=[[@{physique} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Physique</button>
-              <input type="text" name="attr_physique">
+                <button type="roll" name="physique" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=physique }}  {{base-dice=[[@{physique} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Physique</button>
+                <input type="text" name="attr_physique">
             </div>
 
             <div class="attribute-box">
-              <button type="roll" name="precision" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=precision }}  {{base-dice=[[@{precision} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Precision</button>
-              <input type="text" name="attr_precision">
+                <button type="roll" name="precision" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=precision }}  {{base-dice=[[@{precision} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Precision</button>
+                <input type="text" name="attr_precision">
             </div>
 
             <div class="attribute-box">
-              <button type="roll" name="logic" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=logic }}  {{base-dice=[[@{logic} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Logic</button>
-              <input type="text" name="attr_logic">
+                <button type="roll" name="logic" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=logic }}  {{base-dice=[[@{logic} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Logic</button>
+                <input type="text" name="attr_logic">
             </div>
 
             <div class="attribute-box">
-              <button type="roll" name="empathy" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=empathy }}  {{base-dice=[[@{empathy} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Empathy</button>
-              <input type="text" name="attr_empathy">
+                <button type="roll" name="empathy" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=empathy }}  {{base-dice=[[@{empathy} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Empathy</button>
+                <input type="text" name="attr_empathy">
             </div>
 
-          </div>
+            </div>
 
-          <div class="card-box">
+            <div class="card-box">
             <div class="attribute-box">
                 <button type="roll" name="resources" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=resources }}  {{base-dice=[[@{resources} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Resources</button>
                 <input type="text" name="attr_resources">
-              </div>
-          </div>
+                </div>
+            </div>
 
-          <div class="card-box">
+            <div class="card-box">
             <div class="card-title">Conditions</div>
 
             <table class="character-sheet-table">
@@ -275,70 +299,70 @@
                     <td><input type="checkbox" name="attr_cond_ml_broken"></td>
                 </tr>
             </table>
-          </div>
+            </div>
 
-          <div class="card-box">
+            <div class="card-box">
             <div class="card-title">Skills</div>
             <div class="attribute-box">
-                <button type="roll" name="agility" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=agility }}  {{base-dice=[[@{agility} + @{physique} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Agility (Physique)</button>
+                <button type="roll" name="agility" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=agility }}  {{base-dice=[[@{agility} + @{physique} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Agility <span>(Physique)</span></button>
                 <input type="text" name="attr_agility">
             </div>
 
             <div class="attribute-box">
-                <button type="roll" name="close_combat" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=close_combat }}  {{base-dice=[[@{close_combat} + @{physique} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Close combat (Physique)</button>
+                <button type="roll" name="close_combat" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=close_combat }}  {{base-dice=[[@{close_combat} + @{physique} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Close combat <span>(Physique)</span></button>
                 <input type="text" name="attr_close_combat">
             </div>
 
             <div class="attribute-box">
-                <button type="roll" name="force" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=force }}  {{base-dice=[[@{force} + @{physique} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Force (Physique)</button>
+                <button type="roll" name="force" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=force }}  {{base-dice=[[@{force} + @{physique} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Force <span>(Physique)</span></button>
                 <input type="text" name="attr_force">
             </div>
 
             <div class="attribute-box">
-                <button type="roll" name="medicine" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=medicine }}  {{base-dice=[[@{medicine} + @{precision} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Medicine (Precision)</button>
+                <button type="roll" name="medicine" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=medicine }}  {{base-dice=[[@{medicine} + @{precision} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Medicine <span>(Precision)</span></button>
                 <input type="text" name="attr_medicine">
             </div>
 
             <div class="attribute-box">
-                <button type="roll" name="ranged_combat" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=ranged_combat }}  {{base-dice=[[@{ranged_combat} + @{precision} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Ranged Combat (Precision)</button>
+                <button type="roll" name="ranged_combat" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=ranged_combat }}  {{base-dice=[[@{ranged_combat} + @{precision} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Ranged Combat <span>(Precision)</span></button>
                 <input type="text" name="attr_ranged_combat">
             </div>
 
             <div class="attribute-box">
-                <button type="roll" name="stealth" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=stealth }}  {{base-dice=[[@{stealth} + @{precision} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Stealth (Precision)</button>
+                <button type="roll" name="stealth" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=stealth }}  {{base-dice=[[@{stealth} + @{precision} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Stealth <span>(Precision)</span></button>
                 <input type="text" name="attr_stealth">
             </div>
 
             <div class="attribute-box">
-                <button type="roll" name="investigation" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=investigation }}  {{base-dice=[[@{investigation} + @{logic} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Investigation (Logic)</button>
+                <button type="roll" name="investigation" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=investigation }}  {{base-dice=[[@{investigation} + @{logic} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Investigation <span>(Logic)</span></button>
                 <input type="text" name="attr_investigation">
             </div>
 
             <div class="attribute-box">
-                <button type="roll" name="learning" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=learning }}  {{base-dice=[[@{learning} + @{logic} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">learning (Logic)</button>
+                <button type="roll" name="learning" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=learning }}  {{base-dice=[[@{learning} + @{logic} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">learning <span>(Logic)</span></button>
                 <input type="text" name="attr_learning">
             </div>
 
             <div class="attribute-box">
-                <button type="roll" name="vigilance" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=vigilance }}  {{base-dice=[[@{vigilance} + @{logic} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Vigilance (Logic)</button>
+                <button type="roll" name="vigilance" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=vigilance }}  {{base-dice=[[@{vigilance} + @{logic} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Vigilance <span>(Logic)</span></button>
                 <input type="text" name="attr_vigilance">
             </div>
 
             <div class="attribute-box">
-                <button type="roll" name="inspiration" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=inspiration }}  {{base-dice=[[@{inspiration} + @{empathy} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Inspiration (Empathy)</button>
+                <button type="roll" name="inspiration" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=inspiration }}  {{base-dice=[[@{inspiration} + @{empathy} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Inspiration <span>(Empathy)</span></button>
                 <input type="text" name="attr_inspiration">
             </div>
 
             <div class="attribute-box">
-                <button type="roll" name="manipulation" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=manipulation }}  {{base-dice=[[@{manipulation} + @{empathy} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Manipulation (Empathy)</button>
+                <button type="roll" name="manipulation" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=manipulation }}  {{base-dice=[[@{manipulation} + @{empathy} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Manipulation <span>(Empathy)</span></button>
                 <input type="text" name="attr_manipulation">
             </div>
 
             <div class="attribute-box">
-                <button type="roll" name="observation" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=observation }}  {{base-dice=[[@{observation} + @{empathy} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Observation (Empathy)</button>
+                <button type="roll" name="observation" value="@{secret_roll} &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=observation }}  {{base-dice=[[@{observation} + @{empathy} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }}">Observation <span>(Empathy)</span></button>
                 <input type="text" name="attr_observation">
             </div>
-
+            <br>
             <div class="label-with-checkboxes">
                 <span>Experience</span>
                 
@@ -355,14 +379,58 @@
                 
             </div>
 
-          </div>
+            </div>
 
         </div>
-      </div>
+        </div>
     </div>
-  </div>
+</div>
 
+<div class="character-sheet headquarter-tab">
+    <div class="character-sheet-inside">
+        <div class="corners">
+            <span class="top-left"><img src="corner-element.png" alt=""></span>
+            <span class="top-right"><img src="corner-element.png" alt=""></span>
+            <span class="bottom-left"><img src="corner-element.png" alt=""></span>
+            <span class="bottom-right"><img src="corner-element.png" alt=""></span>
+        </div>
     
+        <div class="row" style="margin:0">
+            <div class="col-6" style="padding:0;">
+                <h1 class="title"><img src="https://raw.githubusercontent.com/Wastus2/CharacterSheets/master/Vaesen/img/symbol.png" alt=""><span style="margin-right: -14px;">V</span>AESEN<img src="https://raw.githubusercontent.com/Wastus2/CharacterSheets/master/Vaesen/img/symbol.png" alt=""></h1>
+                <!-- <div class="line"></div> -->
+                <h2 class="subtitle">Headquarter Sheet</h2>
+                <div style="height:20px"></div>
+
+                <div class="character-details with-down-corner">
+                    <label class="character-details-label">
+                        <span>Name</span>
+                        <input type="text" name="attr_headquarter_name" title="@{headquarter_name}" spellcheck="false">
+                    </label>
+
+                    <label class="character-details-label">
+                        <span>Type of building</span>
+                        <input type="text" name="attr_type_of_building" title="@{type_of_building}" spellcheck="false">
+                    </label>
+
+                    <label class="character-details-label">
+                        <span>Location</span>
+                        <input type="text" name="attr_location" title="@{location}" spellcheck="false">
+                    </label>
+
+                    <div class="title-with-input">Development points <input type="text" name="attr_development_points" style="width:70px;text-align: center;"></div>
+
+                </div>
+            </div>
+            <div class="col-6" style="padding:0;padding-left:25px;">
+                <div class="card-box character-details">
+                    <h2 class="details-title">History</h2>
+                    <textarea name="attr_headquarter_history" id="" cols="30" rows="8" spellcheck="false"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Roll Templates -->
 
@@ -390,7 +458,6 @@
       </div>
       
       <div class="template-grid dice-grid">
-
 
         {{#rollGreater() base-dice 0}} <!-- BASE DIE ONE -->
         <div class="template-grid-item template-span-one">
@@ -580,7 +647,29 @@
         {{/rollGreater() base-dice 16}}
 
       </div>
+
+      <div class="dice-stats">
+          <div class="success-stat">Success: </div>
+          <div class="dice-stat">Amount of Dices: {{base-dice}}</div>
+      </div>
     </div>
   </rolltemplate>
     
 
+<script type="text/worker">
+
+on("clicked:tab_character", function() {
+        setAttrs({ 
+            tab_sheet: "Character"
+        });
+        console.log("Sheet tab Set To: Character");
+    });
+
+    on("clicked:tab_headquarter", function() {
+        setAttrs({ 
+            tab_sheet: "Headquarter"
+        });
+        console.log("Sheet tab Set To: Headquarter");
+    });
+
+</script>

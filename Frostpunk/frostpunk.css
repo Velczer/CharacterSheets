@@ -41,7 +41,10 @@
   width: 17%;
   padding: 0 15px;
 }
-
+.flex {
+	display: flex;
+	flex-wrap: nowrap;
+}
 
 .character-sheet input {
   font-family: 'Josefin Sans', sans-serif;
@@ -95,7 +98,7 @@
   padding: 20px;
   font-family: 'Josefin Sans', sans-serif;
 	border: 3px solid #000000;
-  min-width: 740px;
+  min-width: 920px;
   position: relative;
   z-index: 1; 
 }
@@ -169,6 +172,16 @@
 	justify-content: center;
 }
 
+.character-sheet .reset-radio {
+	width: auto;
+	line-height: 32px;
+	margin: 0;
+	padding: 0 12px;
+}
+.reset-radio input {
+	transform: scale(1.5);
+	box-shadow: none;
+}
 
 .attribute-box {
   display: flex;
@@ -270,7 +283,7 @@
 	padding: 8px;
 	/* background: #878787; */
 	background: radial-gradient(circle at center, rgb(255 255 255 / 20%), #6f8899);
-	color: #fff;
+	color: #b9b9b9;
 	transition: .3s all ease;
 	display: inline-block;
 	width: 100%;
@@ -289,6 +302,9 @@
 	bottom: 0;
 	transition: .3s all ease;
 	transform: scale(0);
+}
+.checkbox-label input:checked + span {
+	color: #fff;
 }
 .checkbox-label input:checked + span:before {
 	transform: scale(1);
