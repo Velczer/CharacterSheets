@@ -359,17 +359,20 @@
 }
 .sheet-rolltemplate-frostpunk .sheet-template-grid-item {
   	display: inline-block;
+	vertical-align: middle;
 }
 
 .sheet-rolltemplate-frostpunk .sheet-template-base-between {
-	height: 31px;
-	width: 31px;
-	background-color:#fff;
+	height: 33px;
+	width: 33px;
+	background-color: rgb(255 255 255 / 50%);
 	border: 1px solid #3e5f76;
 	border-radius: 5px;
 	background-size: cover;
 	box-shadow: 4px 4px 0px 0px rgb(0 0 0 / 60%);
 	margin: 3px 0;
+	overflow: hidden;
+
 }
 .sheet-rolltemplate-frostpunk .sheet-template-base-between > span, .sheet-rolltemplate-frostpunk .sheet-template-base-success > span {
 	width: 100%;
@@ -378,41 +381,39 @@
 	border: 0;
 	padding: 0;
 	text-align: center;
-	line-height: 35px;
+	line-height: 33px;
 	background: transparent;
 	font-family: 'Belgrad';
-	font-size: 18px;
+	font-size: 0;
 	/* color: #3e5f76; */
 	color: #fff;
 }
 .sheet-rolltemplate-frostpunk .sheet-template-base-success > span {
-	font-size: 11px;
-	text-align: left;
-	line-height: normal;
-	height: 35px;
-	padding-left: 3px;
-	margin-top: 0;
 	display: block;
-	color: #3e5f76;
 }
 .sheet-rolltemplate-frostpunk .sheet-template-base-success {
-	height: 35px;
-	width: 35px;
+	height: 33px;
+	width: 33px;
 	border-radius: 5px;
 	border: 1px solid #3e5f76;
 	background-color: #f1f0ee;
-	background-size: 90%;
  	box-shadow: 4px 4px 0px 0px rgb(0 0 0 / 60%);
+	/* background-image: url(https://raw.githubusercontent.com/Wastus2/CharacterSheets/master/Frostpunk/img/Snowflake-icon.png); */
+	background-size: 149%;
+	background-repeat: no-repeat;
+	background-position: center;
+	overflow: hidden;
 }
-.sheet-rolltemplate-frostpunk .sheet-template-base-success:before {
-	content: "";
-	
-}
+
 .sheet-rolltemplate-frostpunk span.inlinerollresult.fullcrit {
+	background: radial-gradient(circle at center, rgb(62 95 118), #009f0c);
  	border: 0;
+	font-size: 18px;
 }
 .sheet-rolltemplate-frostpunk span.inlinerollresult.fullfail {
  	border: 0;
+	background: radial-gradient(circle at center, rgb(0 0 0 / 50%), #000000);
+	font-size: 18px;
 }
 
 .sheet-rolltemplate-frostpunk .sheet-dice-pool-name {
