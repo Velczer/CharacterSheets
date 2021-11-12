@@ -2,7 +2,7 @@
 
 @font-face {
 	font-family: 'Belgrad';
-	src: url('https://raw.githubusercontent.com/Wastus2/CharacterSheets/master/Frostpunk/Fonts/Belgrad.ttf');
+	src: url('https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Frostpunk/Fonts/Belgrad.ttf');
 }
 
 /* Defaults  */
@@ -101,7 +101,7 @@
 /* Custom modules */
 
 .character-sheet {
-	background-image: url(https://raw.githubusercontent.com/Wastus2/CharacterSheets/master/Frostpunk/img/sheet-bg.jpg);
+	background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Frostpunk/Images/sheet-bg.jpg);
 	background-size: cover;
 	background-position: top center;
 	padding: 20px;
@@ -323,7 +323,7 @@
 
 /* Roll Template */
 .sheet-rolltemplate-frostpunk .sheet-template-wrap {
-	background-image: url(https://raw.githubusercontent.com/Wastus2/CharacterSheets/master/Frostpunk/img/roll-bg.jpg);
+	background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Frostpunk/Images/roll-bg.jpg);
 	background-position: top center;
 	background-size: cover;
 	border: 3px solid #3e5f76;
@@ -398,7 +398,7 @@
 	border: 1px solid #3e5f76;
 	background-color: #f1f0ee;
  	box-shadow: 4px 4px 0px 0px rgb(0 0 0 / 60%);
-	/* background-image: url(https://raw.githubusercontent.com/Wastus2/CharacterSheets/master/Frostpunk/img/Snowflake-icon.png); */
+	/* background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Frostpunk/Images/Snowflake-icon.png); */
 	background-size: 149%;
 	background-repeat: no-repeat;
 	background-position: center;
