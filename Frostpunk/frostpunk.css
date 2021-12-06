@@ -511,6 +511,7 @@
 	background-size: cover;
 	border: 3px solid #3e5f76;
 	margin: 0;
+	margin-bottom: 15px;
 }
 
 .sheet-rolltemplate-frostpunk .sheet-template-header {
@@ -533,7 +534,6 @@
 	padding: 10px 0;
 	padding-bottom: 6px;
 	text-align: center;
-	text-shadow: 1px 1px 3px #ffffff;
 	text-transform: uppercase;
 	font-family: 'Josefin Sans', sans-serif;
 	font-weight: bold;
