@@ -355,6 +355,7 @@
 	cursor: pointer;
 	position: relative;
 	z-index: 1;
+	font-weight: 400;
 }
 .checkbox-label input {
 	opacity: 0;
