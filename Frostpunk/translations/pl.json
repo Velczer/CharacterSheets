@@ -1,0 +1,49 @@
+{
+	"attributes": "Cechy",
+	"strength": "Siła",
+	"agility": "Zwinność",
+	"wits": "Rozum",
+	"empathy": "Empatia",
+
+	"skills": "Umiejetnosci",
+	"make-the-roll-secret": "Rzuć kośćmi sekretnie",
+	"endure": "Wytrzymałość",
+	"force": "Krzepa",
+	"fight": "Walka wręcz",
+	"sneak": "Skradanie się",
+	"move": "Ruch",
+	"shoot": "Walka na dystans",
+	"scout": "Zwiad",
+	"comprehend": "Pojmowanie",
+	"know-the-zone": "Znajomość otoczenia",
+	"sense-emotion": "Przenikliwość",
+	"manipulate": "Manipulacja",
+	"heal": "Leczenie",
+
+	"attributes-damage": "Obrazenia cech",
+	"character-details": "Szczegoly postaci",
+	"ch-name": "Imię i nazwisko",
+	"age": "Wiek",
+	"archetype": "Zawód",
+	"motivation": "Motywacja",
+	"trauma": "Trauma",
+
+	"gear": "Wyposażenie",
+	"name": "Nazwa",
+	"skill": "Umiejętność",
+	"bonus": "Bonus",
+	"use": "Użyj",
+
+
+	"talents": "Talenty",
+	"description": "Opis",
+
+	"personal-agenda": "Osobisty cel",
+	"conditions": "Kondycja",
+
+	"critical-injuries": "Obrazenia krytyczne",
+	"effect": "Efekt",
+	"time-to-recover": "Powrót do zdrowia"
+
+
+}
