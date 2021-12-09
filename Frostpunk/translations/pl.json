@@ -8,15 +8,15 @@
 	"skills": "Umiejetnosci",
 	"make-the-roll-secret": "Rzuć kośćmi sekretnie",
 	"endure": "Wytrzymałość",
-	"force": "Krzepa",
+	"force": "Wytwarzanie",
 	"fight": "Walka wręcz",
 	"sneak": "Skradanie się",
 	"move": "Ruch",
 	"shoot": "Walka na dystans",
-	"scout": "Zwiad",
+	"scout": "Spostrzegawczość",
 	"comprehend": "Pojmowanie",
 	"know-the-zone": "Znajomość otoczenia",
-	"sense-emotion": "Przenikliwość",
+	"sense-emotion": "Wyczucie emocji",
 	"manipulate": "Manipulacja",
 	"heal": "Leczenie",
 
@@ -43,10 +43,13 @@
 
 	"personal-agenda": "Osobisty cel",
 	"conditions": "Kondycja",
+	"supplies": "Zapasy",
 
 	"critical-injuries": "Obrazenia krytyczne",
 	"effect": "Efekt",
-	"time-to-recover": "Powrót do zdrowia"
+	"time-to-recover": "Powrót do zdrowia",
+
+	"additional-eq": "Pozostaly ekwipunek"
 
 
 }
