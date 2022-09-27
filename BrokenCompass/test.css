@@ -279,7 +279,7 @@
 
 /* Roll Template */
 .sheet-rolltemplate-brokencompass .sheet-template-wrap {
-    /* background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/brokencompass/Images/roll-bg.jpg); */
+    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/roll-bg.jpg);
     background-position: top center;
     background-size: cover;
     border: 3px solid #3e5f76;
@@ -334,6 +334,7 @@
 	text-transform: none;
 	line-height: 1em;
 	font-size: 20px;
+    content: "";
 }
 
 .character-sheet .diamond-checkbox {
@@ -343,18 +344,18 @@
 }
 
 .diamond-checkbox .icon-diamond::before {
-    background: url("https://raw.githubusercontent.com/mperes/Images-for-Roll20-5E-images/master/licensedsheet/ScrollRight.svg?sanitize=true");
-	/* content: '\e802'; */
+    background: url("https://raw.githubusercontent.com/Velczer/CharacterSheets/master/brokencompass/Images/diamond-white-down.svg");
 }
 
-.diamond-checkbox input:checked+.icon-diamond::before {
-	content: '\e800';
+https://raw.githubusercontent.com/Velczer/CharacterSheets/ea2ca779ee798fe663dc620f7bce02e40df68efd/BrokenCompass/Images/diamond-black-down.svg
+.diamond-checkbox input:checked + .icon-diamond::before {
+    background: url("https://raw.githubusercontent.com/Velczer/CharacterSheets/master/brokencompass/Images/diamond-black-down.svg");
 }
 
 .diamond-checkbox.diamond-up .icon-diamond::before {
-	content: '\e803';
+    background: url("https://raw.githubusercontent.com/Velczer/CharacterSheets/master/brokencompass/Images/diamond-white-up.svg");
 }
 
-.diamond-checkbox.diamond-up input:checked+.icon-diamond::before {
-	content: '\e801';
+.diamond-checkbox.diamond-up input:checked + .icon-diamond::before {
+    background: url("https://raw.githubusercontent.com/Velczer/CharacterSheets/master/brokencompass/Images/diamond-black-up.svg");
 }
