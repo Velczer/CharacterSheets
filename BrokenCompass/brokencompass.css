@@ -1,375 +1,318 @@
-/* Broken Compass Icons */
 @font-face {
-	font-family: 'brokencompass';
-	src: url('https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Fonts/brokencompass.eot?27449710');
-	src: url('https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Fonts/brokencompass.eot?27449710#iefix') format('embedded-opentype'),
-		url('https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Fonts/brokencompass.woff2?27449710') format('woff2'),
-		url('https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Fonts/brokencompass.woff?27449710') format('woff'),
-		url('https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Fonts/brokencompass.ttf?27449710') format('truetype'),
-		url('https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Fonts/brokencompass.svg?27449710#brokencompass') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-.icon-diamond::before {
-	font-family: 'brokencompass';
-	font-style: normal;
-	font-weight: normal;
-	display: inline-block;
-	text-decoration: inherit;
-	width: 1em;
-	text-align: center;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1em;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	font-size: 20px;
-}
-
-.character-sheet .diamond-checkbox {
-	cursor: pointer;
-	margin: 0;
-	width: auto;
-}
-
-.diamond-checkbox .icon-diamond::before {
-    background: url("https://raw.githubusercontent.com/mperes/Images-for-Roll20-5E-images/master/licensedsheet/ScrollRight.svg?sanitize=true");
-	content: '\e802';
-}
-
-.diamond-checkbox input:checked+.icon-diamond::before {
-	content: '\e800';
-}
-
-.diamond-checkbox.diamond-up .icon-diamond::before {
-	content: '\e803';
-}
-
-.diamond-checkbox.diamond-up input:checked+.icon-diamond::before {
-	content: '\e801';
+    font-family: 'Lalezar';
+    src: url('https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Fonts/Lalezar-Regular.ttf');
 }
 
 @font-face {
-	font-family: 'Lalezar';
-	src: url('https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Fonts/Lalezar-Regular.ttf');
+    font-family: 'Trocchi';
+    src: url('https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Fonts/Trocchi-Regular.ttf');
 }
-
-@font-face {
-	font-family: 'Trocchi';
-	src: url('https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Fonts/Trocchi-Regular.ttf');
-}
-
-
 
 /* Defaults  */
 .ui-dialog .charsheet {
-	padding: 0;
+    padding: 0;
 }
 
 .character-sheet .row {
-	display: flex;
-	max-width: 100%;
-	margin: 0;
+    display: flex;
+    max-width: 100%;
+    margin: 0;
 }
 
 .col-10 {
-	width: 83%;
-	padding: 0 10px;
+    width: 83%;
+    padding: 0 10px;
 }
 
 .col-9 {
-	width: 75%;
-	padding: 0 10px;
+    width: 75%;
+    padding: 0 10px;
 }
 
 .col-8 {
-	width: 66%;
-	padding: 0 10px;
+    width: 66%;
+    padding: 0 10px;
 }
 
 .col-7 {
-	width: 58%;
-	padding: 0 10px;
+    width: 58%;
+    padding: 0 10px;
 }
 
 .col-6 {
-	width: 50%;
-	padding: 0 10px;
+    width: 50%;
+    padding: 0 10px;
 }
 
 .col-5 {
-	width: 41%;
-	padding: 0 10px;
+    width: 41%;
+    padding: 0 10px;
 }
 
 .col-4 {
-	width: 33%;
-	padding: 0 10px;
+    width: 33%;
+    padding: 0 10px;
 }
 
 .col-3 {
-	width: 25%;
-	padding: 0 10px;
+    width: 25%;
+    padding: 0 10px;
 }
 
 .col-2 {
-	width: 17%;
-	padding: 0 10px;
+    width: 17%;
+    padding: 0 10px;
 }
 
 .flex {
-	display: flex;
-	flex-wrap: nowrap;
+    display: flex;
+    flex-wrap: nowrap;
 }
 
 .flex-1 {
-	flex: 1;
+    flex: 1;
 }
 
 .flex-2 {
-	flex: 2;
+    flex: 2;
 }
 
 .flex-3 {
-	flex: 3;
+    flex: 3;
 }
 
 .flex-4 {
-	flex: 4;
+    flex: 4;
 }
 
 .character-sheet input,
 .character-sheet select {
-	font-family: 'Trocchi', serif;
-	background: #fff;
-	border: 1px solid transparent;
-	border-bottom: 1px solid #231f20;
-	display: inline-block;
-	font-size: 16px;
-	color: #000;
-	line-height: 22px;
-	height: 28px;
-	padding: 0 10px;
-	box-sizing: border-box;
-	border-radius: 0;
+    font-family: 'Trocchi', serif;
+    background: #fff;
+    border: 1px solid transparent;
+    border-bottom: 1px solid #231f20;
+    display: inline-block;
+    font-size: 16px;
+    color: #000;
+    line-height: 22px;
+    height: 28px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    border-radius: 0;
 }
 
 .character-sheet input.transparent {
-	background: transparent;
-	line-height: 16px;
-	height: auto;
-	padding: 5px 5px 0;
+    background: transparent;
+    line-height: 16px;
+    height: auto;
+    padding: 5px 5px 0;
 }
 
 .character-sheet input:focus {
-	border: 1px solid #231f20;
-	outline: none;
+    border: 1px solid #231f20;
+    outline: none;
 }
 
 .charactersheet {
-	padding: 0;
+    padding: 0;
 }
 
 .character-sheet textarea {
-	background-attachment: local;
-	background-color: #Fff;
-	background-image:
-		linear-gradient(to right, white 5px, transparent 5px),
-		linear-gradient(to left, white 5px, transparent 5px),
-		repeating-linear-gradient(white, white 35px, #3e5f76 35px, #3e5f76 36px, white 36px);
-	line-height: 36px;
-	font-size: 16px;
-	padding: 5px;
-	border: 3px solid #3e5f76;
-	width: calc(100% - 15px);
-	box-shadow: 4px 4px 0px 0px #00000057;
-	height: 179px;
-	resize: vertical;
-	margin: 0;
+    background-attachment: local;
+    background-color: #Fff;
+    background-image:
+        linear-gradient(to right, white 5px, transparent 5px),
+        linear-gradient(to left, white 5px, transparent 5px),
+        repeating-linear-gradient(white, white 35px, #3e5f76 35px, #3e5f76 36px, white 36px);
+    line-height: 36px;
+    font-size: 16px;
+    padding: 5px;
+    border: 3px solid #3e5f76;
+    width: calc(100% - 15px);
+    box-shadow: 4px 4px 0px 0px #00000057;
+    height: 179px;
+    resize: vertical;
+    margin: 0;
 }
 
 .charsheet .character-sheet button[type="roll"] {
-	border: 1px solid #231f20;
-	font-family: 'Lalezar';
-	background: transparent;
-	padding: 0 8px;
-	text-transform: uppercase;
-	color: #231f20;
-	cursor: pointer;
-	transition: .3s all ease;
-	margin-right: 5px;
-	text-shadow: none;
+    border: 1px solid #231f20;
+    font-family: 'Lalezar';
+    background: transparent;
+    padding: 0 8px;
+    text-transform: uppercase;
+    color: #231f20;
+    cursor: pointer;
+    transition: .3s all ease;
+    margin-right: 5px;
+    text-shadow: none;
 }
 
 .charsheet .character-sheet button[type="roll"]:hover {
-	background: #231f20;
-	color: #fff;
+    background: #231f20;
+    color: #fff;
 }
 
 .charsheet .character-sheet button[type="roll"]::before {
-	color: #a329ff;
-	font-size: 20px;
-	vertical-align: bottom;
-	margin-right: 5px;
+    color: #a329ff;
+    font-size: 20px;
+    vertical-align: bottom;
+    margin-right: 5px;
 }
 
 .charsheet .character-sheet input[type="checkbox"] {
-	width: auto;
+    width: auto;
 }
 
 /* Custom modules */
 .character-sheet {
-	background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/sheet-bg.jpg);
-	background-size: cover;
-	/* background-size: contain;
+    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/sheet-bg.jpg);
+    background-size: cover;
+    /* background-size: contain;
 	background-repeat: no-repeat; */
-	background-position: top center;
-	padding: 20px 10px;
-	color: #231f20;
-	font-family: 'Lalezar', sans-serif;
-	border: 1px solid #231f20;
-	max-width: 950px;
+    background-position: top center;
+    padding: 20px 10px;
+    color: #231f20;
+    font-family: 'Lalezar', sans-serif;
+    border: 1px solid #231f20;
+    max-width: 950px;
 
-	min-height: 1335px;
+    min-height: 1335px;
 
-	position: relative;
-	z-index: 1;
+    position: relative;
+    z-index: 1;
 }
 
 .character-sheet::before {
-	content: "";
-	z-index: -1;
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background: rgba(255, 255, 255, 0.4);
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.4);
 }
 
 .character-details {
-	padding: 40px 40px 30px;
+    padding: 40px 40px 30px;
 }
 
 .character-details label {
-	font-size: 20px;
-	margin-right: 3px;
-	white-space: nowrap;
-	vertical-align: bottom;
-	line-height: 16px;
-	text-transform: uppercase;
+    font-size: 20px;
+    margin-right: 3px;
+    white-space: nowrap;
+    vertical-align: bottom;
+    line-height: 16px;
+    text-transform: uppercase;
 }
 
 .character-details input {
-	margin: 0 5px;
-	width: 100%;
+    margin: 0 5px;
+    width: 100%;
 }
 
 .character-details .flex {
-	margin-bottom: 25px;
-	align-items: flex-end;
+    margin-bottom: 25px;
+    align-items: flex-end;
 }
 
 .character-details .center-inputs {
-	align-items: baseline;
+    align-items: baseline;
 }
 
 .character-details .center-inputs input {
-	text-align: center;
+    text-align: center;
 }
 
 .character-details .center-inputs p {
-	text-align: center;
-	margin: 0;
-	text-transform: uppercase;
-	font-family: 'Lalezar';
-	font-size: 15px;
+    text-align: center;
+    margin: 0;
+    text-transform: uppercase;
+    font-family: 'Lalezar';
+    font-size: 15px;
 }
 
 .character-details .input-with-subtext {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
 .attribute-box {
-	text-align: right;
+    text-align: right;
 }
 
 .attribute-label {
-	padding-right: 62px;
-	margin-bottom: 5px;
-	display: flex;
-	align-items: center;
-	justify-content: flex-end;
+    padding-right: 62px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .attribute-label button {
-	font-size: 28px;
-	height: 36px;
-	line-height: 38px;
+    font-size: 28px;
+    height: 36px;
+    line-height: 38px;
 }
 
 .skill-box {
-	text-align: right;
+    text-align: right;
 }
+
 .skill-label {
-	margin-bottom: 5px;
-	display: flex;
-	align-items: center;
-	justify-content: flex-end;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
+
 .skill-label button {
-	font-size: 20px;
-	height: 26px;
-	line-height: 28px;
+    font-size: 20px;
+    height: 26px;
+    line-height: 28px;
 }
 
 
 
 /* Roll Template */
 .sheet-rolltemplate-brokencompass .sheet-template-wrap {
-	/* background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/brokencompass/Images/roll-bg.jpg); */
-	background-position: top center;
-	background-size: cover;
-	border: 3px solid #3e5f76;
-	margin: 0;
-	margin-bottom: 15px;
+    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/roll-bg.jpg);
+    background-position: top center;
+    background-size: cover;
+    border: 2px solid #000;
+    margin: 0;
+    margin-bottom: 15px;
 }
 
 .sheet-rolltemplate-brokencompass .sheet-template-header {
-	width: 100%;
-	padding: 7px 5px;
-	color: #fff;
-	background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(62, 95, 118, 1) 60%, rgba(0, 181, 255, 0) 100%);
-	font-family: 'Lalezar';
-	text-align: center;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	font-size: 18px;
+    width: 100%;
+    padding: 7px 5px;
+    color: #fff;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(51, 51, 51, 1) 60%, rgba(0, 181, 255, 0) 100%);
+    font-family: 'Lalezar';
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 18px;
 }
 
 .sheet-rolltemplate-brokencompass .sheet-template-header a {
-	color: #fff;
+    color: #fff;
 }
 
 .sheet-rolltemplate-brokencompass .sheet-template-subtitle {
-	color: #000000;
-	font-size: 20px;
-	padding: 10px 0;
-	padding-bottom: 6px;
-	text-align: center;
-	text-transform: uppercase;
-	font-family: 'Trocchi', sans-serif;
-	font-weight: bold;
-}
-
-.sheet-rolltemplate-brokencompass .template-roll-dice {
-    display: block;
-    padding: 10px;
-    background-color: #231f20;
+    color: #000000;
+    font-size: 20px;
+    padding: 10px 0;
+    padding-bottom: 6px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Trocchi', sans-serif;
+    font-weight: bold;
+    background: rgb(255 255 255 / 40%);
 }
 
 .sheet-rolltemplate-brokencompass .sheet-template-grid {
@@ -378,9 +321,20 @@
 	padding-bottom: 8px;
 }
 
+.sheet-rolltemplate-brokencompass .sheet-template-grid-item-box {
+    background: rgb(255 255 255 / 40%);
+    padding: 0 8px;
+}
+
 .sheet-rolltemplate-brokencompass .sheet-template-grid-item {
-	display: inline-block;
+  	display: inline-block;
 	vertical-align: middle;
+}
+
+.sheet-rolltemplate-brokencompass .sheet-template-grid-item-flex {
+    display: flex;
+    align-items: center;
+    background: rgb(255 255 255 / 40%);
 }
 
 .sheet-rolltemplate-brokencompass .sheet-template-roll-between {
@@ -393,47 +347,37 @@
 	box-shadow: 4px 4px 0px 0px rgb(0 0 0 / 60%);
 	margin: 3px 0;
 	overflow: hidden;
-
+    display: inline-block;
 }
-
-.sheet-rolltemplate-brokencompass .sheet-template-roll-between>span,
-.sheet-rolltemplate-brokencompass .sheet-template-roll-success>span {
+.sheet-rolltemplate-brokencompass .sheet-template-roll-between > span, .sheet-rolltemplate-brokencompass .sheet-template-roll-success > span {
 	width: 100%;
 	display: inline-block;
 	margin: 0;
 	border: 0;
 	padding: 0;
 	text-align: center;
-	line-height: 30px;
+	line-height: 32px;
 	background: transparent;
 	font-family: 'Lalezar';
-	font-size: 0;
+	font-size: 22px;
 	/* color: #3e5f76; */
-	color: #fff;
+	color: #333;
 }
-
-.sheet-rolltemplate-brokencompass span.inlinerollresult.fullcrit {
-	background: radial-gradient(circle at center, rgb(62 95 118), #009f0c);
-	border: 0;
-	font-size: 18px;
+.sheet-rolltemplate-brokencompass .sheet-template-roll-success > span {
+	display: block;
 }
-
-.sheet-rolltemplate-brokencompass span.inlinerollresult.fullfail {
+.sheet-rolltemplate-brokencompass .sheet-template-roll-between > span.fullcrit, .sheet-rolltemplate-brokencompass .sheet-template-roll-between > span.fullfail {
 	border: 0;
-	background: radial-gradient(circle at center, rgb(0 0 0 / 50%), #000000);
-	font-size: 18px;
 }
 
 .sheet-rolltemplate-brokencompass .sheet-template-label {
-	font-size: 14px;
+	font-size: 16px;
 	padding: 5px;
 	text-align: left;
-	background: rgb(0 0 0 / 80%);
-	color: #fff;
-	background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(62, 95, 118, 1) 60%, rgba(0, 181, 255, 0) 100%);
-	font-family: 'Trocchi', sans-serif;
+	font-family: 'Lalezar', sans-serif;
+    color: #231f20;
+    margin: 0;
 }
-
 .sheet-rolltemplate-brokencompass .sheet-template-label span {
 	background: none;
 	border: 0;
@@ -443,206 +387,42 @@
 	margin: 0;
 }
 
-
-/* Progress effect  */
-
-.character-sheet .bar {
-	display: flex;
-	flex-direction: row-reverse;
-	margin: 0;
-	width: 300px;
-	max-width: calc(100% - 30px);
-	padding: 3px 0;
-	justify-content: flex-end;
-}
-
-.character-sheet .bar-input {
-	opacity: 0;
-	pointer-events: none;
-	position: absolute;
-	top: -9999px;
-	left: -9999px;
-}
-
-.bar-input:checked~.bar-view:nth-child(10):after {
-	transition-delay: -0.05s;
-}
-
-.bar-input:checked~.bar-view:nth-child(10) .bar-button:before {
-	transition-delay: 0.01s;
-}
-
-.bar-input:checked~.bar-view:nth-child(8):after {
-	transition-delay: 0.05s;
-}
-
-.bar-input:checked~.bar-view:nth-child(8) .bar-button:before {
-	transition-delay: 0.11s;
-}
-
-.bar-input:checked~.bar-view:nth-child(6):after {
-	transition-delay: 0.15s;
-}
-
-.bar-input:checked~.bar-view:nth-child(6) .bar-button:before {
-	transition-delay: 0.21s;
-}
-
-.bar-input:checked~.bar-view:nth-child(4):after {
-	transition-delay: 0.25s;
-}
-
-.bar-input:checked~.bar-view:nth-child(4) .bar-button:before {
-	transition-delay: 0.31s;
-}
-
-.bar-input:checked~.bar-view:nth-child(2):after {
-	transition-delay: 0.35s;
-}
-
-.bar-input:checked~.bar-view:nth-child(2) .bar-button:before {
-	transition-delay: 0.41s;
-}
-
-.character-sheet .bar-input:checked~.bar-view:after {
-	transform: scaleX(1);
-}
-
-.bar-input:checked~.bar-view .bar-button:before {
-	transform: none;
-	opacity: 1;
-}
-
-.bar-input:checked+.bar-view .bar-button:after {
-	opacity: 1;
-	-webkit-animation: bouncing 0.6s cubic-bezier(0, 0, 0.74, 1.04) infinite;
-	animation: bouncing 0.6s cubic-bezier(0, 0, 0.74, 1.04) infinite;
-}
-
-.bar-view {
-	display: none;
-	flex-grow: 1;
-	position: relative;
-	padding: 0 10px;
-	max-width: 38px;
-}
-
-.character-sheet .bar-view:after {
-	height: 2px;
-	top: calc(50% - 1px);
-	transition: transform 0.06s cubic-bezier(0, 0.72, 0.58, 1);
-	transform: scaleX(0);
-	background: #000;
-	transform-origin: left;
-	z-index: 1;
-}
-
-.bar-view:not(:last-child):before,
-.bar-view:not(:last-child):after {
-	content: "";
-	width: calc(100% - 24px);
-	position: absolute;
-	right: calc(50% + 12px);
-}
-
-.bar-view:not(:last-child):before {
-	height: 6px;
-	top: calc(50% - 3px);
-	background: #3e5f76;
-}
-
-.bar-view:not(:last-child):nth-child(2):after {
-	transition-delay: 0s;
-}
-
-.bar-view:not(:last-child):nth-child(2) .bar-button:before {
-	transition-delay: 0.06s;
-	background: radial-gradient(circle at center, #051ae9, #5e27ce);
-}
-
-.bar-view:not(:last-child):nth-child(4):after {
-	transition-delay: 0.1s;
-}
-
-.bar-view:not(:last-child):nth-child(4) .bar-button:before {
-	transition-delay: 0.16s;
-	background: radial-gradient(circle at center, #2e65c4, #051ae9);
-}
-
-.bar-view:not(:last-child):nth-child(6):after {
-	transition-delay: 0.2s;
-}
-
-.bar-view:not(:last-child):nth-child(6) .bar-button:before {
-	transition-delay: 0.26s;
-	background: radial-gradient(circle at center, #1ea297, #2e65c4);
-}
-
-.bar-view:not(:last-child):nth-child(8):after {
-	transition-delay: 0.3s;
-}
-
-.bar-view:not(:last-child):nth-child(8) .bar-button:before {
-	transition-delay: 0.36s;
-	background: radial-gradient(circle at center, #6f8899, #1ea297);
-}
-
-.bar-view:not(:last-child):nth-child(10):after {
-	transition-delay: 0.4s;
-}
-
-.bar-view:not(:last-child):nth-child(10) .bar-button:before {
-	transition-delay: 0.46s;
-}
-
-.character-sheet .bar-button {
-	display: block;
-	width: 24px;
-	height: 24px;
-	margin: auto;
-	border-radius: 50%;
-	border: 3px solid #3e5f76;
-	position: relative;
+/* Icons */
+.character-sheet .diamond-checkbox {
 	cursor: pointer;
-	box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.3), 2px 2px 8px rgba(0, 0, 0, 0.1);
-	padding: 0;
+	margin: 0;
+	width: auto;
+    padding-right: 1px;
+}
+.character-sheet .diamond-checkbox input {
+    display: none;
+}
+.character-sheet .diamond-checkbox .icon-diamond {
+    height: 28px;
+	width: 20px;
 }
 
-.character-sheet .bar-button:before {
-	content: "";
-	position: absolute;
-	pointer-events: none;
+.icon-diamond::before {
+    content: "";
+	display: inline-block;
+    height: 28px;
+	width: 28px;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-.bar-button:before {
-	width: 100%;
-	height: 100%;
-	border-radius: 50%;
-	background: radial-gradient(circle at center, #ffffff, #6f8899);
-	transform: scale(0.3);
-	opacity: 0;
-	transition-property: transform, opacity;
-	transition-duration: 0.2s;
-	transition-timing-function: cubic-bezier(0, 0.72, 0.58, 1);
+.diamond-checkbox .icon-diamond::before {
+    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/4af3e2cba7b479514ea90497149937ded6853055/BrokenCompass/Images/diamond-white-down.svg);
 }
 
-
-input.bar-calc-view[value="1"]~.bar .bar-view:nth-child(n+10) {
-	display: flex;
+.diamond-checkbox input:checked + .icon-diamond::before {
+    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/4af3e2cba7b479514ea90497149937ded6853055/BrokenCompass/Images/diamond-black-down.svg);
 }
 
-input.bar-calc-view[value="2"]~.bar .bar-view:nth-child(n+8) {
-	display: flex;
+.diamond-checkbox.diamond-up .icon-diamond::before {
+    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/4af3e2cba7b479514ea90497149937ded6853055/BrokenCompass/Images/diamond-white-up.svg);
 }
 
-input.bar-calc-view[value="3"]~.bar .bar-view:nth-child(n+6) {
-	display: flex;
-}
-
-input.bar-calc-view[value="4"]~.bar .bar-view:nth-child(n+4) {
-	display: flex;
-}
-
-input.bar-calc-view[value="5"]~.bar .bar-view:nth-child(n+2) {
-	display: flex;
+.diamond-checkbox.diamond-up input:checked + .icon-diamond::before {
+    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/4af3e2cba7b479514ea90497149937ded6853055/BrokenCompass/Images/diamond-black-up.svg);
 }

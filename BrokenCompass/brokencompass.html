@@ -145,6 +145,9 @@
 <!-- Roll Templates -->
 
 <rolltemplate class="sheet-rolltemplate-brokencompass">
+
+    <h4>dices = {{dices}}</h4>
+
 	<div class="template-wrap">
 		<div class="template-header">
 			{{#character_name}}
@@ -153,58 +156,179 @@
 			{{/character_name}}
 		</div>
 
-		<div class="template-subtitle">
-			{{roll-name}}
-		</div>
+        <div class="template-subtitle">
+            {{roll-name}}
+        </div>
 
-		<h4>Total dices = {{baseDice}}</h4>
+        <div class="template-grid-item-flex">
+		    <label class="template-label">Total dices:</label>
+            <div class="template-roll-between">{{baseDice}}</div>
+        </div>
 
-		<h4>dices = {{dices}}</h4>
+        <div class="template-grid-item-flex">
+            <label class="template-label">Equal dice:</label>
+        </div>
 
-		<label class="template-label">Equal dice:</label>
+        <div class="template-grid-item-box">
+            {{#rollGreater() computed::pair_of_one 1}}
+            <div class="template-grid-item">
+                <div class="template-roll-between"><span class="template-roll-dice">1</span></div>
+                <div class="template-roll-between"><span class="template-roll-dice">1</span></div>
+                {{#rollGreater() computed::pair_of_one 2}}
+                    <div class="template-roll-between"><span class="template-roll-dice">1</span></div>
+                {{/rollGreater() computed::pair_of_one 2}}
 
-		{{#rollGreater() computed::pair_of_one 1}}
-		<div class="template-grid-item">
-			<div class="template-roll-between template-roll-between--{{pair_one}}">{{computed::pair_of_one}} x <span class="template-roll-dice">1</span></div>
-		</div>
-		{{/rollGreater() computed::pair_of_one 1}}
+                {{#rollGreater() computed::pair_of_one 3}}
+                    <div class="template-roll-between"><span class="template-roll-dice">1</span></div>
+                {{/rollGreater() computed::pair_of_one 3}}
 
-		{{#rollGreater() computed::pair_of_two 1}}
-		<div class="template-grid-item">
-			<div class="template-roll-between template-roll-between--{{pair_two}}">{{computed::pair_of_two}} x <span class="template-roll-dice">2</span></div>
-		</div>
-		{{/rollGreater() computed::pair_of_two 1}}
+                {{#rollGreater() computed::pair_of_one 4}}
+                    <div class="template-roll-between"><span class="template-roll-dice">1</span></div>
+                {{/rollGreater() computed::pair_of_one 4}}
 
-		{{#rollGreater() computed::pair_of_three 1}}
-		<div class="template-grid-item">
-			<div class="template-roll-between template-roll-between--{{pair_three}}">{{computed::pair_of_three}} x <span class="template-roll-dice">3</span></div>
-		</div>
-		{{/rollGreater() computed::pair_of_three 1}}
+                {{#rollGreater() computed::pair_of_one 5}}
+                    <div class="template-roll-between"><span class="template-roll-dice">1</span></div>
+                {{/rollGreater() computed::pair_of_one 5}}
 
-		{{#rollGreater() computed::pair_of_four 1}}
-		<div class="template-grid-item">
-			<div class="template-roll-between template-roll-between--{{pair_four}}">{{computed::pair_of_four}} x <span class="template-roll-dice">4</span></div>
-		</div>
-		{{/rollGreater() computed::pair_of_four 1}}
+            </div>
+            {{/rollGreater() computed::pair_of_one 1}}
 
-		{{#rollGreater() computed::pair_of_five 1}}
-		<div class="template-grid-item">
-			<div class="template-roll-between template-roll-between--{{pair_five}}">{{computed::pair_of_five}} x <span class="template-roll-dice">5</span></div>
-		</div>
-		{{/rollGreater() computed::pair_of_five 1}}
+            {{#rollGreater() computed::pair_of_two 1}}
+            <div class="template-grid-item">
+                <div class="template-roll-between"><span class="template-roll-dice">2</span></div>
+                <div class="template-roll-between"><span class="template-roll-dice">2</span></div>
 
-		{{#rollGreater() computed::pair_of_six 1}}
-		<div class="template-grid-item">
-			<div class="template-roll-between template-roll-between--{{pair_six}}">{{computed::pair_of_six}} x <span class="template-roll-dice">6</span></div>
-		</div>
-		{{/rollGreater() computed::pair_of_six 1}}
+                {{#rollGreater() computed::pair_of_two 2}}
+                    <div class="template-roll-between"><span class="template-roll-dice">2</span></div>
+                {{/rollGreater() computed::pair_of_two 2}}
 
-        <h4>Basic successes: {{computed::basic_success}}</h4>
-        <h4>Critical successes: {{computed::critical_success}}</h4>
-        <h4>Extreme successes: {{computed::extreme_success}}</h4>
-        <h4>Impossible successes: {{computed::impossible_success}}</h4>
+                {{#rollGreater() computed::pair_of_two 3}}
+                    <div class="template-roll-between"><span class="template-roll-dice">2</span></div>
+                {{/rollGreater() computed::pair_of_two 3}}
 
-		</div>
+                {{#rollGreater() computed::pair_of_two 4}}
+                    <div class="template-roll-between"><span class="template-roll-dice">2</span></div>
+                {{/rollGreater() computed::pair_of_two 4}}
+
+                {{#rollGreater() computed::pair_of_two 5}}
+                    <div class="template-roll-between"><span class="template-roll-dice">2</span></div>
+                {{/rollGreater() computed::pair_of_two 5}}
+            </div>
+            {{/rollGreater() computed::pair_of_two 1}}
+
+            {{#rollGreater() computed::pair_of_three 1}}
+            <div class="template-grid-item">
+                <div class="template-roll-between"><span class="template-roll-dice">3</span></div>
+                <div class="template-roll-between"><span class="template-roll-dice">3</span></div>
+
+                {{#rollGreater() computed::pair_of_three 2}}
+                    <div class="template-roll-between"><span class="template-roll-dice">3</span></div>
+                {{/rollGreater() computed::pair_of_three 2}}
+
+                {{#rollGreater() computed::pair_of_three 3}}
+                    <div class="template-roll-between"><span class="template-roll-dice">3</span></div>
+                {{/rollGreater() computed::pair_of_three 3}}
+
+                {{#rollGreater() computed::pair_of_three 4}}
+                    <div class="template-roll-between"><span class="template-roll-dice">3</span></div>
+                {{/rollGreater() computed::pair_of_three 4}}
+
+                {{#rollGreater() computed::pair_of_three 5}}
+                    <div class="template-roll-between"><span class="template-roll-dice">3</span></div>
+                {{/rollGreater() computed::pair_of_three 5}}
+            </div>
+            {{/rollGreater() computed::pair_of_three 1}}
+
+            {{#rollGreater() computed::pair_of_four 1}}
+            <div class="template-grid-item">
+                <div class="template-roll-between"><span class="template-roll-dice">4</span></div>
+                <div class="template-roll-between"><span class="template-roll-dice">4</span></div>
+
+                {{#rollGreater() computed::pair_of_four 2}}
+                    <div class="template-roll-between"><span class="template-roll-dice">4</span></div>
+                {{/rollGreater() computed::pair_of_four 2}}
+
+                {{#rollGreater() computed::pair_of_four 3}}
+                    <div class="template-roll-between"><span class="template-roll-dice">4</span></div>
+                {{/rollGreater() computed::pair_of_four 3}}
+
+                {{#rollGreater() computed::pair_of_four 4}}
+                    <div class="template-roll-between"><span class="template-roll-dice">4</span></div>
+                {{/rollGreater() computed::pair_of_four 4}}
+
+                {{#rollGreater() computed::pair_of_four 5}}
+                    <div class="template-roll-between"><span class="template-roll-dice">4</span></div>
+                {{/rollGreater() computed::pair_of_four 5}}
+
+            </div>
+            {{/rollGreater() computed::pair_of_four 1}}
+
+            {{#rollGreater() computed::pair_of_five 1}}
+            <div class="template-grid-item">
+                <div class="template-roll-between"><span class="template-roll-dice">5</span></div>
+                <div class="template-roll-between"><span class="template-roll-dice">5</span></div>
+
+                {{#rollGreater() computed::pair_of_five 2}}
+                    <div class="template-roll-between"><span class="template-roll-dice">5</span></div>
+                {{/rollGreater() computed::pair_of_five 2}}
+
+                {{#rollGreater() computed::pair_of_five 3}}
+                    <div class="template-roll-between"><span class="template-roll-dice">5</span></div>
+                {{/rollGreater() computed::pair_of_five 3}}
+
+                {{#rollGreater() computed::pair_of_five 4}}
+                    <div class="template-roll-between"><span class="template-roll-dice">5</span></div>
+                {{/rollGreater() computed::pair_of_five 4}}
+
+                {{#rollGreater() computed::pair_of_five 5}}
+                    <div class="template-roll-between"><span class="template-roll-dice">5</span></div>
+                {{/rollGreater() computed::pair_of_five 5}}
+            </div>
+            {{/rollGreater() computed::pair_of_five 1}}
+
+            {{#rollGreater() computed::pair_of_six 1}}
+            <div class="template-grid-item">
+                <div class="template-roll-between"><span class="template-roll-dice">6</span></div>
+                <div class="template-roll-between"><span class="template-roll-dice">6</span></div>
+
+                {{#rollGreater() computed::pair_of_six 2}}
+                    <div class="template-roll-between"><span class="template-roll-dice">6</span></div>
+                {{/rollGreater() computed::pair_of_six 2}}
+
+                {{#rollGreater() computed::pair_of_six 3}}
+                    <div class="template-roll-between"><span class="template-roll-dice">6</span></div>
+                {{/rollGreater() computed::pair_of_six 3}}
+
+                {{#rollGreater() computed::pair_of_six 4}}
+                    <div class="template-roll-between"><span class="template-roll-dice">6</span></div>
+                {{/rollGreater() computed::pair_of_six 4}}
+
+                {{#rollGreater() computed::pair_of_six 5}}
+                    <div class="template-roll-between"><span class="template-roll-dice">6</span></div>
+                {{/rollGreater() computed::pair_of_six 5}}
+            </div>
+            {{/rollGreater() computed::pair_of_six 1}}
+        </div>
+
+        <div class="template-grid-item-flex">
+		    <label class="template-label">Basic:</label>
+            <div class="template-roll-between">{{computed::basic_success}}</div>
+        </div>
+
+        <div class="template-grid-item-flex">
+		    <label class="template-label">Critical:</label>
+            <div class="template-roll-between">{{computed::critical_success}}</div>
+        </div>
+
+        <div class="template-grid-item-flex">
+		    <label class="template-label">Extreme:</label>
+            <div class="template-roll-between">{{computed::extreme_success}}</div>
+        </div>
+
+        <div class="template-grid-item-flex">
+		    <label class="template-label">Impossible:</label>
+            <div class="template-roll-between">{{computed::impossible_success}}</div>
+        </div>
 	</div>
 </rolltemplate>
 
