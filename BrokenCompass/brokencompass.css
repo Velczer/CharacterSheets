@@ -52,6 +52,12 @@
 	src: url('https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Fonts/Lalezar-Regular.ttf');
 }
 
+@font-face {
+	font-family: 'Trocchi';
+	src: url('https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Fonts/Trocchi-Regular.ttf');
+}
+
+
 
 /* Defaults  */
 .ui-dialog .charsheet {
@@ -65,6 +71,10 @@
 }
 .col-10 {
 	width: 83%;
+	padding: 0 10px;
+}
+.col-9 {
+	width: 75%;
 	padding: 0 10px;
 }
 .col-8 {
@@ -113,16 +123,26 @@
 }
 
 .character-sheet input, .character-sheet select {
-	font-family: 'Josefin Sans', sans-serif;
-	background:#Fff;
-	border: 3px solid #3e5f76;
-	box-shadow: 4px 4px 0px 0px #00000057;
+	font-family: 'Trocchi', serif;
+	background: #fff;
+	border: 1px solid transparent;
+    border-bottom: 1px solid #231f20;
 	display: inline-block;
 	font-size: 16px;
 	color: #000;
-	border-radius: 5px;
 	line-height: 22px;
-	height: 36px;
+	height: 28px;
+	padding: 0 10px;
+}
+.character-sheet input.transparent {
+	background: transparent;
+    line-height: 16px;
+	height: auto;
+	padding: 5px 10px 0;
+}
+.character-sheet input:focus {
+    border: 1px solid #231f20;
+    outline: none;
 }
 .character-sheet input[type="checkbox"] {
 	box-shadow: 2px 2px 0px 0px #00000057;
@@ -196,28 +216,26 @@
 }
 
 /* Custom modules */
-
-.logo {
-	position: absolute;
-	right: -10px;
-	top: -70px;
-	z-index: 10;
-}
-.logo img {
-	width: 200px;
-}
-
 .character-sheet {
-	background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Frostpunk/Images/sheet-bg.jpg);
-	background-size: cover;
+	/* background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/sheet-bg.jpg); */
+	background-image: url('./LAURA_SHEET.jpg');
+
+	/* background-size: cover; */
+    background-size: contain;
+	background-repeat: no-repeat;
 	background-position: top center;
 	padding: 20px 10px;
-	font-family: 'Josefin Sans', sans-serif;
-	border: 3px solid #000000;
-	min-width: 1500px;
+    color: #231f20;
+	font-family: 'Lalezar', sans-serif;
+	border: 1px solid #231f20;
+	max-width: 950px;
+    
+	min-height: 1335px;
+
 	position: relative;
 	z-index: 1; 
 }
+
 .character-sheet::before {
 	content: "";
 	z-index: -1;
@@ -226,221 +244,33 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: rgba(0,0,0, 0.1);
+	background: rgba(255,255,255, 0.4);
 }
 
-.logo {
-	text-align: center;
-}
-.logo img {
-	margin: -5px auto;
+.character-details {
+    padding: 40px;
 }
 
-.character-details-label {
-  	position: relative;
-}
-.character-details-label span {
-	font-size: 12px;
-	font-weight: bold;
-	text-transform: uppercase;
-	position: absolute;
-	left: 10px;
-	top: 3px;
-	color: #3e5f76;
-	white-space: nowrap;
-}
-.character-details-label input {
-  	padding-top: 13px;
-	padding-left: 10px;
-	font-size: 16px;
-  	line-height: 27px;
-	width: 100%;
+.character-details label {
+    font-size: 18px;
+    margin-right: 10px;
+    white-space: nowrap;
+    vertical-align: bottom;
+	line-height: 10px;
 }
 
-.sheet-box {
-	background: rgb(0 0 0 / 67%);
-	padding: 10px;
-	color: #fff;
-	margin-bottom: 20px;
-	box-shadow: 2px 2px 8px 1px rgb(0 0 0 / 50%);
+.character-details input {
+    margin: 0 5px;
+    width: 100%;
 }
 
-.box-title {
-	font-family: 'Lalezar';
-	text-transform: uppercase;
-	color: #fff;
-	background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(62,95,118,1) 60%, rgba(0,181,255,0) 100%);
-	font-size: 18px;
-	padding: 6px 20px;
-	border-radius: 20px 0 0 0;
-}
-
-.character-sheet .title {
-	font-family: 'Lalezar';
-	font-size: 64px;
-	color: #3e5f76;
-	text-align: center;
-	margin:0;
-	letter-spacing: 8px;
-	line-height: normal;
-	text-transform: uppercase;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.character-sheet .reset-radio {
-	width: auto;
-	line-height: 34px;
-	margin: 0;
-	padding: 0 12px;
-}
-.reset-radio input {
-	box-shadow: none;
-	margin-top: 12px;
-	display: inherit;
-}
-
-.attribute-box {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	margin-bottom: 10px;
-}
-
-.attribute-box input {
-	width: 55px;
-	text-align: center;
-}
-
-.character-sheet .secret-roll {
-	font-size: 14px;
-	text-transform: capitalize;
-	float: right;
-	display: inline-block;
-	margin: 3px 0;
-	width: auto;
-	color: #fff;
-	font-family: 'Josefin Sans', sans-serif;
-	text-shadow: 1px 1px 4px #000;
+.character-details .flex {
+    margin-bottom: 25px;
+    align-items: flex-end;
 }
 
 
-.box-input {
- 	background: #Fff;
-	border: 3px solid #3e5f76;
-	box-shadow: 4px 4px 0px 0px #00000057;
-  	padding: 5px;
-}
- .box-input label {
-	position: relative;
-	display: flex;
-	flex-wrap: nowrap;
-	margin: 0;
-	border-bottom: 1px solid #3e5f76;
-	padding: 0;
-	color: #3e5f76;
-}
-.box-input label span {
- 	white-space: nowrap;
-	line-height: 36px;
-	padding: 0 5px;
-}
-.box-input label input {
-	width: 100%;
-	border: 0;
-	box-shadow: none;
-	border-radius: 0;
-	font-size: 16px;
-	line-height: 27px;
-}
 
-.character-sheet-table {
-	width: 100%;
-	background: #fff;
-	color: #000;
-	margin-bottom: 10px;
-	border: 3px solid #3e5f76;
-	box-shadow: 4px 4px 0px 0px #00000057;
-}
-.character-sheet-table td {
-	font-size: 16px;
-	padding: 10px;
-}
-
-.label-with-checkboxes {
-	background: #dfd9d2;
-	border: 1px solid #3e5f76;
-	box-shadow: 4px 4px 0px 0px #00000057;
-	border-radius: 5px;
-	padding: 5px 10px;
-	text-align: center;
-	padding-bottom: 15px;
-	margin-bottom: 10px;
-}
-.label-with-checkboxes span {
-	display: block;
-	text-align: center;
-	font-size: 22px;
-	color: #3e5f76;
-  	line-height: normal;
-}
-.label-with-checkboxes input {
-	transform: scale(1.5);
-	margin: 5px;
-}
-
-.conditions-box {
-	display: flex;
-	flex-wrap: nowrap;
-}
-.character-sheet .checkbox-label {
-	display: block;
-	width: 100%;
-	margin: 0;
-	white-space: nowrap;
-	padding: 0;
-	cursor: pointer;
-	position: relative;
-	z-index: 1;
-	font-weight: 400;
-}
-.checkbox-label input {
-	opacity: 0;
-	position: absolute;
-}
-.checkbox-label span {
-	border: 3px solid #3e5f76;
-	padding: 8px;
-	/* background: #878787; */
-	background: radial-gradient(circle at center, transparent, #6f8899);
-	color: #b9b9b9;
-	transition: .3s all ease;
-	display: inline-block;
-	width: 100%;
-	text-align: center;
-	box-sizing: border-box;
-}
-
-.checkbox-label span:before {
-	content: "";
-	background: radial-gradient(circle at center, #1ea297 30%, #2e65c4);
-	z-index: -1;
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	transition: .3s all ease;
-	transform: scale(0);
-}
-.checkbox-label input:checked + span {
-	color: #fff;
-	background: radial-gradient(circle at center, transparent, rgb(111 136 153 / 30%));
-}
-.checkbox-label input:checked + span:before {
-	transform: scale(1);
-}
 
 
 
@@ -583,7 +413,7 @@
 	padding-bottom: 6px;
 	text-align: center;
 	text-transform: uppercase;
-	font-family: 'Josefin Sans', sans-serif;
+	font-family: 'Trocchi', sans-serif;
 	font-weight: bold;
 }
 
@@ -658,7 +488,7 @@
 	background: rgb(0 0 0 / 80%);
 	color: #fff;
 	background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(62,95,118,1) 60%, rgba(0,181,255,0) 100%);
-	font-family: 'Josefin Sans', sans-serif;
+	font-family: 'Trocchi', sans-serif;
 }
 .sheet-rolltemplate-frostpunk .sheet-template-label span {
 	background: none;
