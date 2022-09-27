@@ -34,8 +34,8 @@
 }
 
 .diamond-checkbox .icon-diamond::before {
+    background: url("https://raw.githubusercontent.com/mperes/Images-for-Roll20-5E-images/master/licensedsheet/ScrollRight.svg?sanitize=true");
 	content: '\e802';
-
 }
 
 .diamond-checkbox input:checked+.icon-diamond::before {
@@ -328,131 +328,10 @@
 }
 
 
-/* Repeating sections */
-
-.repcontrol {
-	display: flex;
-	margin-top: 3px;
-}
-
-.repcontrol .repcontrol_edit {
-	margin-left: auto;
-	order: 1;
-}
-
-.repcontrol button {
-	background: #fff;
-	color: #3e5f76;
-	border-radius: 0;
-	border-color: #3e5f76;
-	transition: all 0.2s;
-	font-family: pictos;
-	font-size: 0;
-	font-weight: bold;
-	line-height: 8px;
-	padding: 6px 4px 1px;
-}
-
-.repcontrol button:hover {
-	color: green;
-	border-color: green;
-	background: #ddd;
-}
-
-.repcontrol button.repcontrol_edit::after {
-	content: "(";
-}
-
-.repcontrol button.repcontrol_add::after {
-	content: "&";
-}
-
-.repcontrol button.repcontrol_edit::after,
-.repcontrol button.repcontrol_add::after {
-	font-size: 20px;
-}
-
-.repcontainer.editmode+.repcontrol button.repcontrol_edit::after {
-	content: ")";
-}
-
-.itemcontrol {
-	z-index: 20;
-}
-
-.fieldset-labels {
-	display: flex;
-	flex-wrap: nowrap;
-}
-
-.fieldset-labels .mini-title {
-	justify-content: flex-start;
-	margin-right: 6px;
-	height: 14px;
-}
-
-.repitem {
-	display: flex;
-	align-items: flex-start;
-}
-
-.repitem input,
-.repitem select {
-	width: 100%;
-	margin-right: 6px;
-	margin-bottom: 7px;
-}
-
-.character-sheet .repitem textarea {
-	height: 76px;
-}
-
-.repitem input[type="checkbox"] {
-	width: auto;
-	transform: scale(1.5);
-	flex: unset;
-	margin-right: 10px;
-	margin-top: 10px;
-}
-
-.rep-box-vertical .repitem {
-	flex-wrap: wrap;
-	margin-bottom: 10px;
-}
-
-.rep-box-vertical .repitem label {
-	margin-bottom: 0;
-}
-
-.rep-box-vertical .repitem input {
-	margin-bottom: 0;
-	border-radius: 0;
-}
-
-.rep-box-vertical .repitem textarea {
-	height: 78px;
-	border-radius: 0;
-	border-top: 0;
-	border-bottom: 0;
-}
-
-.critical-injures .repitem {
-	display: block;
-}
-
-.critical-injures .repitem label {
-	color: #fff;
-	margin: 0;
-}
-
-.critical-injures .repitem textarea {
-	width: calc(100% - 15px);
-}
-
 
 /* Roll Template */
 .sheet-rolltemplate-brokencompass .sheet-template-wrap {
-	background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/brokencompass/Images/roll-bg.jpg);
+	/* background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/brokencompass/Images/roll-bg.jpg); */
 	background-position: top center;
 	background-size: cover;
 	border: 3px solid #3e5f76;
@@ -485,6 +364,12 @@
 	text-transform: uppercase;
 	font-family: 'Trocchi', sans-serif;
 	font-weight: bold;
+}
+
+.sheet-rolltemplate-brokencompass .template-roll-dice {
+    display: block;
+    padding: 10px;
+    background-color: #231f20;
 }
 
 .sheet-rolltemplate-brokencompass .sheet-template-grid {
@@ -525,24 +410,6 @@
 	font-size: 0;
 	/* color: #3e5f76; */
 	color: #fff;
-}
-
-.sheet-rolltemplate-brokencompass .sheet-template-roll-success>span {
-	display: block;
-}
-
-.sheet-rolltemplate-brokencompass .sheet-template-roll-success {
-	height: 30px;
-	width: 30px;
-	border-radius: 5px;
-	border: 1px solid #3e5f76;
-	background-color: #f1f0ee;
-	box-shadow: 4px 4px 0px 0px rgb(0 0 0 / 60%);
-	/* background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/brokencompass/Images/Snowflake-icon.png); */
-	background-size: 149%;
-	background-repeat: no-repeat;
-	background-position: center;
-	overflow: hidden;
 }
 
 .sheet-rolltemplate-brokencompass span.inlinerollresult.fullcrit {

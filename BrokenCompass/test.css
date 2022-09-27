@@ -1,0 +1,360 @@
+@font-face {
+    font-family: 'Lalezar';
+    src: url('https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Fonts/Lalezar-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Trocchi';
+    src: url('https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Fonts/Trocchi-Regular.ttf');
+}
+
+/* Defaults  */
+.ui-dialog .charsheet {
+    padding: 0;
+}
+
+.character-sheet .row {
+    display: flex;
+    max-width: 100%;
+    margin: 0;
+}
+
+.col-10 {
+    width: 83%;
+    padding: 0 10px;
+}
+
+.col-9 {
+    width: 75%;
+    padding: 0 10px;
+}
+
+.col-8 {
+    width: 66%;
+    padding: 0 10px;
+}
+
+.col-7 {
+    width: 58%;
+    padding: 0 10px;
+}
+
+.col-6 {
+    width: 50%;
+    padding: 0 10px;
+}
+
+.col-5 {
+    width: 41%;
+    padding: 0 10px;
+}
+
+.col-4 {
+    width: 33%;
+    padding: 0 10px;
+}
+
+.col-3 {
+    width: 25%;
+    padding: 0 10px;
+}
+
+.col-2 {
+    width: 17%;
+    padding: 0 10px;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.flex-2 {
+    flex: 2;
+}
+
+.flex-3 {
+    flex: 3;
+}
+
+.flex-4 {
+    flex: 4;
+}
+
+.character-sheet input,
+.character-sheet select {
+    font-family: 'Trocchi', serif;
+    background: #fff;
+    border: 1px solid transparent;
+    border-bottom: 1px solid #231f20;
+    display: inline-block;
+    font-size: 16px;
+    color: #000;
+    line-height: 22px;
+    height: 28px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    border-radius: 0;
+}
+
+.character-sheet input.transparent {
+    background: transparent;
+    line-height: 16px;
+    height: auto;
+    padding: 5px 5px 0;
+}
+
+.character-sheet input:focus {
+    border: 1px solid #231f20;
+    outline: none;
+}
+
+.charactersheet {
+    padding: 0;
+}
+
+.character-sheet textarea {
+    background-attachment: local;
+    background-color: #Fff;
+    background-image:
+        linear-gradient(to right, white 5px, transparent 5px),
+        linear-gradient(to left, white 5px, transparent 5px),
+        repeating-linear-gradient(white, white 35px, #3e5f76 35px, #3e5f76 36px, white 36px);
+    line-height: 36px;
+    font-size: 16px;
+    padding: 5px;
+    border: 3px solid #3e5f76;
+    width: calc(100% - 15px);
+    box-shadow: 4px 4px 0px 0px #00000057;
+    height: 179px;
+    resize: vertical;
+    margin: 0;
+}
+
+.charsheet .character-sheet button[type="roll"] {
+    border: 1px solid #231f20;
+    font-family: 'Lalezar';
+    background: transparent;
+    padding: 0 8px;
+    text-transform: uppercase;
+    color: #231f20;
+    cursor: pointer;
+    transition: .3s all ease;
+    margin-right: 5px;
+    text-shadow: none;
+}
+
+.charsheet .character-sheet button[type="roll"]:hover {
+    background: #231f20;
+    color: #fff;
+}
+
+.charsheet .character-sheet button[type="roll"]::before {
+    color: #a329ff;
+    font-size: 20px;
+    vertical-align: bottom;
+    margin-right: 5px;
+}
+
+.charsheet .character-sheet input[type="checkbox"] {
+    width: auto;
+}
+
+/* Custom modules */
+.character-sheet {
+    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/sheet-bg.jpg);
+    background-size: cover;
+    /* background-size: contain;
+	background-repeat: no-repeat; */
+    background-position: top center;
+    padding: 20px 10px;
+    color: #231f20;
+    font-family: 'Lalezar', sans-serif;
+    border: 1px solid #231f20;
+    max-width: 950px;
+
+    min-height: 1335px;
+
+    position: relative;
+    z-index: 1;
+}
+
+.character-sheet::before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.character-details {
+    padding: 40px 40px 30px;
+}
+
+.character-details label {
+    font-size: 20px;
+    margin-right: 3px;
+    white-space: nowrap;
+    vertical-align: bottom;
+    line-height: 16px;
+    text-transform: uppercase;
+}
+
+.character-details input {
+    margin: 0 5px;
+    width: 100%;
+}
+
+.character-details .flex {
+    margin-bottom: 25px;
+    align-items: flex-end;
+}
+
+.character-details .center-inputs {
+    align-items: baseline;
+}
+
+.character-details .center-inputs input {
+    text-align: center;
+}
+
+.character-details .center-inputs p {
+    text-align: center;
+    margin: 0;
+    text-transform: uppercase;
+    font-family: 'Lalezar';
+    font-size: 15px;
+}
+
+.character-details .input-with-subtext {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.attribute-box {
+    text-align: right;
+}
+
+.attribute-label {
+    padding-right: 62px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.attribute-label button {
+    font-size: 28px;
+    height: 36px;
+    line-height: 38px;
+}
+
+.skill-box {
+    text-align: right;
+}
+
+.skill-label {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.skill-label button {
+    font-size: 20px;
+    height: 26px;
+    line-height: 28px;
+}
+
+
+
+/* Roll Template */
+.sheet-rolltemplate-brokencompass .sheet-template-wrap {
+    /* background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/brokencompass/Images/roll-bg.jpg); */
+    background-position: top center;
+    background-size: cover;
+    border: 3px solid #3e5f76;
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+.sheet-rolltemplate-brokencompass .sheet-template-header {
+    width: 100%;
+    padding: 7px 5px;
+    color: #fff;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(62, 95, 118, 1) 60%, rgba(0, 181, 255, 0) 100%);
+    font-family: 'Lalezar';
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 18px;
+}
+
+.sheet-rolltemplate-brokencompass .sheet-template-header a {
+    color: #fff;
+}
+
+.sheet-rolltemplate-brokencompass .sheet-template-subtitle {
+    color: #000000;
+    font-size: 20px;
+    padding: 10px 0;
+    padding-bottom: 6px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Trocchi', sans-serif;
+    font-weight: bold;
+}
+
+.sheet-rolltemplate-brokencompass .sheet-template-roll-dice {
+    display: block;
+    padding: 10px;
+    background-color: #231f20;
+}
+
+
+
+
+.icon-diamond::before {
+	/* font-family: 'brokencompass'; */
+	font-style: normal;
+	font-weight: normal;
+	display: inline-block;
+	text-decoration: inherit;
+	width: 1em;
+	text-align: center;
+	text-transform: none;
+	line-height: 1em;
+	font-size: 20px;
+}
+
+.character-sheet .diamond-checkbox {
+	cursor: pointer;
+	margin: 0;
+	width: auto;
+}
+
+.diamond-checkbox .icon-diamond::before {
+    background: url("https://raw.githubusercontent.com/mperes/Images-for-Roll20-5E-images/master/licensedsheet/ScrollRight.svg?sanitize=true");
+	/* content: '\e802'; */
+}
+
+.diamond-checkbox input:checked+.icon-diamond::before {
+	content: '\e800';
+}
+
+.diamond-checkbox.diamond-up .icon-diamond::before {
+	content: '\e803';
+}
+
+.diamond-checkbox.diamond-up input:checked+.icon-diamond::before {
+	content: '\e801';
+}

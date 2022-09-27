@@ -52,7 +52,10 @@
                     <input type="hidden" name="attr_action_calc" class="bar-calc-view" value="0">
                     <label class="diamond-checkbox" for="action_value_1">
                         <input class="bar-input" type="checkbox" name="attr_action" id="action_value_1" value="1" />
-                        <span class="icon-diamond"></span>
+                        <div class="icon-diamond">
+                            <span class="icon-not-selected"><svg viewBox="0 0 1129 1256"><path d="M420-149c-4 1-10 4-13 7-5 5-392 653-404 676-5 10-4 22 2 31 3 5 65 48 204 143 109 75 202 137 206 139 9 4 18 4 27 0 15-8 416-271 423-277 7-7 8-8 8-21v-13l-209-336c-115-184-210-337-212-339-7-9-21-13-32-10z m198 395c145 234 181 292 178 294-6 7-366 240-369 239-4-1-352-239-352-240 0-2 340-575 351-592l3-5 4 6c2 3 85 137 185 298z" transform="translate(0,1000) scale(1, -1)" style="fill: currentcolor;"></path></svg></span>
+                            <span class="icon-selected"><svg viewBox="0 0 1129 1256"><path d="M436 847c-4-1-102-64-218-139-156-102-211-139-214-144-5-8-5-22-1-30 9-17 415-669 420-675 12-12 33-12 44 0 3 4 96 158 206 343 216 364 204 343 196 360-1 4-6 9-9 11-35 26-402 274-407 275-8 3-7 3-17-1z" transform="translate(0,1000) scale(1, -1)" style="fill: currentcolor;"></path></svg></span>
+                        </div>
                     </label>
                     <label class="diamond-checkbox diamond-up" for="action_value_2">
                         <input class="bar-input" type="checkbox" name="attr_action" id="action_value_2" value="2" />
@@ -154,47 +157,52 @@
 			{{roll-name}}
 		</div>
 
-		<h4>Result = {{baseDice}}</h4>
+		<h4>Total dices = {{baseDice}}</h4>
 
-		<h4>Dices = {{dices}}</h4>
+		<h4>dices = {{dices}}</h4>
 
 		<label class="template-label">Equal dice:</label>
 
 		{{#rollGreater() computed::pair_of_one 1}}
 		<div class="template-grid-item">
-			<div class="template-roll-between template-roll-between--{{pair_one}}">{{computed::pair_of_one}} x 1</div>
+			<div class="template-roll-between template-roll-between--{{pair_one}}">{{computed::pair_of_one}} x <span class="template-roll-dice">1</span></div>
 		</div>
 		{{/rollGreater() computed::pair_of_one 1}}
 
 		{{#rollGreater() computed::pair_of_two 1}}
 		<div class="template-grid-item">
-			<div class="template-roll-between template-roll-between--{{pair_two}}">{{pair_two}} x 2</div>
+			<div class="template-roll-between template-roll-between--{{pair_two}}">{{computed::pair_of_two}} x <span class="template-roll-dice">2</span></div>
 		</div>
 		{{/rollGreater() computed::pair_of_two 1}}
 
 		{{#rollGreater() computed::pair_of_three 1}}
 		<div class="template-grid-item">
-			<div class="template-roll-between template-roll-between--{{pair_three}}">{{pair_three}} x 3</div>
+			<div class="template-roll-between template-roll-between--{{pair_three}}">{{computed::pair_of_three}} x <span class="template-roll-dice">3</span></div>
 		</div>
 		{{/rollGreater() computed::pair_of_three 1}}
 
 		{{#rollGreater() computed::pair_of_four 1}}
 		<div class="template-grid-item">
-			<div class="template-roll-between template-roll-between--{{pair_four}}">{{pair_four}} x 4</div>
+			<div class="template-roll-between template-roll-between--{{pair_four}}">{{computed::pair_of_four}} x <span class="template-roll-dice">4</span></div>
 		</div>
 		{{/rollGreater() computed::pair_of_four 1}}
 
 		{{#rollGreater() computed::pair_of_five 1}}
 		<div class="template-grid-item">
-			<div class="template-roll-between template-roll-between--{{pair_five}}">{{pair_five}} x 5</div>
+			<div class="template-roll-between template-roll-between--{{pair_five}}">{{computed::pair_of_five}} x <span class="template-roll-dice">5</span></div>
 		</div>
 		{{/rollGreater() computed::pair_of_five 1}}
 
 		{{#rollGreater() computed::pair_of_six 1}}
 		<div class="template-grid-item">
-			<div class="template-roll-between template-roll-between--{{pair_six}}">{{pair_six}} x 6</div>
+			<div class="template-roll-between template-roll-between--{{pair_six}}">{{computed::pair_of_six}} x <span class="template-roll-dice">6</span></div>
 		</div>
 		{{/rollGreater() computed::pair_of_six 1}}
+
+        <h4>Basic successes: {{computed::basic_success}}</h4>
+        <h4>Critical successes: {{computed::critical_success}}</h4>
+        <h4>Extreme successes: {{computed::extreme_success}}</h4>
+        <h4>Impossible successes: {{computed::impossible_success}}</h4>
 
 		</div>
 	</div>
@@ -233,10 +241,12 @@
 			rollName = skill;
 		}
 
-		const roll = '@{secret_roll} &{template:brokencompass} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=^{'+rollName+'} }} {{baseDice=[[ @{'+attribute+'_calc} + @{'+skill+'_calc} + @{'+attribute+'_modifier} + ?{Modifiers|0} ]] }} {{dices=[[(@{'+attribute+'_calc} + @{'+skill+'_calc} + @{'+attribute+'_modifier} + ?{Modifiers|0})d6]]}} {{pair_one=@{pair_one}}} {{pair_two=@{pair_two}}} {{pair_three=@{pair_three}}} {{pair_four=@{pair_four}}} {{pair_five=@{pair_five}}} {{pair_six=@{pair_six}}} {{pair_of_one=[[1d6]]}} {{pair_of_two=[[1d6]]}} {{pair_of_three=[[1d6]]}} {{pair_of_four=[[1d6]]}} {{pair_of_five=[[1d6]]}} {{pair_of_six=[[1d6]]}}';
+		const roll = '@{secret_roll} &{template:brokencompass} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=^{'+rollName+'} }} {{baseDice=[[ @{'+attribute+'_calc} + @{'+skill+'_calc} + @{'+attribute+'_modifier} + ?{Modifiers|0} ]] }} {{dices=[[(@{'+attribute+'_calc} + @{'+skill+'_calc} + @{'+attribute+'_modifier} + ?{Modifiers|0})d6m]]}} {{pair_one=@{pair_one}}} {{pair_two=@{pair_two}}} {{pair_three=@{pair_three}}} {{pair_four=@{pair_four}}} {{pair_five=@{pair_five}}} {{pair_six=@{pair_six}}} {{pair_of_one=[[1d6]]}} {{pair_of_two=[[1d6]]}} {{pair_of_three=[[1d6]]}} {{pair_of_four=[[1d6]]}} {{pair_of_five=[[1d6]]}} {{pair_of_six=[[1d6]]}} {{basic_success=[[1d6]]}} {{critical_success=[[1d6]]}} {{extreme_success=[[1d6]]}} {{impossible_success=[[1d6]]}}';
         startRoll(roll, (results) => {
             const dices	= results.results.dices.dice;
 			var table = [0,0,0,0,0,0,0];
+
+            console.log(results)
 
 			for (i = 0; dices.length > i; i++) {
 				table[dices[i]] += 1;
@@ -252,6 +262,25 @@
 				});
 			});
 
+            var successes = {
+                basic: 0,
+                critical: 0,
+                extreme: 0,
+                impossible: 0,
+            }
+
+            for (k = 1; table.length > k; k++) {
+                if (table[k] >= 5) {
+                    successes.impossible += 1;
+                } else if(table[k] == 4) {
+                    successes.extreme += 1;
+                } else if(table[k] == 3) {
+                    successes.critical += 1;
+                } else if(table[k] == 2) {
+                    successes.basic += 1;
+                }
+            }
+
             finishRoll(
                 results.rollId,
                 {
@@ -261,6 +290,10 @@
                     pair_of_four: table[4],
                     pair_of_five: table[5],
                     pair_of_six: table[6],
+                    basic_success: successes.basic,
+                    critical_success: successes.critical,
+                    extreme_success: successes.extreme,
+                    impossible_success: successes.impossible,
                 }
             );
         });
