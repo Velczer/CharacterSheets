@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>brokencompass</title>
+
+  <link rel="stylesheet" href="brokencompass.css">
+</head>
+<body>
+
+    <div class="character-sheet">
+
+        <span class="icon-diamond_black_down"></span>
+        <span class="icon-diamond_black_down">d</span>
+
+
+        <div class="row">
+            <div class="col-3">
+    
+                <div class="box-title" data-i18n="attributes">Attributes</div>
+                <div class="sheet-box">
+                    <label style="margin:0;"><br></label>
+    
+    
+                    <div class="attribute-box">
+                        <button type="roll" name="strength"
+                            value="@{secret_roll} &{template:frostpunk} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=^{strength} }} {{base-dice=[[@{strength} - @{strength_damage} + ?{Modifiers|0} - (@{condition}) ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }} {{base-roll-eighteen=[[1d6]] }} {{base-roll-nineteen=[[1d6]] }} {{base-roll-twenty=[[1d6]] }}" data-i18n="strength">Strength</button>
+                        <input type="number" name="attr_strength" title="@{strength}" min="0" max="5">
+                    </div>
+    
+                    <div class="attribute-box">
+                        <button type="roll" name="agility"
+                            value="@{secret_roll} &{template:frostpunk} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=^{agility} }} {{base-dice=[[@{agility} - @{agility_damage} + ?{Modifiers|0} - (@{condition}) ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }} {{base-roll-eighteen=[[1d6]] }} {{base-roll-nineteen=[[1d6]] }} {{base-roll-twenty=[[1d6]] }}" data-i18n="agility">Agility</button>
+                        <input type="number" name="attr_agility" title="@{agility}" min="0" max="5">
+                    </div>
+    
+                    <div class="attribute-box">
+                        <button type="roll" name="wits"
+                            value="@{secret_roll} &{template:frostpunk} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=^{wits} }} {{base-dice=[[@{wits} - @{wits_damage} + ?{Modifiers|0} - (@{condition}) ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }} {{base-roll-eighteen=[[1d6]] }} {{base-roll-nineteen=[[1d6]] }} {{base-roll-twenty=[[1d6]] }}" data-i18n="wits">Wits</button>
+                        <input type="number" name="attr_wits" title="@{wits}" min="0" max="5">
+                    </div>
+    
+                    <div class="attribute-box">
+                        <button type="roll" name="empathy"
+                            value="@{secret_roll} &{template:frostpunk} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=^{empathy} }} {{base-dice=[[@{empathy} - @{empathy_damage} + ?{Modifiers|0} - (@{condition}) ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }} {{base-roll-eighteen=[[1d6]] }} {{base-roll-nineteen=[[1d6]] }} {{base-roll-twenty=[[1d6]] }}" data-i18n="empathy">Empathy</button>
+                        <input type="number" name="attr_empathy" title="@{empathy}" min="0" max="5">
+                    </div>
+    
+    
+                </div>
+    
+    
+                <div class="box-title"><span data-i18n="skills">Skills</span> 
+                    <label class="secret-roll"><input type="checkbox" value="/w gm" name="attr_secret_roll"> <span data-i18n="make-the-roll-secret">Make the roll secret</span></label>
+                </div>
+                <div class="sheet-box">
+                    <div class="attribute-box">
+                        <button type="roll" name="endure"
+                            value="@{secret_roll} &{template:frostpunk} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=^{endure} }} {{base-dice=[[@{strength} + @{endure} - @{strength_damage} + ?{Modifiers|0} - (@{condition}) ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }} {{base-roll-eighteen=[[1d6]] }} {{base-roll-nineteen=[[1d6]] }} {{base-roll-twenty=[[1d6]] }}"><span data-i18n="endure">Endure</span>
+                            <span class="small">(<span data-i18n="strength">Strength</span>)</span></button>
+                        <input type="number" name="attr_endure">
+                    </div>
+    
+                    <div class="attribute-box">
+                        <button type="roll" name="force"
+                            value="@{secret_roll} &{template:frostpunk} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=^{force} }} {{base-dice=[[@{strength} + @{force} - @{strength_damage} + ?{Modifiers|0} - (@{condition}) ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }} {{base-roll-eighteen=[[1d6]] }} {{base-roll-nineteen=[[1d6]] }} {{base-roll-twenty=[[1d6]] }}"><span data-i18n="force">Force</span>
+                            <span class="small">(<span data-i18n="strength">Strength</span>)</span></button>
+                        <input type="number" name="attr_force">
+                    </div>
+    
+                    <div class="attribute-box">
+                        <button type="roll" name="fight"
+                            value="@{secret_roll} &{template:frostpunk} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=^{fight} }} {{base-dice=[[@{strength} + @{fight} - @{strength_damage} + ?{Modifiers|0} - (@{condition}) ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }} {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }} {{base-roll-eighteen=[[1d6]] }} {{base-roll-nineteen=[[1d6]] }} {{base-roll-twenty=[[1d6]] }}"><span data-i18n="fight">Fight</span>
+                            <span class="small">(<span data-i18n="strength">Strength</span>)</span></button>
+                        <input type="number" name="attr_fight">
+                    </div>
+    
+                    <div class="attribute-box">
+                        <button type="roll" name="sneak"
+                            value="@{secret_roll} &{template:frostpunk} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=^{sneak} }} {{base-dice=[[@{agility} + @{sneak} - @{agility_damage} + ?{Modifiers|0} - (@{condition}) ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }} {{base-roll-eighteen=[[1d6]] }} {{base-roll-nineteen=[[1d6]] }} {{base-roll-twenty=[[1d6]] }}"><span data-i18n="sneak">Sneak</span>
+                            <span class="small">(<span data-i18n="agility">Agility</span>)</span></button>
+                        <input type="number" name="attr_sneak">
+                    </div>
+    
+                    <div class="attribute-box">
+                        <button type="roll" name="move"
+                            value="@{secret_roll} &{template:frostpunk} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=^{move} }} {{base-dice=[[@{agility} + @{move} - @{agility_damage} + ?{Modifiers|0} - (@{condition}) ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }} {{base-roll-eighteen=[[1d6]] }} {{base-roll-nineteen=[[1d6]] }} {{base-roll-twenty=[[1d6]] }}"><span data-i18n="move">Move</span>
+                            <span class="small">(<span data-i18n="agility">Agility</span>)</span></button>
+                        <input type="number" name="attr_move">
+                    </div>
+    
+                    <div class="attribute-box">
+                        <button type="roll" name="shoot"
+                            value="@{secret_roll} &{template:frostpunk} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=^{shoot} }} {{base-dice=[[@{agility} + @{shoot} - @{agility_damage} + ?{Modifiers|0} - (@{condition}) ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }} {{base-roll-eighteen=[[1d6]] }} {{base-roll-nineteen=[[1d6]] }} {{base-roll-twenty=[[1d6]] }}"><span data-i18n="shoot">Shoot</span>
+                            <span class="small">(<span data-i18n="agility">Agility</span>)</span></button>
+                        <input type="number" name="attr_shoot">
+                    </div>
+    
+                    <div class="attribute-box">
+                        <button type="roll" name="scout"
+                            value="@{secret_roll} &{template:frostpunk} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=^{scout} }} {{base-dice=[[@{wits} + @{scout} - @{wits_damage} + ?{Modifiers|0} - (@{condition}) ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }} {{base-roll-eighteen=[[1d6]] }} {{base-roll-nineteen=[[1d6]] }} {{base-roll-twenty=[[1d6]] }}"><span data-i18n="scout">Scout</span>
+                            <span class="small">(<span data-i18n="wits">Wits</span>)</span></button>
+                        <input type="number" name="attr_scout">
+                    </div>
+    
+                    <div class="attribute-box">
+                        <button type="roll" name="comprehend"
+                            value="@{secret_roll} &{template:frostpunk} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=^{comprehend} }} {{base-dice=[[@{wits} + @{comprehend} - @{wits_damage} + ?{Modifiers|0} - (@{condition}) ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }} {{base-roll-eighteen=[[1d6]] }} {{base-roll-nineteen=[[1d6]] }} {{base-roll-twenty=[[1d6]] }}"><span data-i18n="comprehend">Comprehend</span>
+                            <span class="small">(<span data-i18n="wits">Wits</span>)</span></button>
+                        <input type="number" name="attr_comprehend">
+                    </div>
+    
+                    <div class="attribute-box">
+                        <button type="roll" name="know_the_zone"
+                            value="@{secret_roll} &{template:frostpunk} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=^{know-the-zone} }} {{base-dice=[[@{wits} + @{know_the_zone} - @{wits_damage} + ?{Modifiers|0} - (@{condition}) ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }} {{base-roll-eighteen=[[1d6]] }} {{base-roll-nineteen=[[1d6]] }} {{base-roll-twenty=[[1d6]] }}"><span data-i18n="know-the-zone">Know The Zone</span>
+                            <span class="small">(<span data-i18n="wits">Wits</span>)</span></button>
+                        <input type="number" name="attr_know_the_zone">
+                    </div>
+    
+                    <div class="attribute-box">
+                        <button type="roll" name="sense_emotion"
+                            value="@{secret_roll} &{template:frostpunk} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=^{sense-emotion} }} {{base-dice=[[@{empathy} + @{sense_emotion} - @{empathy_damage} + ?{Modifiers|0} - (@{condition}) ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }} {{base-roll-eighteen=[[1d6]] }} {{base-roll-nineteen=[[1d6]] }} {{base-roll-twenty=[[1d6]] }}"><span data-i18n="sense-emotion">Sense Emotion</span>
+                            <span class="small">(<span data-i18n="empathy">Empathy</span>)</span></button>
+                        <input type="number" name="attr_sense_emotion">
+                    </div>
+    
+                    <div class="attribute-box">
+                        <button type="roll" name="manipulate"
+                            value="@{secret_roll} &{template:frostpunk} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=^{manipulate} }} {{base-dice=[[@{empathy} + @{manipulate} - @{empathy_damage} + ?{Modifiers|0} - (@{condition}) ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }} {{base-roll-eighteen=[[1d6]] }} {{base-roll-nineteen=[[1d6]] }} {{base-roll-twenty=[[1d6]] }}"><span data-i18n="manipulate">Manipulate</span> 
+                            <span class="small">(<span data-i18n="empathy">Empathy</span>)</span></button>
+                        <input type="number" name="attr_manipulate">
+                    </div>
+    
+                    <div class="attribute-box">
+                        <button type="roll" name="heal"
+                            value="@{secret_roll} &{template:frostpunk} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=^{heal} }} {{base-dice=[[@{empathy} + @{heal} - @{empathy_damage} + ?{Modifiers|0} - (@{condition}) ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }} {{base-roll-eighteen=[[1d6]] }} {{base-roll-nineteen=[[1d6]] }} {{base-roll-twenty=[[1d6]] }}"><span data-i18n="heal">Heal</span>
+                            <span class="small">(<span data-i18n="empathy">Empathy</span>)</span></button>
+                        <input type="number" name="attr_heal">
+                    </div>
+    
+    
+    
+                </div>
+    
+    
+            </div>
+    
+            <div class="col-6">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="box-title" data-i18n="attributes-damage">Attributes Damage</div>
+                        <div class="sheet-box">
+                            <label style="color:#fff;margin:0;">Reset</label>
+                            <div class="flex margin-b-10">
+                                <label class="reset-radio">
+                                    <input type="radio" name="attr_strength_damage" value="0">
+                                </label>
+                                <input type="hidden" name="attr_strength_calc" class="bar-calc-view" value="0">
+                                <div class="bar">
+                                    <input class="bar-input" type="radio" name="attr_strength_damage" id="strength_damage_5"
+                                        value="5" />
+                                    <div class="bar-view">
+                                        <label class="bar-button" for="strength_damage_5"></label>
+                                    </div>
+                                    <input class="bar-input" type="radio" name="attr_strength_damage" id="strength_damage_4"
+                                        value="4" />
+                                    <div class="bar-view">
+                                        <label class="bar-button" for="strength_damage_4"></label>
+                                    </div>
+                                    <input class="bar-input" type="radio" name="attr_strength_damage" id="strength_damage_3"
+                                        value="3" />
+                                    <div class="bar-view">
+                                        <label class="bar-button" for="strength_damage_3"></label>
+                                    </div>
+                                    <input class="bar-input" type="radio" name="attr_strength_damage" id="strength_damage_2"
+                                        value="2" />
+                                    <div class="bar-view">
+                                        <label class="bar-button" for="strength_damage_2"></label>
+                                    </div>
+                                    <input class="bar-input" type="radio" name="attr_strength_damage" id="strength_damage_1"
+                                        value="1" />
+                                    <div class="bar-view">
+                                        <label class="bar-button" for="strength_damage_1"></label>
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <div class="flex margin-b-10">
+                                <label class="reset-radio">
+                                    <input type="radio" name="attr_agility_damage" value="0">
+                                </label>
+                                <input type="hidden" name="attr_agility_calc" class="bar-calc-view" value="0">
+            
+                                <div class="bar">
+                                    <input class="bar-input" type="radio" name="attr_agility_damage" id="agility_damage_5"
+                                        value="5" />
+                                    <div class="bar-view">
+                                        <label class="bar-button" for="agility_damage_5"></label>
+                                    </div>
+                                    <input class="bar-input" type="radio" name="attr_agility_damage" id="agility_damage_4"
+                                        value="4" />
+                                    <div class="bar-view">
+                                        <label class="bar-button" for="agility_damage_4"></label>
+                                    </div>
+                                    <input class="bar-input" type="radio" name="attr_agility_damage" id="agility_damage_3"
+                                        value="3" />
+                                    <div class="bar-view">
+                                        <label class="bar-button" for="agility_damage_3"></label>
+                                    </div>
+                                    <input class="bar-input" type="radio" name="attr_agility_damage" id="agility_damage_2"
+                                        value="2" />
+                                    <div class="bar-view">
+                                        <label class="bar-button" for="agility_damage_2"></label>
+                                    </div>
+                                    <input class="bar-input" type="radio" name="attr_agility_damage" id="agility_damage_1"
+                                        value="1" />
+                                    <div class="bar-view">
+                                        <label class="bar-button" for="agility_damage_1"></label>
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <div class="flex margin-b-10">
+                                <label class="reset-radio">
+                                    <input type="radio" name="attr_wits_damage" value="0">
+                                </label>
+                                <input type="hidden" name="attr_wits_calc" class="bar-calc-view" value="0">
+            
+                                <div class="bar">
+                                    <input class="bar-input" type="radio" name="attr_wits_damage" id="wits_damage_5" value="5" />
+                                    <div class="bar-view">
+                                        <label class="bar-button" for="wits_damage_5"></label>
+                                    </div>
+                                    <input class="bar-input" type="radio" name="attr_wits_damage" id="wits_damage_4" value="4" />
+                                    <div class="bar-view">
+                                        <label class="bar-button" for="wits_damage_4"></label>
+                                    </div>
+                                    <input class="bar-input" type="radio" name="attr_wits_damage" id="wits_damage_3" value="3" />
+                                    <div class="bar-view">
+                                        <label class="bar-button" for="wits_damage_3"></label>
+                                    </div>
+                                    <input class="bar-input" type="radio" name="attr_wits_damage" id="wits_damage_2" value="2" />
+                                    <div class="bar-view">
+                                        <label class="bar-button" for="wits_damage_2"></label>
+                                    </div>
+                                    <input class="bar-input" type="radio" name="attr_wits_damage" id="wits_damage_1" value="1" />
+                                    <div class="bar-view">
+                                        <label class="bar-button" for="wits_damage_1"></label>
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <div class="flex margin-b-10">
+                                <label class="reset-radio">
+                                    <input type="radio" name="attr_empathy_damage" value="0">
+                                </label>
+                                <input type="hidden" name="attr_empathy_calc" class="bar-calc-view" value="0">
+            
+                                <div class="bar">
+                                    <input class="bar-input" type="radio" name="attr_empathy_damage" id="empathy_damage_5"
+                                        value="5" />
+                                    <div class="bar-view">
+                                        <label class="bar-button" for="empathy_damage_5"></label>
+                                    </div>
+                                    <input class="bar-input" type="radio" name="attr_empathy_damage" id="empathy_damage_4"
+                                        value="4" />
+                                    <div class="bar-view">
+                                        <label class="bar-button" for="empathy_damage_4"></label>
+                                    </div>
+                                    <input class="bar-input" type="radio" name="attr_empathy_damage" id="empathy_damage_3"
+                                        value="3" />
+                                    <div class="bar-view">
+                                        <label class="bar-button" for="empathy_damage_3"></label>
+                                    </div>
+                                    <input class="bar-input" type="radio" name="attr_empathy_damage" id="empathy_damage_2"
+                                        value="2" />
+                                    <div class="bar-view">
+                                        <label class="bar-button" for="empathy_damage_2"></label>
+                                    </div>
+                                    <input class="bar-input" type="radio" name="attr_empathy_damage" id="empathy_damage_1"
+                                        value="1" />
+                                    <div class="bar-view">
+                                        <label class="bar-button" for="empathy_damage_1"></label>
+                                    </div>
+                                </div>
+                            </div>
+            
+            
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="box-title" data-i18n="personal-agenda">Personal agenda</div>
+                        <div class="sheet-box">
+                            <textarea name="attr_personal_agenda" id="" cols="30" rows="4"></textarea>
+                        </div>
+                        
+                    </div>
+                </div>
+    
+                <div class="box-title" data-i18n="gear">Gear</div>
+                <div class="sheet-box">
+                    <div class="fieldset-labels">
+                        <span class="flex-3 mini-title" data-i18n="name">Name</span>
+                        <span class="flex-3 mini-title" data-i18n="skill">Skill</span>
+                        <span class="flex-1 mini-title" data-i18n="bonus">Bonus</span>
+                        <span class="flex-1 mini-title"><br></span>
+                    </div>
+                    <fieldset class="repeating_gear">
+                        <input class="flex-3" type="text" name="attr_gear_name">
+                        <select class="flex-3" name="attr_gear_skill" class="dtype">
+                            <option value="(@{strength} - @{strength_damage})+@{endure}" data-i18n="endure">Endure</option>
+                            <option value="(@{strength} - @{strength_damage})+@{force}" data-i18n="force">Force</option>
+                            <option value="(@{strength} - @{strength_damage})+@{fight}" data-i18n="fight">Fight</option>
+    
+                            <option value="(@{agility} - @{agility_damage})+@{sneak}" data-i18n="sneak">Sneak</option>
+                            <option value="(@{agility} - @{agility_damage})+@{move}" data-i18n="move">Move</option>
+                            <option value="(@{agility} - @{agility_damage})+@{shoot}" data-i18n="shoot">Shoot</option>
+    
+                            <option value="(@{wits} - @{wits_damage})+@{scout}" data-i18n="scout">Scout</option>
+                            <option value="(@{wits} - @{wits_damage})+@{comprehend}" data-i18n="comprehend">Comprehend</option>
+                            <option value="(@{wits} - @{wits_damage})+@{know_the_zone}" data-i18n="know-the-zone">Know The Zone</option>
+    
+                            <option value="(@{empathy} - @{empathy_damage})+@{sense_emotion}" data-i18n="sense-emotion">Sense Emotion</option>
+                            <option value="(@{empathy} - @{empathy_damage})+@{manipulate}" data-i18n="manipulate">Manipulation</option>
+                            <option value="(@{empathy} - @{empathy_damage})+@{heal}" data-i18n="heal">Heal</option>
+                        </select>
+                        <input class="flex-1" type="number" name="attr_gear_bonus" value="0">
+                        <button type="roll" class="flex-1" value="@{secret_roll} &{template:frostpunk} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{roll-name=@{gear_name}}} {{base-dice=[[@{gear_skill} + ?{Modifiers|0} - (@{condition}) ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }} {{base-roll-eighteen=[[1d6]] }} {{base-roll-nineteen=[[1d6]] }} {{base-roll-twenty=[[1d6]] }} {{gear-dice=[[@{gear_bonus}]]}} {{gear-roll-one=[[1d6]] }} {{gear-roll-two=[[1d6]] }} {{gear-roll-three=[[1d6]] }} {{gear-roll-four=[[1d6]] }} {{gear-roll-five=[[1d6]] }}" name="roll_attack"><span data-i18n="use">Use</span></button>
+                    </fieldset>
+    
+                </div>
+    
+                <div class="box-title" data-i18n="talents">Talents</div>
+                <div class="sheet-box">
+                    <div class="fieldset-labels">
+                        <span class="flex-1 mini-title" data-i18n="name">Name</span>
+                        <span class="flex-4 mini-title" data-i18n="description">Description</span>
+                    </div>
+                    <fieldset class="repeating_talents">
+                        <input class="flex-1" type="text" name="attr_talent_name">
+                        <textarea class="flex-4" name="attr_talent_desc" id="" cols="30" rows="4"></textarea>
+                    </fieldset>
+                </div>
+    
+                <div class="box-title" data-i18n="notes">Notes</div>
+                <div class="sheet-box">
+                    <textarea name="attr_notes" id="" cols="30" rows="4" style="height: 150px;"></textarea>
+                </div>
+    
+            </div>
+    
+            <div class="col-3">
+                <div class="logo"><img src="Images/logo.png" alt=""></div>
+                
+                <div class="box-title" data-i18n="character-details">Character Details</div>
+                <div class="sheet-box">
+                    <label class="character-details-label">
+                        <span data-i18n="ch-name">Name</span>
+                        <input type="text" name="attr_character_name" title="@{character_name}" spellcheck="false">
+                    </label>
+    
+                    <div class="row">
+                        <div class="col-4" style="padding:0">
+                            <label class="character-details-label">
+                                <span data-i18n="age">Age</span>
+                                <input type="text" name="attr_age" title="@{age}" spellcheck="false">
+                            </label>
+                        </div>
+                        <div class="col-8" style="padding-right: 0;">
+                            <label class="character-details-label">
+                                <span data-i18n="archetype">Archetype</span>
+                                <input type="text" name="attr_archetype" title="@{archetype}" spellcheck="false">
+                            </label>
+                        </div>
+                    </div>
+    
+                    <label class="character-details-label">
+                        <span data-i18n="motivation">Motivation</span>
+                        <textarea name="attr_motivation" id="" cols="30" rows="2" style="height: 72px;"></textarea>
+                    </label>
+    
+                    <label class="character-details-label">
+                        <span data-i18n="trauma">Trauma</span>
+                        <textarea name="attr_trauma" id="" cols="30" rows="2" style="height: 72px;"></textarea>
+                    </label>
+                </div>
+    
+                <div class="box-title" data-i18n="conditions">Conditions</div>
+                <div class="sheet-box">
+                    <input type="hidden" name="attr_condition" value="@{cond_starving}+@{cond_dehydrated}+@{cond_sleepless}+@{cond_hypothermic}">
+                    <div class="conditions-box">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="attr_cond_starving" value="1">
+                            <span>&#127838 Wygłodzony</span>
+                        </label>
+    
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="attr_cond_dehydrated" value="1">
+                            <span>&#129371 Odwodniony</span>
+                        </label>
+                    </div>
+                    <div class="conditions-box">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="attr_cond_sleepless" value="1">
+                            <span>&#128564 Zmęczony</span>
+                        </label>
+    
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="attr_cond_hypothermic" value="1">
+                            <span>&#129398 Hipotermia</span>
+                        </label>
+                    </div>
+                    <br>
+    
+                    <div class="attribute-box">
+                        <button type="roll" name="supplies"
+                            value="@{secret_roll} &{template:frostpunk} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=^{supplies} }} {{base-dice=[[@{supplies}]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }} {{base-roll-eighteen=[[1d6]] }} {{base-roll-nineteen=[[1d6]] }} {{base-roll-twenty=[[1d6]] }}" data-i18n="supplies">Supplies</button>
+                        <input type="number" name="attr_supplies">
+                    </div>
+                </div>
+    
+                <div class="box-title" data-i18n="critical-injuries">Critical Injures</div>
+                <div class="sheet-box">
+                    <div class="critical-injures">
+                        <fieldset class="repeating_injures">
+                            <div class="flex">
+                                <label class="character-details-label">
+                                    <span data-i18n="name">Name</span>
+                                    <input type="text" name="attr_injures_name" spellcheck="false">
+                                </label>
+                                <label class="character-details-label">
+                                    <span data-i18n="time-to-recover">Time to recover</span>
+                                    <input type="text" name="attr_injures_time" spellcheck="false">
+                                </label>
+                            </div>
+                            <label data-i18n="effect">Effect</label>
+                            <textarea name="attr_injures_effect" id="" cols="30" rows="2"></textarea>
+                        </fieldset>
+                    </div>
+                </div>
+    
+                <div class="box-title" data-i18n="additional-eq">Pozostały ekwipunek</div>
+                <div class="sheet-box">
+                    <textarea name="attr_add_eq" id="" cols="30" rows="4" style="height: 150px;"></textarea>
+                </div>
+    
+            </div>
+    
+        </div>
+    
+    
+    
+    </div>
+    
+
+</body>
+</html>
