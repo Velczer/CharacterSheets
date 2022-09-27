@@ -17,25 +17,122 @@
 			<div class="col-7 character-details">
 	
 				<div class="flex">
-					<label>I AM</label>
+					<label>I am</label>
 					<input type="text" class="transparent" name="attr_character_name" title="@{character_name}" spellcheck="false">
 				</div>
 
 				<div class="flex">
-					<label>CALL ME IF YOU NEED A</label>
+					<label>Call me if you need a</label>
 					<input type="text" class="transparent">
 				</div>
 
-				<div class="flex">
-					<label>PLACES I CALL HOME</label>
+				<div class="flex center-inputs">
+					<label>Place I call home</label>
+					<div class="input-with-subtext">
+						<input type="text" class="transparent">
+						<p>Heritage</p>
+					</div>
+					<div class="input-with-subtext">
+						<input type="text" class="transparent">
+						<p>Homeland</p>
+					</div>
+					<div class="input-with-subtext">
+						<input type="text" class="transparent">
+						<p>Workplace</p>
+					</div>
+				</div>
+
+				<div class="input-with-subtext center-inputs">
 					<input type="text" class="transparent">
-					<input type="text" class="transparent">
-					<input type="text" class="transparent">
+					<p>Words to live by</p>
+				</div>
+			</div>
+			<div class="col-5">
+				<input type="text">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-4">
+				<div class="attribute-box">
+					<div class="attribute-label">
+						<button type="roll" name="action"
+							value="@{secret_roll} &{template:brokencompass} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=^{action} }} {{base-dice=[[@{action} + @{action_modifier} + ?{Modifiers|0} - (@{condition}) ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }}" data-i18n="action">Action</button>
+						<input type="hidden" name="attr_action_calc" class="bar-calc-view" value="0">
+						<label class="diamond-checkbox" for="action_value_1">
+							<input class="bar-input" type="checkbox" name="attr_action" id="action_value_1" value="1" />
+							<span class="icon-diamond"></span>
+						</label>
+						<label class="diamond-checkbox diamond-up" for="action_value_2">
+							<input class="bar-input" type="checkbox" name="attr_action" id="action_value_2" value="2" />
+							<span class="icon-diamond"></span>
+						</label>
+						<label class="diamond-checkbox" for="action_value_3">
+							<input class="bar-input" type="checkbox" name="attr_action" id="action_value_3" value="3" />
+							<span class="icon-diamond"></span>
+						</label>
+					</div>
+					<div class="skill-box">
+						<div class="skill-label">
+							<button type="roll" name="fight"
+								value="@{secret_roll} &{template:brokencompass} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=^{fight} }} {{base-dice=[[@{action} + @{fight} - @{action_modifier} + ?{Modifiers|0} - (@{condition}) ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }}" data-i18n="fight">Fight</button>
+							<input type="hidden" name="attr_fight_calc" class="bar-calc-view" value="0">
+							<label class="diamond-checkbox" for="fight_value_1">
+								<input class="bar-input" type="checkbox" name="attr_fight" id="fight_value_1" value="1" />
+								<span class="icon-diamond"></span>
+							</label>
+							<label class="diamond-checkbox diamond-up" for="fight_value_2">
+								<input class="bar-input" type="checkbox" name="attr_fight" id="fight_value_2" value="2" />
+								<span class="icon-diamond"></span>
+							</label>
+							<label class="diamond-checkbox" for="fight_value_3">
+								<input class="bar-input" type="checkbox" name="attr_fight" id="fight_value_3" value="3" />
+								<span class="icon-diamond"></span>
+							</label>
+						</div>
+
+						<div class="skill-label">
+							<button type="roll" name="leadership"
+								value="@{secret_roll} &{template:brokencompass} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=^{leadership} }} {{base-dice=[[@{action} + @{leadership} - @{action_modifier} + ?{Modifiers|0} - (@{condition}) ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }}" data-i18n="leadership">leadership</button>
+							<input type="hidden" name="attr_leadership_calc" class="bar-calc-view" value="0">
+							<label class="diamond-checkbox" for="leadership_value_1">
+								<input class="bar-input" type="checkbox" name="attr_leadership" id="leadership_value_1" value="1" />
+								<span class="icon-diamond"></span>
+							</label>
+							<label class="diamond-checkbox diamond-up" for="leadership_value_2">
+								<input class="bar-input" type="checkbox" name="attr_leadership" id="leadership_value_2" value="2" />
+								<span class="icon-diamond"></span>
+							</label>
+							<label class="diamond-checkbox" for="leadership_value_3">
+								<input class="bar-input" type="checkbox" name="attr_leadership" id="leadership_value_3" value="3" />
+								<span class="icon-diamond"></span>
+							</label>
+						</div>
+
+						<div class="skill-label">
+							<button type="roll" name="stunt"
+								value="@{secret_roll} &{template:brokencompass} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=^{stunt} }} {{base-dice=[[@{action} + @{stunt} - @{action_modifier} + ?{Modifiers|0} - (@{condition}) ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }}" data-i18n="stunt">stunt</button>
+							<input type="hidden" name="attr_stunt_calc" class="bar-calc-view" value="0">
+							<label class="diamond-checkbox" for="stunt_value_1">
+								<input class="bar-input" type="checkbox" name="attr_stunt" id="stunt_value_1" value="1" />
+								<span class="icon-diamond"></span>
+							</label>
+							<label class="diamond-checkbox diamond-up" for="stunt_value_2">
+								<input class="bar-input" type="checkbox" name="attr_stunt" id="stunt_value_2" value="2" />
+								<span class="icon-diamond"></span>
+							</label>
+							<label class="diamond-checkbox" for="stunt_value_3">
+								<input class="bar-input" type="checkbox" name="attr_stunt" id="stunt_value_3" value="3" />
+								<span class="icon-diamond"></span>
+							</label>
+						</div>
+						
+					</div>
 				</div>
 			</div>
 		</div>
 
-		<span class="icon-diamond_black_down"></span>
+		
 
 
 	</div>
