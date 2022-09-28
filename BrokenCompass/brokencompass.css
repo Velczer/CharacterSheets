@@ -330,6 +330,43 @@
     vertical-align: text-top;
 }
 
+.luck-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.luck-box-inner {
+    position: relative;
+}
+
+.luck-box-inner .title-label {
+    position: absolute;
+    bottom: 100%;
+}
+
+.luck-box .circle-input {
+    margin-right: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.luck-input-box {
+	background: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/ring.png) no-repeat center;
+	background-size: cover;
+	padding: 60px;
+	padding-left: 66px;
+    margin-left: -50px;
+}
+.luck-input-box input.luck-input {
+	width: 56px;
+	height: 56px;
+	text-align: center;
+	border-radius: 100%;
+	border: 0;
+	font-size: 30px;
+	padding-bottom: 6px;
+}
 
 .feel-box {
     display: flex;
@@ -391,44 +428,26 @@
     background: #231f20;
 }
 
-.luck-box {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.luck-box-inner {
+.expertise-box {
     position: relative;
 }
 
-.luck-box-inner .title-label {
+.expertise-img {
     position: absolute;
-    bottom: 100%;
+    z-index: -1;
+    right: 0;
+    top: 0;
 }
 
-.luck-box .circle-input {
-    margin-right: 10px;
+.weapon-and-gear-title {
     position: relative;
-    z-index: 1;
 }
 
-.luck-input-box {
-	background: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/ring.png) no-repeat center;
-	background-size: cover;
-	padding: 60px;
-	padding-left: 66px;
-    margin-left: -50px;
+.weapon-and-gear-img {
+    position: absolute;
+    right: 0;
+    top: 0;
 }
-.luck-input-box input.luck-input {
-	width: 56px;
-	height: 56px;
-	text-align: center;
-	border-radius: 100%;
-	border: 0;
-	font-size: 30px;
-	padding-bottom: 6px;
-}
-
 
 /* Roll Template */
 .sheet-rolltemplate-brokencompass .sheet-template-wrap {
