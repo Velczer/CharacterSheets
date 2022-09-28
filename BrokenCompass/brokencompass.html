@@ -40,7 +40,7 @@
 
             <label class="secret-roll"><input type="checkbox" value="/w gm" name="attr_secret_roll"> <span data-i18n="make-the-roll-secret">Make the roll secret</span></label>
 
-            <button type="roll" data-i18n="flip-the-coin" value="@{secret_roll} &{template:coin-flip} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{roll-name=coin-flip}} {{roll=[[1d2]]}}">Flip the coin</button>
+            <button type="roll" class="coin-flip-button" data-i18n="flip-the-coin" value="@{secret_roll} &{template:coin-flip} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{roll-name=^{flip-the-coin}}} {{roll=[[1d2]]}}">Flip the coin</button>
         </div>
     </div>
 
@@ -797,25 +797,30 @@
 
 <rolltemplate class="sheet-rolltemplate-coin-flip">
     <div class="template-wrap">
+        <div class="template-header">
+			{{#character_name}}
+			{{#character_id}}[{{character_name}}](https://journal.roll20.net/character/{{character_id}}){{/character_id}}
+			{{^character_id}}{{character_name}}{{/character_id}}
+			{{/character_name}}
+		</div>
+
         <div class="template-subtitle">
             {{roll-name}}
         </div>
 
-        <div class="template-grid-item-flex">
-            <div class="template-roll-between">{{roll}}</div>
+        {{#rollWasCrit() roll}}
+        <div class="template-subtitle green" data-i18n="success">Success</div>
+        <div class="template-center">
+            <img src="https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/coin-heads.png" alt="">
         </div>
+        {{/rollWasCrit() roll}}
 
-        {{#rollWasCrit}}
-        <div class="template-grid-item-flex">
-            <img src="" alt="">
+        {{#rollWasFumble() roll}}
+        <div class="template-subtitle red" data-i18n="fail">Fail</div>
+        <div class="template-center">
+            <img src="https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/coin-tails.png" alt="">
         </div>
-        {{/rollWasCrit}}
-
-        {{#rollWasFumble}}
-        <div class="template-grid-item-flex">
-            <img src="" alt="">
-        </div>
-        {{/rollWasFumble}}
+        {{/rollWasFumble() roll}}
 
 
 
@@ -823,8 +828,6 @@
 </rolltemplate>
 
 <rolltemplate class="sheet-rolltemplate-brokencompass">
-
-    <h4>dices = {{dices}}</h4>
 
 	<div class="template-wrap">
 		<div class="template-header">
@@ -1010,10 +1013,8 @@
 
         <div class="template-grid-item-flex">
             {{#expertise}}
-            <div class="sheet-rolltemplate-button-row">
-                <div class="sheet-rolltemplate-button">
-                    [<span data-i18n="i-have-expertise"></span>](~{{character_name}}|roll||{{attribute}}|{{skill}})
-                </div>
+            <div class="template-button">
+                [<span data-i18n="i-have-expertise"></span>](~{{character_name}}|roll||{{attribute}}|{{skill}})
             </div>
             {{/expertise}}
 

@@ -68,5 +68,7 @@
     "name": "Name",
     "description": "Description",
     "i-have-expertise": "I have expertise",
-    "flip-the-coin": "Flip the coin"
+    "flip-the-coin": "Flip the coin",
+    "success": "Success",
+    "fail": "Fail"
 }

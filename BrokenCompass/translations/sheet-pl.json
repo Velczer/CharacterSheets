@@ -68,5 +68,7 @@
     "name": "Nazwa",
     "description": "Opisy",
     "i-have-expertise": "Mam biegłość",
-    "flip-the-coin": "Rzut monetą"
+    "flip-the-coin": "Rzut monetą",
+    "success": "Sukces",
+    "fail": "Porażka"
 }

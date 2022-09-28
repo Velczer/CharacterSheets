@@ -278,6 +278,15 @@
     align-items: center;
 }
 
+.charsheet .character-sheet .coin-flip-button[type="roll"] {
+    font-size: 22px;
+	height: 38px;
+	line-height: 36px;
+}
+
+.charsheet .character-sheet .coin-flip-button[type="roll"]::before {
+    vertical-align: text-bottom;
+}
 
 .attribute-box {
     text-align: right;
@@ -474,7 +483,7 @@
 }
 
 /* Roll Template */
-.sheet-rolltemplate-brokencompass .sheet-template-wrap {
+.sheet-rolltemplate-brokencompass .sheet-template-wrap, .sheet-rolltemplate-coin-flip .sheet-template-wrap {
     background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/roll-bg.jpg);
     background-position: top center;
     background-size: cover;
@@ -483,7 +492,7 @@
     margin-bottom: 15px;
 }
 
-.sheet-rolltemplate-brokencompass .sheet-template-header {
+.sheet-rolltemplate-brokencompass .sheet-template-header, .sheet-rolltemplate-coin-flip .sheet-template-header {
     width: 100%;
     padding: 7px 5px;
     color: #fff;
@@ -495,11 +504,25 @@
     font-size: 18px;
 }
 
-.sheet-rolltemplate-brokencompass .sheet-template-header a {
+.sheet-rolltemplate-brokencompass .sheet-template-header a, .sheet-rolltemplate-coin-flip .sheet-template-header a {
     color: #fff;
 }
 
-.sheet-rolltemplate-brokencompass .sheet-template-subtitle {
+.sheet-rolltemplate-brokencompass .sheet-template-button {
+    width: 100%;
+    padding-top: 10px;
+}
+
+.sheet-rolltemplate-brokencompass .sheet-template-button a {
+    background: #231f20;
+	border: 0;
+	width: 100%;
+	text-align: center;
+    box-sizing: border-box;
+    text-transform: uppercase;
+}
+
+.sheet-rolltemplate-brokencompass .sheet-template-subtitle, .sheet-rolltemplate-coin-flip .sheet-template-subtitle {
     color: #231f20;
     font-size: 20px;
     padding: 10px 0;
@@ -509,6 +532,28 @@
     font-family: 'Trocchi', sans-serif;
     font-weight: bold;
     background: rgb(255 255 255 / 70%);
+}
+
+.sheet-rolltemplate-coin-flip .sheet-template-subtitle.sheet-green {
+    color: green;
+}
+
+.sheet-rolltemplate-coin-flip .sheet-template-subtitle.sheet-red {
+    color: red;
+}
+
+.sheet-rolltemplate-coin-flip .sheet-template-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+}
+.sheet-rolltemplate-coin-flip .sheet-template-center img {
+    max-width: 150px;
+    margin: auto;
+    box-shadow: 1px 1px 10px 3px #000;
+	border-radius: 100%;
 }
 
 .sheet-rolltemplate-brokencompass .sheet-template-grid {
