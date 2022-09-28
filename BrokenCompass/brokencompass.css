@@ -19,6 +19,11 @@
     margin: 0;
 }
 
+.col-12 {
+    width: 100%;
+    padding: 0 10px;
+}
+
 .col-10 {
     width: 83%;
     padding: 0 10px;
@@ -136,7 +141,7 @@
 }
 
 .charsheet .character-sheet button[type="roll"], .charsheet .character-sheet button[type="action"] {
-    border: 1px solid #231f20;
+    border: 0;
     font-family: 'Lalezar';
     background: transparent;
     padding: 0 8px;
@@ -165,6 +170,24 @@
     width: auto;
 }
 
+.charsheet .character-sheet input.circle-input {
+    width: 20px;
+	padding: 0 9px;
+	height: 20px;
+	background-color: white;
+	border-radius: 50%;
+	vertical-align: middle;
+	border: 1px solid #231f20;
+	appearance: none;
+	-webkit-appearance: none;
+	outline: none;
+	cursor: pointer;
+	margin-right: 2px;
+}
+.charsheet .character-sheet input.circle-input:checked {
+    background-color: #231f20;
+}
+
 /* Custom modules */
 .character-sheet {
     background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/sheet-bg.jpg);
@@ -172,11 +195,12 @@
     /* background-size: contain;
 	background-repeat: no-repeat; */
     background-position: top center;
-    padding: 20px 10px;
+    padding: 20px 0;
     color: #231f20;
     font-family: 'Lalezar', sans-serif;
     border: 1px solid #231f20;
-    max-width: 950px;
+    width: 1050px;
+
 
     min-height: 1335px;
 
@@ -208,6 +232,21 @@
     vertical-align: bottom;
     line-height: 16px;
     text-transform: uppercase;
+}
+
+.charsheet .title-label {
+    font-size: 30px;
+	text-transform: uppercase;
+}
+
+.charsheet .subtitle-label {
+    font-size: 22px;
+	text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.charsheet .center {
+    text-align: center;
 }
 
 .character-details input {
@@ -245,11 +284,12 @@
 
 .attribute-box {
     text-align: right;
+    margin-bottom: 15px;
 }
 
 .attribute-label {
-    padding-right: 62px;
-    margin-bottom: 5px;
+    padding-right: 56px;
+    margin-left: -10px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -261,14 +301,11 @@
     background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(51, 51, 51, 1) 60%, rgba(0, 181, 255, 0) 100%);
 	display: block;
 	height: 34px;
-	width: 85px;
-	position: absolute;
-	left: -20px;
-	z-index: -1;
+    width: 100%;
 }
 
 .attribute-label button {
-    font-size: 28px;
+    font-size: 25px;
     height: 32px;
 	line-height: 30px;
 }
@@ -278,7 +315,6 @@
 }
 
 .skill-label {
-    margin-bottom: 5px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -292,6 +328,105 @@
 
 .skill-label button::before {
     vertical-align: text-top;
+}
+
+
+.feel-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.feel-box > span {
+    display: block;
+    text-transform: uppercase;
+    width: 22%;
+    text-align: center;
+}
+
+.feel-input {
+    width: 39%;
+}
+
+.feel-input input {
+    display: none;
+}
+
+.feel-input label {
+    position: relative;
+}
+
+.character-sheet .feel-input .diamond-checkbox {
+    width: 100%;
+}
+
+.character-sheet .feel-input .diamond-checkbox span {
+    display: flex;
+    width: 100%;
+    font-size: 16px;
+	text-transform: uppercase;
+    align-items: center;
+    font-weight: 400;
+    position: relative;
+}
+
+.character-sheet .feel-input .diamond-checkbox i {
+    position: absolute;
+    right: 25px;
+	font-style: normal;
+}
+
+.character-sheet .feel-input .diamond-checkbox span::before {
+    position: absolute;
+    right: 0;
+    width: 20px;
+	height: 22px;
+}
+.character-sheet .feel-input .diamond-checkbox span::after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    margin: 13px 24px 0 3px;
+    background: #231f20;
+}
+
+.luck-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.luck-box-inner {
+    position: relative;
+}
+
+.luck-box-inner .title-label {
+    position: absolute;
+    bottom: 100%;
+}
+
+.luck-box .circle-input {
+    margin-right: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.luck-input-box {
+	background: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/ring.png) no-repeat center;
+	background-size: cover;
+	padding: 60px;
+	padding-left: 66px;
+    margin-left: -50px;
+}
+.luck-input-box input.luck-input {
+	width: 56px;
+	height: 56px;
+	text-align: center;
+	border-radius: 100%;
+	border: 0;
+	font-size: 30px;
+	padding-bottom: 6px;
 }
 
 
@@ -406,6 +541,104 @@
 	margin: 0;
 }
 
+/* Repeating sections */
+
+.repcontrol {
+    display: flex;
+    margin-top: 3px;
+}
+  
+.repcontrol .repcontrol_edit {
+    margin-left: auto;
+    order: 1;
+}
+  
+.repcontrol button {
+    background: #fff;
+    color: #3e5f76;
+    border-radius: 0;
+	border-color: #3e5f76;
+    transition: all 0.2s;
+    font-family: pictos;
+    font-size: 0;
+    font-weight: bold;
+    line-height: 8px;
+	padding: 6px 4px 1px;
+}
+  
+.repcontrol button:hover {
+    color: green;
+    border-color: green;
+    background: #ddd;
+}
+  
+.repcontrol button.repcontrol_edit::after {
+    content: "(";
+}
+  
+.repcontrol button.repcontrol_add::after {
+    content: "&";
+}
+  
+.repcontrol button.repcontrol_edit::after, .repcontrol button.repcontrol_add::after {
+    font-size: 20px;
+}
+  
+.repcontainer.editmode + .repcontrol button.repcontrol_edit::after {
+    content: ")";
+}
+
+.itemcontrol {
+    z-index: 20;
+}
+
+.fieldset-labels {
+	display: flex;
+	flex-wrap: nowrap;
+}
+.fieldset-labels .mini-title {
+	justify-content: flex-start;
+	margin-right: 6px;
+	height: 14px;
+}
+.repitem {
+	display: flex;
+    align-items: flex-start;
+}
+.repitem input, .repitem select {
+	width: 100%;
+	margin-bottom: 7px;
+    padding: 5px 10px;
+	border: 1px solid #231f20;
+}
+.character-sheet .repitem textarea {
+	height: 76px;
+}
+.repitem input[type="checkbox"] {
+    width: auto;
+	transform: scale(1.5);
+	flex: unset;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+.rep-box-vertical .repitem {
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+.rep-box-vertical .repitem label {
+    margin-bottom: 0;
+}
+.rep-box-vertical .repitem input {
+    margin-bottom: 0;
+    border-radius: 0;
+}
+.rep-box-vertical .repitem textarea {
+    height: 78px;
+    border-radius: 0;
+    border-top: 0;
+    border-bottom: 0;
+}
+
 /* Icons */
 .diamond-checkboxes {
     display: flex;
@@ -415,20 +648,20 @@
 .character-sheet .diamond-checkbox {
 	cursor: pointer;
 	margin: 0;
-	width: auto;
+	width: 21px;
     padding-right: 1px;
 }
 
-.character-sheet .diamond-checkbox .icon-diamond {
+.character-sheet .diamond-checkbox .diamond-down, .character-sheet .diamond-checkbox .diamond-up {
     height: 28px;
 	width: 20px;
 }
 
-.icon-diamond::before {
+.diamond-down::before, .diamond-up::before {
     content: "";
 	display: inline-block;
     height: 28px;
-	width: 28px;
+    width: 25px;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -437,25 +670,25 @@
     display: none;
 }
 
-.diamond-checkboxes .diamond-input:checked ~ .diamond-checkbox .icon-diamond::before {
-    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/diamond-black-down.svg);
-}
-.diamond-checkboxes .diamond-input:checked ~ .diamond-up .icon-diamond::before {
-    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/diamond-black-up.svg);
-}
-
-.diamond-checkbox .icon-diamond::before {
+.diamond-checkbox .diamond-down::before {
     background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/diamond-white-down.svg);
 }
 
-.diamond-checkbox input:checked + .icon-diamond::before {
+input.diamond-input:checked + .diamond-checkbox .diamond-down::before {
     background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/diamond-black-down.svg);
 }
 
-.diamond-checkbox.diamond-up .icon-diamond::before {
+.diamond-checkbox .diamond-up::before {
     background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/diamond-white-up.svg);
 }
 
-.diamond-checkbox.diamond-up input:checked + .icon-diamond::before {
+input.diamond-input:checked + .diamond-checkbox  .diamond-up::before {
+    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/diamond-black-up.svg);
+}
+
+.diamond-input:checked ~ .diamond-checkbox .diamond-down::before {
+    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/diamond-black-down.svg);
+}
+.diamond-input:checked ~ .diamond-checkbox .diamond-up::before {
     background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/diamond-black-up.svg);
 }
