@@ -194,13 +194,15 @@
     background-size: cover;
     background-position: top center;
     padding: 10px 30px;
-    color: #231f20;
-    font-family: 'Lalezar', sans-serif;
-    border: 1px solid #231f20;
-    width: 1050px;
-	margin-bottom: 50px;
-    position: relative;
-    z-index: 1;
+    padding-bottom: 30px;
+	color: #231f20;
+	font-family: 'Lalezar', sans-serif;
+	border: 1px solid #231f20;
+	width: 1050px;
+	margin-bottom: 15px;
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
 }
 
 .character-sheet::before {
@@ -333,17 +335,24 @@
 
 .luck-box-inner {
     position: relative;
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 .luck-box-inner .title-label {
     position: absolute;
     bottom: 100%;
+    left: 0;
 }
 
 .luck-box .circle-input {
     margin-right: 10px;
     position: relative;
     z-index: 1;
+}
+
+.luck-box .circle-input:checked ~ .circle-input {
+    background-color: #231f20;
 }
 
 .luck-input-box {
@@ -353,6 +362,7 @@
 	padding-left: 66px;
     margin-left: -50px;
 }
+
 .charsheet .luck-input-box input.luck-input {
 	width: 56px;
 	height: 56px;
@@ -498,7 +508,7 @@
     text-transform: uppercase;
     font-family: 'Trocchi', sans-serif;
     font-weight: bold;
-    background: rgb(255 255 255 / 40%);
+    background: rgb(255 255 255 / 70%);
 }
 
 .sheet-rolltemplate-brokencompass .sheet-template-grid {
@@ -508,7 +518,7 @@
 }
 
 .sheet-rolltemplate-brokencompass .sheet-template-grid-item-box {
-    background: rgb(255 255 255 / 40%);
+    background: rgb(255 255 255 / 70%);
     padding: 0 8px;
 }
 
@@ -520,7 +530,7 @@
 .sheet-rolltemplate-brokencompass .sheet-template-grid-item-flex {
     display: flex;
     align-items: center;
-    background: rgb(255 255 255 / 40%);
+    background: rgb(255 255 255 / 70%);
 }
 
 .sheet-rolltemplate-brokencompass .sheet-template-roll-between {
@@ -637,6 +647,9 @@
 .repitem {
 	display: flex;
     align-items: flex-start;
+}
+.gear-rep-list .repitem {
+    align-items: center;
 }
 .repitem input, .repitem select {
 	width: 100%;

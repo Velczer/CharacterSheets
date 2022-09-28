@@ -64,8 +64,9 @@
     "critical:": "Critical:",
     "extreme:": "Extreme:",
     "impossible:": "Impossible:",
-    "test": "test",
 
-
-    "test": "test"
+    "name": "Name",
+    "description": "Description",
+    "i-have-expertise": "I have expertise",
+    "flip-the-coin": "Flip the coin"
 }

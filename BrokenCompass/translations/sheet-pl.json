@@ -64,8 +64,9 @@
     "critical:": "Krytyczny:",
     "extreme:": "Ekstremalny:",
     "impossible:": "Nieprawdopodobny:",
-    "test": "test",
 
-
-    "test": "test"
+    "name": "Nazwa",
+    "description": "Opisy",
+    "i-have-expertise": "Mam biegłość",
+    "flip-the-coin": "Rzut monetą"
 }
