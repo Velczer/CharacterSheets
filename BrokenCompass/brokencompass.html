@@ -1,7 +1,7 @@
 <div class="character-sheet">
 
     <div class="row">
-        <div class="col-7 character-details">
+        <div class="col-8 character-details">
 
             <div class="flex">
                 <label>I am</label>
@@ -34,9 +34,11 @@
                 <p>Words to live by</p>
             </div>
 
+            <br><br>
+
             <label class="secret-roll"><input type="checkbox" value="/w gm" name="attr_secret_roll"> <span data-i18n="make-the-roll-secret">Make the roll secret</span></label>
         </div>
-        <div class="col-5">
+        <div class="col-4">
             <input type="text">
         </div>
     </div>
@@ -49,78 +51,89 @@
 
                     <button type="action" name="act_roll" data-i18n="action" data-attribute="action" data-skill="">Action</button>
 
-                    <input type="hidden" name="attr_action_calc" class="bar-calc-view" value="0">
-                    <label class="diamond-checkbox" for="action_value_1">
-                        <input class="bar-input" type="checkbox" name="attr_action" id="action_value_1" value="1" />
-                        <div class="icon-diamond">
-                            <span class="icon-not-selected"><svg viewBox="0 0 1129 1256"><path d="M420-149c-4 1-10 4-13 7-5 5-392 653-404 676-5 10-4 22 2 31 3 5 65 48 204 143 109 75 202 137 206 139 9 4 18 4 27 0 15-8 416-271 423-277 7-7 8-8 8-21v-13l-209-336c-115-184-210-337-212-339-7-9-21-13-32-10z m198 395c145 234 181 292 178 294-6 7-366 240-369 239-4-1-352-239-352-240 0-2 340-575 351-592l3-5 4 6c2 3 85 137 185 298z" transform="translate(0,1000) scale(1, -1)" style="fill: currentcolor;"></path></svg></span>
-                            <span class="icon-selected"><svg viewBox="0 0 1129 1256"><path d="M436 847c-4-1-102-64-218-139-156-102-211-139-214-144-5-8-5-22-1-30 9-17 415-669 420-675 12-12 33-12 44 0 3 4 96 158 206 343 216 364 204 343 196 360-1 4-6 9-9 11-35 26-402 274-407 275-8 3-7 3-17-1z" transform="translate(0,1000) scale(1, -1)" style="fill: currentcolor;"></path></svg></span>
-                        </div>
-                    </label>
-                    <label class="diamond-checkbox diamond-up" for="action_value_2">
-                        <input class="bar-input" type="checkbox" name="attr_action" id="action_value_2" value="2" />
-                        <span class="icon-diamond"></span>
-                    </label>
-                    <label class="diamond-checkbox" for="action_value_3">
-                        <input class="bar-input" type="checkbox" name="attr_action" id="action_value_3" value="3" />
-                        <span class="icon-diamond"></span>
-                    </label>
+                    <input type="hidden" name="attr_action_calc" value="0">
+                    <div class="diamond-checkboxes">
+                        <input class="diamond-input" type="checkbox" name="attr_action" id="action_value_3" value="3" />
+                        <label class="diamond-checkbox" for="action_value_3">
+                            <span class="icon-diamond"></span>
+                        </label>
+
+                        <input class="diamond-input" type="checkbox" name="attr_action" id="action_value_2" value="2" />
+                        <label class="diamond-checkbox diamond-up" for="action_value_2">
+                            <span class="icon-diamond"></span>
+                        </label>
+
+                        <input class="diamond-input" type="checkbox" name="attr_action" id="action_value_1" value="1" />
+                        <label class="diamond-checkbox" for="action_value_1">
+                            <span class="icon-diamond"></span>
+                        </label>
+                    </div>
                 </div>
                 <div class="skill-box">
                     <div class="skill-label">
-                        <button type="roll" name="fight"
-                            value="@{secret_roll} &{template:brokencompass} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=^{fight} }} {{base-dice=[[@{action_calc} + @{fight_calc} - @{action_modifier} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }}" data-i18n="fight">Fight</button>
-						<button type="action" name="act_roll" data-i18n="action" data-attribute="action" data-skill="fight">Fight</button>
+						<button type="action" name="act_roll" data-i18n="fight" data-attribute="action" data-skill="fight">Fight</button>
 
-                        <input type="hidden" name="attr_fight_calc" class="bar-calc-view" value="0">
-                        <label class="diamond-checkbox" for="fight_value_1">
-                            <input class="bar-input" type="checkbox" name="attr_fight" id="fight_value_1" value="1" />
-                            <span class="icon-diamond"></span>
-                        </label>
-                        <label class="diamond-checkbox diamond-up" for="fight_value_2">
-                            <input class="bar-input" type="checkbox" name="attr_fight" id="fight_value_2" value="2" />
-                            <span class="icon-diamond"></span>
-                        </label>
-                        <label class="diamond-checkbox" for="fight_value_3">
-                            <input class="bar-input" type="checkbox" name="attr_fight" id="fight_value_3" value="3" />
-                            <span class="icon-diamond"></span>
-                        </label>
+                        <input type="hidden" name="attr_fight_calc" value="0">
+                        <div class="diamond-checkboxes">
+                            <input class="diamond-input" type="checkbox" name="attr_fight" id="fight_value_3" value="3" />
+                            <label class="diamond-checkbox" for="fight_value_3">
+                                <span class="icon-diamond"></span>
+                            </label>
+
+                            <input class="diamond-input" type="checkbox" name="attr_fight" id="fight_value_2" value="2" />
+                            <label class="diamond-checkbox diamond-up" for="fight_value_2">
+                                <span class="icon-diamond"></span>
+                            </label>
+
+                            <input class="diamond-input" type="checkbox" name="attr_fight" id="fight_value_1" value="1" />
+                            <label class="diamond-checkbox" for="fight_value_1">
+                                <span class="icon-diamond"></span>
+                            </label>
+                        </div>
                     </div>
 
                     <div class="skill-label">
-                        <button type="roll" name="leadership"
-                            value="@{secret_roll} &{template:brokencompass} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=^{leadership} }} {{base-dice=[[@{action_calc} + @{leadership_calc} - @{action_modifier} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }}" data-i18n="leadership">leadership</button>
-                        <input type="hidden" name="attr_leadership_calc" class="bar-calc-view" value="0">
-                        <label class="diamond-checkbox" for="leadership_value_1">
-                            <input class="bar-input" type="checkbox" name="attr_leadership" id="leadership_value_1" value="1" />
-                            <span class="icon-diamond"></span>
-                        </label>
-                        <label class="diamond-checkbox diamond-up" for="leadership_value_2">
-                            <input class="bar-input" type="checkbox" name="attr_leadership" id="leadership_value_2" value="2" />
-                            <span class="icon-diamond"></span>
-                        </label>
-                        <label class="diamond-checkbox" for="leadership_value_3">
-                            <input class="bar-input" type="checkbox" name="attr_leadership" id="leadership_value_3" value="3" />
-                            <span class="icon-diamond"></span>
-                        </label>
+						<button type="action" name="act_roll" data-i18n="leadership" data-attribute="action" data-skill="leadership">Leadership</button>
+
+                        <input type="hidden" name="attr_leadership_calc" value="0">
+                        <div class="diamond-checkboxes">
+                            <input class="diamond-input" type="checkbox" name="attr_leadership" id="leadership_value_3" value="3" />
+                            <label class="diamond-checkbox" for="leadership_value_3">
+                                <span class="icon-diamond"></span>
+                            </label>
+
+                            <input class="diamond-input" type="checkbox" name="attr_leadership" id="leadership_value_2" value="2" />
+                            <label class="diamond-checkbox diamond-up" for="leadership_value_2">
+                                <span class="icon-diamond"></span>
+                            </label>
+
+                            <input class="diamond-input" type="checkbox" name="attr_leadership" id="leadership_value_1" value="1" />
+                            <label class="diamond-checkbox" for="leadership_value_1">
+                                <span class="icon-diamond"></span>
+                            </label>
+                        </div>
                     </div>
 
                     <div class="skill-label">
-                        <button type="roll" name="stunt"
-                            value="@{secret_roll} &{template:brokencompass} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=^{stunt} }} {{base-dice=[[@{action_calc} + @{stunt_calc} - @{action_modifier} + ?{Modifiers|0} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }}" data-i18n="stunt">stunt</button>
-                        <input type="hidden" name="attr_stunt_calc" class="bar-calc-view" value="0">
-                        <label class="diamond-checkbox" for="stunt_value_1">
-                            <input class="bar-input" type="checkbox" name="attr_stunt" id="stunt_value_1" value="1" />
-                            <span class="icon-diamond"></span>
-                        </label>
-                        <label class="diamond-checkbox diamond-up" for="stunt_value_2">
-                            <input class="bar-input" type="checkbox" name="attr_stunt" id="stunt_value_2" value="2" />
-                            <span class="icon-diamond"></span>
-                        </label>
-                        <label class="diamond-checkbox" for="stunt_value_3">
-                            <input class="bar-input" type="checkbox" name="attr_stunt" id="stunt_value_3" value="3" />
-                            <span class="icon-diamond"></span>
-                        </label>
+                        <button type="action" name="act_roll" data-i18n="stunt" data-attribute="action" data-skill="stunt">Stunt</button>
+
+                        <input type="hidden" name="attr_stunt_calc" value="0">
+                        <div class="diamond-checkboxes">
+                            <input class="diamond-input" type="checkbox" name="attr_stunt" id="stunt_value_3" value="3" />
+                            <label class="diamond-checkbox" for="stunt_value_3">
+                                <span class="icon-diamond"></span>
+                            </label>
+
+                            <input class="diamond-input" type="checkbox" name="attr_stunt" id="stunt_value_2" value="2" />
+                            <label class="diamond-checkbox diamond-up" for="stunt_value_2">
+                                <span class="icon-diamond"></span>
+                            </label>
+
+                            <input class="diamond-input" type="checkbox" name="attr_stunt" id="stunt_value_1" value="1" />
+                            <label class="diamond-checkbox" for="stunt_value_1">
+                                <span class="icon-diamond"></span>
+                            </label>
+                        </div>
                     </div>
 
                     <input type="text" name="attr_action_modifier" value="0">

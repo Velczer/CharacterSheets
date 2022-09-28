@@ -135,7 +135,7 @@
     margin: 0;
 }
 
-.charsheet .character-sheet button[type="roll"] {
+.charsheet .character-sheet button[type="roll"], .charsheet .character-sheet button[type="action"] {
     border: 1px solid #231f20;
     font-family: 'Lalezar';
     background: transparent;
@@ -148,16 +148,17 @@
     text-shadow: none;
 }
 
-.charsheet .character-sheet button[type="roll"]:hover {
+.charsheet .character-sheet button[type="roll"]:hover, .charsheet .character-sheet button[type="action"]:hover {
     background: #231f20;
     color: #fff;
 }
 
-.charsheet .character-sheet button[type="roll"]::before {
+.charsheet .character-sheet button[type="roll"]::before, .charsheet .character-sheet button[type="action"]::before {
     color: #a329ff;
     font-size: 20px;
-    vertical-align: bottom;
     margin-right: 5px;
+    font-family: "dicefontd20";
+	content: "t";
 }
 
 .charsheet .character-sheet input[type="checkbox"] {
@@ -200,6 +201,8 @@
 
 .character-details label {
     font-size: 20px;
+    margin: 0;
+    width: auto;
     margin-right: 3px;
     white-space: nowrap;
     vertical-align: bottom;
@@ -250,12 +253,24 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    position: relative;
+}
+
+.attribute-label::before {
+    content: "";
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(51, 51, 51, 1) 60%, rgba(0, 181, 255, 0) 100%);
+	display: block;
+	height: 34px;
+	width: 85px;
+	position: absolute;
+	left: -20px;
+	z-index: -1;
 }
 
 .attribute-label button {
     font-size: 28px;
-    height: 36px;
-    line-height: 38px;
+    height: 32px;
+	line-height: 30px;
 }
 
 .skill-box {
@@ -270,11 +285,14 @@
 }
 
 .skill-label button {
-    font-size: 20px;
-    height: 26px;
-    line-height: 28px;
+	font-size: 18px;
+    height: 32px;
+	line-height: 26px;
 }
 
+.skill-label button::before {
+    vertical-align: text-top;
+}
 
 
 /* Roll Template */
@@ -304,7 +322,7 @@
 }
 
 .sheet-rolltemplate-brokencompass .sheet-template-subtitle {
-    color: #000000;
+    color: #231f20;
     font-size: 20px;
     padding: 10px 0;
     padding-bottom: 6px;
@@ -341,7 +359,7 @@
 	height: 30px;
 	width: 30px;
 	background-color: rgb(255 255 255 / 50%);
-	border: 1px solid #3e5f76;
+	border: 1px solid #000;
 	border-radius: 5px;
 	background-size: cover;
 	box-shadow: 4px 4px 0px 0px rgb(0 0 0 / 60%);
@@ -374,7 +392,8 @@
 	font-size: 16px;
 	padding: 5px;
 	text-align: left;
-	font-family: 'Lalezar', sans-serif;
+    font-weight: bold;
+	text-transform: uppercase;
     color: #231f20;
     margin: 0;
 }
@@ -388,15 +407,18 @@
 }
 
 /* Icons */
+.diamond-checkboxes {
+    display: flex;
+	flex-direction: row-reverse;
+}
+
 .character-sheet .diamond-checkbox {
 	cursor: pointer;
 	margin: 0;
 	width: auto;
     padding-right: 1px;
 }
-.character-sheet .diamond-checkbox input {
-    display: none;
-}
+
 .character-sheet .diamond-checkbox .icon-diamond {
     height: 28px;
 	width: 20px;
@@ -411,18 +433,29 @@
     background-position: center;
 }
 
+.diamond-checkboxes input.diamond-input {
+    display: none;
+}
+
+.diamond-checkboxes .diamond-input:checked ~ .diamond-checkbox .icon-diamond::before {
+    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/diamond-black-down.svg);
+}
+.diamond-checkboxes .diamond-input:checked ~ .diamond-up .icon-diamond::before {
+    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/diamond-black-up.svg);
+}
+
 .diamond-checkbox .icon-diamond::before {
-    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/4af3e2cba7b479514ea90497149937ded6853055/BrokenCompass/Images/diamond-white-down.svg);
+    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/diamond-white-down.svg);
 }
 
 .diamond-checkbox input:checked + .icon-diamond::before {
-    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/4af3e2cba7b479514ea90497149937ded6853055/BrokenCompass/Images/diamond-black-down.svg);
+    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/diamond-black-down.svg);
 }
 
 .diamond-checkbox.diamond-up .icon-diamond::before {
-    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/4af3e2cba7b479514ea90497149937ded6853055/BrokenCompass/Images/diamond-white-up.svg);
+    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/diamond-white-up.svg);
 }
 
 .diamond-checkbox.diamond-up input:checked + .icon-diamond::before {
-    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/4af3e2cba7b479514ea90497149937ded6853055/BrokenCompass/Images/diamond-black-up.svg);
+    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/diamond-black-up.svg);
 }
