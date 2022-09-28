@@ -4,42 +4,41 @@
         <div class="col-8 character-details">
 
             <div class="flex">
-                <label>I am</label>
+                <label data-i18n="I-am">I am</label>
                 <input type="text" class="transparent" name="attr_character_name" title="@{character_name}" spellcheck="false">
             </div>
 
             <div class="flex">
-                <label>Call me if you need a</label>
+                <label data-i18n="call-me-if-you-need-a">Call me if you need a</label>
                 <input type="text" class="transparent">
             </div>
 
             <div class="flex center-inputs">
-                <label>Place I call home</label>
+                <label data-i18n="place-i-call-home">Place I call home</label>
                 <div class="input-with-subtext">
                     <input type="text" class="transparent">
-                    <p>Heritage</p>
+                    <p data-i18n="heritage">Heritage</p>
                 </div>
                 <div class="input-with-subtext">
                     <input type="text" class="transparent">
-                    <p>Homeland</p>
+                    <p data-i18n="homeland">Homeland</p>
                 </div>
                 <div class="input-with-subtext">
                     <input type="text" class="transparent">
-                    <p>Workplace</p>
+                    <p data-i18n="workplace">Workplace</p>
                 </div>
             </div>
 
             <div class="input-with-subtext center-inputs">
                 <input type="text" class="transparent">
-                <p>Words to live by</p>
+                <p data-i18n="words-to-live-by">Words to live by</p>
             </div>
-
-            <br><br>
-
-            <label class="secret-roll"><input type="checkbox" value="/w gm" name="attr_secret_roll"> <span data-i18n="make-the-roll-secret">Make the roll secret</span></label>
+           
         </div>
         <div class="col-4">
-            <input type="text">
+			<br><br>
+
+            <label class="secret-roll"><input type="checkbox" value="/w gm" name="attr_secret_roll"> <span data-i18n="make-the-roll-secret">Make the roll secret</span></label>
         </div>
     </div>
 
@@ -597,7 +596,7 @@
                 <div class="col-7">
                     <div class="luck-box">
 						<div class="luck-box-inner"> 
-							<label class="title-label">Luck</label>
+							<label class="title-label" data-i18n="luck">Luck</label>
 							<input class="circle-input" type="checkbox" name="attr_luck" id="luck_value_1" value="10" />
 							<input class="circle-input" type="checkbox" name="attr_luck" id="luck_value_1" value="9" />
 							<input class="circle-input" type="checkbox" name="attr_luck" id="luck_value_1" value="8" />
@@ -623,115 +622,162 @@
 
             <div class="row">
                 <div class="col-8" style="margin-bottom: 50px;">
-                    <label class="title-label center">I feel</label>
+                    <label class="title-label center" data-i18n="i-feel">I feel</label>
 
                     <div class="feel-box">
                         <div class="feel-input">
                             <input type="checkbox" class="diamond-input" name="attr_action_modifier" id="attr_action_modifier-plus" value="1">
-                            <label class="diamond-checkbox" for="attr_action_modifier-plus"><span class="diamond-down">Powerful <i>+</i></span></label>
+                            <label class="diamond-checkbox" for="attr_action_modifier-plus"><span class="diamond-down"><span data-i18n="powerful">Powerful</span> <i>+</i></span></label>
                         </div>
-                        <span>Action</span>
+                        <span data-i18n="action">Action</span>
                         <div class="feel-input ">
                             <input type="checkbox" class="diamond-input" name="attr_action_modifier" id="attr_action_modifier-minus" value="-1">
-                            <label class="diamond-checkbox" for="attr_action_modifier-minus"><span class="diamond-up">Bleeding <i>-</i></span></label>
+                            <label class="diamond-checkbox" for="attr_action_modifier-minus"><span class="diamond-up"><span data-i18n="bleeding">Bleeding</span> <i>-</i></span></label>
                         </div>
                     </div>
 
                     <div class="feel-box">
                         <div class="feel-input">
                             <input type="checkbox" class="diamond-input" name="attr_guts_modifier" id="attr_guts_modifier-plus" value="1">
-                            <label class="diamond-checkbox" for="attr_guts_modifier-plus"><span class="diamond-down">Daring <i>+</i></span></label>
+                            <label class="diamond-checkbox" for="attr_guts_modifier-plus"><span class="diamond-down"><span data-i18n="daring">Daring</span> <i>+</i></span></label>
                         </div>
-                        <span>Guts</span>
-                        <div class="feel-input ">
+                        <span data-i18n="guts">Guts</span>
+                        <div class="feel-input">
                             <input type="checkbox" class="diamond-input" name="attr_guts_modifier" id="attr_guts_modifier-minus" value="-1">
-                            <label class="diamond-checkbox" for="attr_guts_modifier-minus"><span class="diamond-up">Schocked <i>-</i></span></label>
+                            <label class="diamond-checkbox" for="attr_guts_modifier-minus"><span class="diamond-up"><span data-i18n="shocked">Shocked</span> <i>-</i></span></label>
                         </div>
                     </div>
 
                     <div class="feel-box">
                         <div class="feel-input">
                             <input type="checkbox" class="diamond-input" name="attr_knowledge_modifier" id="attr_knowledge_modifier-plus" value="1">
-                            <label class="diamond-checkbox" for="attr_knowledge_modifier-plus"><span class="diamond-down">Focused <i>+</i></span></label>
+                            <label class="diamond-checkbox" for="attr_knowledge_modifier-plus"><span class="diamond-down"><span data-i18n="focused">Focused</span> <i>+</i></span></label>
                         </div>
-                        <span>Knowledge</span>
+                        <span data-i18n="knowledge">Knowledge</span>
                         <div class="feel-input ">
                             <input type="checkbox" class="diamond-input" name="attr_knowledge_modifier" id="attr_knowledge_modifier-minus" value="-1">
-                            <label class="diamond-checkbox" for="attr_knowledge_modifier-minus"><span class="diamond-up">Dizzy <i>-</i></span></label>
+                            <label class="diamond-checkbox" for="attr_knowledge_modifier-minus"><span class="diamond-up"><span data-i18n="dizzy">Dizzy</span> <i>-</i></span></label>
                         </div>
                     </div>
 
 					<div class="feel-box">
                         <div class="feel-input">
                             <input type="checkbox" class="diamond-input" name="attr_society_modifier" id="attr_society_modifier-plus" value="1">
-                            <label class="diamond-checkbox" for="attr_society_modifier-plus"><span class="diamond-down">Confident <i>+</i></span></label>
+                            <label class="diamond-checkbox" for="attr_society_modifier-plus"><span class="diamond-down"><span data-i18n="confident">Confident</span> <i>+</i></span></label>
                         </div>
-                        <span>Society</span>
+                        <span data-i18n="society">Society</span>
                         <div class="feel-input ">
                             <input type="checkbox" class="diamond-input" name="attr_society_modifier" id="attr_society_modifier-minus" value="-1">
-                            <label class="diamond-checkbox" for="attr_society_modifier-minus"><span class="diamond-up">Embarassed <i>-</i></span></label>
+                            <label class="diamond-checkbox" for="attr_society_modifier-minus"><span class="diamond-up"><span data-i18n="embarassed">Embarassed</span> <i>-</i></span></label>
                         </div>
                     </div>
 
 					<div class="feel-box">
                         <div class="feel-input">
                             <input type="checkbox" class="diamond-input" name="attr_wild_modifier" id="attr_wild_modifier-plus" value="1">
-                            <label class="diamond-checkbox" for="attr_wild_modifier-plus"><span class="diamond-down">Fierce <i>+</i></span></label>
+                            <label class="diamond-checkbox" for="attr_wild_modifier-plus"><span class="diamond-down"><span data-i18n="fierce">Fierce</span> <i>+</i></span></label>
                         </div>
-                        <span>Wild</span>
+                        <span data-i18n="wild">Wild</span>
                         <div class="feel-input ">
                             <input type="checkbox" class="diamond-input" name="attr_wild_modifier" id="attr_wild_modifier-minus" value="-1">
-                            <label class="diamond-checkbox" for="attr_wild_modifier-minus"><span class="diamond-up">Broken <i>-</i></span></label>
+                            <label class="diamond-checkbox" for="attr_wild_modifier-minus"><span class="diamond-up"><span data-i18n="broken">Broken</span> <i>-</i></span></label>
                         </div>
                     </div>
 
 					<div class="feel-box">
                         <div class="feel-input">
                             <input type="checkbox" class="diamond-input" name="attr_crime_modifier" id="attr_crime_modifier-plus" value="1">
-                            <label class="diamond-checkbox" for="attr_crime_modifier-plus"><span class="diamond-down">Untouchable <i>+</i></span></label>
+                            <label class="diamond-checkbox" for="attr_crime_modifier-plus"><span class="diamond-down"><span data-i18n="untouchable">Untouchable</span> <i>+</i></span></label>
                         </div>
-                        <span>Crime</span>
+                        <span data-i18n="crime">Crime</span>
                         <div class="feel-input ">
                             <input type="checkbox" class="diamond-input" name="attr_crime_modifier" id="attr_crime_modifier-minus" value="-1">
-                            <label class="diamond-checkbox" for="attr_crime_modifier-minus"><span class="diamond-up">Scared <i>-</i></span></label>
+                            <label class="diamond-checkbox" for="attr_crime_modifier-minus"><span class="diamond-up"><span data-i18n="scared">Scared</span> <i>-</i></span></label>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-4 expertise-box">
 					<img class="expertise-img" src="https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/scythe.png" alt="">
+					<label class="subtitle-label" data-i18n="expertise">Expertise</label>
 					<div class="repitem">
 						<input type="text" name="attr_expertise_default">
 					</div>
 
-					<div class="sheet-box">
-						<fieldset class="repeating_expertise">
-							<input class="flex-1" type="text" name="attr_expertise_name">
-						</fieldset>
-					</div>
-					<label class="subtitle-label center">Expertise</label>
+					<fieldset class="repeating_expertise">
+						<input class="flex-1" type="text" name="attr_expertise_name">
+					</fieldset>
                 </div>
             </div>
 
 			<div class="row">
 				<div class="col-12">
-					<label class="title-label weapon-and-gear-title">Weapon & Gear 
+					<div class="weapon-and-gear-title">
+						<label class="title-label" data-i18n="weapon-and-gear">Weapon & Gear</label>
 						<img class="weapon-and-gear-img" src="https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/hook.png" alt="">
-					</label>
-
-					<div class="sheet-box">
-						<fieldset class="repeating_talents">
-							<input class="flex-1" type="text" name="attr_gear_name">
-							<input class="flex-2" type="text" name="attr_gear_desc">
-						</fieldset>
 					</div>
+
+					<fieldset class="repeating_gear">
+						<input class="flex-1 gear-input" type="text" name="attr_gear_name">
+						<input class="flex-2" type="text" name="attr_gear_desc">
+					</fieldset>
 				</div>
 			</div>
             
         </div>
-
-        
     </div>
+
+	<div class="row">
+		<div class="col-4">
+			<label class="subtitle-label" data-i18n="scars-and-experiences">Scars and Experiences</label>
+
+			<fieldset class="repeating_scars">
+				<input class="flex-1" type="text" name="attr_scars">
+			</fieldset>
+		</div>
+
+		<div class="col-4">
+			<label class="subtitle-label" data-i18n="pockets">Pockets</label>
+			<fieldset class="repeating_pockets">
+				<input class="flex-1" type="text" name="attr_pockets">
+			</fieldset>
+
+			<label class="subtitle-label" data-i18n="bag">Bag</label>
+			<fieldset class="repeating_bag">
+				<input class="flex-1" type="text" name="attr_bag">
+			</fieldset>
+		</div>
+
+		<div class="col-4">
+			<div class="backpack-box">
+				<label class="subtitle-label" data-i18n="backpack">backpack</label>
+				<img class="backpack-img" src="https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/backpack.png" alt="">
+				<fieldset class="repeating_backpack">
+					<input class="flex-1" type="text" name="attr_backpack">
+				</fieldset>
+			</div>
+
+			<label class="subtitle-label" data-i18n="mags">Mags</label>
+			<div class="fieldset-labels center">
+				<span class="flex-3 mini-title"></span>
+				<span class="flex-1 mini-title" data-i18n="pockets">pockets</span>
+				<span class="flex-1 mini-title" data-i18n="bag">bag</span>
+				<span class="flex-1 mini-title" data-i18n="backpack">backpack</span>
+			</div>
+			<fieldset class="repeating_mag">
+				<input class="flex-3" type="text" name="attr_mag_name">
+				<input class="flex-1" type="number" max="2" name="attr_mag_pockets">
+				<input class="flex-1" type="number" max="2" name="attr_mag_bag">
+				<input class="flex-1" type="number" max="9" name="attr_mag_backpack">
+			</fieldset>
+			<div class="fieldset-labels mag-max-clips">
+				<span class="flex-3 mini-title"></span>
+				<span class="flex-1 mini-title">/2</span>
+				<span class="flex-1 mini-title">/2</span>
+				<span class="flex-1 mini-title">/9</span>
+			</div>
+		</div>
+	</div>
 
     <input type="hidden" name="attr_null_calc" value="0">
 </div>
@@ -757,12 +803,12 @@
         </div>
 
         <div class="template-grid-item-flex">
-		    <label class="template-label">Total dices:</label>
+		    <label class="template-label" data-i18n="total-dices:">Total dices:</label>
             <div class="template-roll-between">{{baseDice}}</div>
         </div>
 
         <div class="template-grid-item-flex">
-            <label class="template-label">Equal dice:</label>
+            <label class="template-label" data-i18n="equal-dice:">Equal dice:</label>
         </div>
 
         <div class="template-grid-item-box">
@@ -907,22 +953,22 @@
         </div>
 
         <div class="template-grid-item-flex">
-		    <label class="template-label">Basic:</label>
+		    <label class="template-label" data-i18n="basic:">Basic:</label>
             <div class="template-roll-between">{{computed::basic_success}}</div>
         </div>
 
         <div class="template-grid-item-flex">
-		    <label class="template-label">Critical:</label>
+		    <label class="template-label" data-i18n="critical:">Critical:</label>
             <div class="template-roll-between">{{computed::critical_success}}</div>
         </div>
 
         <div class="template-grid-item-flex">
-		    <label class="template-label">Extreme:</label>
+		    <label class="template-label" data-i18n="extreme:">Extreme:</label>
             <div class="template-roll-between">{{computed::extreme_success}}</div>
         </div>
 
         <div class="template-grid-item-flex">
-		    <label class="template-label">Impossible:</label>
+		    <label class="template-label" data-i18n="impossible:">Impossible:</label>
             <div class="template-roll-between">{{computed::impossible_success}}</div>
         </div>
 	</div>
