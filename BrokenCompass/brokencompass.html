@@ -789,6 +789,15 @@
 	</div>
 
     <input type="hidden" name="attr_null_calc" value="0">
+
+    <input type="hidden" name="attr_pair_one_sum" value="0">
+    <input type="hidden" name="attr_pair_two_sum" value="0">
+    <input type="hidden" name="attr_pair_three_sum" value="0">
+    <input type="hidden" name="attr_pair_four_sum" value="0">
+    <input type="hidden" name="attr_pair_five_sum" value="0">
+    <input type="hidden" name="attr_pair_six_sum" value="0">
+    <input type="hidden" name="attr_dice_for_reroll" value="0">
+
 </div>
 
 
@@ -805,6 +814,7 @@
 		</div>
 
         <div class="template-subtitle">
+            {{expertise_title}}
             {{roll-name}}
         </div>
 
@@ -847,7 +857,7 @@
         </div>
 
         <div class="template-grid-item-flex">
-            <label class="template-label" data-i18n="equal-dice:">Equal dice:</label>
+            <label class="template-label" data-i18n="result:">Result:</label>
         </div>
 
         <div class="template-grid-item-box">
@@ -989,6 +999,43 @@
                 {{/rollGreater() computed::pair_of_six 5}}
             </div>
             {{/rollGreater() computed::pair_of_six 1}}
+
+            {{#rollGreater() computed::base_dice_1 0}}
+                <div class="template-grid-item">
+                    <div class="template-roll-between"><span class="template-roll-dice">1</span></div>
+                </div>
+            {{/rollGreater() computed::base_dice_1 0}}
+
+            {{#rollGreater() computed::base_dice_2 0}}
+                <div class="template-grid-item">
+                    <div class="template-roll-between"><span class="template-roll-dice">2</span></div>
+                </div>
+            {{/rollGreater() computed::base_dice_2 0}}
+
+            {{#rollGreater() computed::base_dice_3 0}}
+                <div class="template-grid-item">
+                    <div class="template-roll-between"><span class="template-roll-dice">3</span></div>
+                </div>
+            {{/rollGreater() computed::base_dice_3 0}}
+
+            {{#rollGreater() computed::base_dice_4 0}}
+                <div class="template-grid-item">
+                    <div class="template-roll-between"><span class="template-roll-dice">4</span></div>
+                </div>
+            {{/rollGreater() computed::base_dice_4 0}}
+
+            {{#rollGreater() computed::base_dice_5 0}}
+                <div class="template-grid-item">
+                    <div class="template-roll-between"><span class="template-roll-dice">5</span></div>
+                </div>
+            {{/rollGreater() computed::base_dice_5 0}}
+
+            {{#rollGreater() computed::base_dice_6 0}}
+                <div class="template-grid-item">
+                    <div class="template-roll-between"><span class="template-roll-dice">6</span></div>
+                </div>
+            {{/rollGreater() computed::base_dice_6 0}}
+
         </div>
 
         <div class="template-grid-item-flex">
@@ -1014,7 +1061,7 @@
         <div class="template-grid-item-flex">
             {{#expertise}}
             <div class="template-button">
-                [<span data-i18n="i-have-expertise"></span>](~{{character_name}}|roll||{{attribute}}|{{skill}})
+                [<span data-i18n="i-have-expertise"></span>](~{{character_name}}|roll||{{attribute}}|{{skill}}|{{baseDice}})
             </div>
             {{/expertise}}
 
@@ -1024,7 +1071,7 @@
 
 <script type="text/worker">
 
-	const stats = ["action", "fight", "leadership", "stunt"];
+	const stats = ["action", "fight", "leadership", "stunt", "guts", "cool", "drive", "shoot", "knowledge", "culture", "first_aid", "tech", "society", "charm", "eloquence", "observation", "wild", "scout", "survival", "tough", "crime", "caution", "dexterity", "stealth"];
 
 	stats.forEach(stat => {
 		on(`change:${stat}`, () => {
@@ -1041,35 +1088,42 @@
 		});
 	});
 
-    on('clicked:roll', async (info) => {
-        console.log(info)
+	const expertiseAttr = ["dice_for_reroll", "pair_one_sum", "pair_two_sum", "pair_three_sum", "pair_four_sum", "pair_five_sum", "pair_six_sum"];
 
+    on('clicked:roll', async (info) => {
         var expertise = true;
-        if (info.originalRollId != null) {
-            var attr_and_skill = info.originalRollId.split('|');
-            var attribute = attr_and_skill[0];
-            var skill = attr_and_skill[1];
-            expertise = '';
-        } else {
-            var attribute = info.htmlAttributes['data-attribute'];
-            var skill = info.htmlAttributes['data-skill'];
-        }
+        var expertiseTitle = '';
+        var attribute = info.htmlAttributes['data-attribute'];
+        var skill = info.htmlAttributes['data-skill'];
+        var baseDiceTotal = '@{'+attribute+'_calc} + @{'+skill+'_calc} + @{'+attribute+'_modifier} + ?{Modifiers|0}';
+        var baseDiceTotalToRoll = baseDiceTotal;
 
 		var rollName = attribute;
 
-		if (skill == '') {
+        if (info.originalRollId != null) {
+            var attr_and_skill = info.originalRollId.split('|');
+            attribute = attr_and_skill[0];
+            skill = attr_and_skill[1];
+            baseDiceTotal = attr_and_skill[2];
+            baseDiceTotalToRoll = "@{dice_for_reroll}";
+            expertiseTitle = "{{expertise_title=^{i-have-expertise} }}";
+            expertise = '';
+        }
+
+        if (skill == '') {
 			skill = 'null';
 		} else {
 			rollName = skill;
 		}
 
-		const rollBase = '@{secret_roll} &{template:brokencompass} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{attribute='+attribute+'}} {{skill='+skill+'}} {{expertise='+expertise+'}} {{roll-name=^{'+rollName+'} }} {{baseDice=[[ @{'+attribute+'_calc} + @{'+skill+'_calc} + @{'+attribute+'_modifier} + ?{Modifiers|0} ]] }} {{dices=[[(@{'+attribute+'_calc} + @{'+skill+'_calc} + @{'+attribute+'_modifier} + ?{Modifiers|0})d6m]]}} {{pair_of_one=[[1d6]]}} {{pair_of_two=[[1d6]]}} {{pair_of_three=[[1d6]]}} {{pair_of_four=[[1d6]]}} {{pair_of_five=[[1d6]]}} {{pair_of_six=[[1d6]]}} {{basic_success=[[1d6]]}} {{critical_success=[[1d6]]}} {{extreme_success=[[1d6]]}} {{impossible_success=[[1d6]]}}';
-
-        var table = [0,0,0,0,0,0,0];
-
+		const rollBase = '@{secret_roll} &{template:brokencompass} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{attribute='+attribute+'}} {{skill='+skill+'}} {{expertise='+expertise+'}} '+expertiseTitle+' {{roll-name=^{'+rollName+'} }} {{baseDice=[[ '+baseDiceTotal+' ]] }} {{dices=[[('+baseDiceTotalToRoll+')d6m]]}} {{pair_of_one=[[1d6]]}} {{pair_of_two=[[1d6]]}} {{pair_of_three=[[1d6]]}} {{pair_of_four=[[1d6]]}} {{pair_of_five=[[1d6]]}} {{pair_of_six=[[1d6]]}} {{basic_success=[[1d6]]}} {{critical_success=[[1d6]]}} {{extreme_success=[[1d6]]}} {{impossible_success=[[1d6]]}} {{what_a_hero_success=[[1d6]]}} {{base_dice_1=[[1d6]]}} {{base_dice_2=[[1d6]]}} {{base_dice_3=[[1d6]]}}{{base_dice_4=[[1d6]]}} {{base_dice_5=[[1d6]]}} {{base_dice_6=[[1d6]]}} {{previous_pairs=@{pair_one_sum}}}';
         let rollResult = await startRoll(rollBase);
+        let tableOfPairs = await checkPairs(rollResult, expertise);
+        let computedValues = await calcComputedValues(tableOfPairs);
 
-        let computedValues = await checkPairs(rollResult);
+        if (expertise != '') {
+            await updateExpertiseAttr(computedValues, tableOfPairs);
+        }
 
         finishRoll(
             rollResult.rollId,
@@ -1077,8 +1131,38 @@
         );
     });
 
+    // Update attr for expertise
+    const updateExpertiseAttr = async (computedValues, tableOfPairs) => {
+        expertiseAttr.forEach((attr, index) => {
+            if (index == 0) {
+                setAttrs({
+                    [`${attr}`]: computedValues.dice_for_reroll
+                }); 
+            } else {
+                setAttrs({
+                    [`${attr}`]: tableOfPairs[index]
+                }); 
+            }
+        });
+    }
+
+    // Get expertise numbers
+    const getExpertiseAttr = async (table) => {
+
+	    var expertiseTable = await asw.getAttrs(expertiseAttr);
+        expertiseTable = Object.values(expertiseTable);
+
+        for (i = 1; expertiseTable.length > i; i++) {
+            if (expertiseTable[i] > 1) {
+                table[i] += expertiseTable[i];
+            }
+        }
+
+        return table;
+    }
+
     // Helper for check pairs and successes
-    const checkPairs = async (rollResult) => {
+    const checkPairs = async (rollResult, expertise) => {
         const dices	= rollResult.results.dices.dice;
 
         var table = [0,0,0,0,0,0,0];
@@ -1087,25 +1171,68 @@
             table[dices[i]] += 1;
         }
 
+        if (expertise == '') {
+            var table = await getExpertiseAttr(table);
+        }
+
+        console.log(table)
+
+        return table;
+    }
+
+    // Helper for calc computed values
+    const calcComputedValues = async (table) => {
         var successes = {
             basic: 0,
             critical: 0,
             extreme: 0,
             impossible: 0,
+            what_a_hero: 0,
         }
 
+        var rest_dices = {
+            1: 0, 
+            2: 0, 
+            3: 0,
+            4: 0,
+            5: 0,
+            6: 0,
+        };
+
+        var dice_for_reroll = 0;
+
         for (k = 1; table.length > k; k++) {
-            if (table[k] >= 5) {
+            if (table[k] >= 6) {
+                successes.what_a_hero += 1;
+            } else if (table[k] == 5) {
                 successes.impossible += 1;
             } else if(table[k] == 4) {
                 successes.extreme += 1;
+
+                if (successes.extreme == 2) {
+                    successes.extreme = 0;
+                    successes.impossible += 1;
+                }
             } else if(table[k] == 3) {
                 successes.critical += 1;
+
+                if (successes.critical == 3) {
+                    successes.critical = 0;
+                    successes.impossible += 1;
+                }
             } else if(table[k] == 2) {
                 successes.basic += 1;
+
+                if (successes.basic == 3) {
+                    successes.basic = 0;
+                    successes.critical += 1;
+                }
+            } else if(table[k] == 1) {
+                rest_dices[k] = k;
+                dice_for_reroll += 1;
             }
         }
-    
+
         let results = {
             pair_of_one: table[1],
             pair_of_two: table[2],
@@ -1117,8 +1244,44 @@
             critical_success: successes.critical,
             extreme_success: successes.extreme,
             impossible_success: successes.impossible,
+            what_a_hero_success: successes.what_a_hero,
+            base_dice_1: rest_dices[1],
+            base_dice_2: rest_dices[2],
+            base_dice_3: rest_dices[3],
+            base_dice_4: rest_dices[4],
+            base_dice_5: rest_dices[5],
+            base_dice_6: rest_dices[6],
+            dice_for_reroll: dice_for_reroll,
         };
 
         return results;
     }
+
+    const asw = (() => {
+        const setActiveCharacterId = function(charId){
+            let oldAcid=getActiveCharacterId();
+            let ev = new CustomEvent("message");
+            ev.data={"id":"0", "type":"setActiveCharacter", "data":charId};
+            self.dispatchEvent(ev);
+            return oldAcid;
+        };
+        const promisifyWorker = (worker, parameters) => {
+            let acid=getActiveCharacterId();
+            let prevAcid=null;
+            return new Promise((res,rej)=>{
+                prevAcid=setActiveCharacterId(acid);
+                try {if (worker===0) getAttrs(parameters[0]||[],(v)=>res(v));
+                    else if (worker===1) setAttrs(parameters[0]||{}, parameters[1]||{},(v)=>res(v));
+                    else if (worker===2) getSectionIDs(parameters[0]||'',(v)=>res(v));
+                } catch(err) {rej(console.error(err))}
+            }).finally(()=>setActiveCharacterId(prevAcid));
+        }
+        
+        return {
+            getAttrs(attrArray) {return promisifyWorker(0, [attrArray])},
+            setAttrs(attrObj, options) {return promisifyWorker(1, [attrObj, options])},
+            getSectionIDs(section) {return promisifyWorker(2, [section])},
+            setActiveCharacterId,
+        }
+    })();
 </script>
