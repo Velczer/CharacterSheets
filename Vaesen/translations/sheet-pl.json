@@ -9,19 +9,23 @@
 	"trauma": "Trauma",
 	"dark-secret": "Mroczny Sekret",
 	"relationships": "Relacje",
+	"relation": "Relacja",
 	"talents": "Talenty",
 	"insights-defects": "Dary i Skazy",
 	"advantages": "Przewagi",
 	"armor": "Pancerz",
 	"protection": "Punkty osłony",
-	"agility": "Gibkość",
 	"equipment": "Rynsztunek",
 	"bonus": "Premia",
 	"weapon": "Broń",
 	"damage": "Obrażenia",
 	"range": "Zasięg",
 	"memento": "Pamiątka",
+
+	"roll": "Rzuć",
+	"roll-d66": "Rzuć k66",
 	"make-the-roll-secret": "Rzuć kośćmi sekretnie",
+	"dice-modificator-roll": "Rzut modyfikatorem",
 
 	"attributes": "Cechy",
 	"physique": "Krzepa",
@@ -42,6 +46,10 @@
 	"hopeless": "Rozpacz",
 
 	"skills": "Umiejętności",
+	"attribute": "Atrybut",
+	"use": "Użyj",
+	"clear": "Wyczyść",
+	"dice-modificator": "Modyfikator rzutu:",
 
 	"agility": "Gibkość",
 	"close-combat": "Walka wręcz",
@@ -57,9 +65,12 @@
 	"observation": "Obserwacja",
 	"experience": "Punkty doświadczenia",
 
-	"success": "Sukcesy:",
-	"amount-of-dices": "Ilość kości:",
+	"weapon-attack": "Atak bronią",
 
+	"success": "Sukcesy",
+	"amount-of-dices": "Ilość kości",
+	"condition-penalty": "Kara ze stanu",
+	"weapon-bonus": "Bonus z broni",
 
 	"headquarter-sheet": "Karta Siedziby",
 	"name-hq": "Nazwa",
@@ -73,6 +84,23 @@
 	"contacts": "Kontakty",
 	"personel": "Personel",
 	"function": "Funkcja",
-	"asset": "Zasób"
+	"asset": "Zasób",
 	
+	"npc-sheet": "Karta NPC",
+	"physical-toughness": "Wytrzymałość fizyczna",
+	"mental-toughness": "Wytrzymałość psychiczna",
+	"notes": "Notatki",
+	"skill-roll": "Rzut na umiejętność",
+
+
+	"vaesen-sheet": "Karta Vaesen",
+	"secret": "Sekret",
+	"ritual": "Rytuał",
+	"might": "Moc",
+	"body-control": "Kontrola ciała",
+	"magic": "Magia",
+	"fear": "Strach",
+	"attacks": "Ataki",
+	"condition-name": "Nazwa",
+	"abilities": "Umiejętności"
 }

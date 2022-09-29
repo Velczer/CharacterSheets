@@ -814,7 +814,6 @@
 		</div>
 
         <div class="template-subtitle">
-            {{expertise_title}}
             {{roll-name}}
         </div>
 
@@ -848,6 +847,10 @@
 		</div>
 
         <div class="template-subtitle">
+            {{#expertise_title}}
+                {{expertise_title}}
+			{{/expertise_title}}
+
             {{roll-name}}
         </div>
 
@@ -1040,37 +1043,43 @@
 
         <div class="template-grid-item-flex">
 		    <label class="template-label" data-i18n="basic:">Basic:</label>
-            <div class="template-roll-between">{{computed::basic_success}}</div>
+            <div class="template-roll-between">{{computed::basic}}</div>
         </div>
 
         <div class="template-grid-item-flex">
 		    <label class="template-label" data-i18n="critical:">Critical:</label>
-            <div class="template-roll-between">{{computed::critical_success}}</div>
+            <div class="template-roll-between">{{computed::critical}}</div>
         </div>
 
         <div class="template-grid-item-flex">
 		    <label class="template-label" data-i18n="extreme:">Extreme:</label>
-            <div class="template-roll-between">{{computed::extreme_success}}</div>
+            <div class="template-roll-between">{{computed::extreme}}</div>
         </div>
 
         <div class="template-grid-item-flex">
 		    <label class="template-label" data-i18n="impossible:">Impossible:</label>
-            <div class="template-roll-between">{{computed::impossible_success}}</div>
+            <div class="template-roll-between">{{computed::impossible}}</div>
         </div>
 
-        {{#rollGreater() computed::what_a_hero_success 0}}
+        {{#rollGreater() computed::what_a_hero 0}}
             <div class="sheet-template-subtitle sheet-green" data-i18n="what-a-hero">What a hero!</div>
-        {{/rollGreater() computed::what_a_hero_success 0}}
+        {{/rollGreater() computed::what_a_hero 0}}
 
 
+        {{#expertise}}
         <div class="template-grid-item-flex">
-            {{#expertise}}
             <div class="template-button">
                 [<span data-i18n="i-have-expertise"></span>](~{{character_name}}|roll||{{attribute}}|{{skill}}|{{baseDice}})
             </div>
-            {{/expertise}}
-
         </div>
+        {{/expertise}}
+
+        {{#rollGreater() computed::any_success 0}}
+        <div class="template-grid-item-flex">
+            [<span data-i18n="risk"></span>](~{{character_name}}|roll||{{attribute}}|{{skill}}|{{baseDice}})
+        </div>
+        {{/rollGreater() computed::any_success 0}}
+
 	</div>
 </rolltemplate>
 
@@ -1100,28 +1109,35 @@
         var expertiseTitle = '';
         var attribute = info.htmlAttributes['data-attribute'];
         var skill = info.htmlAttributes['data-skill'];
+
+        if (skill == '') {
+			skill = 'null';
+		}
+
         var baseDiceTotal = '@{'+attribute+'_calc} + @{'+skill+'_calc} + @{'+attribute+'_modifier} + ?{Modifiers|0}';
         var baseDiceTotalToRoll = baseDiceTotal;
 
-		var rollName = attribute;
 
         if (info.originalRollId != null) {
             var attr_and_skill = info.originalRollId.split('|');
+            console.log(attr_and_skill)
             attribute = attr_and_skill[0];
             skill = attr_and_skill[1];
             baseDiceTotal = attr_and_skill[2];
+
             baseDiceTotalToRoll = "@{dice_for_reroll}";
             expertiseTitle = "{{expertise_title=^{i-have-expertise} }}";
             expertise = '';
         }
 
-        if (skill == '') {
-			skill = 'null';
-		} else {
-			rollName = skill;
-		}
 
-		const rollBase = '@{secret_roll} &{template:brokencompass} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{attribute='+attribute+'}} {{skill='+skill+'}} {{expertise='+expertise+'}} '+expertiseTitle+' {{roll-name=^{'+rollName+'} }} {{baseDice=[[ '+baseDiceTotal+' ]] }} {{dices=[[('+baseDiceTotalToRoll+')d6m]]}} {{pair_of_one=[[1d6]]}} {{pair_of_two=[[1d6]]}} {{pair_of_three=[[1d6]]}} {{pair_of_four=[[1d6]]}} {{pair_of_five=[[1d6]]}} {{pair_of_six=[[1d6]]}} {{basic_success=[[1d6]]}} {{critical_success=[[1d6]]}} {{extreme_success=[[1d6]]}} {{impossible_success=[[1d6]]}} {{what_a_hero_success=[[1d6]]}} {{base_dice_1=[[1d6]]}} {{base_dice_2=[[1d6]]}} {{base_dice_3=[[1d6]]}}{{base_dice_4=[[1d6]]}} {{base_dice_5=[[1d6]]}} {{base_dice_6=[[1d6]]}} {{previous_pairs=@{pair_one_sum}}}';
+        if (skill == 'null') {
+            var rollName = attribute;
+		} else {
+            var rollName = skill;
+        }
+
+		const rollBase = '@{secret_roll} &{template:brokencompass} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{attribute='+attribute+'}} {{skill='+skill+'}} {{expertise='+expertise+'}} '+expertiseTitle+' {{roll-name=^{'+rollName+'} }} {{baseDice=[[ '+baseDiceTotal+' ]] }} {{dices=[[('+baseDiceTotalToRoll+')d6m]]}} {{pair_of_one=[[1d6]]}} {{pair_of_two=[[1d6]]}} {{pair_of_three=[[1d6]]}} {{pair_of_four=[[1d6]]}} {{pair_of_five=[[1d6]]}} {{pair_of_six=[[1d6]]}} {{basic=[[1d6]]}} {{critical=[[1d6]]}} {{extreme=[[1d6]]}} {{impossible=[[1d6]]}} {{what_a_hero=[[1d6]]}} {{base_dice_1=[[1d6]]}} {{base_dice_2=[[1d6]]}} {{base_dice_3=[[1d6]]}}{{base_dice_4=[[1d6]]}} {{base_dice_5=[[1d6]]}} {{base_dice_6=[[1d6]]}} {{previous_pairs=@{pair_one_sum}}} {{any_success=[[1d6]]}}';
         let rollResult = await startRoll(rollBase);
         let tableOfPairs = await checkPairs(rollResult, expertise);
         let computedValues = await calcComputedValues(tableOfPairs);
@@ -1185,56 +1201,35 @@
 
     // Helper for calc computed values
     const calcComputedValues = async (table) => {
-        var successes = {
-            basic: 0,
-            critical: 0,
-            extreme: 0,
-            impossible: 0,
-            what_a_hero: 0,
-        }
+        const success = { basic: 0, critical: 0, extreme: 0, impossible: 0, what_a_hero: 0 };
 
-        var rest_dices = {
-            1: 0, 
-            2: 0, 
-            3: 0,
-            4: 0,
-            5: 0,
-            6: 0,
-        };
+        var rest_dices = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0 };
 
         var dice_for_reroll = 0;
 
+        var any_success = 0;
         for (k = 1; table.length > k; k++) {
-            if (table[k] >= 6) {
-                successes.what_a_hero += 1;
-            } else if (table[k] == 5) {
-                successes.impossible += 1;
-            } else if(table[k] == 4) {
-                successes.extreme += 1;
-
-                if (successes.extreme == 2) {
-                    successes.extreme = 0;
-                    successes.impossible += 1;
-                }
-            } else if(table[k] == 3) {
-                successes.critical += 1;
-
-                if (successes.critical == 3) {
-                    successes.critical = 0;
-                    successes.impossible += 1;
-                }
-            } else if(table[k] == 2) {
-                successes.basic += 1;
-
-                if (successes.basic == 3) {
-                    successes.basic = 0;
-                    successes.critical += 1;
-                }
-            } else if(table[k] == 1) {
+            if (table[k] === 1) {
                 rest_dices[k] = k;
                 dice_for_reroll += 1;
-            }
+            } else if(table[k] >= 2) {
+                any_success += 1;
+
+                if (table[k] === 2) {
+                    success.basic++;
+                } else if (table[k] === 3) {
+                    success.critical++;
+                } else if (table[k] === 4) {
+                    success.extreme++;
+                } else if (table[k] === 5) {
+                    success.impossible++;
+                } else if (table[k] >= 6) {
+                    success.what_a_hero++;
+                }
+            } 
         }
+
+        console.log(any_success)
 
         let results = {
             pair_of_one: table[1],
@@ -1243,11 +1238,11 @@
             pair_of_four: table[4],
             pair_of_five: table[5],
             pair_of_six: table[6],
-            basic_success: successes.basic,
-            critical_success: successes.critical,
-            extreme_success: successes.extreme,
-            impossible_success: successes.impossible,
-            what_a_hero_success: successes.what_a_hero,
+            basic: success.basic,
+            critical: success.critical,
+            extreme: success.extreme,
+            impossible: success.impossible,
+            what_a_hero: success.what_a_hero,
             base_dice_1: rest_dices[1],
             base_dice_2: rest_dices[2],
             base_dice_3: rest_dices[3],
@@ -1255,6 +1250,7 @@
             base_dice_5: rest_dices[5],
             base_dice_6: rest_dices[6],
             dice_for_reroll: dice_for_reroll,
+            any_success: any_success,
         };
 
         console.log(results)
