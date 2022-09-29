@@ -1058,6 +1058,11 @@
             <div class="template-roll-between">{{computed::impossible_success}}</div>
         </div>
 
+        {{#rollGreater() computed::what_a_hero_success 0}}
+            <div class="sheet-template-subtitle sheet-green" data-i18n="what-a-hero">What a hero!</div>
+        {{/rollGreater() computed::what_a_hero_success 0}}
+
+
         <div class="template-grid-item-flex">
             {{#expertise}}
             <div class="template-button">
@@ -1175,8 +1180,6 @@
             var table = await getExpertiseAttr(table);
         }
 
-        console.log(table)
-
         return table;
     }
 
@@ -1253,6 +1256,8 @@
             base_dice_6: rest_dices[6],
             dice_for_reroll: dice_for_reroll,
         };
+
+        console.log(results)
 
         return results;
     }
