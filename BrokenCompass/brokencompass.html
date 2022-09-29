@@ -854,13 +854,9 @@
             {{roll-name}}
         </div>
 
-        <div class="template-grid-item-flex">
-		    <label class="template-label" data-i18n="total-dices:">Total dices:</label>
-            <div class="template-roll-between">{{baseDice}}</div>
-        </div>
-
-        <div class="template-grid-item-flex">
-            <label class="template-label" data-i18n="result:">Result:</label>
+        <div class="template-dice-stats">
+            <div><label class="template-label" data-i18n="result:">Result:</label></div>
+            <div><span data-i18n="total-dices">Total dices</span> {{baseDice}}</div>
         </div>
 
         <div class="template-grid-item-box">
@@ -1041,45 +1037,37 @@
 
         </div>
 
-        <div class="template-grid-item-flex">
-		    <label class="template-label" data-i18n="basic:">Basic:</label>
-            <div class="template-roll-between">{{computed::basic}}</div>
+        <div class="template-dice-stats">
+            <div><span data-i18n="basic">Basic</span> {{computed::basic}}</div>
+            <div><span data-i18n="critical">Critical</span> {{computed::critical}}</div>
         </div>
 
-        <div class="template-grid-item-flex">
-		    <label class="template-label" data-i18n="critical:">Critical:</label>
-            <div class="template-roll-between">{{computed::critical}}</div>
+        <div class="template-dice-stats">
+            <div><span data-i18n="extreme">Extreme</span> {{computed::extreme}}</div>
+            <div><span data-i18n="impossible">Impossible</span> {{computed::impossible}}</div>
         </div>
-
-        <div class="template-grid-item-flex">
-		    <label class="template-label" data-i18n="extreme:">Extreme:</label>
-            <div class="template-roll-between">{{computed::extreme}}</div>
-        </div>
-
-        <div class="template-grid-item-flex">
-		    <label class="template-label" data-i18n="impossible:">Impossible:</label>
-            <div class="template-roll-between">{{computed::impossible}}</div>
-        </div>
-
+        
         {{#rollGreater() computed::what_a_hero 0}}
             <div class="sheet-template-subtitle sheet-green" data-i18n="what-a-hero">What a hero!</div>
         {{/rollGreater() computed::what_a_hero 0}}
 
-
-        {{#expertise}}
-        <div class="template-grid-item-flex">
-            <div class="template-button">
-                [<span data-i18n="i-have-expertise"></span>](~{{character_name}}|roll||{{attribute}}|{{skill}}|{{baseDice}})
+        <div class="template-dice-actions">
+            {{#expertise}}
+            <div>
+                <div class="template-button">
+                    [<span data-i18n="i-have-expertise"></span>](~{{character_name}}|roll||{{attribute}}|{{skill}}|{{baseDice}})
+                </div>
             </div>
-        </div>
-        {{/expertise}}
+            {{/expertise}}
 
-        {{#rollGreater() computed::any_success 0}}
-        <div class="template-grid-item-flex">
-            [<span data-i18n="risk"></span>](~{{character_name}}|roll||{{attribute}}|{{skill}}|{{baseDice}})
+            {{#rollGreater() computed::any_success 0}}
+            <div>
+                <div class="template-button">
+                    [<span data-i18n="risk"></span>](~{{character_name}}|roll||{{attribute}}|{{skill}}|{{baseDice}})
+                </div>
+            </div>
+            {{/rollGreater() computed::any_success 0}}
         </div>
-        {{/rollGreater() computed::any_success 0}}
-
 	</div>
 </rolltemplate>
 

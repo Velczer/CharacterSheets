@@ -190,7 +190,7 @@
 
 /* Custom modules */
 .character-sheet {
-    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/sheet-bg.jpg);
+    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/sheet-bg.webp);
     background-size: cover;
     background-position: top center;
     padding: 10px 30px;
@@ -525,20 +525,6 @@
     color: #fff;
 }
 
-.sheet-rolltemplate-brokencompass .sheet-template-button {
-    width: 100%;
-    padding-top: 10px;
-}
-
-.sheet-rolltemplate-brokencompass .sheet-template-button a {
-    background: #231f20;
-	border: 0;
-	width: 100%;
-	text-align: center;
-    box-sizing: border-box;
-    text-transform: uppercase;
-}
-
 .sheet-rolltemplate-brokencompass .sheet-template-subtitle, .sheet-rolltemplate-coin-flip .sheet-template-subtitle {
     color: #231f20;
     font-size: 20px;
@@ -580,7 +566,7 @@
 }
 
 .sheet-rolltemplate-brokencompass .sheet-template-grid-item-box {
-    background: rgb(255 255 255 / 70%);
+    background: rgb(255 255 255 / 60%);
     padding: 0 8px;
 }
 
@@ -592,7 +578,7 @@
 .sheet-rolltemplate-brokencompass .sheet-template-grid-item-flex {
     display: flex;
     align-items: center;
-    background: rgb(255 255 255 / 70%);
+    background: rgb(255 255 255 / 60%);
 }
 
 .sheet-rolltemplate-brokencompass .sheet-template-roll-between {
@@ -607,6 +593,7 @@
 	overflow: hidden;
     display: inline-block;
 }
+
 .sheet-rolltemplate-brokencompass .sheet-template-roll-between > span, .sheet-rolltemplate-brokencompass .sheet-template-roll-success > span {
 	width: 100%;
 	display: inline-block;
@@ -621,22 +608,25 @@
 	/* color: #3e5f76; */
 	color: #333;
 }
+
 .sheet-rolltemplate-brokencompass .sheet-template-roll-success > span {
 	display: block;
 }
+
 .sheet-rolltemplate-brokencompass .sheet-template-roll-between > span.fullcrit, .sheet-rolltemplate-brokencompass .sheet-template-roll-between > span.fullfail {
 	border: 0;
 }
 
 .sheet-rolltemplate-brokencompass .sheet-template-label {
 	font-size: 16px;
-	padding: 5px;
+	padding: 0 5px;
 	text-align: left;
     font-weight: bold;
 	text-transform: uppercase;
     color: #231f20;
     margin: 0;
 }
+
 .sheet-rolltemplate-brokencompass .sheet-template-label span {
 	background: none;
 	border: 0;
@@ -644,6 +634,73 @@
 	display: inline;
 	font-size: 14px;
 	margin: 0;
+}
+
+.sheet-rolltemplate-brokencompass .sheet-template-small-label {
+    padding: 6px;
+	color: #231f20;
+	text-align: center;
+	font-size: 13px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.sheet-rolltemplate-brokencompass span.inlinerollresult.fullcrit {
+    border: 0;
+    counter-increment: hit;
+}
+
+.sheet-rolltemplate-brokencompass span.inlinerollresult.fullfail {
+    border: 0;
+}
+
+.sheet-rolltemplate-brokencompass .sheet-template-dice-stats {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(255 255 255 / 60%);
+}
+
+.sheet-rolltemplate-brokencompass .sheet-template-dice-stats>div {
+    padding: 6px;
+    color: #231f20;
+    text-align: center;
+    font-size: 13px;
+}
+
+.sheet-rolltemplate-brokencompass .sheet-template-dice-stats span, .sheet-rolltemplate-brokencompass .sheet-template-clear-result span {
+    display: inline;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    font-weight: bold;
+}
+.sheet-rolltemplate-brokencompass .sheet-template-dice-stats span:first-child:after {
+    content: ":";
+}
+
+.sheet-rolltemplate-brokencompass .sheet-template-dice-actions {
+    display: flex;
+	justify-content: space-between;
+	background-color: rgb(255 255 255 / 60%);
+    padding-top: 5px;
+}
+
+.sheet-rolltemplate-brokencompass .sheet-template-dice-actions > div {
+    flex: 1;
+}
+
+.sheet-rolltemplate-brokencompass .sheet-template-dice-actions > div:last-child {
+    border-left: 1px solid transparent;
+}
+
+.sheet-rolltemplate-brokencompass .sheet-template-button a {
+    background: #231f20;
+	border: 0;
+	width: 100%;
+	text-align: center;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    padding: 5px 10px;
 }
 
 /* Repeating sections */

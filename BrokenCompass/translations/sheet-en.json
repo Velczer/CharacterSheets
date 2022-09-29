@@ -58,12 +58,12 @@
     "backpack": "Backpack",
     "mags": "Mags",
 
-    "total-dices:": "Total dices:",
+    "total-dices": "Total dices",
     "result:": "Result:",
-    "basic:": "Basic:",
-    "critical:": "Critical:",
-    "extreme:": "Extreme:",
-    "impossible:": "Impossible:",
+    "basic": "Basic",
+    "critical": "Critical",
+    "extreme": "Extreme",
+    "impossible": "Impossible",
     "what-a-hero": "What a hero!",
 
     "name": "Name",
