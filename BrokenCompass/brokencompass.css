@@ -524,8 +524,6 @@
 .sheet-rolltemplate-coin-flip .sheet-template-center img {
     max-width: 150px;
     margin: auto;
-    box-shadow: 1px 1px 10px 3px #000;
-    border-radius: 100%;
 }
 
 .sheet-rolltemplate-brokencompass .sheet-template-grid {
