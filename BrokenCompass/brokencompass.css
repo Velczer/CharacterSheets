@@ -152,6 +152,7 @@
     transition: .3s all ease;
     margin-right: 5px;
     text-shadow: none;
+    border-radius: 4px;
 }
 
 .charsheet .character-sheet button[type="roll"]:hover,
@@ -162,7 +163,7 @@
 
 .charsheet .character-sheet button[type="roll"]::before,
 .charsheet .character-sheet button[type="action"]::before {
-    color: #531185;
+    color: #893fc8;
     font-size: 20px;
     margin-right: 5px;
     font-family: "dicefontd20";
@@ -465,7 +466,7 @@
 /* Roll Template */
 .sheet-rolltemplate-brokencompass .sheet-template-wrap,
 .sheet-rolltemplate-coin-flip .sheet-template-wrap {
-    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/roll-bg.jpg);
+    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/roll-bg.jpg?v=2);
     background-position: top center;
     background-size: cover;
     border: 2px solid #000;
@@ -495,8 +496,9 @@
 .sheet-rolltemplate-coin-flip .sheet-template-subtitle {
     color: #231f20;
     font-size: 20px;
-    padding: 10px 0;
-    padding-bottom: 6px;
+	padding: 5px 0;
+	padding-bottom: 6px;
+	line-height: 26px;
     text-align: center;
     text-transform: uppercase;
     font-family: 'Trocchi', sans-serif;
@@ -518,7 +520,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 30px;
+    padding: 10px;
 }
 
 .sheet-rolltemplate-coin-flip .sheet-template-center img {
@@ -612,6 +614,10 @@
     font-size: 13px;
     font-weight: bold;
     margin: 0;
+}
+
+.sheet-rolltemplate-brokencompass .sheet-template-small-label.sheet-red {
+    color: red;
 }
 
 .sheet-rolltemplate-brokencompass span.inlinerollresult.fullcrit {

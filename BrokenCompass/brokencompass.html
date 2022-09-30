@@ -846,6 +846,10 @@
                 {{expertise_title}}
 			{{/expertise_title}}
 
+            {{#risk_title}}
+                {{risk_title}}
+			{{/risk_title}}
+
             {{roll-name}}
         </div>
 
@@ -1032,6 +1036,13 @@
 
         </div>
 
+        {{#rollGreater() computed::riskLost 0}}
+        <div class="template-grid-item-flex">
+            <label class="template-small-label sheet-red" data-i18n="you-lost-one-success">You lost one success</label>
+        </div>
+        {{/rollGreater() computed::riskLost 0}}
+
+
         <div class="template-dice-stats">
             <div><span data-i18n="basic">Basic</span> {{computed::basic}}</div>
             <div><span data-i18n="critical">Critical</span> {{computed::critical}}</div>
@@ -1046,23 +1057,28 @@
             <div class="sheet-template-subtitle sheet-green" data-i18n="what-a-hero">What a hero!</div>
         {{/rollGreater() computed::what_a_hero 0}}
 
+        {{#rollGreater() computed::dice_for_reroll 0}}
         <div class="template-dice-actions">
             {{#expertise}}
             <div>
                 <div class="template-button">
-                    [<span data-i18n="i-have-expertise"></span>](~{{character_name}}|roll||{{attribute}}|{{skill}}|{{baseDice}})
+                    [<span data-i18n="i-have-expertise"></span>](~{{character_name}}|roll||expertise|{{attribute}}|{{skill}}|{{baseDice}}|{{computed::dice_for_reroll}})
                 </div>
             </div>
             {{/expertise}}
 
-            {{#rollGreater() computed::any_success 0}}
-            <div>
-                <div class="template-button">
-                    [<span data-i18n="risk"></span>](~{{character_name}}|roll||{{attribute}}|{{skill}}|{{baseDice}})
+            {{#risk}}
+                {{#rollGreater() computed::any_success 0}}
+                <div>
+                    <div class="template-button">
+                        [<span data-i18n="risk"></span>](~{{character_name}}|roll||risk|{{attribute}}|{{skill}}|{{baseDice}}|{{computed::dice_for_reroll}})
+                    </div>
                 </div>
-            </div>
-            {{/rollGreater() computed::any_success 0}}
+                {{/rollGreater() computed::any_success 0}}
+            {{/risk}}
         </div>
+        {{/rollGreater() computed::dice_for_reroll 0}}
+
 	</div>
 </rolltemplate>
 
@@ -1085,11 +1101,17 @@
 		});
 	});
 
-	const expertiseAttr = ["dice_for_reroll", "pair_one_sum", "pair_two_sum", "pair_three_sum", "pair_four_sum", "pair_five_sum", "pair_six_sum"];
+	const savedDiceAttr = ["dice_for_reroll", "pair_one_sum", "pair_two_sum", "pair_three_sum", "pair_four_sum", "pair_five_sum", "pair_six_sum"];
 
     on('clicked:roll', async (info) => {
+        var risk = true;
+        var riskTitle = '';
+        var runRiskFunc = false;
+
         var expertise = true;
         var expertiseTitle = '';
+        var runExpertiseFunc = false;
+        
         var attribute = info.htmlAttributes['data-attribute'];
         var skill = info.htmlAttributes['data-skill'];
 
@@ -1103,16 +1125,24 @@
 
         if (info.originalRollId != null) {
             var attr_and_skill = info.originalRollId.split('|');
-            console.log(attr_and_skill)
-            attribute = attr_and_skill[0];
-            skill = attr_and_skill[1];
-            baseDiceTotal = attr_and_skill[2];
 
-            baseDiceTotalToRoll = "@{dice_for_reroll}";
-            expertiseTitle = "{{expertise_title=^{i-have-expertise} }}";
-            expertise = '';
+            if (attr_and_skill[0] == 'expertise') {
+                expertiseTitle = "{{expertise_title=^{i-have-expertise} }}";
+                expertise = '';
+                runExpertiseFunc = true;
+                risk = '';
+            } else if(attr_and_skill[0] == 'risk') {
+                riskTitle = "{{risk_title=^{risk} }}";
+                risk = '';
+                runRiskFunc = true;
+                expertise = '';
+            }
+
+            attribute = attr_and_skill[1];
+            skill = attr_and_skill[2];
+            baseDiceTotal = attr_and_skill[3];
+            baseDiceTotalToRoll = attr_and_skill[4].split("'>")[1];
         }
-
 
         if (skill == 'null') {
             var rollName = attribute;
@@ -1120,13 +1150,23 @@
             var rollName = skill;
         }
 
-		const rollBase = '@{secret_roll} &{template:brokencompass} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{attribute='+attribute+'}} {{skill='+skill+'}} {{expertise='+expertise+'}} '+expertiseTitle+' {{roll-name=^{'+rollName+'} }} {{baseDice=[[ '+baseDiceTotal+' ]] }} {{dices=[[('+baseDiceTotalToRoll+')d6m]]}} {{pair_of_one=[[1d6]]}} {{pair_of_two=[[1d6]]}} {{pair_of_three=[[1d6]]}} {{pair_of_four=[[1d6]]}} {{pair_of_five=[[1d6]]}} {{pair_of_six=[[1d6]]}} {{basic=[[1d6]]}} {{critical=[[1d6]]}} {{extreme=[[1d6]]}} {{impossible=[[1d6]]}} {{what_a_hero=[[1d6]]}} {{base_dice_1=[[1d6]]}} {{base_dice_2=[[1d6]]}} {{base_dice_3=[[1d6]]}}{{base_dice_4=[[1d6]]}} {{base_dice_5=[[1d6]]}} {{base_dice_6=[[1d6]]}} {{previous_pairs=@{pair_one_sum}}} {{any_success=[[1d6]]}}';
+		const rollBase = '@{secret_roll} &{template:brokencompass} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{attribute='+attribute+'}} {{skill='+skill+'}} {{risk='+risk+'}} '+riskTitle+' {{expertise='+expertise+'}} '+expertiseTitle+' {{roll-name=^{'+rollName+'} }} {{baseDice=[[ '+baseDiceTotal+' ]] }} {{dices=[[('+baseDiceTotalToRoll+')d6m]]}} {{pair_of_one=[[1d6]]}} {{pair_of_two=[[1d6]]}} {{pair_of_three=[[1d6]]}} {{pair_of_four=[[1d6]]}} {{pair_of_five=[[1d6]]}} {{pair_of_six=[[1d6]]}} {{basic=[[1d6]]}} {{critical=[[1d6]]}} {{extreme=[[1d6]]}} {{impossible=[[1d6]]}} {{what_a_hero=[[1d6]]}} {{base_dice_1=[[1d6]]}} {{base_dice_2=[[1d6]]}} {{base_dice_3=[[1d6]]}} {{base_dice_4=[[1d6]]}} {{base_dice_5=[[1d6]]}} {{base_dice_6=[[1d6]]}} {{previous_pairs=@{pair_one_sum}}} {{any_success=[[1d6]]}} {{dice_for_reroll=[[1d6]]}} {{riskLost=[[1d6]]}}';
         let rollResult = await startRoll(rollBase);
-        let tableOfPairs = await checkPairs(rollResult, expertise);
-        let computedValues = await calcComputedValues(tableOfPairs);
+        let tableOfPairs = await calcDice(rollResult);
 
-        if (expertise != '') {
-            await updateExpertiseAttr(computedValues, tableOfPairs);
+        let removeSuccess = null;
+        if (runRiskFunc) {
+            removeSuccess = await riskTaken(tableOfPairs);
+        }
+
+        if (runExpertiseFunc || runRiskFunc) {
+            tableOfPairs = await mergeWithSavedDice(tableOfPairs);
+        }
+
+        let computedValues = await calcComputedValues(tableOfPairs, removeSuccess);
+
+        if (!runExpertiseFunc && !runRiskFunc) {
+            await updateSavedDiceAttr(computedValues, tableOfPairs);
         }
 
         finishRoll(
@@ -1136,8 +1176,8 @@
     });
 
     // Update attr for expertise
-    const updateExpertiseAttr = async (computedValues, tableOfPairs) => {
-        expertiseAttr.forEach((attr, index) => {
+    const updateSavedDiceAttr = async (computedValues, tableOfPairs) => {
+        savedDiceAttr.forEach((attr, index) => {
             if (index == 0) {
                 setAttrs({
                     [`${attr}`]: computedValues.dice_for_reroll
@@ -1150,23 +1190,16 @@
         });
     }
 
-    // Get expertise numbers
-    const getExpertiseAttr = async (table) => {
+    // Get saved dices
+    const getSavedDiceAttr = async () => {
+	    var savedDiceTable = await asw.getAttrs(savedDiceAttr);
+        savedDiceTable = Object.values(savedDiceTable);
 
-	    var expertiseTable = await asw.getAttrs(expertiseAttr);
-        expertiseTable = Object.values(expertiseTable);
-
-        for (i = 1; expertiseTable.length > i; i++) {
-            if (expertiseTable[i] > 1) {
-                table[i] += expertiseTable[i];
-            }
-        }
-
-        return table;
+        return savedDiceTable;
     }
 
-    // Helper for check pairs and successes
-    const checkPairs = async (rollResult, expertise) => {
+    // Helper for calc dice table
+    const calcDice = async (rollResult, expertise) => {
         const dices	= rollResult.results.dices.dice;
 
         var table = [0,0,0,0,0,0,0];
@@ -1175,15 +1208,43 @@
             table[dices[i]] += 1;
         }
 
-        if (expertise == '') {
-            var table = await getExpertiseAttr(table);
+        return table;
+    }
+
+    // Helper for risk taken
+    const riskTaken = async (table) => {
+        var savedDiceTable = await getSavedDiceAttr();
+
+        var additionalSuccess = false;
+        for (k = 1; table.length > k; k++) {
+            if (table[k] > 0 && savedDiceTable[k] > 1) {
+                additionalSuccess = true;
+            } else if (table[k] > 1) {
+                additionalSuccess = true;
+            }
+        }
+
+        return additionalSuccess;
+    }
+
+    // helper for merging saved dices
+    const mergeWithSavedDice = async (table) => {
+        var savedDiceTable = await getSavedDiceAttr();
+
+        console.log(savedDiceTable)
+        console.log(table)
+
+        for (j = 1; savedDiceTable.length > j; j++) {
+            if (savedDiceTable[j] > 1) {
+                table[j] += savedDiceTable[j];
+            }
         }
 
         return table;
     }
 
     // Helper for calc computed values
-    const calcComputedValues = async (table) => {
+    const calcComputedValues = async (table, removeSuccess) => {
         const success = { basic: 0, critical: 0, extreme: 0, impossible: 0, what_a_hero: 0 };
 
         var rest_dices = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0 };
@@ -1212,7 +1273,24 @@
             } 
         }
 
-        console.log(any_success)
+
+        var riskLost = 0;
+        if (removeSuccess != null) {
+            if (!removeSuccess) {
+                riskLost = 1;
+                if (success.basic > 0) {
+                    success.basic--;
+                } else if (success.critical > 0) {
+                    success.critical--;
+                } else if (success.extreme > 0) {
+                    success.extreme--;
+                } else if (success.impossible > 0) {
+                    success.impossible--;
+                } else if (success.what_a_hero > 0) {
+                    success.what_a_hero--;
+                }
+            }
+        }
 
         let results = {
             pair_of_one: table[1],
@@ -1234,9 +1312,8 @@
             base_dice_6: rest_dices[6],
             dice_for_reroll: dice_for_reroll,
             any_success: any_success,
+            riskLost: riskLost,
         };
-
-        console.log(results)
 
         return results;
     }
