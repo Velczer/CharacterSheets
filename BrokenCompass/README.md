@@ -4,5 +4,5 @@ Developed by Velczer.
 # Changelog
 
 ## 2022-10-03 by Velczer
-– Init character sheet
+- Init character sheet
 - Add English and Polish translations
