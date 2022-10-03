@@ -815,14 +815,14 @@
         {{#rollWasCrit() roll}}
         <div class="template-subtitle green" data-i18n="success">Success</div>
         <div class="template-center">
-            <img src="https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/coin-heads.png" alt="">
+            <img src="https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/coin-heads.png?v=3" alt="">
         </div>
         {{/rollWasCrit() roll}}
 
         {{#rollWasFumble() roll}}
         <div class="template-subtitle red" data-i18n="fail">Fail</div>
         <div class="template-center">
-            <img src="https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/coin-tails.png" alt="">
+            <img src="https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/coin-tails.png?v=3" alt="">
         </div>
         {{/rollWasFumble() roll}}
 
@@ -1042,6 +1042,12 @@
         </div>
         {{/rollGreater() computed::riskLost 0}}
 
+        {{#rollGreater() computed::allOrNothingLost 0}}
+        <div class="template-grid-item-flex">
+            <label class="template-small-label sheet-red" data-i18n="you-lost-all-your-successes">You lost all your successes</label>
+        </div>
+        {{/rollGreater() computed::allOrNothingLost 0}}
+
 
         <div class="template-dice-stats">
             <div><span data-i18n="basic">Basic</span> {{computed::basic}}</div>
@@ -1076,8 +1082,20 @@
                 </div>
                 {{/rollGreater() computed::any_success 0}}
             {{/risk}}
+
+            {{#all_or_nothing}}
+            <div>
+                <div class="template-button">
+                    [<span data-i18n="all-or-nothing"></span>](~{{character_name}}|roll||allOrNothing|{{attribute}}|{{skill}}|{{baseDice}}|{{computed::dice_for_reroll}})
+                </div>
+            </div>
+            {{/all_or_nothing}}
         </div>
         {{/rollGreater() computed::dice_for_reroll 0}}
+
+
+
+
 
 	</div>
 </rolltemplate>
@@ -1112,6 +1130,10 @@
         var expertiseTitle = '';
         var runExpertiseFunc = false;
         
+        var allOrNothing = '';
+        var allOrNothingTitle = '';
+        var runAllOrNothingFunc = false;
+        
         var attribute = info.htmlAttributes['data-attribute'];
         var skill = info.htmlAttributes['data-skill'];
 
@@ -1125,17 +1147,26 @@
 
         if (info.originalRollId != null) {
             var attr_and_skill = info.originalRollId.split('|');
+            var action = attr_and_skill[0];
 
-            if (attr_and_skill[0] == 'expertise') {
+            if (action == 'expertise') {
                 expertiseTitle = "{{expertise_title=^{i-have-expertise} }}";
                 expertise = '';
                 runExpertiseFunc = true;
                 risk = '';
-            } else if(attr_and_skill[0] == 'risk') {
+                allOrNothing = true;
+            } else if(action == 'risk') {
                 riskTitle = "{{risk_title=^{risk} }}";
                 risk = '';
                 runRiskFunc = true;
                 expertise = '';
+                allOrNothing = true;
+            } else if(action == 'allOrNothing') {
+                allOrNothingTitle = "{{all_or_nothing_title=^{all-or-nothing} }}";
+                allOrNothing = '';
+                runAllOrNothingFunc = true;
+                expertise = '';
+                risk = '';
             }
 
             attribute = attr_and_skill[1];
@@ -1150,20 +1181,25 @@
             var rollName = skill;
         }
 
-		const rollBase = '@{secret_roll} &{template:brokencompass} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{attribute='+attribute+'}} {{skill='+skill+'}} {{risk='+risk+'}} '+riskTitle+' {{expertise='+expertise+'}} '+expertiseTitle+' {{roll-name=^{'+rollName+'} }} {{baseDice=[[ '+baseDiceTotal+' ]] }} {{dices=[[('+baseDiceTotalToRoll+')d6m]]}} {{pair_of_one=[[1d6]]}} {{pair_of_two=[[1d6]]}} {{pair_of_three=[[1d6]]}} {{pair_of_four=[[1d6]]}} {{pair_of_five=[[1d6]]}} {{pair_of_six=[[1d6]]}} {{basic=[[1d6]]}} {{critical=[[1d6]]}} {{extreme=[[1d6]]}} {{impossible=[[1d6]]}} {{what_a_hero=[[1d6]]}} {{base_dice_1=[[1d6]]}} {{base_dice_2=[[1d6]]}} {{base_dice_3=[[1d6]]}} {{base_dice_4=[[1d6]]}} {{base_dice_5=[[1d6]]}} {{base_dice_6=[[1d6]]}} {{previous_pairs=@{pair_one_sum}}} {{any_success=[[1d6]]}} {{dice_for_reroll=[[1d6]]}} {{riskLost=[[1d6]]}}';
+		const rollBase = '@{secret_roll} &{template:brokencompass} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{attribute='+attribute+'}} {{skill='+skill+'}} {{risk='+risk+'}} '+riskTitle+' {{expertise='+expertise+'}} '+expertiseTitle+' {{roll-name=^{'+rollName+'} }} {{baseDice=[[ '+baseDiceTotal+' ]] }} {{dices=[[('+baseDiceTotalToRoll+')d6m]]}} {{pair_of_one=[[1d6]]}} {{pair_of_two=[[1d6]]}} {{pair_of_three=[[1d6]]}} {{pair_of_four=[[1d6]]}} {{pair_of_five=[[1d6]]}} {{pair_of_six=[[1d6]]}} {{basic=[[1d6]]}} {{critical=[[1d6]]}} {{extreme=[[1d6]]}} {{impossible=[[1d6]]}} {{what_a_hero=[[1d6]]}} {{base_dice_1=[[1d6]]}} {{base_dice_2=[[1d6]]}} {{base_dice_3=[[1d6]]}} {{base_dice_4=[[1d6]]}} {{base_dice_5=[[1d6]]}} {{base_dice_6=[[1d6]]}} {{previous_pairs=@{pair_one_sum}}} {{any_success=[[1d6]]}} {{dice_for_reroll=[[1d6]]}} {{riskLost=[[1d6]]}} {{all_or_nothing='+allOrNothing+'}} {{allOrNothingLost=[[1d6]]}}' + allOrNothingTitle;
         let rollResult = await startRoll(rollBase);
         let tableOfPairs = await calcDice(rollResult);
 
-        let removeSuccess = null;
+        let removeSuccess = false;
         if (runRiskFunc) {
             removeSuccess = await riskTaken(tableOfPairs);
         }
 
-        if (runExpertiseFunc || runRiskFunc) {
+        let removeAllSuccesses = false;
+        if (runAllOrNothingFunc) {
+            removeAllSuccesses = await riskTaken(tableOfPairs);
+        }
+
+        if (runExpertiseFunc || runRiskFunc || runAllOrNothingFunc) {
             tableOfPairs = await mergeWithSavedDice(tableOfPairs);
         }
 
-        let computedValues = await calcComputedValues(tableOfPairs, removeSuccess);
+        let computedValues = await calcComputedValues(tableOfPairs, removeSuccess, removeAllSuccesses);
 
         if (!runExpertiseFunc && !runRiskFunc) {
             await updateSavedDiceAttr(computedValues, tableOfPairs);
@@ -1215,16 +1251,16 @@
     const riskTaken = async (table) => {
         var savedDiceTable = await getSavedDiceAttr();
 
-        var additionalSuccess = false;
+        var removeSuccess = true;
         for (k = 1; table.length > k; k++) {
             if (table[k] > 0 && savedDiceTable[k] > 1) {
-                additionalSuccess = true;
+                removeSuccess = false;
             } else if (table[k] > 1) {
-                additionalSuccess = true;
+                removeSuccess = false;
             }
         }
 
-        return additionalSuccess;
+        return removeSuccess;
     }
 
     // helper for merging saved dices
@@ -1244,51 +1280,60 @@
     }
 
     // Helper for calc computed values
-    const calcComputedValues = async (table, removeSuccess) => {
-        const success = { basic: 0, critical: 0, extreme: 0, impossible: 0, what_a_hero: 0 };
+    const calcComputedValues = async (table, removeSuccess, removeAllSuccesses) => {
+        var success = { basic: 0, critical: 0, extreme: 0, impossible: 0, what_a_hero: 0 };
 
         var rest_dices = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0 };
 
         var dice_for_reroll = 0;
 
-        var any_success = 0;
-        for (k = 1; table.length > k; k++) {
-            if (table[k] === 1) {
-                rest_dices[k] = k;
-                dice_for_reroll += 1;
-            } else if(table[k] >= 2) {
-                any_success += 1;
+        console.log(table)
 
-                if (table[k] === 2) {
-                    success.basic++;
-                } else if (table[k] === 3) {
-                    success.critical++;
-                } else if (table[k] === 4) {
-                    success.extreme++;
-                } else if (table[k] === 5) {
-                    success.impossible++;
-                } else if (table[k] >= 6) {
-                    success.what_a_hero++;
+        var any_success = 0;
+        var allOrNothingLost = 0;
+        if (!removeAllSuccesses) {
+            for (k = 1; table.length > k; k++) {
+                if (table[k] === 1) {
+                    rest_dices[k] = k;
+                    dice_for_reroll += 1;
+                } else if(table[k] >= 2) {
+                    any_success += 1;
+    
+                    if (table[k] === 2) {
+                        success.basic++;
+                    } else if (table[k] === 3) {
+                        success.critical++;
+                    } else if (table[k] === 4) {
+                        success.extreme++;
+                    } else if (table[k] === 5) {
+                        success.impossible++;
+                    } else if (table[k] >= 6) {
+                        success.what_a_hero++;
+                    }
+                } 
+            }
+        } else {
+            allOrNothingLost = 1;
+            for (k = 1; table.length > k; k++) {
+                if (table[k] === 1) {
+                    rest_dices[k] = k;
                 }
-            } 
+            }
         }
 
-
         var riskLost = 0;
-        if (removeSuccess != null) {
-            if (!removeSuccess) {
-                riskLost = 1;
-                if (success.basic > 0) {
-                    success.basic--;
-                } else if (success.critical > 0) {
-                    success.critical--;
-                } else if (success.extreme > 0) {
-                    success.extreme--;
-                } else if (success.impossible > 0) {
-                    success.impossible--;
-                } else if (success.what_a_hero > 0) {
-                    success.what_a_hero--;
-                }
+        if (removeSuccess) {
+            riskLost = 1;
+            if (success.basic > 0) {
+                success.basic--;
+            } else if (success.critical > 0) {
+                success.critical--;
+            } else if (success.extreme > 0) {
+                success.extreme--;
+            } else if (success.impossible > 0) {
+                success.impossible--;
+            } else if (success.what_a_hero > 0) {
+                success.what_a_hero--;
             }
         }
 
@@ -1313,6 +1358,7 @@
             dice_for_reroll: dice_for_reroll,
             any_success: any_success,
             riskLost: riskLost,
+            allOrNothingLost: allOrNothingLost,
         };
 
         return results;
