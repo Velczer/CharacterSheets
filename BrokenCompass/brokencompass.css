@@ -203,7 +203,7 @@
     color: #231f20;
     font-family: 'Lalezar', sans-serif;
     border: 1px solid #231f20;
-    width: 1050px;
+    min-width: 1050px;
     margin-bottom: 15px;
     position: relative;
     overflow: hidden;
