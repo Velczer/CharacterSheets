@@ -187,7 +187,7 @@
 
 /* Custom modules */
 .character-sheet {
-    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/sheet-bg.webp);
+    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/sheet-bg.png);
     background-size: cover;
     background-position: top center;
     padding: 10px 30px;
@@ -195,7 +195,8 @@
     color: #231f20;
     font-family: 'Girassol', cursive;
     border: 1px solid #231f20;
-    min-width: 1050px;
+    width: 1000px;
+    min-height: 1500px;
     margin-bottom: 15px;
     position: relative;
     overflow: hidden;
