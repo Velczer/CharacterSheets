@@ -38,9 +38,9 @@
 
     <div class="row">
         <div class="col-4">
-            <div class="input-box">
+            <div class="input-box input-box--hr">
                 <label><span data-i18n="appearance">Wygląd i wiek</span></label>
-                <textarea name="attr_appearance" rows="5"></textarea>
+                <textarea name="attr_appearance" rows="8"></textarea>
             </div>
 
             <div class="input-box">
@@ -49,31 +49,31 @@
             </div>
 
             <div class="row">
-                <div class="col-6">
+                <div class="col-5">
                     <div class="input-box">
                         <label>
                             <span data-i18n="fatum">Fatum</span>
-                            <input type="text" name="attr_fatum" spellcheck="false">
+                            <input type="number" name="attr_fatum" value="0">
                         </label>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-7">
                     <div class="input-box">
                         <label>
                             <span data-i18n="fate-pool">Pula losu</span>
-                            <input type="text" name="attr_fate_pool" spellcheck="false">
+                            <input type="number" name="attr_fate_pool" value="0">
                         </label>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-3">
-            <div class="input-box">
+            <div class="input-box input-box--hr">
                 <label><span data-i18n="advantages">Przewagi</span></label>
-                <textarea name="attr_advantages" rows="3"></textarea>
+                <textarea name="attr_advantages" rows="4"></textarea>
             </div>
 
-            <div class="input-box">
+            <div class="input-box input-box--hr">
                 <label><span data-i18n="disadvantages">Zawady</span></label>
                 <textarea name="attr_disadvantages" rows="3"></textarea>
             </div>
@@ -84,32 +84,172 @@
             </div>
         </div>
         <div class="col-5">
-            <div class="input-box">
+            <div class="input-box input-box--hr">
                 <label><span data-i18n="equipment">Ekwipunek</span></label>
-                <textarea name="attr_equipment" rows="5"></textarea>
+                <textarea name="attr_equipment" rows="9"></textarea>
             </div>
 
             <div class="input-box">
-                <div class="flex">
-                    <div>
-                        <label data-i18n="wounds">Rany</label>
-                        <input type="checkbox" name="attr_wound" value="0">
-                    </div>
-                    <div>
-                        <label data-i18n="light">Lekka</label>
+                <div class="flex wounds-box">
+                    <label class="checkbox-label">
+                        <span data-i18n="wounds">Rany</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <span data-i18n="light">Lekka</span>
                         <input type="checkbox" name="attr_wound" value="1">
-                    </div>
-                    <div>
-                        <label data-i18n="average">Średnia</label>
+                        <div class="checkmark"></div>
+                    </label>
+                    <label class="checkbox-label">
+                        <span data-i18n="average">Średnia</span>
                         <input type="checkbox" name="attr_wound" value="2">
-                    </div>
-                    <div>
-                        <label data-i18n="heavy">Ciężka</label>
+                        <div class="checkmark"></div>
+                    </label>
+                    <label class="checkbox-label">
+                        <span data-i18n="heavy">Ciężka</span>
                         <input type="checkbox" name="attr_wound" value="3">
-                    </div>
-                    <div>
-                        <label data-i18n="critical">Krytyczna</label>
+                        <div class="checkmark"></div>
+                    </label>
+                    <label class="checkbox-label">
+                        <span data-i18n="critical">Krytyczna</span>
                         <input type="checkbox" name="attr_wound" value="4">
+                        <div class="checkmark"></div>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <div class="attributes-box">
+                <div class="attributes-box__line">
+                    <label data-i18n="proficiency" style="margin-bottom: 15px;">Biegłość</label>
+                    <div class="input-box attributes-box__line-horizontal">
+                        <input type="number" name="attr_physical_level" value="0" min="0" max="5">
+                    </div>
+                </div>
+                <div>
+                    <div class="fieldset-labels center">
+                        <span class="flex-1 mini-title" style="width: 36px;"><br></span>
+                        <span class="flex-1 mini-title" data-i18n="level">Poziom</span>
+                        <span class="flex-3 mini-title" data-i18n="physical-attributes">Atrybuty Fizyczne</span>
+                        <span class="flex-1 mini-title" data-i18n="skill">Wprawa</span>
+                    </div>
+
+                    <div class="attributes-box__line-ver">
+                        <fieldset class="repeating_physical-attributes">
+                            <div class="flex attribute-box__line-horizontal-left">
+                                <button class="flex-1" type="action" name="act_roll" data-attribute="physical"></button>
+                                <input class="flex-1" type="number" name="attr_physical_level" value="0" min="0" max="5">
+                                <input class="flex-3" type="text" name="attr_physical_name">
+                                <input class="flex-1" type="number" name="attr_physical_skill" value="0" min="0" max="30">
+                            </div>
+                            <div class="attributes-box__text">
+                                <textarea name="attr_physical_spec" placeholder="Specjalizacja"></textarea>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="attributes-box">
+                <div class="attributes-box__line">
+                    <label data-i18n="proficiency" style="margin-bottom: 15px;">Biegłość</label>
+                    <div class="input-box attributes-box__line-horizontal">
+                        <input type="number" name="attr_mind_level" value="0" min="0" max="5">
+                    </div>
+                </div>
+                <div>
+                    <div class="fieldset-labels center">
+                        <span class="flex-1 mini-title" style="width: 36px;"><br></span>
+                        <span class="flex-1 mini-title" data-i18n="level">Poziom</span>
+                        <span class="flex-3 mini-title" data-i18n="mind-attributes">Atrybuty Fizyczne</span>
+                        <span class="flex-1 mini-title" data-i18n="skill">Wprawa</span>
+                    </div>
+
+                    <div class="attributes-box__line-ver">
+                        <fieldset class="repeating_mind-attributes">
+                            <div class="flex attribute-box__line-horizontal-left">
+                                <button class="flex-1" type="action" name="act_roll" data-attribute="mind"></button>
+                                <input class="flex-1" type="number" name="attr_mind_level" value="0" min="0" max="5">
+                                <input class="flex-3" type="text" name="attr_mind_name">
+                                <input class="flex-1" type="number" name="attr_mind_skill" value="0" min="0" max="30">
+                            </div>
+                            <div class="attributes-box__text">
+                                <textarea name="attr_mind_spec" placeholder="Specjalizacja"></textarea>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <div class="attributes-box">
+                <div class="attributes-box__line">
+                    <label data-i18n="proficiency" style="margin-bottom: 15px;">Biegłość</label>
+                    <div class="input-box attributes-box__line-horizontal">
+                        <input type="number" name="attr_society_level" value="0" min="0" max="5">
+                    </div>
+                </div>
+                <div>
+                    <div class="fieldset-labels center">
+                        <span class="flex-1 mini-title" style="width: 36px;"><br></span>
+                        <span class="flex-1 mini-title" data-i18n="level">Poziom</span>
+                        <span class="flex-3 mini-title" data-i18n="society-attributes">Atrybuty Fizyczne</span>
+                        <span class="flex-1 mini-title" data-i18n="skill">Wprawa</span>
+                    </div>
+
+                    <div class="attributes-box__line-ver">
+                        <fieldset class="repeating_society-attributes">
+                            <div class="flex attribute-box__line-horizontal-left">
+                                <button class="flex-1" type="action" name="act_roll" data-attribute="society"></button>
+                                <input class="flex-1" type="number" name="attr_society_level" value="0" min="0" max="5">
+                                <input class="flex-3" type="text" name="attr_society_name">
+                                <input class="flex-1" type="number" name="attr_society_skill" value="0" min="0" max="30">
+                            </div>
+                            <div class="attributes-box__text">
+                                <textarea name="attr_society_spec" placeholder="Specjalizacja"></textarea>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="attributes-box">
+                <div class="attributes-box__line">
+                    <label data-i18n="proficiency" style="margin-bottom: 15px;">Biegłość</label>
+                    <div class="input-box attributes-box__line-horizontal">
+                        <input type="number" name="attr_professional_level" value="0" min="0" max="5">
+                    </div>
+                </div>
+                <div>
+                    <div class="fieldset-labels center">
+                        <span class="flex-1 mini-title" style="width: 36px;"><br></span>
+                        <span class="flex-1 mini-title" data-i18n="level">Poziom</span>
+                        <span class="flex-3 mini-title" data-i18n="professional-attributes">Atrybuty Fizyczne</span>
+                        <span class="flex-1 mini-title" data-i18n="skill">Wprawa</span>
+                    </div>
+
+
+                    <div class="attributes-box__line-ver">
+                        <fieldset class="repeating_professional-attributes">
+                            <div class="flex attribute-box__line-horizontal-left">
+                                <button class="flex-1" type="action" name="act_roll" data-attribute="professional"></button>
+                                <input class="flex-1" type="number" name="attr_professional_level" value="0" min="0" max="5">
+                                <input class="flex-3" type="text" name="attr_professional_name">
+                                <input class="flex-1" type="number" name="attr_professional_skill" value="0" min="0" max="30">
+                            </div>
+                            <div class="attributes-box__text">
+                                <textarea name="attr_professional_spec" placeholder="Specjalizacja"></textarea>
+                            </div>
+                        </fieldset>
                     </div>
                 </div>
             </div>

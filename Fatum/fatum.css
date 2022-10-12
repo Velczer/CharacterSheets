@@ -94,7 +94,7 @@
     color: #000;
     line-height: 32px;
     height: 32px;
-    padding: 0 2px;
+    padding: 0 6px;
     box-sizing: border-box;
     border-radius: 0;
 }
@@ -119,12 +119,14 @@
     background-attachment: local;
     background-color: transparent;
     font-size: 16px;
-    padding: 0 5px;
+    padding: 1px 9px;
     box-sizing: border-box;
     height: auto;
     resize: vertical;
     margin: 0;
     border: 0;
+    color: #000;
+    border-radius: 0;
 }
 
 .character-sheet textarea:focus {
@@ -137,14 +139,14 @@
     border: 0;
     font-family: 'Girassol', cursive;
     background: transparent;
-    padding: 0 8px;
     text-transform: uppercase;
     color: #231f20;
     cursor: pointer;
     transition: .3s all ease;
-    margin-right: 5px;
     text-shadow: none;
     border-radius: 4px;
+    padding: 0;
+    height: 36px;
 }
 
 .charsheet .character-sheet button[type="roll"]:hover,
@@ -157,13 +159,19 @@
 .charsheet .character-sheet button[type="action"]::before {
     color: #893fc8;
     font-size: 20px;
-    margin-right: 5px;
     font-family: "dicefontd20";
     content: "t";
 }
 
 .charsheet .character-sheet input[type="checkbox"] {
     width: auto;
+}
+
+.charsheet .character-sheet input[type="number"] {
+    width: 100%;
+    padding-right: 0;
+    text-align: center;
+    font-size: 18px;
 }
 
 .charsheet .character-sheet input.circle-input {
@@ -251,10 +259,169 @@
     width: 100%;
 }
 
-.character-sheet .input-box textarea::before {
+.character-sheet .input-box.input-box--hr {
+    position: relative;
+}
+
+.character-sheet .input-box.input-box--hr::before {
     content: "";
     display: block;
     height: 4px;
+    width: auto;
+    background: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/hr.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    position: absolute;
+    z-index: 1;
+    top: 29px;
+    left: 10px;
+	right: 10px;
+}
+
+.wounds-box {
+    padding-bottom: 10px;
+}
+
+.wounds-box > div {
+    padding: 5px 10px;
+}
+
+.wounds-box::before {
+    content: "";
+    display: block;
+}
+
+.checkbox-label {
+    flex-direction: column;
+	position: relative;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.character-sheet .checkbox-label input {
+    position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
+
+.checkbox-label .checkmark {
+	height: 23px;
+	width: 23px;
+    border: 2px solid #000;
+    position: relative;
+}
+
+.checkbox-label .checkmark::after {
+    content: "";
+    position: absolute;
+    left: 8px;
+	top: 4px;
+	width: 5px;
+	height: 10px;
+	border: solid transparent;
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.checkbox-label input:checked ~ .checkmark:after {
+	border-color: #000;
+}
+
+.attributes-box {
+    display: flex;
+    position: relative;
+    margin-top: 10px;
+}
+
+.attributes-box::before {
+    content: "";
+	display: block;
+	height: 2px;
+	width: auto;
+	background: #272626;
+	position: absolute;
+	z-index: 1;
+	top: 24px;
+	left: 0;
+	right: 10px;
+}
+
+.attributes-box .fieldset-labels {
+    margin-bottom: 5px;
+}
+
+.attributes-box__text {
+    padding-left: 45px;
+}
+
+.attributes-box__line {
+    position: relative;
+    margin-right: 11px;
+}
+/* 
+.attributes-box__line::before {
+	content: "";
+	position: absolute;
+	top: 25px;
+    bottom: 40px;
+	right: -11px;
+	width: 2px;
+	background: #272626;
+} */
+
+.attributes-box__line-horizontal {
+    position: relative;
+}
+
+.attributes-box__line-horizontal::before, .attribute-box__line-horizontal-left::before {
+	content: "";
+	position: absolute;
+	height: 2px;
+	width: 11px;
+	background: #272626;
+	right: -11px;
+	top: 14px;
+	z-index: -1;
+}
+
+.attribute-box__line-horizontal-left {
+    position: relative;
+}
+
+.attribute-box__line-horizontal-left::before {
+    right: 100%;
+    left: -1px;
+	top: 18px;
+	width: 14px;
+}
+
+.attribute-box__line-horizontal-left button {
+    margin-top: 2px;
+}
+
+.attributes-box__line-ver {
+    position: relative;
+}
+
+.attributes-box__line-ver .repitem::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    bottom: 0;
+	left: -2px;
+	width: 2px;
+	background: #272626;
+}
+
+.attributes-box__line-ver .repitem:last-child::before {
+    bottom: calc(100% - 20px);
 }
 
 /* Roll Template */
@@ -475,53 +642,6 @@
 }
 
 /* Repeating sections */
-
-.repcontrol {
-    display: flex;
-    margin-top: 3px;
-}
-
-.repcontrol .repcontrol_edit {
-    margin-left: auto;
-    order: 1;
-}
-
-.repcontrol button {
-    background: #fff;
-    color: #3e5f76;
-    border-radius: 0;
-    border-color: #3e5f76;
-    transition: all 0.2s;
-    font-family: pictos;
-    font-size: 0;
-    font-weight: bold;
-    line-height: 8px;
-    padding: 6px 4px 1px;
-}
-
-.repcontrol button:hover {
-    color: green;
-    border-color: green;
-    background: #ddd;
-}
-
-.repcontrol button.repcontrol_edit::after {
-    content: "(";
-}
-
-.repcontrol button.repcontrol_add::after {
-    content: "&";
-}
-
-.repcontrol button.repcontrol_edit::after,
-.repcontrol button.repcontrol_add::after {
-    font-size: 20px;
-}
-
-.repcontainer.editmode+.repcontrol button.repcontrol_edit::after {
-    content: ")";
-}
-
 .itemcontrol {
     z-index: 20;
 }
@@ -534,34 +654,27 @@
 .fieldset-labels .mini-title {
     justify-content: flex-start;
     margin-right: 6px;
-    height: 14px;
+    height: 26px;
+	font-size: 16px;
 }
 
-.repitem {
-    display: flex;
-    align-items: flex-start;
-}
-
-.gear-rep-list .repitem {
-    align-items: center;
-}
-
-.repitem input,
-.repitem select {
+.repitem input {
     width: 100%;
-    margin-bottom: 7px;
-    padding: 5px 10px;
-    border: 1px solid #231f20;
+    margin: 2px;
+	padding: 5px;
+	border: 2px solid #272626;
+	line-height: 24px;
+    background: transparent;
 }
 
-.repitem .gear-input {
-    padding: 8px 10px;
-    margin-right: -2px;
-    z-index: 1;
+.repitem input:focus {
+    border: 2px solid #000;
 }
 
 .character-sheet .repitem textarea {
-    height: 76px;
+    border: 2px solid #272626;
+    padding: 4px 9px;
+    min-height: 34px;
 }
 
 .repitem input[type="checkbox"] {
@@ -591,9 +704,4 @@
     border-radius: 0;
     border-top: 0;
     border-bottom: 0;
-}
-
-.mag-max-clips {
-    margin-top: -28px;
-    text-align: center;
 }

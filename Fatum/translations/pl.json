@@ -1,7 +1,7 @@
 {
     "titre": "Miano",
     "race": "Rasa",
-        "human": "Miano",
+        "human": "Człowiek",
         "half-angel": "Półanioł",
         "half-angel-giant": "Półanioł olbrzym",
         "demonic-lilita": "Lilita demoniczny",
@@ -23,6 +23,13 @@
         "heavy": "Ciężka",
         "critical": "Krytyczna",
 
-    "test": "Miano"
+    "proficiency": "Biegłość",
+    "level": "Poziom",
+    "skill": "Wprawa",
+
+    "physical-attributes": "Atrybuty fizyczne",
+    "mind-attributes": "Atrybuty umysłowe",
+    "society-attributes": "Atrybuty społeczne",
+    "professional-attributes": "Atrybuty zawodowe"
 
 }
