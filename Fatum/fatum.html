@@ -1,5 +1,118 @@
 <div class="character-sheet">
     <div class="row">
+        <div class="col-5">
+            <div class="input-box">
+                <label class="character-details-label">
+                    <span data-i18n="titre">Miano</span>
+                    <input type="text" name="attr_titre" spellcheck="false">
+                </label>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="input-box">
+                <label class="character-details-label">
+                    <span data-i18n="race">Rasa</span>
+                    <select name="attr_race">
+                        <option value="1" selected="selected" data-i18n="human">człowiek</option>
+                        <option value="2" data-i18n="half-angel">półanioł</option>
+                        <option value="3" data-i18n="half-angel-giant">półanioł olbrzym</option>
+                        <option value="4" data-i18n="demonic-lilita">lilita demoniczny</option>
+                        <option value="5" data-i18n="lilita">lilita</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="input-box">
+                <label class="character-details-label">
+                    <span data-i18n="carrier">Nosiciel</span>
+                    <select name="attr_carrier">
+                        <option value="1" selected="selected" data-i18n="human">człowiek</option>
+                        <option value="2" data-i18n="half-angel">półanioł</option>
+                    </select>
+                </label>
+            </div>
+        </div>
         
+    </div>
+
+    <div class="row">
+        <div class="col-4">
+            <div class="input-box">
+                <label><span data-i18n="appearance">Wygląd i wiek</span></label>
+                <textarea name="attr_appearance" rows="5"></textarea>
+            </div>
+
+            <div class="input-box">
+                <label><span data-i18n="fortune">Pieniądze i majątek</span></label>
+                <textarea name="attr_fortune" rows="1"></textarea>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <div class="input-box">
+                        <label>
+                            <span data-i18n="fatum">Fatum</span>
+                            <input type="text" name="attr_fatum" spellcheck="false">
+                        </label>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="input-box">
+                        <label>
+                            <span data-i18n="fate-pool">Pula losu</span>
+                            <input type="text" name="attr_fate_pool" spellcheck="false">
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="input-box">
+                <label><span data-i18n="advantages">Przewagi</span></label>
+                <textarea name="attr_advantages" rows="3"></textarea>
+            </div>
+
+            <div class="input-box">
+                <label><span data-i18n="disadvantages">Zawady</span></label>
+                <textarea name="attr_disadvantages" rows="3"></textarea>
+            </div>
+
+            <div class="input-box">
+                <label><span data-i18n="states">Stany</span></label>
+                <textarea name="attr_states" rows="1"></textarea>
+            </div>
+        </div>
+        <div class="col-5">
+            <div class="input-box">
+                <label><span data-i18n="equipment">Ekwipunek</span></label>
+                <textarea name="attr_equipment" rows="5"></textarea>
+            </div>
+
+            <div class="input-box">
+                <div class="flex">
+                    <div>
+                        <label data-i18n="wounds">Rany</label>
+                        <input type="checkbox" name="attr_wound" value="0">
+                    </div>
+                    <div>
+                        <label data-i18n="light">Lekka</label>
+                        <input type="checkbox" name="attr_wound" value="1">
+                    </div>
+                    <div>
+                        <label data-i18n="average">Średnia</label>
+                        <input type="checkbox" name="attr_wound" value="2">
+                    </div>
+                    <div>
+                        <label data-i18n="heavy">Ciężka</label>
+                        <input type="checkbox" name="attr_wound" value="3">
+                    </div>
+                    <div>
+                        <label data-i18n="critical">Krytyczna</label>
+                        <input type="checkbox" name="attr_wound" value="4">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

@@ -1,0 +1,28 @@
+{
+    "titre": "Miano",
+    "race": "Rasa",
+        "human": "Miano",
+        "half-angel": "Półanioł",
+        "half-angel-giant": "Półanioł olbrzym",
+        "demonic-lilita": "Lilita demoniczny",
+        "lilita": "Lilita",
+    "carrier": "Nosiciel",
+
+    "appearance": "Wygląd i wiek",
+    "fortune": "Pieniądze i majątek",
+    "fatum": "Fatum",
+    "fate-pool": "Pula losu",
+    "advantages": "Przewagi",
+    "disadvantages": "Zawady",
+    "states": "Stany",
+    "equipment": "Ekwipunek",
+
+    "wounds": "Rany",
+        "light": "Lekka",
+        "average": "Średnia",
+        "heavy": "Ciężka",
+        "critical": "Krytyczna",
+
+    "test": "Miano"
+
+}
