@@ -88,7 +88,7 @@
 	font-size: 20px;
 }
 
-.charsheet .character-sheet button[type="roll"] {
+.charsheet .character-sheet button[type="roll"], .charsheet .character-sheet button[type="action"] {
   /* background-color: #b9dff3; */
 	background-image: none;
 	/* background: linear-gradient(-90deg,#3e5f76 0%, #ffffff 100%); */
@@ -109,11 +109,11 @@
 .charsheet .character-sheet .attribute-box input[type="number"] {
 	width: 55px;
 }
-.charsheet .character-sheet button[type="roll"] span {
+.charsheet .character-sheet button[type="roll"] span, .charsheet .character-sheet button[type="action"] span {
 	font-size: 13px;
     margin-right: 5px;
 }
-.charsheet .character-sheet button[type="roll"]::before {
+.charsheet .character-sheet button[type="roll"]::before, .charsheet .character-sheet button[type="action"]::before {
 	color: #fff;
 	font-size: 20px;
 	vertical-align: bottom;
@@ -122,7 +122,7 @@
 .attribute-box button span.small {
     font-size: 13px;
 }
-.charsheet .character-sheet button[type="roll"] span:last-child {
+.charsheet .character-sheet button[type="roll"] span:last-child, .charsheet .character-sheet button[type="action"] span:last-child {
     margin: 0;
 }
 

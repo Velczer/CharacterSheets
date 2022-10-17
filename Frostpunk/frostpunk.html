@@ -45,7 +45,7 @@
 
 				<div class="attribute-box">
                     <button type="action" name="act_roll" data-attribute="strength" data-skill="force">
-                        <span data-i18n="endure">Force</span>
+                        <span data-i18n="force">Force</span>
 						<span class="small">(<span data-i18n="strength">Strength</span>)</span>
                     </button>
 					<input type="number" value="0" name="attr_force">
@@ -53,7 +53,7 @@
 
 				<div class="attribute-box">
                     <button type="action" name="act_roll" data-attribute="strength" data-skill="fight">
-                        <span data-i18n="endure">Fight</span>
+                        <span data-i18n="fight">Fight</span>
 						<span class="small">(<span data-i18n="strength">Strength</span>)</span>
                     </button>
 					<input type="number" value="0" name="attr_fight">
@@ -61,7 +61,7 @@
 
 				<div class="attribute-box">
                     <button type="action" name="act_roll" data-attribute="agility" data-skill="sneak">
-                        <span data-i18n="endure">Sneak</span>
+                        <span data-i18n="sneak">Sneak</span>
 						<span class="small">(<span data-i18n="agility">Agility</span>)</span>
                     </button>
 					<input type="number" value="0" name="attr_sneak">
@@ -69,7 +69,7 @@
 
 				<div class="attribute-box">
                     <button type="action" name="act_roll" data-attribute="agility" data-skill="move">
-                        <span data-i18n="endure">Move</span>
+                        <span data-i18n="move">Move</span>
 						<span class="small">(<span data-i18n="agility">Agility</span>)</span>
                     </button>
 					<input type="number" value="0" name="attr_move">
@@ -77,7 +77,7 @@
 
 				<div class="attribute-box">
                     <button type="action" name="act_roll" data-attribute="agility" data-skill="shoot">
-                        <span data-i18n="endure">Shoot</span>
+                        <span data-i18n="shoot">Shoot</span>
 						<span class="small">(<span data-i18n="agility">Agility</span>)</span>
                     </button>
 					<input type="number" value="0" name="attr_shoot">
@@ -85,7 +85,7 @@
 
 				<div class="attribute-box">
                     <button type="action" name="act_roll" data-attribute="wits" data-skill="scout">
-                        <span data-i18n="endure">Scout</span>
+                        <span data-i18n="scout">Scout</span>
 						<span class="small">(<span data-i18n="wits">Wits</span>)</span>
                     </button>
 					<input type="number" value="0" name="attr_scout">
@@ -93,7 +93,7 @@
 
 				<div class="attribute-box">
                     <button type="action" name="act_roll" data-attribute="wits" data-skill="comprehend">
-                        <span data-i18n="endure">Comprehend</span>
+                        <span data-i18n="comprehend">Comprehend</span>
 						<span class="small">(<span data-i18n="wits">Wits</span>)</span>
                     </button>
 					<input type="number" value="0" name="attr_comprehend">
@@ -179,27 +179,27 @@
                             <input type="checkbox" style="display:none" name="attr_agility_damage" value="0" checked />
 							<input type="hidden" name="attr_agility_calc" class="bar-calc-view" value="0">
 							<div class="bar">
-								<input class="bar-input" type="radio" name="attr_agility_damage" id="agility_damage_5"
+								<input class="bar-input" type="checkbox" name="attr_agility_damage" id="agility_damage_5"
 									value="5" />
 								<div class="bar-view">
 									<label class="bar-button" for="agility_damage_5"></label>
 								</div>
-								<input class="bar-input" type="radio" name="attr_agility_damage" id="agility_damage_4"
+								<input class="bar-input" type="checkbox" name="attr_agility_damage" id="agility_damage_4"
 									value="4" />
 								<div class="bar-view">
 									<label class="bar-button" for="agility_damage_4"></label>
 								</div>
-								<input class="bar-input" type="radio" name="attr_agility_damage" id="agility_damage_3"
+								<input class="bar-input" type="checkbox" name="attr_agility_damage" id="agility_damage_3"
 									value="3" />
 								<div class="bar-view">
 									<label class="bar-button" for="agility_damage_3"></label>
 								</div>
-								<input class="bar-input" type="radio" name="attr_agility_damage" id="agility_damage_2"
+								<input class="bar-input" type="checkbox" name="attr_agility_damage" id="agility_damage_2"
 									value="2" />
 								<div class="bar-view">
 									<label class="bar-button" for="agility_damage_2"></label>
 								</div>
-								<input class="bar-input" type="radio" name="attr_agility_damage" id="agility_damage_1"
+								<input class="bar-input" type="checkbox" name="attr_agility_damage" id="agility_damage_1"
 									value="1" />
 								<div class="bar-view">
 									<label class="bar-button" for="agility_damage_1"></label>
@@ -212,23 +212,23 @@
 							<input type="hidden" name="attr_wits_calc" class="bar-calc-view" value="0">
 		
 							<div class="bar">
-								<input class="bar-input" type="radio" name="attr_wits_damage" id="wits_damage_5" value="5" />
+								<input class="bar-input" type="checkbox" name="attr_wits_damage" id="wits_damage_5" value="5" />
 								<div class="bar-view">
 									<label class="bar-button" for="wits_damage_5"></label>
 								</div>
-								<input class="bar-input" type="radio" name="attr_wits_damage" id="wits_damage_4" value="4" />
+								<input class="bar-input" type="checkbox" name="attr_wits_damage" id="wits_damage_4" value="4" />
 								<div class="bar-view">
 									<label class="bar-button" for="wits_damage_4"></label>
 								</div>
-								<input class="bar-input" type="radio" name="attr_wits_damage" id="wits_damage_3" value="3" />
+								<input class="bar-input" type="checkbox" name="attr_wits_damage" id="wits_damage_3" value="3" />
 								<div class="bar-view">
 									<label class="bar-button" for="wits_damage_3"></label>
 								</div>
-								<input class="bar-input" type="radio" name="attr_wits_damage" id="wits_damage_2" value="2" />
+								<input class="bar-input" type="checkbox" name="attr_wits_damage" id="wits_damage_2" value="2" />
 								<div class="bar-view">
 									<label class="bar-button" for="wits_damage_2"></label>
 								</div>
-								<input class="bar-input" type="radio" name="attr_wits_damage" id="wits_damage_1" value="1" />
+								<input class="bar-input" type="checkbox" name="attr_wits_damage" id="wits_damage_1" value="1" />
 								<div class="bar-view">
 									<label class="bar-button" for="wits_damage_1"></label>
 								</div>
@@ -240,27 +240,27 @@
 							<input type="hidden" name="attr_empathy_calc" class="bar-calc-view" value="0">
 		
 							<div class="bar">
-								<input class="bar-input" type="radio" name="attr_empathy_damage" id="empathy_damage_5"
+								<input class="bar-input" type="checkbox" name="attr_empathy_damage" id="empathy_damage_5"
 									value="5" />
 								<div class="bar-view">
 									<label class="bar-button" for="empathy_damage_5"></label>
 								</div>
-								<input class="bar-input" type="radio" name="attr_empathy_damage" id="empathy_damage_4"
+								<input class="bar-input" type="checkbox" name="attr_empathy_damage" id="empathy_damage_4"
 									value="4" />
 								<div class="bar-view">
 									<label class="bar-button" for="empathy_damage_4"></label>
 								</div>
-								<input class="bar-input" type="radio" name="attr_empathy_damage" id="empathy_damage_3"
+								<input class="bar-input" type="checkbox" name="attr_empathy_damage" id="empathy_damage_3"
 									value="3" />
 								<div class="bar-view">
 									<label class="bar-button" for="empathy_damage_3"></label>
 								</div>
-								<input class="bar-input" type="radio" name="attr_empathy_damage" id="empathy_damage_2"
+								<input class="bar-input" type="checkbox" name="attr_empathy_damage" id="empathy_damage_2"
 									value="2" />
 								<div class="bar-view">
 									<label class="bar-button" for="empathy_damage_2"></label>
 								</div>
-								<input class="bar-input" type="radio" name="attr_empathy_damage" id="empathy_damage_1"
+								<input class="bar-input" type="checkbox" name="attr_empathy_damage" id="empathy_damage_1"
 									value="1" />
 								<div class="bar-view">
 									<label class="bar-button" for="empathy_damage_1"></label>
