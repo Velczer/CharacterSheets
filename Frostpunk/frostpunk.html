@@ -286,29 +286,41 @@
 					<span class="flex-3 mini-title" data-i18n="name">Name</span>
 					<span class="flex-3 mini-title" data-i18n="skill">Skill</span>
 					<span class="flex-1 mini-title" data-i18n="bonus">Bonus</span>
+					<span class="flex-1 mini-title" data-i18n="damage">Damage</span>
 					<span class="flex-1 mini-title"><br></span>
 				</div>
 				<fieldset class="repeating_gear">
-					<input class="flex-3" type="text" name="attr_gear_name">
-					<select class="flex-3" name="attr_gear_skill" class="dtype">
-						<option value="(@{strength} - @{strength_damage})+@{endure}" data-i18n="endure">Endure</option>
-						<option value="(@{strength} - @{strength_damage})+@{force}" data-i18n="force">Force</option>
-						<option value="(@{strength} - @{strength_damage})+@{fight}" data-i18n="fight">Fight</option>
-
-						<option value="(@{agility} - @{agility_damage})+@{sneak}" data-i18n="sneak">Sneak</option>
-						<option value="(@{agility} - @{agility_damage})+@{move}" data-i18n="move">Move</option>
-						<option value="(@{agility} - @{agility_damage})+@{shoot}" data-i18n="shoot">Shoot</option>
-
-						<option value="(@{wits} - @{wits_damage})+@{scout}" data-i18n="scout">Scout</option>
-						<option value="(@{wits} - @{wits_damage})+@{comprehend}" data-i18n="comprehend">Comprehend</option>
-						<option value="(@{wits} - @{wits_damage})+@{know_the_zone}" data-i18n="know-the-zone">Know The Zone</option>
-
-						<option value="(@{empathy} - @{empathy_damage})+@{sense_emotion}" data-i18n="sense-emotion">Sense Emotion</option>
-						<option value="(@{empathy} - @{empathy_damage})+@{manipulate}" data-i18n="manipulate">Manipulation</option>
-						<option value="(@{empathy} - @{empathy_damage})+@{heal}" data-i18n="heal">Heal</option>
-					</select>
-					<input class="flex-1" type="number" name="attr_gear_bonus" value="0">
-					<button type="roll" class="flex-1" value="@{secret_roll} &{template:frostpunk} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{roll-name=@{gear_name}}} {{base-dice=[[@{gear_skill} + ?{Modifiers|0} - (@{condition}) ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }} {{base-roll-eighteen=[[1d6]] }} {{base-roll-nineteen=[[1d6]] }} {{base-roll-twenty=[[1d6]] }} {{gear-dice=[[@{gear_bonus}]]}} {{gear-roll-one=[[1d6]] }} {{gear-roll-two=[[1d6]] }} {{gear-roll-three=[[1d6]] }} {{gear-roll-four=[[1d6]] }} {{gear-roll-five=[[1d6]] }}" name="roll_attack"><span data-i18n="use">Use</span></button>
+                    <div class="flex-3">
+                        <input type="text" name="attr_gear_name">
+                    </div>
+                    <div class="flex-3">
+                        <select name="attr_gear_skill" class="dtype">
+                            <option value="(@{strength} - @{strength_damage})+@{endure}" data-i18n="endure">Endure</option>
+                            <option value="(@{strength} - @{strength_damage})+@{force}" data-i18n="force">Force</option>
+                            <option value="(@{strength} - @{strength_damage})+@{fight}" data-i18n="fight">Fight</option>
+    
+                            <option value="(@{agility} - @{agility_damage})+@{sneak}" data-i18n="sneak">Sneak</option>
+                            <option value="(@{agility} - @{agility_damage})+@{move}" data-i18n="move">Move</option>
+                            <option value="(@{agility} - @{agility_damage})+@{shoot}" data-i18n="shoot">Shoot</option>
+    
+                            <option value="(@{wits} - @{wits_damage})+@{scout}" data-i18n="scout">Scout</option>
+                            <option value="(@{wits} - @{wits_damage})+@{comprehend}" data-i18n="comprehend">Comprehend</option>
+                            <option value="(@{wits} - @{wits_damage})+@{know_the_zone}" data-i18n="know-the-zone">Know The Zone</option>
+    
+                            <option value="(@{empathy} - @{empathy_damage})+@{sense_emotion}" data-i18n="sense-emotion">Sense Emotion</option>
+                            <option value="(@{empathy} - @{empathy_damage})+@{manipulate}" data-i18n="manipulate">Manipulation</option>
+                            <option value="(@{empathy} - @{empathy_damage})+@{heal}" data-i18n="heal">Heal</option>
+                        </select>
+                    </div>
+                    <div class="flex-1">
+                        <input type="number" name="attr_gear_bonus" value="0">
+                    </div>
+                    <div class="flex-1">
+                        <input type="number" name="attr_gear_damage" value="0">
+                    </div>
+                    <div class="flex-1">
+                        <button type="roll" value="@{secret_roll} &{template:frostpunk} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{roll-name=@{gear_name}}} {{base-dice=[[@{gear_skill} + ?{Modifiers|0} - (@{condition}) ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }} {{base-roll-eighteen=[[1d6]] }} {{base-roll-nineteen=[[1d6]] }} {{base-roll-twenty=[[1d6]] }} {{gear-dice=[[@{gear_bonus}]]}} {{gear-roll-one=[[1d6]] }} {{gear-roll-two=[[1d6]] }} {{gear-roll-three=[[1d6]] }} {{gear-roll-four=[[1d6]] }} {{gear-roll-five=[[1d6]] }}" name="roll_attack"><span data-i18n="use">Use</span></button>
+                    </div>
 				</fieldset>
 
 			</div>

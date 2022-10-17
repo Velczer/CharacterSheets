@@ -454,7 +454,7 @@
 }
 .fieldset-labels .mini-title {
 	justify-content: flex-start;
-	margin-right: 6px;
+	padding-left: 5px;
 	height: 14px;
 }
 .repitem {
@@ -462,9 +462,13 @@
     align-items: flex-start;
 }
 .repitem input, .repitem select {
-	width: 100%;
+	width: 96%;
 	margin-right: 6px;
 	margin-bottom: 7px;
+}
+.charsheet .repitem input[type="number"] {
+    width: 88%;
+    text-align: center;
 }
 .character-sheet .repitem textarea {
 	height: 76px;

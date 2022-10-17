@@ -32,6 +32,7 @@
 	"name": "Nazwa",
 	"skill": "Umiejętność",
 	"bonus": "Bonus",
+    "damage": "Uszkodzenia",
 	"use": "Użyj",
 
 
