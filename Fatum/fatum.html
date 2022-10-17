@@ -125,7 +125,7 @@
                 <div class="attributes-box__line">
                     <label data-i18n="proficiency" style="margin-bottom: 15px;">Biegłość</label>
                     <div class="input-box attributes-box__line-horizontal">
-                        <input type="number" name="attr_physical_level" value="0" min="0" max="5">
+                        <input type="number" name="attr_physical_main_level" value="0" min="0" max="5">
                     </div>
                 </div>
                 <div>
@@ -137,9 +137,9 @@
                     </div>
 
                     <div class="attributes-box__line-ver">
-                        <fieldset class="repeating_physical-attributes">
+                        <fieldset class="repeating_physical">
                             <div class="flex attribute-box__line-horizontal-left">
-                                <button class="flex-1" type="action" name="act_roll" data-attribute="physical"></button>
+                                <button class="flex-1" type="action" name="act_roll" data-attribute="physical" value='&{template:fatum} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{roll=[[@{prefix-physical_skill} + @{prefix-physical_level}]] }} {{name=@{prefix-physical_name}}}'></button>
                                 <input class="flex-1" type="number" name="attr_physical_level" value="0" min="0" max="5">
                                 <input class="flex-3" type="text" name="attr_physical_name">
                                 <input class="flex-1" type="number" name="attr_physical_skill" value="0" min="0" max="30">
@@ -149,16 +149,17 @@
                             </div>
                         </fieldset>
                     </div>
+
                 </div>
             </div>
         </div>
 
-        <div class="col-6">
+        <!-- <div class="col-6">
             <div class="attributes-box">
                 <div class="attributes-box__line">
                     <label data-i18n="proficiency" style="margin-bottom: 15px;">Biegłość</label>
                     <div class="input-box attributes-box__line-horizontal">
-                        <input type="number" name="attr_mind_level" value="0" min="0" max="5">
+                        <input type="number" name="attr_mind_main_level" value="0" min="0" max="5">
                     </div>
                 </div>
                 <div>
@@ -184,16 +185,16 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-6">
             <div class="attributes-box">
                 <div class="attributes-box__line">
                     <label data-i18n="proficiency" style="margin-bottom: 15px;">Biegłość</label>
                     <div class="input-box attributes-box__line-horizontal">
-                        <input type="number" name="attr_society_level" value="0" min="0" max="5">
+                        <input type="number" name="attr_society_main_level" value="0" min="0" max="5">
                     </div>
                 </div>
                 <div>
@@ -226,7 +227,7 @@
                 <div class="attributes-box__line">
                     <label data-i18n="proficiency" style="margin-bottom: 15px;">Biegłość</label>
                     <div class="input-box attributes-box__line-horizontal">
-                        <input type="number" name="attr_professional_level" value="0" min="0" max="5">
+                        <input type="number" name="attr_professional_main_level" value="0" min="0" max="5">
                     </div>
                 </div>
                 <div>
@@ -254,5 +255,318 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>
+
+<rolltemplate class="sheet-rolltemplate-fatum">
+	<div class="template-wrap">
+		<div class="template-header">
+			{{#character_name}}
+			{{#character_id}}[{{character_name}}](https://journal.roll20.net/character/{{character_id}}){{/character_id}}
+			{{^character_id}}{{character_name}}{{/character_id}}
+			{{/character_name}}
+		</div>
+
+		<div class="template-subtitle">
+			{{roll-name}}
+		</div>
+
+		<label class="template-label">Kości podstawowe: {{base-dice}}</label>
+		<div class="template-grid">
+			{{#rollGreater() base-dice 0}}
+			<!-- BASE DIE ONE -->
+			<div class="template-grid-item">
+                {{#rollWasFumble() base-roll-one}}
+                <div class="template-roll-success hit">{{base-roll-one}}</div>
+				{{/rollWasFumble() base-roll-one}}
+				{{#rollBetween() base-roll-one 2 5}}
+				<div class="template-roll-between">{{base-roll-one}}</div>
+				{{/rollBetween() base-roll-one 2 5}}
+				{{#rollWasCrit() base-roll-one}}
+				<div class="template-roll-fail">{{base-roll-one}}</div>
+				{{/rollWasCrit() base-roll-one}}
+			</div>
+			{{/rollGreater() base-dice 0}}
+
+			{{#rollGreater() base-dice 1}}
+			<!-- BASE DIE TWO -->
+			<div class="template-grid-item">
+				{{#rollBetween() base-roll-two 1 5}}
+				<div class="template-roll-between">{{base-roll-two}}</div>
+				{{/rollBetween() base-roll-two 1 5}}
+				{{#rollWasCrit() base-roll-two}}
+				<div class="template-roll-success">{{base-roll-two}}</div>
+				{{/rollWasCrit() base-roll-two}}
+			</div>
+			{{/rollGreater() base-dice 1}}
+
+			{{#rollGreater() base-dice 2}}
+			<!-- BASE DIE THREE -->
+			<div class="template-grid-item">
+				{{#rollBetween() base-roll-three 1 5}}
+				<div class="template-roll-between">{{base-roll-three}}</div>
+				{{/rollBetween() base-roll-three 1 5}}
+				{{#rollWasCrit() base-roll-three}}
+				<div class="template-roll-success hit">{{base-roll-three}}</div>
+				{{/rollWasCrit() base-roll-three}}
+			</div>
+			{{/rollGreater() base-dice 2}}
+
+			{{#rollGreater() base-dice 3}}
+			<!-- BASE DIE FOUR -->
+			<div class="template-grid-item">
+				{{#rollBetween() base-roll-four 1 5}}
+				<div class="template-roll-between">{{base-roll-four}}</div>
+				{{/rollBetween() base-roll-four 1 5}}
+				{{#rollWasCrit() base-roll-four}}
+				<div class="template-roll-success hit">{{base-roll-four}}</div>
+				{{/rollWasCrit() base-roll-four}}
+			</div>
+			{{/rollGreater() base-dice 3}}
+
+			{{#rollGreater() base-dice 4}}
+			<!-- BASE DIE FIVE -->
+			<div class="template-grid-item">
+				{{#rollBetween() base-roll-five 1 5}}
+				<div class="template-roll-between">{{base-roll-five}}</div>
+				{{/rollBetween() base-roll-five 1 5}}
+				{{#rollWasCrit() base-roll-five}}
+				<div class="template-roll-success hit">{{base-roll-five}}</div>
+				{{/rollWasCrit() base-roll-five}}
+			</div>
+			{{/rollGreater() base-dice 4}}
+
+			{{#rollGreater() base-dice 5}} <!-- BASE DIE SIX -->
+			<div class="template-grid-item">
+				{{#rollBetween() base-roll-six 1 5}}
+					<div class="template-roll-between">{{base-roll-six}}</div>
+				{{/rollBetween() base-roll-six 1 5}}
+				{{#rollWasCrit() base-roll-six}}
+					<div class="template-roll-success hit">{{base-roll-six}}</div>
+				{{/rollWasCrit() base-roll-six}}
+			</div>
+			{{/rollGreater() base-dice 5}}
+			
+			{{#rollGreater() base-dice 6}} <!-- BASE DIE SEVEN -->
+			<div class="template-grid-item">
+				{{#rollBetween() base-roll-seven 1 5}}
+					<div class="template-roll-between">{{base-roll-seven}}</div>
+				{{/rollBetween() base-roll-seven 1 5}}
+				{{#rollWasCrit() base-roll-seven}}
+					<div class="template-roll-success hit">{{base-roll-seven}}</div>
+				{{/rollWasCrit() base-roll-seven}}
+			</div>
+			{{/rollGreater() base-dice 6}}
+			
+			{{#rollGreater() base-dice 7}} <!-- BASE DIE EIGHT -->
+			<div class="template-grid-item">
+				{{#rollBetween() base-roll-eight 1 5}}
+					<div class="template-roll-between">{{base-roll-eight}}</div>
+				{{/rollBetween() base-roll-eight 1 5}}
+				{{#rollWasCrit() base-roll-eight}}
+					<div class="template-roll-success hit">{{base-roll-eight}}</div>
+				{{/rollWasCrit() base-roll-eight}}
+			</div>
+			{{/rollGreater() base-dice 7}}
+			
+			{{#rollGreater() base-dice 8}} <!-- BASE DIE NINE -->
+			<div class="template-grid-item">
+				{{#rollBetween() base-roll-nine 1 5}}
+					<div class="template-roll-between">{{base-roll-nine}}</div>
+				{{/rollBetween() base-roll-nine 1 5}}
+				{{#rollWasCrit() base-roll-nine}}
+					<div class="template-roll-success hit">{{base-roll-nine}}</div>
+				{{/rollWasCrit() base-roll-nine}}
+			</div>
+			{{/rollGreater() base-dice 8}}
+			
+			{{#rollGreater() base-dice 9}} <!-- BASE DIE TEN -->
+			<div class="template-grid-item">
+				{{#rollBetween() base-roll-ten 1 5}}
+					<div class="template-roll-between">{{base-roll-ten}}</div>
+				{{/rollBetween() base-roll-ten 1 5}}
+				{{#rollWasCrit() base-roll-ten}}
+					<div class="template-roll-success hit">{{base-roll-ten}}</div>
+				{{/rollWasCrit() base-roll-ten}}
+			</div>
+			{{/rollGreater() base-dice 9}}
+			
+			{{#rollGreater() base-dice 10}} <!-- BASE DIE ELEVEN -->
+			<div class="template-grid-item">
+				{{#rollBetween() base-roll-eleven 1 5}}
+					<div class="template-roll-between">{{base-roll-eleven}}</div>
+				{{/rollBetween() base-roll-eleven 1 5}}
+				{{#rollWasCrit() base-roll-eleven}}
+					<div class="template-roll-success hit">{{base-roll-eleven}}</div>
+				{{/rollWasCrit() base-roll-eleven}}
+			</div>
+			{{/rollGreater() base-dice 10}}
+			
+			{{#rollGreater() base-dice 11}} <!-- BASE DIE TWELVE -->
+			<div class="template-grid-item">
+				{{#rollBetween() base-roll-twelve 1 5}}
+					<div class="template-roll-between">{{base-roll-twelve}}</div>
+				{{/rollBetween() base-roll-twelve 1 5}}
+				{{#rollWasCrit() base-roll-twelve}}
+					<div class="template-roll-success hit">{{base-roll-twelve}}</div>
+				{{/rollWasCrit() base-roll-twelve}}
+			</div>
+			{{/rollGreater() base-dice 11}}
+			
+			{{#rollGreater() base-dice 12}} <!-- BASE DIE THIRTEEN -->
+			<div class="template-grid-item">
+				{{#rollBetween() base-roll-thirteen 1 5}}
+					<div class="template-roll-between">{{base-roll-thirteen}}</div>
+				{{/rollBetween() base-roll-thirteen 1 5}}
+				{{#rollWasCrit() base-roll-thirteen}}
+					<div class="template-roll-success hit">{{base-roll-thirtheen}}</div>
+				{{/rollWasCrit() base-roll-thirteen}}
+			</div>
+			{{/rollGreater() base-dice 12}}
+			
+			{{#rollGreater() base-dice 13}} <!-- BASE DIE FOURTEEN -->
+			<div class="template-grid-item">
+				{{#rollBetween() base-roll-fourteen 1 5}}
+					<div class="template-roll-between">{{base-roll-fourteen}}</div>
+				{{/rollBetween() base-roll-fourteen 1 5}}
+				{{#rollWasCrit() base-roll-fourteen}}
+					<div class="template-roll-success hit">{{base-roll-fourteen}}</div>
+				{{/rollWasCrit() base-roll-fourteen}}
+			</div>
+			{{/rollGreater() base-dice 13}}
+			
+			{{#rollGreater() base-dice 14}} <!-- BASE DIE FIFTEEN -->
+			<div class="template-grid-item">
+				{{#rollBetween() base-roll-fifteen 1 5}}
+					<div class="template-roll-between">{{base-roll-fifteen}}</div>
+				{{/rollBetween() base-roll-fifteen 1 5}}
+				{{#rollWasCrit() base-roll-fifteen}}
+					<div class="template-roll-success hit">{{base-roll-fifteen}}</div>
+				{{/rollWasCrit() base-roll-fifteen}}
+			</div>
+			{{/rollGreater() base-dice 14}}
+
+			{{#rollGreater() base-dice 15}} <!-- BASE DIE SIXTEEN -->
+			<div class="template-grid-item">
+				{{#rollBetween() base-roll-sixteen 1 5}}
+					<div class="template-roll-between">{{base-roll-sixteen}}</div>
+				{{/rollBetween() base-roll-sixteen 1 5}}
+				{{#rollWasCrit() base-roll-sixteen}}
+					<div class="template-roll-success hit">{{base-roll-sixteen}}</div>
+				{{/rollWasCrit() base-roll-sixteen}}
+			</div>
+			{{/rollGreater() base-dice 15}}
+			
+			{{#rollGreater() base-dice 16}} <!-- BASE DIE SEVENTEEN -->
+			<div class="template-grid-item">
+				{{#rollBetween() base-roll-seventeen 1 5}}
+					<div class="template-roll-between">{{base-roll-seventeen}}</div>
+				{{/rollBetween() base-roll-seventeen 1 5}}
+				{{#rollWasCrit() base-roll-seventeen}}
+					<div class="template-roll-success hit">{{base-roll-seventeen}}</div>
+				{{/rollWasCrit() base-roll-seventeen}}
+			</div>
+			{{/rollGreater() base-dice 16}}
+
+			{{#rollGreater() base-dice 17}} <!-- BASE DIE EIGHTEEN -->
+			<div class="template-grid-item">
+				{{#rollBetween() base-roll-eighteen 1 5}}
+					<div class="template-roll-between">{{base-roll-eighteen}}</div>
+				{{/rollBetween() base-roll-eighteen 1 5}}
+				{{#rollWasCrit() base-roll-eighteen}}
+					<div class="template-roll-success hit">{{base-roll-eighteen}}</div>
+				{{/rollWasCrit() base-roll-eighteen}}
+			</div>
+			{{/rollGreater() base-dice 17}}
+
+			{{#rollGreater() base-dice 18}} <!-- BASE DIE NINETEEN -->
+			<div class="template-grid-item">
+				{{#rollBetween() base-roll-nineteen 1 5}}
+					<div class="template-roll-between">{{base-roll-nineteen}}</div>
+				{{/rollBetween() base-roll-nineteen 1 5}}
+				{{#rollWasCrit() base-roll-nineteen}}
+					<div class="template-roll-success hit">{{base-roll-nineteen}}</div>
+				{{/rollWasCrit() base-roll-nineteen}}
+			</div>
+			{{/rollGreater() base-dice 18}}
+
+			{{#rollGreater() base-dice 19}} <!-- BASE DIE TWENTY -->
+			<div class="template-grid-item">
+                {{#rollWasFumble() base-roll-twenty}}
+					<div class="template-roll-success hit">{{base-roll-twenty}}</div>
+				{{/rollWasFumble() base-roll-twenty}}
+				{{#rollBetween() base-roll-twenty 2 5}}
+					<div class="template-roll-between">{{base-roll-twenty}}</div>
+				{{/rollBetween() base-roll-twenty 2 5}}
+				{{#rollWasCrit() base-roll-twenty}}
+					<div class="template-roll-fail hit">{{base-roll-twenty}}</div>
+				{{/rollWasCrit() base-roll-twenty}}
+			</div>
+			{{/rollGreater() base-dice 19}}
+		</div>
+
+	</div>
+</rolltemplate>
+
+
+<script type="text/worker">
+
+
+    on('clicked:roll', async (event) => {
+
+        console.log(event)
+
+        // prefix gets an empty string for normal attributes, and repeating_section_ID_ for repeating attributes
+        var trigger = event.triggerName.slice(8); // this always starts with 'clicked:'
+        var prefix = trigger.split('_').slice(0,3).join('_') + '_'
+    
+        let rollBase = event.htmlAttributes.value.replaceAll('prefix-', `${prefix}`) + "{{fumble=[[1d10!]]}}{{fumble2=[[1d10!]]}}";
+        let rollResult = await startRoll(rollBase);  
+
+        console.log(rollResult)
+    
+        let computedValues = await resolveChecks(
+            checkFumble(rollResult)
+        );
+    
+        finishRoll(
+                rollResult.rollId,
+                computedValues
+            );
+    });
+
+
+    const checkFumble = async (rollResult) => {
+
+        var rollComputed = rollResult.results.roll.result;
+        var roll2Computed = undefined;
+    
+        if(rollResult.results.roll.dice[0] == 1) // We check if the first die is a fumble.
+        {
+            rollComputed = rollResult.results.roll.result - rollResult.results.fumble.result-1;
+        }
+    
+        if(rollResult.results.roll2 != null) {
+    
+            roll2Computed = rollResult.results.roll2.result;
+    
+            if( rollResult.results.roll2.dice[0] == 1) // We check if the first die is a fumble.
+            {
+                roll2Computed = rollResult.results.roll2.result - rollResult.results.fumble2.result-1;
+            }
+        }
+    
+        let results = {
+                    roll: rollComputed,
+                    roll2: roll2Computed,
+                };
+        return results;
+    }
+
+
+    const resolveChecks = async (...checks) => {
+        let results = await Promise.all(checks);
+       return results.reduce((r, o) => Object.assign(r, o), {});
+   }
+
+</script>
