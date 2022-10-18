@@ -425,213 +425,166 @@
 }
 
 /* Roll Template */
-.sheet-rolltemplate-brokencompass .sheet-template-wrap,
+.sheet-rolltemplate-fatum .sheet-template-wrap,
 .sheet-rolltemplate-coin-flip .sheet-template-wrap {
-    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/roll-bg.jpg?v=2);
+    /* background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/roll-bg.jpg?v=2); */
+    background-color: #e9e4e3;
     background-position: top center;
     background-size: cover;
     border: 2px solid #000;
     margin: 0;
     margin-bottom: 15px;
+    font-family: 'Girassol', cursive;
+    padding: 5px;
 }
 
-.sheet-rolltemplate-brokencompass .sheet-template-header,
-.sheet-rolltemplate-coin-flip .sheet-template-header {
+.sheet-rolltemplate-fatum .sheet-template-header,
+.sheet-rolltemplate-fatum .sheet-template-subtitle {
     width: 100%;
-    padding: 7px 5px;
-    color: #fff;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(51, 51, 51, 1) 60%, rgba(0, 181, 255, 0) 100%);
-    font-family: 'Girassol', cursive;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 18px;
-}
-
-.sheet-rolltemplate-brokencompass .sheet-template-header a,
-.sheet-rolltemplate-coin-flip .sheet-template-header a {
-    color: #fff;
-}
-
-.sheet-rolltemplate-brokencompass .sheet-template-subtitle,
-.sheet-rolltemplate-coin-flip .sheet-template-subtitle {
+    padding: 2px 5px;
+    line-height: 24px;
+    border: 1px solid #272626;
     color: #231f20;
-    font-size: 20px;
-	padding: 5px 0;
-	padding-bottom: 6px;
-	line-height: 26px;
-    text-align: center;
-    text-transform: uppercase;
     font-family: 'Girassol', cursive;
-    font-weight: bold;
-    background: rgb(255 255 255 / 70%);
-}
-
-.sheet-rolltemplate-brokencompass .sheet-template-subtitle.sheet-green,
-.sheet-rolltemplate-coin-flip .sheet-template-subtitle.sheet-green {
-    color: green;
-}
-
-.sheet-rolltemplate-coin-flip .sheet-template-subtitle.sheet-red {
-    color: red;
-}
-
-.sheet-rolltemplate-coin-flip .sheet-template-center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 10px;
-}
-
-.sheet-rolltemplate-coin-flip .sheet-template-center img {
-    max-width: 150px;
-    margin: auto;
-}
-
-.sheet-rolltemplate-brokencompass .sheet-template-grid {
     text-align: center;
+    font-size: 18px;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-header a,
+.sheet-rolltemplate-coin-flip .sheet-template-header a {
+    color: #231f20;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-grid {
+    text-align: left;
     padding: 0 5px;
     padding-bottom: 8px;
 }
 
-.sheet-rolltemplate-brokencompass .sheet-template-grid-item-box {
-    background: rgb(255 255 255 / 60%);
-    padding: 0 8px;
-}
-
-.sheet-rolltemplate-brokencompass .sheet-template-grid-item {
+.sheet-rolltemplate-fatum .sheet-template-grid-item {
     display: inline-block;
     vertical-align: middle;
 }
 
-.sheet-rolltemplate-brokencompass .sheet-template-grid-item-flex {
+.sheet-rolltemplate-fatum .sheet-template-grid-item-flex {
     display: flex;
     align-items: center;
-    background: rgb(255 255 255 / 60%);
 }
 
-.sheet-rolltemplate-brokencompass .sheet-template-roll-between {
-    height: 30px;
-    width: 30px;
-    background-color: rgb(255 255 255 / 50%);
-    border: 1px solid #000;
+.sheet-rolltemplate-fatum .sheet-template-roll-between, 
+.sheet-rolltemplate-fatum .sheet-template-roll-success, 
+.sheet-rolltemplate-fatum .sheet-template-roll-fail {
+    height: 36px;
+    width: 36px;
+    border: 1px solid #272626;
     border-radius: 5px;
     background-size: cover;
-    box-shadow: 4px 4px 0px 0px rgb(0 0 0 / 60%);
-    margin: 3px 0;
+    margin: 2px 1px;
     overflow: hidden;
     display: inline-block;
 }
 
-.sheet-rolltemplate-brokencompass .sheet-template-roll-between>span,
-.sheet-rolltemplate-brokencompass .sheet-template-roll-success>span {
+.sheet-rolltemplate-fatum .sheet-template-roll-between>span,
+.sheet-rolltemplate-fatum .sheet-template-roll-success>span,
+.sheet-rolltemplate-fatum .sheet-template-roll-fail>span {
     width: 100%;
     display: inline-block;
     margin: 0;
     border: 0;
     padding: 0;
     text-align: center;
-    line-height: 32px;
+    line-height: 36px;
     background: transparent;
     font-family: 'Girassol', cursive;
-    font-size: 22px;
-    /* color: #3e5f76; */
-    color: #333;
+    font-size: 26px;
+    color: #231f20;
 }
 
-.sheet-rolltemplate-brokencompass .sheet-template-roll-success>span {
+.sheet-rolltemplate-fatum .sheet-template-roll-success>span {
     display: block;
 }
 
-.sheet-rolltemplate-brokencompass .sheet-template-roll-between>span.fullcrit,
-.sheet-rolltemplate-brokencompass .sheet-template-roll-between>span.fullfail {
+.sheet-rolltemplate-fatum .sheet-template-roll-success>span {
+    color: #8dc63f;
+}
+.sheet-rolltemplate-fatum .sheet-template-roll-fail>span {
+    color: #f1592a;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-roll-between>span.fullcrit,
+.sheet-rolltemplate-fatum .sheet-template-roll-between>span.fullfail {
     border: 0;
 }
 
-.sheet-rolltemplate-brokencompass .sheet-template-label {
-    font-size: 16px;
-    padding: 0 5px;
-    text-align: left;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #231f20;
-    margin: 0;
-}
-
-.sheet-rolltemplate-brokencompass .sheet-template-label span {
-    background: none;
-    border: 0;
-    padding: 0;
-    display: inline;
-    font-size: 14px;
-    margin: 0;
-}
-
-.sheet-rolltemplate-brokencompass .sheet-template-small-label {
-    padding: 6px;
-    color: #231f20;
-    text-align: center;
-    font-size: 13px;
-    font-weight: bold;
-    margin: 0;
-}
-
-.sheet-rolltemplate-brokencompass .sheet-template-small-label.sheet-red {
-    color: red;
-}
-
-.sheet-rolltemplate-brokencompass span.inlinerollresult.fullcrit {
+.sheet-rolltemplate-fatum span.inlinerollresult.fullcrit {
     border: 0;
     counter-increment: hit;
 }
 
-.sheet-rolltemplate-brokencompass span.inlinerollresult.fullfail {
+.sheet-rolltemplate-fatum span.inlinerollresult.fullfail {
     border: 0;
 }
 
-.sheet-rolltemplate-brokencompass .sheet-template-dice-stats {
+.sheet-rolltemplate-fatum .sheet-template-dice-stats {
     display: flex;
     justify-content: space-between;
-    background-color: rgb(255 255 255 / 60%);
+    border: 1px solid #272626;
+    margin-top: -1px;
 }
 
-.sheet-rolltemplate-brokencompass .sheet-template-dice-stats>div {
-    padding: 6px;
+.sheet-rolltemplate-fatum .sheet-template-dice-stats>div {
+    padding: 6px 8px;
     color: #231f20;
-    text-align: center;
-    font-size: 13px;
+    font-size: 16px;
 }
 
-.sheet-rolltemplate-brokencompass .sheet-template-dice-stats span,
-.sheet-rolltemplate-brokencompass .sheet-template-clear-result span {
+.sheet-rolltemplate-fatum .sheet-template-dice-stats span {
     display: inline;
     border: 0;
     background: transparent;
     padding: 0;
-    font-weight: bold;
 }
 
-.sheet-rolltemplate-brokencompass .sheet-template-dice-stats span:first-child:after {
-    content: ":";
+.sheet-rolltemplate-fatum .sheet-template-dice-stats > .sheet-template-dice-stats-value {
+    padding: 0;
 }
 
-.sheet-rolltemplate-brokencompass .sheet-template-dice-actions {
+.sheet-rolltemplate-fatum .sheet-template-dice-stats-value span {
+	background: #231f20;
+	padding: 0 12px;
+	color: #fff;
+	display: flex;
+	height: 100%;
+	align-items: center;
+	font-weight: 400;
+	font-size: 22px;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-dice-stats-value.sheet-success span {
+    background-color: #8dc63f;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-dice-stats-value.sheet-fail span {
+    background-color: #f1592a;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-dice-actions {
     display: flex;
     justify-content: space-between;
-    background-color: rgb(255 255 255 / 60%);
     padding-top: 5px;
 }
 
-.sheet-rolltemplate-brokencompass .sheet-template-dice-actions>div {
+.sheet-rolltemplate-fatum .sheet-template-dice-actions>div {
     flex: 1;
 }
 
-.sheet-rolltemplate-brokencompass .sheet-template-dice-actions>div:last-child {
+.sheet-rolltemplate-fatum .sheet-template-dice-actions>div:last-child {
     border-left: 1px solid transparent;
 }
 
-.sheet-rolltemplate-brokencompass .sheet-template-button a {
+.sheet-rolltemplate-fatum .sheet-template-button a {
     background: #231f20;
     border: 0;
     width: 100%;
