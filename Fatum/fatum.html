@@ -138,15 +138,13 @@
 
                     <div class="attributes-box__line-ver">
                         <fieldset class="repeating_physical">
-                            <div class="flex attribute-box__line-horizontal-left">
-                                <button class="flex-1" type="action" name="act_roll" data-attribute="physical" value='&{template:fatum} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{roll=[[@{prefix-physical_skill} + @{prefix-physical_level}]] }} {{name=@{prefix-physical_name}}}'></button>
-                                <input class="flex-1" type="number" name="attr_physical_level" value="0" min="0" max="5">
-                                <input class="flex-3" type="text" name="attr_physical_name">
-                                <input class="flex-1" type="number" name="attr_physical_skill" value="0" min="0" max="30">
-                            </div>
-                            <div class="attributes-box__text">
-                                <textarea name="attr_physical_spec" placeholder="Specjalizacja"></textarea>
-                            </div>
+                            <div class="attribute-box__line-horizontal-left"></div>
+                            <button class="flex-1" type="action" name="act_roll" data-attribute="physical" value='&{template:fatum} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{base-dice=[[@{physical_main_level} + @{prefix-physical_skill} + @{prefix-physical_level}]] }} {{roll-name=@{prefix-physical_name}}}'></button>
+                            <input class="flex-1" type="number" name="attr_physical_level" value="0" min="0" max="5">
+                            <input class="flex-3" type="text" name="attr_physical_name">
+                            <input class="flex-1" type="number" name="attr_physical_skill" value="0" min="0" max="30">
+                            <div class="break"></div>
+                            <textarea name="attr_physical_spec" placeholder="Specjalizacja"></textarea>
                         </fieldset>
                     </div>
 
@@ -511,58 +509,23 @@
 
 <script type="text/worker">
 
-
-    on('clicked:roll', async (event) => {
-
-        console.log(event)
+    on('clicked:repeating_physical:roll', async (event) => {
+        var attribute = event.htmlAttributes['data-attribute'];
 
         // prefix gets an empty string for normal attributes, and repeating_section_ID_ for repeating attributes
         var trigger = event.triggerName.slice(8); // this always starts with 'clicked:'
         var prefix = trigger.split('_').slice(0,3).join('_') + '_'
-    
-        let rollBase = event.htmlAttributes.value.replaceAll('prefix-', `${prefix}`) + "{{fumble=[[1d10!]]}}{{fumble2=[[1d10!]]}}";
+
+        let rollBase = event.htmlAttributes.value.replaceAll('prefix-', `${prefix}`) + "+ pula fatum <d6 + biegłość + poziom + pula losu"; // DOKOŃCZYĆ
+        console.log(rollBase)
         let rollResult = await startRoll(rollBase);  
 
         console.log(rollResult)
     
-        let computedValues = await resolveChecks(
-            checkFumble(rollResult)
-        );
-    
         finishRoll(
                 rollResult.rollId,
-                computedValues
             );
     });
-
-
-    const checkFumble = async (rollResult) => {
-
-        var rollComputed = rollResult.results.roll.result;
-        var roll2Computed = undefined;
-    
-        if(rollResult.results.roll.dice[0] == 1) // We check if the first die is a fumble.
-        {
-            rollComputed = rollResult.results.roll.result - rollResult.results.fumble.result-1;
-        }
-    
-        if(rollResult.results.roll2 != null) {
-    
-            roll2Computed = rollResult.results.roll2.result;
-    
-            if( rollResult.results.roll2.dice[0] == 1) // We check if the first die is a fumble.
-            {
-                roll2Computed = rollResult.results.roll2.result - rollResult.results.fumble2.result-1;
-            }
-        }
-    
-        let results = {
-                    roll: rollComputed,
-                    roll2: roll2Computed,
-                };
-        return results;
-    }
-
 
     const resolveChecks = async (...checks) => {
         let results = await Promise.all(checks);

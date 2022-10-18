@@ -397,6 +397,7 @@
     display: flex;
     align-items: center;
     margin-bottom: 5px;
+    width: 100%;
 }
 
 .feel-box>span {
@@ -407,12 +408,8 @@
     color: #6c6c6c;
 }
 
-.feel-input {
+.charsheet .character-sheet .feel-input {
     width: 39%;
-}
-
-.feel-input input {
-    display: none;
 }
 
 .feel-input label {
@@ -453,6 +450,22 @@
     width: 100%;
     margin: 13px 24px 0 3px;
     background: #231f20;
+}
+
+.character-sheet .feel-input .diamond-checkbox>span.without-line::after {
+    display: none;
+}
+.character-sheet .feel-input .diamond-checkbox>span.without-line input {
+    width: 75%;
+	margin: 0;
+	background: transparent;
+	border: 1px solid transparent;
+	border-bottom: 1px solid #231f20;
+    padding: 2px 0;
+	font-size: 16px;
+	text-transform: uppercase;
+    font-family: 'Lalezar', sans-serif;
+    color: #333;
 }
 
 .expertise-box {
@@ -833,7 +846,7 @@
     background-position: center;
 }
 
-.diamond-checkboxes input.diamond-input {
+.diamond-checkboxes input.diamond-input, .feel-box input.diamond-input {
     display: none;
 }
 
@@ -841,7 +854,7 @@
     background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/diamond-white-down.svg);
 }
 
-input.diamond-input:checked+.diamond-checkbox>.diamond-down::before {
+.diamond-checkbox input.diamond-input:checked+.diamond-down::before {
     background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/diamond-black-down.svg);
 }
 
@@ -849,14 +862,14 @@ input.diamond-input:checked+.diamond-checkbox>.diamond-down::before {
     background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/diamond-white-up.svg);
 }
 
-input.diamond-input:checked+.diamond-checkbox>.diamond-up::before {
+.diamond-checkbox input.diamond-input:checked+.diamond-up::before {
     background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/diamond-black-up.svg);
 }
 
-.diamond-input:checked~.diamond-checkbox>.diamond-down::before {
+.diamond-checkbox .diamond-input:checked~.diamond-down::before {
     background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/diamond-black-down.svg);
 }
 
-.diamond-input:checked~.diamond-checkbox>.diamond-up::before {
+.diamond-checkbox .diamond-input:checked~.diamond-up::before {
     background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/diamond-black-up.svg);
 }

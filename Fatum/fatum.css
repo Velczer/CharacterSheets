@@ -658,6 +658,12 @@
 	font-size: 16px;
 }
 
+.repitem {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
 .repitem input {
     width: 100%;
     margin: 2px;
@@ -671,10 +677,16 @@
     border: 2px solid #000;
 }
 
+.repitem .break {
+    flex-basis: 100%;
+    height: 0;
+}
+
 .character-sheet .repitem textarea {
     border: 2px solid #272626;
     padding: 4px 9px;
     min-height: 34px;
+    width: 85%;
 }
 
 .repitem input[type="checkbox"] {
