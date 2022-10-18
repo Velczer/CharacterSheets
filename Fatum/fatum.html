@@ -270,7 +270,7 @@
 		</div>
 
 		<div class="template-grid">
-			{{#rollGreater() baseDice 0}}
+			{{#rollGreater() computed::baseDice 0}}
 			<!-- BASE DIE ONE -->
 			<div class="template-grid-item">
                 {{#rollWasFumble() base-roll-one}}
@@ -283,9 +283,9 @@
 				<div class="template-roll-fail">{{base-roll-one}}</div>
 				{{/rollWasCrit() base-roll-one}}
 			</div>
-			{{/rollGreater() baseDice 0}}
+			{{/rollGreater() computed::baseDice 0}}
 
-			{{#rollGreater() baseDice 1}}
+			{{#rollGreater() computed::baseDice 1}}
 			<!-- BASE DIE TWO -->
 			<div class="template-grid-item">
                 {{#rollWasFumble() base-roll-two}}
@@ -298,9 +298,9 @@
 				<div class="template-roll-fail">{{base-roll-two}}</div>
 				{{/rollWasCrit() base-roll-two}}
 			</div>
-			{{/rollGreater() baseDice 1}}
+			{{/rollGreater() computed::baseDice 1}}
 
-			{{#rollGreater() baseDice 2}}
+			{{#rollGreater() computed::baseDice 2}}
 			<!-- BASE DIE THREE -->
 			<div class="template-grid-item">
                 {{#rollWasFumble() base-roll-three}}
@@ -313,9 +313,9 @@
 				<div class="template-roll-fail">{{base-roll-three}}</div>
 				{{/rollWasCrit() base-roll-three}}
 			</div>
-			{{/rollGreater() baseDice 2}}
+			{{/rollGreater() computed::baseDice 2}}
 
-			{{#rollGreater() baseDice 3}}
+			{{#rollGreater() computed::baseDice 3}}
 			<!-- BASE DIE FOUR -->
 			<div class="template-grid-item">
                 {{#rollWasFumble() base-roll-four}}
@@ -328,9 +328,9 @@
 				<div class="template-roll-fail">{{base-roll-four}}</div>
 				{{/rollWasCrit() base-roll-four}}
 			</div>
-			{{/rollGreater() baseDice 3}}
+			{{/rollGreater() computed::baseDice 3}}
 
-			{{#rollGreater() baseDice 4}}
+			{{#rollGreater() computed::baseDice 4}}
 			<!-- BASE DIE FIVE -->
 			<div class="template-grid-item">
                 {{#rollWasFumble() base-roll-five}}
@@ -343,9 +343,9 @@
 				<div class="template-roll-fail">{{base-roll-five}}</div>
 				{{/rollWasCrit() base-roll-five}}
 			</div>
-			{{/rollGreater() baseDice 4}}
+			{{/rollGreater() computed::baseDice 4}}
 
-			{{#rollGreater() baseDice 5}} <!-- BASE DIE SIX -->
+			{{#rollGreater() computed::baseDice 5}} <!-- BASE DIE SIX -->
 			<div class="template-grid-item">
                 {{#rollWasFumble() base-roll-six}}
                 <div class="template-roll-success">{{base-roll-six}}</div>
@@ -357,9 +357,9 @@
 					<div class="template-roll-fail">{{base-roll-six}}</div>
 				{{/rollWasCrit() base-roll-six}}
 			</div>
-			{{/rollGreater() baseDice 5}}
+			{{/rollGreater() computed::baseDice 5}}
 			
-			{{#rollGreater() baseDice 6}} <!-- BASE DIE SEVEN -->
+			{{#rollGreater() computed::baseDice 6}} <!-- BASE DIE SEVEN -->
 			<div class="template-grid-item">
                 {{#rollWasFumble() base-roll-seven}}
                 <div class="template-roll-success">{{base-roll-seven}}</div>
@@ -371,9 +371,9 @@
 					<div class="template-roll-fail">{{base-roll-seven}}</div>
 				{{/rollWasCrit() base-roll-seven}}
 			</div>
-			{{/rollGreater() baseDice 6}}
+			{{/rollGreater() computed::baseDice 6}}
 			
-			{{#rollGreater() baseDice 7}} <!-- BASE DIE EIGHT -->
+			{{#rollGreater() computed::baseDice 7}} <!-- BASE DIE EIGHT -->
 			<div class="template-grid-item">
                 {{#rollWasFumble() base-roll-eight}}
                 <div class="template-roll-success">{{base-roll-eight}}</div>
@@ -385,9 +385,9 @@
 					<div class="template-roll-fail">{{base-roll-eight}}</div>
 				{{/rollWasCrit() base-roll-eight}}
 			</div>
-			{{/rollGreater() baseDice 7}}
+			{{/rollGreater() computed::baseDice 7}}
 			
-			{{#rollGreater() baseDice 8}} <!-- BASE DIE NINE -->
+			{{#rollGreater() computed::baseDice 8}} <!-- BASE DIE NINE -->
 			<div class="template-grid-item">
                 {{#rollWasFumble() base-roll-nine}}
                 <div class="template-roll-success">{{base-roll-nine}}</div>
@@ -399,9 +399,9 @@
 					<div class="template-roll-fail">{{base-roll-nine}}</div>
 				{{/rollWasCrit() base-roll-nine}}
 			</div>
-			{{/rollGreater() baseDice 8}}
+			{{/rollGreater() computed::baseDice 8}}
 			
-			{{#rollGreater() baseDice 9}} <!-- BASE DIE TEN -->
+			{{#rollGreater() computed::baseDice 9}} <!-- BASE DIE TEN -->
 			<div class="template-grid-item">
                 {{#rollWasFumble() base-roll-ten}}
                 <div class="template-roll-success">{{base-roll-ten}}</div>
@@ -413,9 +413,9 @@
 					<div class="template-roll-fail">{{base-roll-ten}}</div>
 				{{/rollWasCrit() base-roll-ten}}
 			</div>
-			{{/rollGreater() baseDice 9}}
+			{{/rollGreater() computed::baseDice 9}}
 			
-			{{#rollGreater() baseDice 10}} <!-- BASE DIE ELEVEN -->
+			{{#rollGreater() computed::baseDice 10}} <!-- BASE DIE ELEVEN -->
 			<div class="template-grid-item">
                 {{#rollWasFumble() base-roll-eleven}}
                 <div class="template-roll-success">{{base-roll-eleven}}</div>
@@ -427,9 +427,9 @@
 					<div class="template-roll-fail">{{base-roll-eleven}}</div>
 				{{/rollWasCrit() base-roll-eleven}}
 			</div>
-			{{/rollGreater() baseDice 10}}
+			{{/rollGreater() computed::baseDice 10}}
 			
-			{{#rollGreater() baseDice 11}} <!-- BASE DIE TWELVE -->
+			{{#rollGreater() computed::baseDice 11}} <!-- BASE DIE TWELVE -->
 			<div class="template-grid-item">
                 {{#rollWasFumble() base-roll-twelve}}
                 <div class="template-roll-success">{{base-roll-twelve}}</div>
@@ -441,9 +441,9 @@
 					<div class="template-roll-fail">{{base-roll-twelve}}</div>
 				{{/rollWasCrit() base-roll-twelve}}
 			</div>
-			{{/rollGreater() baseDice 11}}
+			{{/rollGreater() computed::baseDice 11}}
 			
-			{{#rollGreater() baseDice 12}} <!-- BASE DIE THIRTEEN -->
+			{{#rollGreater() computed::baseDice 12}} <!-- BASE DIE THIRTEEN -->
 			<div class="template-grid-item">
                 {{#rollWasFumble() base-roll-thirteen}}
                 <div class="template-roll-success">{{base-roll-thirteen}}</div>
@@ -455,9 +455,9 @@
 					<div class="template-roll-fail">{{base-roll-thirtheen}}</div>
 				{{/rollWasCrit() base-roll-thirteen}}
 			</div>
-			{{/rollGreater() baseDice 12}}
+			{{/rollGreater() computed::baseDice 12}}
 			
-			{{#rollGreater() baseDice 13}} <!-- BASE DIE FOURTEEN -->
+			{{#rollGreater() computed::baseDice 13}} <!-- BASE DIE FOURTEEN -->
 			<div class="template-grid-item">
                 {{#rollWasFumble() base-roll-fourteen}}
                 <div class="template-roll-success">{{base-roll-fourteen}}</div>
@@ -469,9 +469,9 @@
 					<div class="template-roll-fail">{{base-roll-fourteen}}</div>
 				{{/rollWasCrit() base-roll-fourteen}}
 			</div>
-			{{/rollGreater() baseDice 13}}
+			{{/rollGreater() computed::baseDice 13}}
 			
-			{{#rollGreater() baseDice 14}} <!-- BASE DIE FIFTEEN -->
+			{{#rollGreater() computed::baseDice 14}} <!-- BASE DIE FIFTEEN -->
 			<div class="template-grid-item">
                 {{#rollWasFumble() base-roll-fifteen}}
                 <div class="template-roll-success">{{base-roll-fifteen}}</div>
@@ -483,9 +483,9 @@
 					<div class="template-roll-fail">{{base-roll-fifteen}}</div>
 				{{/rollWasCrit() base-roll-fifteen}}
 			</div>
-			{{/rollGreater() baseDice 14}}
+			{{/rollGreater() computed::baseDice 14}}
 
-			{{#rollGreater() baseDice 15}} <!-- BASE DIE SIXTEEN -->
+			{{#rollGreater() computed::baseDice 15}} <!-- BASE DIE SIXTEEN -->
 			<div class="template-grid-item">
                 {{#rollWasFumble() base-roll-sixteen}}
                 <div class="template-roll-success">{{base-roll-sixteen}}</div>
@@ -497,9 +497,9 @@
 					<div class="template-roll-fail">{{base-roll-sixteen}}</div>
 				{{/rollWasCrit() base-roll-sixteen}}
 			</div>
-			{{/rollGreater() baseDice 15}}
+			{{/rollGreater() computed::baseDice 15}}
 			
-			{{#rollGreater() baseDice 16}} <!-- BASE DIE SEVENTEEN -->
+			{{#rollGreater() computed::baseDice 16}} <!-- BASE DIE SEVENTEEN -->
 			<div class="template-grid-item">
                 {{#rollWasFumble() base-roll-seventeen}}
                 <div class="template-roll-success">{{base-roll-seventeen}}</div>
@@ -511,9 +511,9 @@
 					<div class="template-roll-fail">{{base-roll-seventeen}}</div>
 				{{/rollWasCrit() base-roll-seventeen}}
 			</div>
-			{{/rollGreater() baseDice 16}}
+			{{/rollGreater() computed::baseDice 16}}
 
-			{{#rollGreater() baseDice 17}} <!-- BASE DIE EIGHTEEN -->
+			{{#rollGreater() computed::baseDice 17}} <!-- BASE DIE EIGHTEEN -->
 			<div class="template-grid-item">
                 {{#rollWasFumble() base-roll-eighteen}}
                 <div class="template-roll-success">{{base-roll-eighteen}}</div>
@@ -525,9 +525,9 @@
 					<div class="template-roll-fail">{{base-roll-eighteen}}</div>
 				{{/rollWasCrit() base-roll-eighteen}}
 			</div>
-			{{/rollGreater() baseDice 17}}
+			{{/rollGreater() computed::baseDice 17}}
 
-			{{#rollGreater() baseDice 18}} <!-- BASE DIE NINETEEN -->
+			{{#rollGreater() computed::baseDice 18}} <!-- BASE DIE NINETEEN -->
 			<div class="template-grid-item">
                 {{#rollWasFumble() base-roll-nineteen}}
                 <div class="template-roll-success">{{base-roll-nineteen}}</div>
@@ -539,9 +539,9 @@
 					<div class="template-roll-fail">{{base-roll-nineteen}}</div>
 				{{/rollWasCrit() base-roll-nineteen}}
 			</div>
-			{{/rollGreater() baseDice 18}}
+			{{/rollGreater() computed::baseDice 18}}
 
-			{{#rollGreater() baseDice 19}} <!-- BASE DIE TWENTY -->
+			{{#rollGreater() computed::baseDice 19}} <!-- BASE DIE TWENTY -->
 			<div class="template-grid-item">
                 {{#rollWasFumble() base-roll-twenty}}
 					<div class="template-roll-success">{{base-roll-twenty}}</div>
@@ -553,7 +553,7 @@
 					<div class="template-roll-fail">{{base-roll-twenty}}</div>
 				{{/rollWasCrit() base-roll-twenty}}
 			</div>
-			{{/rollGreater() baseDice 19}}
+			{{/rollGreater() computed::baseDice 19}}
 		</div>
 
         <div class="template-dice-stats">
@@ -658,7 +658,7 @@
             fail: fail,
             success: success,
             total_success: success + auto_level,
-
+            baseDice: baseDice
         };
 
         return results;
