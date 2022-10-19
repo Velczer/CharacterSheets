@@ -152,7 +152,7 @@
             </div>
         </div>
 
-        <!-- <div class="col-6">
+        <div class="col-6">
             <div class="attributes-box">
                 <div class="attributes-box__line">
                     <label data-i18n="proficiency" style="margin-bottom: 15px;">Biegłość</label>
@@ -164,26 +164,24 @@
                     <div class="fieldset-labels center">
                         <span class="flex-1 mini-title" style="width: 36px;"><br></span>
                         <span class="flex-1 mini-title" data-i18n="level">Poziom</span>
-                        <span class="flex-3 mini-title" data-i18n="mind-attributes">Atrybuty Fizyczne</span>
+                        <span class="flex-3 mini-title" data-i18n="mind-attributes">Atrybuty Umysłowe</span>
                         <span class="flex-1 mini-title" data-i18n="skill">Wprawa</span>
                     </div>
 
                     <div class="attributes-box__line-ver">
-                        <fieldset class="repeating_mind-attributes">
-                            <div class="flex attribute-box__line-horizontal-left">
-                                <button class="flex-1" type="action" name="act_roll" data-attribute="mind"></button>
-                                <input class="flex-1" type="number" name="attr_mind_level" value="0" min="0" max="5">
-                                <input class="flex-3" type="text" name="attr_mind_name">
-                                <input class="flex-1" type="number" name="attr_mind_skill" value="0" min="0" max="30">
-                            </div>
-                            <div class="attributes-box__text">
-                                <textarea name="attr_mind_spec" placeholder="Specjalizacja"></textarea>
-                            </div>
+                        <fieldset class="repeating_mind">
+                            <div class="attribute-box__line-horizontal-left"></div>
+                            <button class="flex-1" type="action" name="act_roll" data-attribute="mind" value='&{template:fatum} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{threshold=[[@{Fatum} + @{mind_main_level} + @{prefix-mind_level}]]}} {{baseDice=[[@{Fatum} + @{mind_main_level} + @{prefix-mind_skill} + @{prefix-mind_level}]] }} {{level=[[@{prefix-mind_level}]]}} {{roll-name=@{prefix-mind_name}}}'></button>
+                            <input class="flex-1" type="number" name="attr_mind_level" value="0" min="0" max="5">
+                            <input class="flex-3" type="text" name="attr_mind_name">
+                            <input class="flex-1" type="number" name="attr_mind_skill" value="0" min="0" max="30">
+                            <div class="break"></div>
+                            <textarea name="attr_mind_spec" placeholder="Specjalizacja"></textarea>
                         </fieldset>
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
     </div>
 
     <!-- <div class="row">

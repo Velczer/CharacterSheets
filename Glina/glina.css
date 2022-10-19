@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Girassol&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=Open+Sans&display=swap');
 
 /* Defaults  */
 .ui-dialog .charsheet {
@@ -84,19 +84,20 @@
 
 .character-sheet input,
 .character-sheet select {
-    /* font-family: 'Girassol', cursive; */
+    font-family: 'Open Sans', sans-serif;
     text-transform: none;
-    background: #fff;
+    background: transparent;
     border: 1px solid transparent;
     border-bottom: 1px solid #231f20;
+    border-radius: 0;
+    transition: .3s all ease;
     display: inline-block;
     font-size: 16px;
     color: #000;
-    line-height: 32px;
+    line-height: 30px;
     height: 32px;
     padding: 0 6px;
     box-sizing: border-box;
-    border-radius: 0;
 }
 
 .character-sheet input.transparent {
@@ -107,7 +108,7 @@
 }
 
 .character-sheet input:focus {
-    border: 1px solid #231f20;
+    border: 1px solid #4471c4;
     outline: none;
 }
 
@@ -137,7 +138,7 @@
 .charsheet .character-sheet button[type="roll"],
 .charsheet .character-sheet button[type="action"] {
     border: 0;
-    font-family: 'Girassol', cursive;
+    font-family: 'Courier Prime', monospace;
     background: transparent;
     text-transform: uppercase;
     color: #231f20;
@@ -200,221 +201,42 @@
 /* Custom modules */
 .character-sheet {
     background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Glina/Images/sheet-bg.png);
-    background-size: contain;
-	background-repeat: no-repeat;
-	background-position: top center;
+    /* background-size: contain;
+	background-repeat: no-repeat; */
+	background-position: top left;
     box-sizing: border-box;
-    padding: 210px 117px;
-	padding-bottom: 40px;
+    padding: 80px;
     color: #000;
-    min-height: 1500px;
+    font-family: 'Open Sans', sans-serif;
     margin-bottom: 15px;
     position: relative;
     overflow: hidden;
     z-index: 1;
 }
 
-.character-sheet .secret-roll {
-    font-size: 19px;
-    text-transform: uppercase;
-    font-weight: 500;
-    color: #231f20;
+.character-sheet h2 {
+    font-family: 'Courier Prime', monospace;
+}
+
+.charsheet .character-details-label {
     display: flex;
-    align-items: center;
-    margin: 3px 0;
-    padding-left: 13px;
-    width: auto;
-    line-height: 25px;
+    padding-right: 30px;
+	box-sizing: border-box;
 }
 
-.character-sheet .secret-roll input {
-    margin-right: 8px;
+.charsheet .character-details-label span {
+	display: block;
+	padding-right: 10px;
+	padding-top: 8px;
+	font-weight: 600;
 }
 
-.character-sheet .input-box {
-    border: 2px solid #272626;
-    margin-bottom: 3px;
-}
-
-.character-sheet .input-box label {
-    margin: 0;
-    padding: 0;
-    display: flex;
-	align-items: center;
-}
-
-.character-sheet .input-box label span {
-    padding: 7px 8px;
-    display: inline-block;
-    font-size: 16px;
-    white-space: nowrap;
-}
-
-.character-sheet .input-box input, .character-sheet .input-box select {
-    background-color: transparent;
-    border: 0;
-    margin: 0;
+.character-details-label input {
     width: 100%;
 }
 
-.character-sheet .input-box.input-box--hr {
-    position: relative;
-}
-
-.character-sheet .input-box.input-box--hr::before {
-    content: "";
-    display: block;
-    height: 4px;
-    width: auto;
-    background: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/hr.png);
-    background-repeat: no-repeat;
-    background-position: left;
-    position: absolute;
-    z-index: 1;
-    top: 29px;
-    left: 10px;
-	right: 10px;
-}
-
-.wounds-box {
-    padding-bottom: 10px;
-}
-
-.wounds-box > div {
-    padding: 5px 10px;
-}
-
-.wounds-box::before {
-    content: "";
-    display: block;
-}
-
-.checkbox-label {
-    flex-direction: column;
-	position: relative;
-	cursor: pointer;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-}
-
-.character-sheet .checkbox-label input {
-    position: absolute;
-	opacity: 0;
-	cursor: pointer;
-	height: 0;
-	width: 0;
-}
-
-.checkbox-label .checkmark {
-	height: 23px;
-	width: 23px;
-    border: 2px solid #000;
-    position: relative;
-}
-
-.checkbox-label .checkmark::after {
-    content: "";
-    position: absolute;
-    left: 8px;
-	top: 4px;
-	width: 5px;
-	height: 10px;
-	border: solid transparent;
-	border-width: 0 3px 3px 0;
-	-webkit-transform: rotate(45deg);
-	-ms-transform: rotate(45deg);
-	transform: rotate(45deg);
-}
-
-.checkbox-label input:checked ~ .checkmark:after {
-	border-color: #000;
-}
-
-.attributes-box {
-    display: flex;
-    position: relative;
-    margin-top: 10px;
-}
-
-.attributes-box::before {
-    content: "";
-	display: block;
-	height: 2px;
-	width: auto;
-	background: #272626;
-	position: absolute;
-	z-index: 1;
-	top: 24px;
-	left: 0;
-	right: 10px;
-}
-
-.attributes-box .fieldset-labels {
-    margin-bottom: 5px;
-}
-
-.attributes-box__text {
-    padding-left: 45px;
-}
-
-.attributes-box__line {
-    position: relative;
-    margin-right: 11px;
-}
-
-.attributes-box__line-horizontal {
-    position: relative;
-}
-
-.attributes-box__line-horizontal::before, .attribute-box__line-horizontal-left::before {
-	content: "";
-	position: absolute;
-	height: 2px;
-	width: 11px;
-	background: #272626;
-	right: -11px;
-	top: 14px;
-	z-index: -1;
-}
-
-.attribute-box__line-horizontal-left {
-    position: relative;
-}
-
-.attribute-box__line-horizontal-left::before {
-    right: 100%;
-    left: -1px;
-	top: 18px;
-	width: 14px;
-}
-
-.attribute-box__line-horizontal-left button {
-    margin-top: 2px;
-}
-
-.attributes-box__line-ver {
-    position: relative;
-}
-
-.attributes-box__line-ver .repitem::before {
-    content: "";
-    position: absolute;
-    top: -5px;
-    bottom: 0;
-	left: -2px;
-	width: 2px;
-	background: #272626;
-}
-
-.attributes-box__line-ver .repitem:last-child::before {
-    bottom: calc(100% - 20px);
-}
-
 /* Roll Template */
-.sheet-rolltemplate-fatum .sheet-template-wrap,
-.sheet-rolltemplate-coin-flip .sheet-template-wrap {
+.sheet-rolltemplate-fatum .sheet-template-wrap {
     /* background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/roll-bg.jpg?v=2); */
     background-color: #e9e4e3;
     background-position: top center;
@@ -422,7 +244,7 @@
     border: 2px solid #000;
     margin: 0;
     margin-bottom: 15px;
-    font-family: 'Girassol', cursive;
+    font-family: 'Courier Prime', monospace;
     padding: 5px;
 }
 
@@ -433,7 +255,7 @@
     line-height: 24px;
     border: 1px solid #272626;
     color: #231f20;
-    font-family: 'Girassol', cursive;
+    font-family: 'Courier Prime', monospace;
     text-align: center;
     font-size: 18px;
     box-sizing: border-box;
@@ -485,7 +307,7 @@
     text-align: center;
     line-height: 36px;
     background: transparent;
-    font-family: 'Girassol', cursive;
+    font-family: 'Courier Prime', monospace;
     font-size: 26px;
     color: #231f20;
 }

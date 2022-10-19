@@ -1,0 +1,23 @@
+{
+    "name": "Imię",
+    "appearance": "Wygląd",
+    "face": "Twarz",
+    "hair": "Włosy",
+    "profile": "Sylwetka",
+    "other": "Inne",
+
+    "family": "Rodzina",
+    "partner": "Partner",
+    "kids": "Dzieci",
+    "parents": "Rodzice",
+    "marital-status": "Stan cywilny",
+
+    "weakness": "Słabość",
+    "notes": "Notatki służbowe",
+
+    "connections": "Znajomości",
+    "value": "Wartość",
+    "ties": "Więzi"
+    
+
+}
