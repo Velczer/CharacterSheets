@@ -198,11 +198,10 @@
 /* Custom modules */
 .character-sheet {
     background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Glina/Images/sheet-bg.png);
-    /* background-size: contain;
-	background-repeat: no-repeat; */
 	background-position: top left;
     box-sizing: border-box;
-    padding: 80px;
+    padding: 50px;
+    padding-bottom: 25px;
     color: #000;
     font-family: 'Open Sans', sans-serif;
     margin-bottom: 15px;
@@ -232,6 +231,14 @@
 
 .character-details-label input {
     width: 100%;
+}
+
+.character-details-box {
+    margin-bottom: 20px;
+}
+
+.character-details-box:last-child {
+    margin: 0;
 }
 
 /* Roll Template */

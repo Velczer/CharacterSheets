@@ -1,12 +1,15 @@
 <div class="character-sheet">
     <div class="row">
         <div class="col-6">
-            <h2 data-i18n="name">Imię</h2>
+            <div class="character-details-box">
+                <h2 data-i18n="name">Imię</h2>
                 <label class="character-details-label">
                     <input type="text" name="attr_character_name" title="@{character_name}" spellcheck="false">
                 </label>
+            </div>
 
-            <h2 data-i18n="appearance">Wygląd</h2>
+            <div class="character-details-box">
+                <h2 data-i18n="appearance">Wygląd</h2>
                 <label class="character-details-label">
                     <span data-i18n="face">Twarz</span>
                     <input type="text" name="attr_face" title="@{face}" spellcheck="false">
@@ -26,8 +29,10 @@
                     <span data-i18n="other">Inne</span>
                     <textarea name="attr_other" cols="30" rows="2" spellcheck="false"></textarea>
                 </label>
+            </div>
 
-            <h2 data-i18n="family">Rodzina</h2>
+            <div class="character-details-box">
+                <h2 data-i18n="family">Rodzina</h2>
                 <label class="character-details-label">
                     <span data-i18n="partner">Partner</span>
                     <input type="text" name="attr_partner" title="@{partner}" spellcheck="false">
@@ -47,121 +52,250 @@
                     <span data-i18n="marital-status">Stan cywilny</span>
                     <input type="text" name="attr_marital_status" title="@{marital_status}" spellcheck="false">
                 </label>
-            
-            <h2 data-i18n="weakness">Słabość</h2>
-            <input type="text" name="attr_weakness" placeholder="Nazwa słabości..">
-            <textarea name="attr_weakness_more" id="" cols="30" rows="4" placeholder="Szczegóły słabości.."></textarea>
+            </div>
 
-            <h2 data-i18n="notes">Notatki służbowe</h2>
-            <textarea name="attr_notes" id="" cols="30" rows="4"></textarea>
+            <div class="character-details-box">
+                <h2 data-i18n="weakness">Słabość</h2>
+                <input type="text" name="attr_weakness" placeholder="Nazwa słabości..">
+                <textarea name="attr_weakness_more" id="" cols="30" rows="4" placeholder="Szczegóły słabości.."></textarea>
+            </div>
+            
         </div>
 
         <div class="col-6">
-            <h2 data-i18n="connections">Znajomości</h2>
+            <div class="character-details-box">
+                <h2 data-i18n="connections">Znajomości</h2>
 
-            <div class="fieldset-labels center">
-                <span class="flex-4 mini-title"><br></span>
-                <span class="flex-1 mini-title" data-i18n="value">Wartość</span>
+                <div class="fieldset-labels center">
+                    <span style="width: 100%;" class="mini-title"><br></span>
+                    <span class="mini-title" data-i18n="value">Wartość</span>
+                </div>
+    
+                <fieldset class="repeating_connections">
+                    <input type="text" name="attr_connection">
+                    <input style="width:50px;" type="number" name="attr_connection_value" value="0">
+                </fieldset>
             </div>
 
-            <fieldset class="repeating_connections">
-                <input type="text" name="attr_connection">
-                <input style="width:50px;" type="number" name="attr_connection_value" value="0">
-            </fieldset>
+            <div class="character-details-box">
+                <h2 data-i18n="ties">Więzi</h2>
+                <fieldset class="repeating_ties">
+                    <input class="flex-4" type="text" name="attr_ties"> 
+                    <input class="flex-1" type="number" name="attr_ties_value" value="2">
+                </fieldset>
+            </div>
 
-            <h2 data-i18n="ties">Więzi</h2>
-            <fieldset class="repeating_ties">
-                <input class="flex-4" type="text" name="attr_ties"> 
-                <input class="flex-1" type="number" name="attr_ties_value" value="2">
-            </fieldset>
+            <div class="character-details-box">
+                <h2 data-i18n="notes">Notatki służbowe</h2>
+                <textarea name="attr_notes" id="" cols="30" rows="4"></textarea>
+            </div>
+        </div>
+    </div>
 
-            <h2 data-i18n="attributes">Atrybuty</h2>
-            <table>
-                <tr>
-                    <th></th>
-                    <th data-i18n="value">Wartość</th>
-                    <th></th>
-                </tr>
-                <tr>
-                    <td data-i18n="inteligence">Inteligencja</td>
-                    <td>
-                        <input type="checkbox" name="attr_int" value="1">
-                        <input type="checkbox" name="attr_int" value="2">
-                        <input type="checkbox" name="attr_int" value="3">
-                    </td>
-                    <td>
-                        <button type="action" name="act_roll" data-attribute="int" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td data-i18n="charisma">Osobowość</td>
-                    <td>
-                        <input type="checkbox" name="attr_char" value="1">
-                        <input type="checkbox" name="attr_char" value="2">
-                        <input type="checkbox" name="attr_char" value="3">
-                    </td>
-                    <td>
-                        <button type="action" name="act_roll" data-attribute="char" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
-                    </td>
-                </tr>
-            </table>
+</div>
 
-            <h2 data-i18n="job-rank">Stopień służbowy</h2>
-            <table>
-                <tr>
-                    <th></th>
-                    <th data-i18n="value">Wartość</th>
-                    <th></th>
-                </tr>
-                <tr>
-                    <td data-i18n="job-rank">Stopień służbowy</td>
-                    <td>
-                        <input type="checkbox" name="attr_job_rank" value="1">
-                        <input type="checkbox" name="attr_job_rank" value="2">
-                        <input type="checkbox" name="attr_job_rank" value="3">
-                    </td>
-                    <td>
-                        <button type="action" name="act_roll" data-attribute="job_rank" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
-                    </td>
-                </tr>
-            </table>
+<div class="character-sheet">
+    <div class="row">
+        <div class="col-6">
+            <div class="character-details-box">
+                <h2 data-i18n="job-rank">Stopień służbowy</h2>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th data-i18n="value">Wartość</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td data-i18n="job-rank">Stopień służbowy</td>
+                        <td>
+                            <input type="checkbox" name="attr_job_rank" value="1">
+                            <input type="checkbox" name="attr_job_rank" value="2">
+                            <input type="checkbox" name="attr_job_rank" value="3">
+                        </td>
+                        <td>
+                            <button type="action" name="act_roll" data-attribute="job_rank" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
 
-            <h2 data-i18n="investigative-movements">Ruchy śledcze</h2>
-            <table>
-                <tr>
-                    <th></th>
-                    <th data-i18n="get-lead">Zdobycie tropu</th>
-                    <th></th>
-                </tr>
-                <tr>
-                    <td data-i18n="">Komunikacja interpersonalna</td>
-                    <td>
-                        <input type="checkbox" name="attr_get_lead_1" value="1">
-                        <input type="checkbox" name="attr_get_lead_1" value="2">
-                        <input type="checkbox" name="attr_get_lead_1" value="3">
-                    </td>
-                    <td>
-                        <button type="action" name="act_roll" data-attribute="get_lead_1" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td data-i18n="">Książka telefoniczna</td>
-                    <td>
-                        <input type="checkbox" name="attr_get_lead_1" value="1">
-                        <input type="checkbox" name="attr_get_lead_1" value="2">
-                        <input type="checkbox" name="attr_get_lead_1" value="3">
-                    </td>
-                    <td>
-                        <button type="action" name="act_roll" data-attribute="get_lead_1" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
-                    </td>
-                </tr>
-            </table>
+            <div class="character-details-box">
+                <h2 data-i18n="investigative-movements">Ruchy śledcze</h2>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th data-i18n="get-lead">Zdobycie tropu</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td data-i18n="interpersonal-communication">Komunikacja interpersonalna</td>
+                        <td>
+                            <input type="checkbox" name="attr_get_lead_1" value="1">
+                            <input type="checkbox" name="attr_get_lead_1" value="2">
+                            <input type="checkbox" name="attr_get_lead_1" value="3">
+                        </td>
+                        <td>
+                            <button type="action" name="act_roll" data-attribute="get_lead_1" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="phone-book">Książka telefoniczna</td>
+                        <td>
+                            <input type="checkbox" name="attr_get_lead_1" value="1">
+                            <input type="checkbox" name="attr_get_lead_1" value="2">
+                            <input type="checkbox" name="attr_get_lead_1" value="3">
+                        </td>
+                        <td>
+                            <button type="action" name="act_roll" data-attribute="get_lead_1" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="paperwork">Papierkowa robota</td>
+                        <td>
+                            <input type="checkbox" name="attr_get_lead_1" value="1">
+                            <input type="checkbox" name="attr_get_lead_1" value="2">
+                            <input type="checkbox" name="attr_get_lead_1" value="3">
+                        </td>
+                        <td>
+                            <button type="action" name="act_roll" data-attribute="get_lead_1" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="specialists-help">Pomoc specjalistów</td>
+                        <td>
+                            <input type="checkbox" name="attr_get_lead_1" value="1">
+                            <input type="checkbox" name="attr_get_lead_1" value="2">
+                            <input type="checkbox" name="attr_get_lead_1" value="3">
+                        </td>
+                        <td>
+                            <button type="action" name="act_roll" data-attribute="get_lead_1" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="operational-work">Praca operacyjno-rozpoznawcza</td>
+                        <td>
+                            <input type="checkbox" name="attr_get_lead_1" value="1">
+                            <input type="checkbox" name="attr_get_lead_1" value="2">
+                            <input type="checkbox" name="attr_get_lead_1" value="3">
+                        </td>
+                        <td>
+                            <button type="action" name="act_roll" data-attribute="get_lead_1" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="violance">Przemoc</td>
+                        <td>
+                            <input type="checkbox" name="attr_get_lead_1" value="1">
+                            <input type="checkbox" name="attr_get_lead_1" value="2">
+                            <input type="checkbox" name="attr_get_lead_1" value="3">
+                        </td>
+                        <td>
+                            <button type="action" name="act_roll" data-attribute="get_lead_1" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="manipulate">Robienie w wała</td>
+                        <td>
+                            <input type="checkbox" name="attr_get_lead_1" value="1">
+                            <input type="checkbox" name="attr_get_lead_1" value="2">
+                            <input type="checkbox" name="attr_get_lead_1" value="3">
+                        </td>
+                        <td>
+                            <button type="action" name="act_roll" data-attribute="get_lead_1" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
+                        </td>
+                    </tr>
 
-            <h2 data-i18n="archetype-movements">Ruchy archetypu</h2>
-            <fieldset class="repeating_archetype-movements">
-                <input class="flex-1" type="text" name="attr_archetype_movement" spellcheck="false"> 
-                <input class="flex-4" type="text" name="attr_archetype_movement_desc" spellcheck="false">
-            </fieldset>
+                    <tr>
+                        <td data-i18n="computer-tech">Techniki komputerowe</td>
+                        <td>
+                            <input type="checkbox" name="attr_get_lead_1" value="1">
+                            <input type="checkbox" name="attr_get_lead_1" value="2">
+                            <input type="checkbox" name="attr_get_lead_1" value="3">
+                        </td>
+                        <td>
+                            <button type="action" name="act_roll" data-attribute="get_lead_1" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            
+        </div>
+
+        <div class="col-6">
+            <div class="character-details-box">
+                <h2 data-i18n="attributes">Atrybuty</h2>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th data-i18n="value">Wartość</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td data-i18n="inteligence">Inteligencja</td>
+                        <td>
+                            <input type="checkbox" name="attr_inteligence" value="1">
+                            <input type="checkbox" name="attr_inteligence" value="2">
+                            <input type="checkbox" name="attr_inteligence" value="3">
+                        </td>
+                        <td>
+                            <button type="action" name="act_roll" data-attribute="inteligence" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="charisma">Osobowość</td>
+                        <td>
+                            <input type="checkbox" name="attr_charisma" value="1">
+                            <input type="checkbox" name="attr_charisma" value="2">
+                            <input type="checkbox" name="attr_charisma" value="3">
+                        </td>
+                        <td>
+                            <button type="action" name="act_roll" data-attribute="charisma" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="psyche">Psychika</td>
+                        <td>
+                            <input type="checkbox" name="attr_psyche" value="1">
+                            <input type="checkbox" name="attr_psyche" value="2">
+                            <input type="checkbox" name="attr_psyche" value="3">
+                        </td>
+                        <td>
+                            <button type="action" name="act_roll" data-attribute="psyche" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="dexterity">Sprawność</td>
+                        <td>
+                            <input type="checkbox" name="attr_dexterity" value="1">
+                            <input type="checkbox" name="attr_dexterity" value="2">
+                            <input type="checkbox" name="attr_dexterity" value="3">
+                        </td>
+                        <td>
+                            <button type="action" name="act_roll" data-attribute="dexterity" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="senses">Zmysły</td>
+                        <td>
+                            <input type="checkbox" name="attr_senses" value="1">
+                            <input type="checkbox" name="attr_senses" value="2">
+                            <input type="checkbox" name="attr_senses" value="3">
+                        </td>
+                        <td>
+                            <button type="action" name="act_roll" data-attribute="senses" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="character-details-box">
+                <h2 data-i18n="archetype-movements">Ruchy archetypu</h2>
+                <fieldset class="repeating_archetype-movements">
+                    <input class="flex-1" type="text" name="attr_archetype_movement" spellcheck="false"> 
+                    <input class="flex-4" type="text" name="attr_archetype_movement_desc" spellcheck="false">
+                </fieldset>
+            </div>
 
         </div>
     </div>

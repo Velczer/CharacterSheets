@@ -22,10 +22,21 @@
     "attributes": "Atrybuty",
     "inteligence": "Inteligencja",
     "charisma": "Osobowość",
+    "psyche": "Psychika",
+    "dexterity": "Sprawność",
+    "senses": "Zmysły",
 
     "job-rank": "Stopień służbowy",
     "investigative-movements": "Ruchy śledcze",
     "get-lead": "Zdobycie tropu",
+    "interpersonal-communication": "Komunikacja interpersonalna",
+    "phone-book": "Książka telefoniczna",
+    "paperwork": "Papierkowa robota",
+    "specialists-help": "Pomoc specjalistów",
+    "operational-work": "Praca operacyjno-rozpoznawcza",
+    "violance": "Przemoc",
+    "manipulate": "Robienie w wała",
+    "computer-tech": "Techniki komputerowe",
 
     "archetype-movements": "Ruchy archetypu"
 
