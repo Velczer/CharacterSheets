@@ -38,7 +38,7 @@
 
 .col-6 {
     width: 50%;
-    padding: 0 6px;
+    padding: 0 2px;
 }
 
 .col-5 {
@@ -59,6 +59,10 @@
 .col-2 {
     width: 17%;
     padding: 0 2px;
+}
+
+.more-col-padding {
+    padding: 0 6px;
 }
 
 .flex {
@@ -492,14 +496,22 @@
     color: #231f20;
 }
 
+.sheet-rolltemplate-fatum .sheet-template-roll-fatum > div {
+    background: #756221;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-roll-fatum .sheet-template-roll-between>span {
+    color: #fff;
+}
+
 .sheet-rolltemplate-fatum .sheet-template-roll-success>span {
     display: block;
 }
 
-.sheet-rolltemplate-fatum .sheet-template-roll-success>span {
+.sheet-rolltemplate-fatum .sheet-template-roll-success>span, .sheet-rolltemplate-fatum .sheet-template-roll-fatum .sheet-template-roll-success>span {
     color: #8dc63f;
 }
-.sheet-rolltemplate-fatum .sheet-template-roll-fail>span {
+.sheet-rolltemplate-fatum .sheet-template-roll-fail>span, .sheet-rolltemplate-fatum .sheet-template-roll-fatum .sheet-template-roll-fail>span {
     color: #f1592a;
 }
 
