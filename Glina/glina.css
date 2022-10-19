@@ -125,13 +125,14 @@
     height: auto;
     resize: vertical;
     margin: 0;
-    border: 0;
     color: #000;
+    border-bottom: 1px solid #231f20;
     border-radius: 0;
+    transition: .3s all ease;
 }
 
 .character-sheet textarea:focus {
-    border: 0;
+    border: 1px solid #4471c4;
     outline: none;
 }
 
@@ -194,10 +195,6 @@
     background-color: #231f20;
 }
 
-.charsheet .character-sheet label {
-    font-weight: 400;
-}
-
 /* Custom modules */
 .character-sheet {
     background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Glina/Images/sheet-bg.png);
@@ -229,6 +226,8 @@
 	padding-right: 10px;
 	padding-top: 8px;
 	font-weight: 600;
+    white-space: nowrap;
+    font-size: 16px;
 }
 
 .character-details-label input {
@@ -422,9 +421,12 @@
 	font-size: 16px;
 }
 
+.fieldset-labels .mini-title.center {
+    justify-content: center;
+}
+
 .repitem {
     display: flex;
-    flex-wrap: wrap;
     justify-content: flex-end;
 }
 
@@ -432,13 +434,15 @@
     width: 100%;
     margin: 2px;
 	padding: 5px;
-	border: 2px solid #272626;
+	border: 1px solid transparent;
+	border-bottom: 1px solid #272626;
+    transition: .3s all ease;
 	line-height: 24px;
     background: transparent;
 }
 
 .repitem input:focus {
-    border: 2px solid #000;
+    border: 1px solid #4471c4;
 }
 
 .repitem .break {

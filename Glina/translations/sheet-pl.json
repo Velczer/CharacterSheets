@@ -17,7 +17,18 @@
 
     "connections": "Znajomości",
     "value": "Wartość",
-    "ties": "Więzi"
+    "ties": "Więzi",
+
+    "attributes": "Atrybuty",
+    "inteligence": "Inteligencja",
+    "charisma": "Osobowość",
+
+    "job-rank": "Stopień służbowy",
+    "investigative-movements": "Ruchy śledcze",
+    "get-lead": "Zdobycie tropu",
+
+    "archetype-movements": "Ruchy archetypu"
+
     
 
 }
