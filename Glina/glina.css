@@ -178,16 +178,35 @@
     width: auto;
     appearance: none;
 	-webkit-appearance: none;
-    height: 20px;
-    width: 20px;
+    height: 16px;
+    width: 16px;
     border-radius: 100%;
     background-color: transparent;
     padding: 0;
 	border: 1px solid #000;
+    margin-right: 3px;
 }
 
-.charsheet .character-sheet input[type="checkbox"]:after {
+.charsheet .character-sheet input[type="checkbox"]::after {
     content: "";
+    background: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Glina/Images/x.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 18px;
+    width: 18px;
+    display: block;
+    margin-top: -2px;
+	margin-left: -2px;
+    opacity: 0;
+    transition: .3s all ease;
+}
+
+.charsheet .character-sheet input[type="checkbox"]:checked::after {
+    opacity: 1;
+}
+
+.charsheet .character-sheet .checkbox-line input[type="checkbox"]:checked ~ input[type="checkbox"]::after {
+    opacity: 1;
 }
 
 .charsheet .character-sheet input[type="number"] {
@@ -280,12 +299,45 @@
     text-align: right;
 }
 
+.custom-table th {
+    text-align: center;
+}
+
 .custom-table td:first-child {
     padding-right: 8px;
     width: 100%;
 }
 .custom-table td:nth-child(2) {
     white-space: nowrap;
+}
+
+.checkbox-line {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.down-checkboxes-box {
+    display: inline-block;
+    margin-right: 20px;
+    text-align: center;
+}
+
+.down-checkboxes {
+    display: flex;
+}
+
+.down-checkboxes .checkbox-label {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 4px 0;
+	border: 1px solid #000;
+	margin-right: -1px;
+	width: 32px;
+}
+
+.down-checkboxes .checkbox-label input {
+    display: none;
 }
 
 /* Roll Template */
@@ -484,6 +536,10 @@
     justify-content: flex-end;
 }
 
+.repeating-with-textarea .repitem {
+    flex-wrap: wrap;
+}
+
 .repcontainer {
     margin-bottom: 10px;
 }
@@ -509,38 +565,10 @@
     height: 0;
 }
 
-.character-sheet .repitem textarea {
-    border: 2px solid #272626;
-    padding: 4px 9px;
-    min-height: 34px;
-    width: 85%;
-}
-
 .repitem input[type="checkbox"] {
     width: auto;
     transform: scale(1.5);
     flex: unset;
     margin-right: 10px;
     margin-top: 10px;
-}
-
-.rep-box-vertical .repitem {
-    flex-wrap: wrap;
-    margin-bottom: 10px;
-}
-
-.rep-box-vertical .repitem label {
-    margin-bottom: 0;
-}
-
-.rep-box-vertical .repitem input {
-    margin-bottom: 0;
-    border-radius: 0;
-}
-
-.rep-box-vertical .repitem textarea {
-    height: 78px;
-    border-radius: 0;
-    border-top: 0;
-    border-bottom: 0;
 }

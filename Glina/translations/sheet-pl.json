@@ -17,7 +17,7 @@
 
     "connections": "Znajomości",
     "value": "Wartość",
-    "ties": "Więzi",
+    "ties": "Więzi / Wrogowie",
 
     "attributes": "Atrybuty",
     "inteligence": "Inteligencja",
@@ -38,7 +38,14 @@
     "manipulate": "Robienie w wała",
     "computer-tech": "Techniki komputerowe",
 
-    "archetype-movements": "Ruchy archetypu"
+    "archetype-movements": "Ruchy archetypu",
+
+    "experience": "Punkty doświadczenia",
+    "status": "Status",
+    "stressed": "Zestresowany",
+    "label": "Etykieta",
+    "to-attr": "Do atrybutu",
+    "modifier": "Modyfikator"
 
     
 

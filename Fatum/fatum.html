@@ -4,7 +4,7 @@
             <div class="input-box">
                 <label class="character-details-label">
                     <span data-i18n="titre">Miano</span>
-                    <input type="text" name="attr_titre" spellcheck="false">
+                    <input type="text" name="attr_character_name" spellcheck="false">
                 </label>
             </div>
         </div>
@@ -27,7 +27,8 @@
                 <label class="character-details-label">
                     <span data-i18n="carrier">Nosiciel</span>
                     <select name="attr_carrier">
-                        <option value="1" selected="selected" data-i18n="human">człowiek</option>
+                        <option value="0" selected="selected">-</option>
+                        <option value="1" data-i18n="human">człowiek</option>
                         <option value="2" data-i18n="half-angel">półanioł</option>
                     </select>
                 </label>
@@ -53,15 +54,16 @@
                     <div class="input-box">
                         <label>
                             <span data-i18n="fatum">Fatum</span>
-                            <input type="number" name="attr_fatum" value="0">
+                            <input type="number" name="attr_fatum" value="0" min="0" max="3">
                         </label>
+                        <!-- Fatum button -->
                     </div>
                 </div>
                 <div class="col-7">
                     <div class="input-box">
                         <label>
                             <span data-i18n="fate-pool">Pula losu</span>
-                            <input type="number" name="attr_fate_pool" value="0">
+                            <input type="number" name="attr_fate_pool" value="0" min="0" max="12">
                         </label>
                     </div>
                 </div>
@@ -139,7 +141,7 @@
                     <div class="attributes-box__line-ver">
                         <fieldset class="repeating_physical">
                             <div class="attribute-box__line-horizontal-left"></div>
-                            <button class="flex-1" type="action" name="act_roll" data-attribute="physical" value='&{template:fatum} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{threshold=[[@{Fatum} + @{physical_main_level} + @{prefix-physical_level}]]}} {{baseDice=[[@{Fatum} + @{physical_main_level} + @{prefix-physical_skill} + @{prefix-physical_level}]] }} {{level=[[@{prefix-physical_level}]]}} {{roll-name=@{prefix-physical_name}}}'></button>
+                            <button class="flex-1" type="action" name="act_roll" data-attribute="physical" value='&{template:fatum} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{threshold=[[@{physical_main_level} + @{prefix-physical_level}]]}} {{baseDice=[[@{Fatum} + @{physical_main_level} + @{prefix-physical_level}]] }} {{level=[[@{prefix-physical_level}]]}} {{roll-name=@{prefix-physical_name}}}'></button>
                             <input class="flex-1" type="number" name="attr_physical_level" value="0" min="0" max="5">
                             <input class="flex-3" type="text" name="attr_physical_name">
                             <input class="flex-1" type="number" name="attr_physical_skill" value="0" min="0" max="30">
@@ -171,7 +173,7 @@
                     <div class="attributes-box__line-ver">
                         <fieldset class="repeating_mind">
                             <div class="attribute-box__line-horizontal-left"></div>
-                            <button class="flex-1" type="action" name="act_roll" data-attribute="mind" value='&{template:fatum} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{threshold=[[@{Fatum} + @{mind_main_level} + @{prefix-mind_level}]]}} {{baseDice=[[@{Fatum} + @{mind_main_level} + @{prefix-mind_skill} + @{prefix-mind_level}]] }} {{level=[[@{prefix-mind_level}]]}} {{roll-name=@{prefix-mind_name}}}'></button>
+                            <button class="flex-1" type="action" name="act_roll" data-attribute="mind" value='&{template:fatum} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{threshold=[[@{mind_main_level} + @{prefix-mind_level}]]}} {{baseDice=[[@{Fatum} + @{mind_main_level} + @{prefix-mind_level}]] }} {{level=[[@{prefix-mind_level}]]}} {{roll-name=@{prefix-mind_name}}}'></button>
                             <input class="flex-1" type="number" name="attr_mind_level" value="0" min="0" max="5">
                             <input class="flex-3" type="text" name="attr_mind_name">
                             <input class="flex-1" type="number" name="attr_mind_skill" value="0" min="0" max="30">
@@ -556,7 +558,7 @@
 
         <div class="template-dice-stats">
             <div><span> Próg rzutu</span></div>
-            <div class="template-dice-stats-value">{{threshold}}</div>
+            <div class="template-dice-stats-value">{{computed::threshold}}</div>
         </div>
 
         <div style="height: 10px;"></div>
@@ -610,6 +612,9 @@
     const calcDice = async (rollResult) => {
         var moreDice = rollResult.results.moreDice.result;
         var baseDice = rollResult.results.baseDice.result + moreDice;
+        // ograniczać kości do 20 i zwracać reszte z puli losu
+
+        console.log(rollResult)
 
         var table = [];
         var i = 0;
@@ -630,19 +635,34 @@
         var moreDice = rollResult.results.moreDice.result;
         var baseDice = rollResult.results.baseDice.result + moreDice;
 
-        var largerThreshold = rollResult.results.largerThreshold.result;
-        var threshold = rollResult.results.threshold.result + largerThreshold;
+        var threshold = rollResult.results.threshold.result;
+        if (threshold == 0) {
+            threshold = 1;
+        }
+
+        if (threshold < 5) {
+            var largerThreshold = rollResult.results.largerThreshold.result;
+            threshold += largerThreshold;
+
+            if (threshold > 5) {
+                var unusedFate = threshold - 5;
+                threshold = 5;
+            }
+        } 
+
         var auto_level = rollResult.results.level.result;
 
+        console.log(threshold)
+        console.log(table)
+
         var success = 0;
-        for (i = 1; table.length > i; i++) {
+        for (i = 0; table.length > i; i++) {
             if (table[i] <= threshold) {
                 success += 1;
             }
         }
 
-        var fail = baseDice - success;
-        var fateCalc = fail - (moreDice + largerThreshold);
+        var fateCalc = unusedFate - (moreDice + largerThreshold);
 
         var fate_pool = await asw.getAttrs(['fate_pool']);
         fate_pool = Object.values(fate_pool);
@@ -653,10 +673,11 @@
 
 
         let results = {
-            fail: fail,
+            fail: baseDice - success,
             success: success,
             total_success: success + auto_level,
-            baseDice: baseDice
+            baseDice: baseDice,
+            threshold: threshold
         };
 
         return results;
