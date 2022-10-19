@@ -199,7 +199,7 @@
 
 /* Custom modules */
 .character-sheet {
-    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/sheet-bg.png);
+    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Glina/Images/sheet-bg.png);
     background-size: contain;
 	background-repeat: no-repeat;
 	background-position: top center;
@@ -207,8 +207,6 @@
     padding: 210px 117px;
 	padding-bottom: 40px;
     color: #000;
-    font-family: 'Girassol', cursive;
-    width: 1000px;
     min-height: 1500px;
     margin-bottom: 15px;
     position: relative;

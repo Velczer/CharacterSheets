@@ -1,0 +1,79 @@
+<div class="character-sheet">
+    <div class="row">
+        <div class="col-6">
+            <h2 data-i18n="name">Imię</h2>
+                <label class="character-details-label">
+                    <input type="text" name="attr_character_name" title="@{character_name}" spellcheck="false">
+                </label>
+
+            <h2 data-i18n="appearance">Wygląd</h2>
+                <label class="character-details-label">
+                    <span data-i18n="face">Twarz</span>
+                    <input type="text" name="attr_face" title="@{face}" spellcheck="false">
+                </label>
+
+                <label class="character-details-label">
+                    <span data-i18n="hair">Włosy</span>
+                    <input type="text" name="attr_hair" title="@{hair}" spellcheck="false">
+                </label>
+
+                <label class="character-details-label">
+                    <span data-i18n="other">Inne</span>
+                    <textarea name="attr_other" cols="30" rows="4" spellcheck="false"></textarea>
+                </label>
+
+                <label class="character-details-label">
+                    <span data-i18n="partner">Partner</span>
+                    <input type="text" name="attr_partner" title="@{partner}" spellcheck="false">
+                </label>
+
+            <h2 data-i18n="family">Rodzina</h2>
+                <label class="character-details-label">
+                    <span data-i18n="partner">Partner</span>
+                    <input type="text" name="attr_partner" title="@{partner}" spellcheck="false">
+                </label>
+
+                <label class="character-details-label">
+                    <span data-i18n="kids">Dzieci</span>
+                    <input type="text" name="attr_kids" title="@{kids}" spellcheck="false">
+                </label>
+
+                <label class="character-details-label">
+                    <span data-i18n="parents">Rodzice</span>
+                    <input type="text" name="attr_parents" title="@{parents}" spellcheck="false">
+                </label>
+
+                <label class="character-details-label">
+                    <span data-i18n="marital-status">Stan cywilny</span>
+                    <input type="text" name="attr_marital_status" title="@{marital_status}" spellcheck="false">
+                </label>
+            
+            <h2 data-i18n="weakness">Słabość</h2>
+            <input type="text" name="attr_weakness">
+            <textarea name="attr_weakness_more" id="" cols="30" rows="10"></textarea>
+
+            <h2 data-i18n="notes">Notatki służbowe</h2>
+            <textarea name="attr_notes" id="" cols="30" rows="10"></textarea>
+        </div>
+
+        <div class="col-6">
+            <h2 data-i18n="connections">Znajomości</h2>
+
+            <div class="fieldset-labels center">
+                <span class="flex-4 mini-title"><br></span>
+                <span class="flex-1 mini-title" data-i18n="value">Wartość</span>
+            </div>
+
+            <fieldset class="repeating_connections">
+                <input class="flex-4" type="text" name="attr_connection">
+                <input class="flex-1" type="number" name="attr_connection_value" value="0">
+            </fieldset>
+
+            <h2 data-i18n="ties">Więzi</h2>
+            <fieldset class="repeating_ties">
+                <input class="flex-4" type="text" name="attr_ties">
+                <input class="flex-1" type="number" name="attr_ties_value" value="2">
+            </fieldset>
+        </div>
+    </div>
+</div>
