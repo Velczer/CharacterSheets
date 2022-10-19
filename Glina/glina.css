@@ -38,7 +38,7 @@
 
 .col-6 {
     width: 50%;
-    padding: 0 2px;
+    padding: 0 15px;
 }
 
 .col-5 {
@@ -88,7 +88,7 @@
     text-transform: none;
     background: transparent;
     border: 1px solid transparent;
-    border-bottom: 1px solid #231f20;
+    border-bottom: 1px dashed #231f20;
     border-radius: 0;
     transition: .3s all ease;
     display: inline-block;
@@ -96,7 +96,7 @@
     color: #000;
     line-height: 30px;
     height: 32px;
-    padding: 0 6px;
+    padding: 0 12px;
     box-sizing: border-box;
 }
 
@@ -109,6 +109,7 @@
 
 .character-sheet input:focus {
     border: 1px solid #4471c4;
+    border-radius: 25px;
     outline: none;
 }
 
@@ -120,19 +121,21 @@
     background-attachment: local;
     background-color: transparent;
     font-size: 16px;
-    padding: 1px 9px;
+    padding: 4px 12px;
     box-sizing: border-box;
     height: auto;
     resize: vertical;
     margin: 0;
     color: #000;
-    border-bottom: 1px solid #231f20;
+    border: 1px solid transparent;
+	border-bottom: 1px dashed #231f20;
     border-radius: 0;
     transition: .3s all ease;
 }
 
 .character-sheet textarea:focus {
     border: 1px solid #4471c4;
+    border-radius: 25px;
     outline: none;
 }
 
@@ -149,24 +152,42 @@
     border-radius: 4px;
     padding: 0;
     height: 36px;
+    width: 36px;
 }
 
 .charsheet .character-sheet button[type="roll"]:hover,
 .charsheet .character-sheet button[type="action"]:hover {
-    background: #231f20;
     color: #fff;
 }
 
 .charsheet .character-sheet button[type="roll"]::before,
 .charsheet .character-sheet button[type="action"]::before {
-    color: #893fc8;
+    color: #4471c4;
     font-size: 20px;
     font-family: "dicefontd20";
     content: "t";
 }
 
+.charsheet .character-sheet button[type="roll"]:hover::before,
+.charsheet .character-sheet button[type="action"]:hover::before {
+    color: #e83838;
+}
+
+
 .charsheet .character-sheet input[type="checkbox"] {
     width: auto;
+    appearance: none;
+	-webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    background-color: transparent;
+    padding: 0;
+	border: 1px solid #000;
+}
+
+.charsheet .character-sheet input[type="checkbox"]:after {
+    content: "";
 }
 
 .charsheet .character-sheet input[type="number"] {
@@ -197,10 +218,10 @@
 
 /* Custom modules */
 .character-sheet {
-    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Glina/Images/sheet-bg.png);
+    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Glina/Images/sheet-bg-long.png);
 	background-position: top left;
     box-sizing: border-box;
-    padding: 50px;
+    padding: 40px 30px;
     padding-bottom: 25px;
     color: #000;
     font-family: 'Open Sans', sans-serif;
@@ -216,7 +237,7 @@
 
 .charsheet .character-details-label {
     display: flex;
-    padding-right: 30px;
+    padding-right: 0;
 	box-sizing: border-box;
 }
 
@@ -239,6 +260,32 @@
 
 .character-details-box:last-child {
     margin: 0;
+}
+
+.custom-table {
+    width: 100%;
+}
+
+.custom-table tr {
+    border-bottom: 1px solid #000;
+}
+
+.custom-table tr:last-child {
+    border: 0;
+}
+
+.custom-table td:first-child, .custom-table th {
+    font-weight: bold;
+	font-style: italic;
+    text-align: right;
+}
+
+.custom-table td:first-child {
+    padding-right: 8px;
+    width: 100%;
+}
+.custom-table td:nth-child(2) {
+    white-space: nowrap;
 }
 
 /* Roll Template */
@@ -437,10 +484,15 @@
     justify-content: flex-end;
 }
 
+.repcontainer {
+    margin-bottom: 10px;
+}
+
 .repitem input {
     width: 100%;
-    margin: 2px;
-	padding: 5px;
+    margin: 0;
+    margin-top: -1px;
+	padding: 4px 12px;
 	border: 1px solid transparent;
 	border-bottom: 1px solid #272626;
     transition: .3s all ease;
