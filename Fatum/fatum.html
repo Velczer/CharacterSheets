@@ -619,51 +619,80 @@
 			{{/rollGreater() computed::baseDice 19}}
 		</div>
 
+        {{#rollGreater() computed::fatePool 0}}
+        <div class="template-dice-stats without-bg">
+            <div><span style="color: #1378bd">Kości przydzielone z Puli Losu</span></div>
+        </div>
+        <div class="template-dice-stats template-dice-additional">
+            <div><span>Do progu rzutu</span></div>
+            <div class="template-dice-stats-value blue-bg">{{computed::largerThreshold}}</div>
+        </div>
+        <div class="template-dice-stats template-dice-additional">
+            <div><span>Do liczby kości</span></div>
+            <div class="template-dice-stats-value blue-bg">{{computed::moreDice}}</div>
+        </div>
+        {{/rollGreater() computed::fatePool 0}}
+
+        {{#rollGreater() computed::additionalPool 0}}
+        <div class="template-dice-stats without-bg" style="margin-top:10px;">
+            <div><span style="color: #9f1f63">Kości przydzielone z Innych Źródeł</span></div>
+        </div>
+        <div class="template-dice-stats template-dice-additional">
+            <div><span>Do progu rzutu</span></div>
+            <div class="template-dice-stats-value purple-bg">{{computed::additionalThreshold}}</div>
+        </div>
+        <div class="template-dice-stats template-dice-additional" style="margin-bottom: 10px;">
+            <div><span>Do liczby kości</span></div>
+            <div class="template-dice-stats-value purple-bg">{{computed::additionalDice}}</div>
+        </div>
+        {{/rollGreater() computed::additionalPool 0}}
+
+        <div class="template-hr" data-i18n="roll-result">Wynik Rzutu</div>
+
         <div class="template-dice-stats">
-            <div><span> Próg rzutu</span></div>
+            <div><span data-i18n="roll-threshold">Próg rzutu</span></div>
             <div class="template-dice-stats-value">{{computed::threshold}}</div>
         </div>
-
 
         {{#basicRoll}}
         <div style="height: 10px;"></div>
         <div class="template-dice-stats">
-            <div><span> Liczba sukcesów</span></div>
+            <div><span data-i18n="roll-successes">Liczba sukcesów</span></div>
             <div class="template-dice-stats-value">{{computed::success}}</div>
         </div>
         <div class="template-dice-stats">
-            <div><span> Liczba sukcesów z poziomu</span></div>
+            <div><span data-i18n="roll-successes-from-level">Liczba sukcesów z poziomu</span></div>
             <div class="template-dice-stats-value">{{level}}</div>
         </div>
         {{/basicRoll}}
 
         <div class="template-dice-stats">
-            <div><span> Całkowita liczba sukcesów</span></div>
+            <div><span data-i18n="roll-successes-total">Całkowita liczba sukcesów</span></div>
             <div class="template-dice-stats-value success">{{computed::total_success}}</div>
         </div>
 
         {{#basicRoll}}
         <div style="height: 10px;"></div>
         <div class="template-dice-stats">
-            <div><span> Liczba porażek</span></div>
+            <div><span data-i18n="roll-fails">Liczba porażek</span></div>
             <div class="template-dice-stats-value fail">{{computed::fail}}</div>
         </div>
         {{/basicRoll}}
         
         {{#rollBetween() wound 2 2}}
-            <div class="template-dice-stats">
-                <div><span>Średnia rana - Najniższy wynik na kości otrzymuje karę +1</span></div>
+            <div class="template-dice-stats without-bg">
+                <div><span data-i18n="average-damage-desc">Średnia rana - Najniższy wynik na kości otrzymuje karę +1</span></div>
             </div>
         {{/rollBetween() wound 2 2}}
 
         {{#rollBetween() wound 3 3}}
-            <div class="template-dice-stats">
+            <div class="template-dice-stats without-bg">
                 <div><span>Ciężka rana - Wszystkie kości otrzymują karę +1</span></div>
             </div>
         {{/rollBetween() wound 3 3}}
 
         {{#rollBetween() wound 4 4}}
-            <div class="template-dice-stats">
+            <div class="template-dice-stats without-bg">
                 <div><span>Krytyczna rana - Wszystkie kości otrzymuje karę +2</span></div>
             </div>
         {{/rollBetween() wound 4 4}}
@@ -693,7 +722,7 @@
         var trigger = event.triggerName.slice(8); // this always starts with 'clicked:'
         var prefix = trigger.split('_').slice(0,3).join('_') + '_'
 
-        let rollBase = event.htmlAttributes.value.replaceAll('prefix-', `${prefix}`) + " {{largerThreshold=[[?{Ile kości z PULI LOSU chcesz poświęcić, aby zwiększyć PRÓG}|0]]}} {{moreDice=[[?{Ile kości z PULI LOSU chcesz dodać do wykonywanego rzutu}|0]]}} {{baseRoll1=[[1d6]] }} {{baseRoll2=[[1d6]] }} {{baseRoll3=[[1d6]] }} {{baseRoll4=[[1d6]] }} {{baseRoll5=[[1d6]] }} {{baseRoll6=[[1d6]] }} {{baseRoll7=[[1d6]] }} {{baseRoll8=[[1d6]] }} {{baseRoll9=[[1d6]] }} {{baseRoll10=[[1d6]] }} {{baseRoll11=[[1d6]] }} {{baseRoll12=[[1d6]] }} {{baseRoll13=[[1d6]] }} {{baseRoll14=[[1d6]] }} {{baseRoll15=[[1d6]] }} {{baseRoll16=[[1d6]] }} {{baseRoll17=[[1d6]] }} {{baseRoll18=[[1d6]] }} {{baseRoll19=[[1d6]] }} {{baseRoll20=[[1d6]] }} {{success=[[1d6]]}} {{fail=[[1d6]]}} {{total_success=[[1d6]]}} {{wound=[[@{wound}]]}} {{fatum=[[@{fatum}]]}} @{modifierquery} {{basicRoll=true}}";
+        let rollBase = event.htmlAttributes.value.replaceAll('prefix-', `${prefix}`) + " {{largerThreshold=[[?{Ile kości z PULI LOSU chcesz poświęcić, aby zwiększyć PRÓG}|0]]}} {{moreDice=[[?{Ile kości z PULI LOSU chcesz dodać do wykonywanego rzutu}|0]]}} {{baseRoll1=[[1d6]] }} {{baseRoll2=[[1d6]] }} {{baseRoll3=[[1d6]] }} {{baseRoll4=[[1d6]] }} {{baseRoll5=[[1d6]] }} {{baseRoll6=[[1d6]] }} {{baseRoll7=[[1d6]] }} {{baseRoll8=[[1d6]] }} {{baseRoll9=[[1d6]] }} {{baseRoll10=[[1d6]] }} {{baseRoll11=[[1d6]] }} {{baseRoll12=[[1d6]] }} {{baseRoll13=[[1d6]] }} {{baseRoll14=[[1d6]] }} {{baseRoll15=[[1d6]] }} {{baseRoll16=[[1d6]] }} {{baseRoll17=[[1d6]] }} {{baseRoll18=[[1d6]] }} {{baseRoll19=[[1d6]] }} {{baseRoll20=[[1d6]] }} {{success=[[1d6]]}} {{fail=[[1d6]]}} {{total_success=[[1d6]]}} {{wound=[[@{wound}]]}} {{fatum=[[@{fatum}]]}} @{modifierquery} {{basicRoll=true}} {{fatePool=[[0]]}} {{additionalPool=[[0]]}}";
         let rollResult = await startRoll(rollBase);  
         let computedValues = await calcComputedValues(rollResult);
     
@@ -729,12 +758,20 @@
             [`fate_pool`]: fate_pool*1 + fateCalc
         }); 
 
+        console.log(threshold.additionalThreshold)
+
         let computedValues = {
             fail: baseDice - success,
             success: success,
             total_success: success + auto_level,
             baseDice: baseDice,
-            threshold: threshold.value
+            threshold: threshold.value,
+            moreDice: dices.moreDice,
+            largerThreshold: threshold.largerThreshold,
+            additionalDice: dices.additionalDice,
+            additionalThreshold: threshold.additionalThreshold,
+            fatePool: dices.moreDice + threshold.largerThreshold,
+            additionalPool: dices.additionalDice + threshold.additionalThreshold
         };
 
         var wound = results.wound.result;
@@ -786,7 +823,8 @@
         var obj = {
             table: table,
             unusedFateDice: unusedFateDice,
-            moreDice: moreDice
+            moreDice: moreDice,
+            additionalDice: additionalDice
         }
 
         return obj;
