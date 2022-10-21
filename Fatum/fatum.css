@@ -462,7 +462,7 @@
     background-position: top center;
     background-size: cover;
     border: 0;
-    margin: 0;
+    margin: 0 -8px;
     margin-bottom: 15px;
     font-family: 'Girassol', cursive;
     padding: 10px;
@@ -498,7 +498,7 @@
     background-repeat: no-repeat;
     width: 100%;
     padding: 2px 5px;
-    line-height: 28px;
+    line-height: 26px;
     border: 0;
     color: #231f20;
     font-family: 'Girassol', cursive;
@@ -548,8 +548,8 @@
 .sheet-rolltemplate-fatum .sheet-template-roll-between, 
 .sheet-rolltemplate-fatum .sheet-template-roll-success, 
 .sheet-rolltemplate-fatum .sheet-template-roll-fail {
-    height: 44px;
-    width: 44px;
+    height: 38px;
+	width: 38px;
     border: 0;
     border-radius: 7px;
     background: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/dice-result.png);
@@ -569,7 +569,7 @@
     border: 0;
     padding: 0;
     text-align: center;
-    line-height: 44px;
+    line-height: 38px;
     background: transparent;
     font-family: 'Girassol', cursive;
     font-size: 26px;
@@ -612,14 +612,14 @@
 .sheet-rolltemplate-fatum .sheet-template-dice-stats {
     display: flex;
     justify-content: space-between;
-    margin-top: -2px;
+    margin-bottom: 2px;
 }
 
 .sheet-rolltemplate-fatum .sheet-template-dice-stats > div:first-child {
-    background: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/roll-template-name.png);
-    background-size: contain;
+    background: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/roll-template-frame-1.png);
+    background-size: cover;
     background-repeat: no-repeat;
-    padding: 5px 14px;
+    padding: 7px 8px;
     color: #231f20;
     font-size: 16px;
     width: 100%;
@@ -635,9 +635,9 @@
 
 .sheet-rolltemplate-fatum .sheet-template-dice-stats > .sheet-template-dice-stats-value {
     padding: 1px;
-    width: 42px;
+    width: 45px;
     background: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/roll-template-frame-2.png);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
@@ -649,11 +649,16 @@
 }
 
 .sheet-rolltemplate-fatum .sheet-template-dice-stats.sheet-template-dice-additional {
-    padding: 0 13px;
+    max-width: 224px;
+    margin: auto;
+    margin-top: -2px;
 }
 
 .sheet-rolltemplate-fatum .sheet-template-dice-stats.sheet-template-dice-additional > div:first-child {
     padding: 3px 14px;
+    background: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/roll-template-name.png);
+    background-size: contain;
+	background-repeat: no-repeat;
 }
 .sheet-rolltemplate-fatum .sheet-template-dice-stats.sheet-template-dice-additional span {
     text-transform: uppercase;
@@ -662,7 +667,7 @@
 
 .sheet-rolltemplate-fatum .sheet-template-dice-stats-value span {
 	background: #231f20;
-	width: 40px;
+	width: 44px;
 	color: #fff;
 	display: flex;
 	height: 100%;
@@ -670,6 +675,13 @@
     justify-content: center;
 	font-weight: 400;
 	font-size: 22px;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-dice-additional .sheet-template-dice-stats-value {
+    width: 36px;
+}
+.sheet-rolltemplate-fatum .sheet-template-dice-additional .sheet-template-dice-stats-value span {
+    width: 34px;
 }
 
 .sheet-rolltemplate-fatum .sheet-template-dice-stats-value.sheet-success span {
@@ -724,6 +736,7 @@
 
 .fieldset-labels .mini-title {
     justify-content: flex-start;
+    white-space: nowrap;
     margin-right: 6px;
     height: 26px;
 	font-size: 16px;

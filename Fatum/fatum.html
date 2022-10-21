@@ -621,28 +621,28 @@
 
         {{#rollGreater() computed::fatePool 0}}
         <div class="template-dice-stats without-bg">
-            <div><span style="color: #1378bd">Kości przydzielone z Puli Losu</span></div>
+            <div><span style="color: #1378bd" data-i18n="dices-from-fate-pool">Kości przydzielone z Puli Losu</span></div>
         </div>
         <div class="template-dice-stats template-dice-additional">
-            <div><span>Do progu rzutu</span></div>
+            <div><span data-i18n="to-threshold">Do progu rzutu</span></div>
             <div class="template-dice-stats-value blue-bg">{{computed::largerThreshold}}</div>
         </div>
         <div class="template-dice-stats template-dice-additional">
-            <div><span>Do liczby kości</span></div>
+            <div><span data-i18n="to-dice-number">Do liczby kości</span></div>
             <div class="template-dice-stats-value blue-bg">{{computed::moreDice}}</div>
         </div>
         {{/rollGreater() computed::fatePool 0}}
 
         {{#rollGreater() computed::additionalPool 0}}
         <div class="template-dice-stats without-bg" style="margin-top:10px;">
-            <div><span style="color: #9f1f63">Kości przydzielone z Innych Źródeł</span></div>
+            <div><span style="color: #9f1f63" data-i18n="dices-from-additional">Kości przydzielone z Innych Źródeł</span></div>
         </div>
         <div class="template-dice-stats template-dice-additional">
-            <div><span>Do progu rzutu</span></div>
+            <div><span data-i18n="to-threshold">Do progu rzutu</span></div>
             <div class="template-dice-stats-value purple-bg">{{computed::additionalThreshold}}</div>
         </div>
         <div class="template-dice-stats template-dice-additional" style="margin-bottom: 10px;">
-            <div><span>Do liczby kości</span></div>
+            <div><span data-i18n="to-dice-number">Do liczby kości</span></div>
             <div class="template-dice-stats-value purple-bg">{{computed::additionalDice}}</div>
         </div>
         {{/rollGreater() computed::additionalPool 0}}
@@ -657,24 +657,24 @@
         {{#basicRoll}}
         <div style="height: 10px;"></div>
         <div class="template-dice-stats">
-            <div><span data-i18n="roll-successes">Liczba sukcesów</span></div>
+            <div><span data-i18n="roll-successes">Sukcesy</span></div>
             <div class="template-dice-stats-value">{{computed::success}}</div>
         </div>
         <div class="template-dice-stats">
-            <div><span data-i18n="roll-successes-from-level">Liczba sukcesów z poziomu</span></div>
+            <div><span data-i18n="roll-successes-from-level">Sukcesy Z Poziomu</span></div>
             <div class="template-dice-stats-value">{{level}}</div>
         </div>
         {{/basicRoll}}
 
         <div class="template-dice-stats">
-            <div><span data-i18n="roll-successes-total">Całkowita liczba sukcesów</span></div>
+            <div><span data-i18n="roll-successes-total">Sukcesy Łącznie</span></div>
             <div class="template-dice-stats-value success">{{computed::total_success}}</div>
         </div>
 
         {{#basicRoll}}
         <div style="height: 10px;"></div>
         <div class="template-dice-stats">
-            <div><span data-i18n="roll-fails">Liczba porażek</span></div>
+            <div><span data-i18n="roll-fails">Porażki</span></div>
             <div class="template-dice-stats-value fail">{{computed::fail}}</div>
         </div>
         {{/basicRoll}}
@@ -715,7 +715,7 @@
         );
     });
 
-    on('clicked:repeating_physical:roll', async (event) => {
+    on('clicked:repeating_physical:roll clicked:repeating_mind:roll clicked:repeating_society:roll clicked:repeating_professional:roll', async (event) => {
         var attribute = event.htmlAttributes['data-attribute'];
 
         // prefix gets an empty string for normal attributes, and repeating_section_ID_ for repeating attributes
@@ -724,7 +724,11 @@
 
         let rollBase = event.htmlAttributes.value.replaceAll('prefix-', `${prefix}`) + " {{largerThreshold=[[?{Ile kości z PULI LOSU chcesz poświęcić, aby zwiększyć PRÓG}|0]]}} {{moreDice=[[?{Ile kości z PULI LOSU chcesz dodać do wykonywanego rzutu}|0]]}} {{baseRoll1=[[1d6]] }} {{baseRoll2=[[1d6]] }} {{baseRoll3=[[1d6]] }} {{baseRoll4=[[1d6]] }} {{baseRoll5=[[1d6]] }} {{baseRoll6=[[1d6]] }} {{baseRoll7=[[1d6]] }} {{baseRoll8=[[1d6]] }} {{baseRoll9=[[1d6]] }} {{baseRoll10=[[1d6]] }} {{baseRoll11=[[1d6]] }} {{baseRoll12=[[1d6]] }} {{baseRoll13=[[1d6]] }} {{baseRoll14=[[1d6]] }} {{baseRoll15=[[1d6]] }} {{baseRoll16=[[1d6]] }} {{baseRoll17=[[1d6]] }} {{baseRoll18=[[1d6]] }} {{baseRoll19=[[1d6]] }} {{baseRoll20=[[1d6]] }} {{success=[[1d6]]}} {{fail=[[1d6]]}} {{total_success=[[1d6]]}} {{wound=[[@{wound}]]}} {{fatum=[[@{fatum}]]}} @{modifierquery} {{basicRoll=true}} {{fatePool=[[0]]}} {{additionalPool=[[0]]}}";
         let rollResult = await startRoll(rollBase);  
-        let computedValues = await calcComputedValues(rollResult);
+
+        var fate_pool = await asw.getAttrs(['fate_pool']);
+        fate_pool = Object.values(fate_pool);
+
+        let computedValues = await calcComputedValues(rollResult, fate_pool*1);
     
         finishRoll(
             rollResult.rollId,
@@ -733,12 +737,14 @@
     });
 
     // Helper for calc computed values
-    const calcComputedValues = async (rollResult) => {
+    const calcComputedValues = async (rollResult, fate_pool) => {
         var results = rollResult.results;
-        var dices = await calcDice(results);
-        var baseDice = dices.table.length;
+        var threshold = await calcThreshold(results, fate_pool);
+        fate_pool = threshold.fatePoolUpdate;
 
-        var threshold = await calcThreshold(results);
+        var dices = await calcDice(results, fate_pool);
+        var baseDice = dices.table.length;
+        fate_pool = dices.fatePoolUpdate;
 
         var auto_level = results.level.result;
        
@@ -749,16 +755,12 @@
             }
         }
 
-        var fateCalc = dices.unusedFateDice + threshold.unusedFate - (dices.moreDice + threshold.largerThreshold);
+        var fateCalc = dices.unusedFateDice + threshold.unusedFate;
 
-        var fate_pool = await asw.getAttrs(['fate_pool']);
-        fate_pool = Object.values(fate_pool);
-
+        console.log(fateCalc)
         setAttrs({
-            [`fate_pool`]: fate_pool*1 + fateCalc
+            [`fate_pool`]: fate_pool + fateCalc
         }); 
-
-        console.log(threshold.additionalThreshold)
 
         let computedValues = {
             fail: baseDice - success,
@@ -781,11 +783,16 @@
     }
 
     // Helper for calc dice table
-    const calcDice = async (results) => {
+    const calcDice = async (results, fate_pool) => {
         var moreDice = 0;
         if (results.moreDice != null) {
             moreDice = results.moreDice.result;
         }
+
+        if (fate_pool <= moreDice) {
+            moreDice = fate_pool;
+        }
+        fate_pool -= moreDice;
 
         var baseDice = results.baseDice.result + moreDice;
 
@@ -824,18 +831,20 @@
             table: table,
             unusedFateDice: unusedFateDice,
             moreDice: moreDice,
-            additionalDice: additionalDice
+            additionalDice: additionalDice,
+            fatePoolUpdate: fate_pool
         }
 
         return obj;
     }
 
     // Calc threshold
-    const calcThreshold = async (results) => {
+    const calcThreshold = async (results, fate_pool) => {
         var threshold = results.threshold.result;
         if (threshold == 0) {
             threshold = 1;
         }
+
         var unusedFate = 0;
         var unusedAdditional = 0;
 
@@ -849,6 +858,12 @@
             if (results.largerThreshold != null) {
                 largerThreshold = results.largerThreshold.result;
             }
+
+            if (fate_pool <= largerThreshold) {
+                largerThreshold = fate_pool;
+            }
+            fate_pool -= largerThreshold;
+
             threshold += largerThreshold;
     
             if (threshold > 5) {
@@ -870,7 +885,8 @@
             value: threshold,
             unusedFate: unusedFate,
             largerThreshold: largerThreshold,
-            additionalThreshold: additionalThreshold
+            additionalThreshold: additionalThreshold,
+            fatePoolUpdate: fate_pool
         }
 
         return obj;
