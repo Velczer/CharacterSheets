@@ -305,6 +305,18 @@
 	user-select: none;
 }
 
+.checkbox-label.horizontal {
+    display: flex;
+	flex-direction: row-reverse;
+	justify-content: flex-end;
+    padding: 5px 3px;
+}
+
+.checkbox-label.horizontal span {
+    padding-left: 6px;
+    display: inline-block;
+}
+
 .character-sheet .checkbox-label input {
     position: absolute;
 	opacity: 0;

@@ -98,6 +98,82 @@
     <div class="row">
         <div class="col-6">
             <div class="character-details-box">
+                <h2 data-i18n="attributes">Atrybuty</h2>
+                <table class="custom-table">
+                    <tr>
+                        <th></th>
+                        <th data-i18n="value">Wartość</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td data-i18n="inteligence">Inteligencja</td>
+                        <td>
+                            <div class="checkbox-line">
+                                <input type="checkbox" name="attr_inteligence" value="3">
+                                <input type="checkbox" name="attr_inteligence" value="2">
+                                <input type="checkbox" name="attr_inteligence" value="1">
+                            </div>
+                        </td>
+                        <td>
+                            <button type="action" name="act_roll" data-attribute="inteligence" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="charisma">Osobowość</td>
+                        <td>
+                            <div class="checkbox-line">
+                                <input type="checkbox" name="attr_charisma" value="3">
+                                <input type="checkbox" name="attr_charisma" value="2">
+                                <input type="checkbox" name="attr_charisma" value="1">
+                            </div>
+                        </td>
+                        <td>
+                            <button type="action" name="act_roll" data-attribute="charisma" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="psyche">Psychika</td>
+                        <td>
+                            <div class="checkbox-line">
+                                <input type="checkbox" name="attr_psyche" value="3">
+                                <input type="checkbox" name="attr_psyche" value="2">
+                                <input type="checkbox" name="attr_psyche" value="1">
+                            </div>
+                        </td>
+                        <td>
+                            <button type="action" name="act_roll" data-attribute="psyche" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="dexterity">Sprawność</td>
+                        <td>
+                            <div class="checkbox-line">
+                                <input type="checkbox" name="attr_dexterity" value="3">
+                                <input type="checkbox" name="attr_dexterity" value="2">
+                                <input type="checkbox" name="attr_dexterity" value="1">
+                            </div>
+                        </td>
+                        <td>
+                            <button type="action" name="act_roll" data-attribute="dexterity" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="senses">Zmysły</td>
+                        <td>
+                            <div class="checkbox-line">
+                                <input type="checkbox" name="attr_senses" value="3">
+                                <input type="checkbox" name="attr_senses" value="2">
+                                <input type="checkbox" name="attr_senses" value="1">
+                            </div>
+                        </td>
+                        <td>
+                            <button type="action" name="act_roll" data-attribute="senses" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="character-details-box">
                 <h2 data-i18n="job-rank">Stopień służbowy</h2>
                 <table class="custom-table">
                     <tr>
@@ -241,82 +317,6 @@
         </div>
 
         <div class="col-6">
-            <div class="character-details-box">
-                <h2 data-i18n="attributes">Atrybuty</h2>
-                <table class="custom-table">
-                    <tr>
-                        <th></th>
-                        <th data-i18n="value">Wartość</th>
-                        <th></th>
-                    </tr>
-                    <tr>
-                        <td data-i18n="inteligence">Inteligencja</td>
-                        <td>
-                            <div class="checkbox-line">
-                                <input type="checkbox" name="attr_inteligence" value="3">
-                                <input type="checkbox" name="attr_inteligence" value="2">
-                                <input type="checkbox" name="attr_inteligence" value="1">
-                            </div>
-                        </td>
-                        <td>
-                            <button type="action" name="act_roll" data-attribute="inteligence" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td data-i18n="charisma">Osobowość</td>
-                        <td>
-                            <div class="checkbox-line">
-                                <input type="checkbox" name="attr_charisma" value="3">
-                                <input type="checkbox" name="attr_charisma" value="2">
-                                <input type="checkbox" name="attr_charisma" value="1">
-                            </div>
-                        </td>
-                        <td>
-                            <button type="action" name="act_roll" data-attribute="charisma" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td data-i18n="psyche">Psychika</td>
-                        <td>
-                            <div class="checkbox-line">
-                                <input type="checkbox" name="attr_psyche" value="3">
-                                <input type="checkbox" name="attr_psyche" value="2">
-                                <input type="checkbox" name="attr_psyche" value="1">
-                            </div>
-                        </td>
-                        <td>
-                            <button type="action" name="act_roll" data-attribute="psyche" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td data-i18n="dexterity">Sprawność</td>
-                        <td>
-                            <div class="checkbox-line">
-                                <input type="checkbox" name="attr_dexterity" value="3">
-                                <input type="checkbox" name="attr_dexterity" value="2">
-                                <input type="checkbox" name="attr_dexterity" value="1">
-                            </div>
-                        </td>
-                        <td>
-                            <button type="action" name="act_roll" data-attribute="dexterity" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td data-i18n="senses">Zmysły</td>
-                        <td>
-                            <div class="checkbox-line">
-                                <input type="checkbox" name="attr_senses" value="3">
-                                <input type="checkbox" name="attr_senses" value="2">
-                                <input type="checkbox" name="attr_senses" value="1">
-                            </div>
-                        </td>
-                        <td>
-                            <button type="action" name="act_roll" data-attribute="senses" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-
             <div class="character-details-box">
                 <h2 data-i18n="archetype-movements">Ruchy archetypu</h2>
                 <fieldset class="repeating_archetype-movements">
