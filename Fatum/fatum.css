@@ -148,23 +148,36 @@
     cursor: pointer;
     transition: .3s all ease;
     text-shadow: none;
-    border-radius: 4px;
     padding: 0;
     height: 36px;
 }
 
-.charsheet .character-sheet button[type="roll"]:hover,
-.charsheet .character-sheet button[type="action"]:hover {
-    background: #231f20;
-    color: #fff;
-}
-
 .charsheet .character-sheet button[type="roll"]::before,
 .charsheet .character-sheet button[type="action"]::before {
-    color: #893fc8;
-    font-size: 20px;
-    font-family: "dicefontd20";
-    content: "t";
+    content: "";
+    background: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/dice.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: block;
+    height: 36px;
+    width: 36px;
+}
+
+.charsheet .character-sheet button[type="action"].mini-dice {
+    height: 28px;
+    width: 28px;   
+}
+
+.charsheet .character-sheet button[type="action"].mini-dice::before {
+    width: 28px;
+    height: 28px;
+}
+
+.charsheet .character-sheet button[type="roll"]:hover::before,
+.charsheet .character-sheet button[type="action"]:hover::before {
+    background: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/dice-hover.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .charsheet .character-sheet input[type="checkbox"] {
@@ -240,6 +253,11 @@
 .character-sheet .input-box {
     border: 2px solid #272626;
     margin-bottom: 3px;
+    align-items: center;
+}
+
+.character-sheet .input-box button {
+    margin-left: 3px;
 }
 
 .character-sheet .input-box label {
@@ -254,6 +272,10 @@
     display: inline-block;
     font-size: 16px;
     white-space: nowrap;
+}
+
+.character-sheet .input-box button + label span {
+    padding: 7px 6px;
 }
 
 .character-sheet .input-box input, .character-sheet .input-box select {
@@ -309,6 +331,7 @@
     display: flex;
 	flex-direction: row-reverse;
 	justify-content: flex-end;
+    align-items: center;
     padding: 5px 3px;
 }
 
@@ -403,7 +426,7 @@
 
 .attribute-box__line-horizontal-left::before {
     right: 100%;
-    left: -1px;
+    left: -12px;
 	top: 18px;
 	width: 14px;
 }
@@ -414,6 +437,7 @@
 
 .attributes-box__line-ver {
     position: relative;
+    padding-left: 12px;
 }
 
 .attributes-box__line-ver .repitem::before {
@@ -421,7 +445,7 @@
     position: absolute;
     top: -5px;
     bottom: 0;
-	left: -2px;
+    left: -14px;
 	width: 2px;
 	background: #272626;
 }
