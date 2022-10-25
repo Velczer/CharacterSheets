@@ -215,39 +215,78 @@
 }
 
 /* Custom modules */
-.character-sheet {
-    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/sheet-bg.png);
+.character-sheet__top-bg {
+    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/sheet-top-bg.png);
     background-size: contain;
 	background-repeat: no-repeat;
 	background-position: top center;
+    height: 203px;
+    width: 1000px;
+}
+.character-sheet__bottom-bg {
+    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/sheet-bottom-bg.png);
+    background-size: contain;
+	background-repeat: no-repeat;
+	background-position: top center;
+    height: 70px;
+    margin-top: -70px;
+    width: 1000px;
+    position: relative;
+	z-index: 1;
+}
+.character-sheet {
+    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/sheet-repeat-bg.png);
+    background-size: contain;
+	background-repeat: repeat;
+	background-position: top center;
     box-sizing: border-box;
-    padding: 210px 117px;
-	padding-bottom: 40px;
+    padding: 8px 117px;
+    padding-bottom: 80px;
     color: #000;
     font-family: 'Girassol', cursive;
     width: 1000px;
     min-height: 1500px;
-    margin-bottom: 15px;
     position: relative;
     overflow: hidden;
     z-index: 1;
 }
 
-.character-sheet .secret-roll {
-    font-size: 19px;
-    text-transform: uppercase;
-    font-weight: 500;
-    color: #231f20;
-    display: flex;
-    align-items: center;
-    margin: 3px 0;
-    padding-left: 13px;
-    width: auto;
-    line-height: 25px;
+.sheet-main,
+.sheet-notes {
+    display: none;
 }
 
-.character-sheet .secret-roll input {
-    margin-right: 8px;
+/*MAIN Sheet Layout*/
+.sheet-tabstoggle[value="main"]~div.sheet-main {
+    display: block;
+}
+
+/*NOTES Sheet Layout*/
+.sheet-tabstoggle[value="notes"]~div.sheet-notes {
+    display: block;
+}
+
+.charsheet .character-sheet .not-roll[type="action"] {
+    border: 1px solid #272626;
+	padding: 0 10px;
+	margin-right: 5px;
+	height: 30px;
+    position: relative;
+	z-index: 1;
+}
+
+.charsheet .character-sheet .not-roll[type="action"]:hover {
+    background-color: #272626;
+    color: #fff;
+}
+
+.charsheet .character-sheet .not-roll[type="action"]::before {
+    display: none;
+}
+
+.sheet-tabstoggle[value="main"] ~ .not-roll[name="act_main"], .sheet-tabstoggle[value="notes"] ~ .not-roll[name="act_notes"] {
+    background-color: #272626;
+    color: #fff;
 }
 
 .character-sheet .input-box {
@@ -304,6 +343,10 @@
 	right: 10px;
 }
 
+.character-sheet .inline-block {
+    display: inline-block;
+}
+
 .wounds-box {
     padding-bottom: 10px;
 }
@@ -315,6 +358,19 @@
 .wounds-box::before {
     content: "";
     display: block;
+}
+.wounds-box span:first-child {
+    margin-bottom: 10px;
+}
+.character-sheet .wounds-box span.wound-desc {
+    font-size: 10px;
+    line-height: 12px;
+    white-space: normal;
+    padding: 0;
+    padding-top: 3px;
+    text-transform: uppercase;
+	font-weight: bold;
+    text-align: center;
 }
 
 .checkbox-label {

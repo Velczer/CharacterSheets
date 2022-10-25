@@ -1,3 +1,4 @@
+<div class="character-sheet__top-bg"></div>
 <div class="character-sheet">
     <div class="row">
         <div class="col-5">
@@ -44,9 +45,9 @@
                 <textarea name="attr_appearance" rows="8"></textarea>
             </div>
 
-            <div class="input-box">
+            <div class="input-box input-box--hr">
                 <label><span data-i18n="fortune">Pieniądze i majątek</span></label>
-                <textarea name="attr_fortune" rows="1"></textarea>
+                <textarea name="attr_fortune" rows="2"></textarea>
             </div>
 
             <div class="row">
@@ -62,8 +63,8 @@
                 <div class="col-6">
                     <div class="input-box">
                         <label>
-                            <span data-i18n="fate-pool">Pula losu</span>
-                            <input type="number" name="attr_fate_pool" value="0" min="0" max="12">
+                            <span data-i18n="fate-pool" style="padding-right: 0;">Pula losu</span>
+                            <input type="number" name="attr_fate_pool" value="0" min="0" max="10">
                         </label>
                     </div>
                 </div>
@@ -80,20 +81,20 @@
                 <textarea name="attr_disadvantages" rows="3"></textarea>
             </div>
 
-            <div class="input-box">
+            <div class="input-box input-box--hr">
                 <label><span data-i18n="states">Stany</span></label>
-                <textarea name="attr_states" rows="1"></textarea>
+                <textarea name="attr_states" style="height: 50px;"></textarea>
             </div>
         </div>
         <div class="col-5">
             <div class="input-box input-box--hr">
                 <label><span data-i18n="equipment">Ekwipunek</span></label>
-                <textarea name="attr_equipment" rows="9"></textarea>
+                <textarea name="attr_equipment" rows="8"></textarea>
             </div>
 
-            <div class="input-box">
+            <div class="input-box input-box--hr">
                 <div class="flex wounds-box">
-                    <label class="checkbox-label">
+                    <label class="checkbox-label" style="width: 42px;">
                         <span data-i18n="wounds">Rany</span>
                     </label>
                     <label class="checkbox-label">
@@ -105,161 +106,184 @@
                         <span data-i18n="average">Średnia</span>
                         <input type="checkbox" name="attr_wound" value="2">
                         <div class="checkmark"></div>
+                        <span class="wound-desc">+1 do rzutu<br>najniższej<br>kości</span>
                     </label>
                     <label class="checkbox-label">
                         <span data-i18n="heavy">Ciężka</span>
                         <input type="checkbox" name="attr_wound" value="3">
                         <div class="checkmark"></div>
+                        <span class="wound-desc">+1 do rzutów<br>wszystkich<br>kości</span>
                     </label>
                     <label class="checkbox-label">
                         <span data-i18n="critical">Krytyczna</span>
                         <input type="checkbox" name="attr_wound" value="4">
                         <div class="checkmark"></div>
+                        <span class="wound-desc">+2 do rzutów<br>wszystkich<br>kości</span>
                     </label>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-12">
-            <label class="checkbox-label horizontal">
-                <span data-i18n="additional-modifier">Modyfikator z innego źródła</span>
-                <input type="checkbox" name="attr_modifierquery" value="{{additionalThreshold=[[?{O ile z INNEGO źródła chcesz podnieś próg rzutu?|0}]]}} {{additionalDice=[[?{Ile kości z INNEGO źródła chcesz dodać|0}]]}}">
-                <div class="checkmark"></div>
-            </label>
+    <br>
+    <input type="hidden" class="sheet-tabstoggle" name="attr_sheetTab" value="main">
+    <button type="action" name="act_main" class="not-roll">Atrybuty</button>
+    <button type="action" name="act_notes" class="not-roll">Notatki</button>
+    <div class="row" style="margin-top: -35px;">
+        <div class="col-3">
+            <br>
         </div>
-    </div>
-
-    <div class="row">
-        <div class="col-6 more-col-padding">
-            <div class="attributes-box">
-                <div class="attributes-box__line">
-                    <label data-i18n="proficiency" style="margin-bottom: 15px;">Biegłość</label>
-                    <div class="input-box attributes-box__line-horizontal">
-                        <input type="number" name="attr_physical_main_level" value="0" min="0" max="5">
-                    </div>
-                </div>
-                <div>
-                    <div class="fieldset-labels center">
-                        <span class="flex-1 mini-title" style="width: 36px;"><br></span>
-                        <span class="flex-1 mini-title" data-i18n="level">Poziom</span>
-                        <span class="flex-3 mini-title" data-i18n="physical-attributes">Atrybuty Fizyczne</span>
-                        <span class="flex-1 mini-title" data-i18n="skill">Wprawa</span>
-                    </div>
-
-                    <div class="attributes-box__line-ver">
-                        <fieldset class="repeating_physical">
-                            <div class="attribute-box__line-horizontal-left"></div>
-                            <button class="flex-1" type="action" name="act_roll" data-attribute="physical" value='&{template:fatum} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{threshold=[[@{physical_main_level} + @{prefix-physical_level}]]}} {{baseDice=[[@{Fatum} + @{physical_main_level} + @{prefix-physical_level}]] }} {{level=[[@{prefix-physical_level}]]}} {{roll-name=@{prefix-physical_name}}}'></button>
-                            <input class="flex-1" type="number" name="attr_physical_level" value="0" min="0" max="5">
-                            <input class="flex-3" type="text" name="attr_physical_name">
-                            <input class="flex-1" type="number" name="attr_physical_skill" value="0" min="0" max="30">
-                            <div class="break"></div>
-                            <textarea name="attr_physical_spec" placeholder="Specjalizacja"></textarea>
-                        </fieldset>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="col-6 more-col-padding">
-            <div class="attributes-box">
-                <div class="attributes-box__line">
-                    <label data-i18n="proficiency" style="margin-bottom: 15px;">Biegłość</label>
-                    <div class="input-box attributes-box__line-horizontal">
-                        <input type="number" name="attr_mind_main_level" value="0" min="0" max="5">
-                    </div>
-                </div>
-                <div>
-                    <div class="fieldset-labels center">
-                        <span class="flex-1 mini-title" style="width: 36px;"><br></span>
-                        <span class="flex-1 mini-title" data-i18n="level">Poziom</span>
-                        <span class="flex-3 mini-title" data-i18n="mind-attributes">Atrybuty Umysłowe</span>
-                        <span class="flex-1 mini-title" data-i18n="skill">Wprawa</span>
-                    </div>
-
-                    <div class="attributes-box__line-ver">
-                        <fieldset class="repeating_mind">
-                            <div class="attribute-box__line-horizontal-left"></div>
-                            <button class="flex-1" type="action" name="act_roll" data-attribute="mind" value='&{template:fatum} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{threshold=[[@{mind_main_level} + @{prefix-mind_level}]]}} {{baseDice=[[@{Fatum} + @{mind_main_level} + @{prefix-mind_level}]] }} {{level=[[@{prefix-mind_level}]]}} {{roll-name=@{prefix-mind_name}}}'></button>
-                            <input class="flex-1" type="number" name="attr_mind_level" value="0" min="0" max="5">
-                            <input class="flex-3" type="text" name="attr_mind_name">
-                            <input class="flex-1" type="number" name="attr_mind_skill" value="0" min="0" max="30">
-                            <div class="break"></div>
-                            <textarea name="attr_mind_spec" placeholder="Specjalizacja"></textarea>
-                        </fieldset>
-                    </div>
-                </div>
+        <div class="col-9">
+            <div class="inline-block">
+                <label class="checkbox-label horizontal">
+                    <span data-i18n="additional-modifier">Modyfikator z innego źródła</span>
+                    <input type="checkbox" name="attr_modifierquery" value="{{additionalThreshold=[[?{O ile z INNEGO źródła chcesz podnieś próg rzutu?|0}]]}} {{additionalDice=[[?{Ile kości z INNEGO źródła chcesz dodać|0}]]}}">
+                    <div class="checkmark"></div>
+                </label>
             </div>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-6 more-col-padding">
-            <div class="attributes-box">
-                <div class="attributes-box__line">
-                    <label data-i18n="proficiency" style="margin-bottom: 15px;">Biegłość</label>
-                    <div class="input-box attributes-box__line-horizontal">
-                        <input type="number" name="attr_society_main_level" value="0" min="0" max="5">
+    <div class="sheet-main">
+        <div class="row">
+            <div class="col-6 more-col-padding">
+                <div class="attributes-box">
+                    <div class="attributes-box__line">
+                        <label data-i18n="proficiency" style="margin-bottom: 15px;">Biegłość</label>
+                        <div class="input-box attributes-box__line-horizontal">
+                            <input type="number" name="attr_physical_main_level" value="0" min="0" max="5">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="fieldset-labels center">
+                            <span class="flex-1 mini-title" style="width: 36px;"><br></span>
+                            <span class="flex-1 mini-title" data-i18n="level">Poziom</span>
+                            <span class="flex-3 mini-title" data-i18n="physical-attributes">Atrybuty Fizyczne</span>
+                            <span class="flex-1 mini-title" data-i18n="skill">Wprawa</span>
+                        </div>
+    
+                        <div class="attributes-box__line-ver">
+                            <fieldset class="repeating_physical">
+                                <div class="attribute-box__line-horizontal-left"></div>
+                                <button class="flex-1" type="action" name="act_roll" data-attribute="physical" value='&{template:fatum} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{threshold=[[@{physical_main_level} + @{prefix-physical_level}]]}} {{baseDice=[[@{Fatum} + @{physical_main_level} + @{prefix-physical_level}]] }} {{level=[[@{prefix-physical_level}]]}} {{roll-name=@{prefix-physical_name}}}'></button>
+                                <input class="flex-1" type="number" name="attr_physical_level" value="0" min="0" max="5">
+                                <input class="flex-3" type="text" name="attr_physical_name">
+                                <input class="flex-1" type="number" name="attr_physical_skill" value="0" min="0" max="30">
+                                <div class="break"></div>
+                                <textarea name="attr_physical_spec" placeholder="Specjalizacja"></textarea>
+                            </fieldset>
+                        </div>
+    
                     </div>
                 </div>
-                <div>
-                    <div class="fieldset-labels center">
-                        <span class="flex-1 mini-title" style="width: 36px;"><br></span>
-                        <span class="flex-1 mini-title" data-i18n="level">Poziom</span>
-                        <span class="flex-3 mini-title" data-i18n="society-attributes">Atrybuty Społeczne</span>
-                        <span class="flex-1 mini-title" data-i18n="skill">Wprawa</span>
+            </div>
+    
+            <div class="col-6 more-col-padding">
+                <div class="attributes-box">
+                    <div class="attributes-box__line">
+                        <label data-i18n="proficiency" style="margin-bottom: 15px;">Biegłość</label>
+                        <div class="input-box attributes-box__line-horizontal">
+                            <input type="number" name="attr_mind_main_level" value="0" min="0" max="5">
+                        </div>
                     </div>
-
-                    <div class="attributes-box__line-ver">
-                        <fieldset class="repeating_society">
-                            <div class="attribute-box__line-horizontal-left"></div>
-                            <button class="flex-1" type="action" name="act_roll" data-attribute="society" value='&{template:fatum} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{threshold=[[@{society_main_level} + @{prefix-society_level}]]}} {{baseDice=[[@{Fatum} + @{society_main_level} + @{prefix-society_level}]] }} {{level=[[@{prefix-society_level}]]}} {{roll-name=@{prefix-society_name}}}'></button>
-                            <input class="flex-1" type="number" name="attr_society_level" value="0" min="0" max="5">
-                            <input class="flex-3" type="text" name="attr_society_name">
-                            <input class="flex-1" type="number" name="attr_society_skill" value="0" min="0" max="30">
-                            <div class="break"></div>
-                            <textarea name="attr_society_spec" placeholder="Specjalizacja"></textarea>
-                        </fieldset>
+                    <div>
+                        <div class="fieldset-labels center">
+                            <span class="flex-1 mini-title" style="width: 36px;"><br></span>
+                            <span class="flex-1 mini-title" data-i18n="level">Poziom</span>
+                            <span class="flex-3 mini-title" data-i18n="mind-attributes">Atrybuty Umysłowe</span>
+                            <span class="flex-1 mini-title" data-i18n="skill">Wprawa</span>
+                        </div>
+    
+                        <div class="attributes-box__line-ver">
+                            <fieldset class="repeating_mind">
+                                <div class="attribute-box__line-horizontal-left"></div>
+                                <button class="flex-1" type="action" name="act_roll" data-attribute="mind" value='&{template:fatum} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{threshold=[[@{mind_main_level} + @{prefix-mind_level}]]}} {{baseDice=[[@{Fatum} + @{mind_main_level} + @{prefix-mind_level}]] }} {{level=[[@{prefix-mind_level}]]}} {{roll-name=@{prefix-mind_name}}}'></button>
+                                <input class="flex-1" type="number" name="attr_mind_level" value="0" min="0" max="5">
+                                <input class="flex-3" type="text" name="attr_mind_name">
+                                <input class="flex-1" type="number" name="attr_mind_skill" value="0" min="0" max="30">
+                                <div class="break"></div>
+                                <textarea name="attr_mind_spec" placeholder="Specjalizacja"></textarea>
+                            </fieldset>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="col-6 more-col-padding">
-            <div class="attributes-box">
-                <div class="attributes-box__line">
-                    <label data-i18n="proficiency" style="margin-bottom: 15px;">Biegłość</label>
-                    <div class="input-box attributes-box__line-horizontal">
-                        <input type="number" name="attr_professional_main_level" value="0" min="0" max="5">
+    
+        <div class="row">
+            <div class="col-6 more-col-padding">
+                <div class="attributes-box">
+                    <div class="attributes-box__line">
+                        <label data-i18n="proficiency" style="margin-bottom: 15px;">Biegłość</label>
+                        <div class="input-box attributes-box__line-horizontal">
+                            <input type="number" name="attr_society_main_level" value="0" min="0" max="5">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="fieldset-labels center">
+                            <span class="flex-1 mini-title" style="width: 36px;"><br></span>
+                            <span class="flex-1 mini-title" data-i18n="level">Poziom</span>
+                            <span class="flex-3 mini-title" data-i18n="society-attributes">Atrybuty Społeczne</span>
+                            <span class="flex-1 mini-title" data-i18n="skill">Wprawa</span>
+                        </div>
+    
+                        <div class="attributes-box__line-ver">
+                            <fieldset class="repeating_society">
+                                <div class="attribute-box__line-horizontal-left"></div>
+                                <button class="flex-1" type="action" name="act_roll" data-attribute="society" value='&{template:fatum} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{threshold=[[@{society_main_level} + @{prefix-society_level}]]}} {{baseDice=[[@{Fatum} + @{society_main_level} + @{prefix-society_level}]] }} {{level=[[@{prefix-society_level}]]}} {{roll-name=@{prefix-society_name}}}'></button>
+                                <input class="flex-1" type="number" name="attr_society_level" value="0" min="0" max="5">
+                                <input class="flex-3" type="text" name="attr_society_name">
+                                <input class="flex-1" type="number" name="attr_society_skill" value="0" min="0" max="30">
+                                <div class="break"></div>
+                                <textarea name="attr_society_spec" placeholder="Specjalizacja"></textarea>
+                            </fieldset>
+                        </div>
                     </div>
                 </div>
-                <div>
-                    <div class="fieldset-labels center">
-                        <span class="flex-1 mini-title" style="width: 36px;"><br></span>
-                        <span class="flex-1 mini-title" data-i18n="level">Poziom</span>
-                        <span class="flex-3 mini-title" data-i18n="professional-attributes">Atrybuty Zawodowe</span>
-                        <span class="flex-1 mini-title" data-i18n="skill">Wprawa</span>
+            </div>
+    
+            <div class="col-6 more-col-padding">
+                <div class="attributes-box">
+                    <div class="attributes-box__line">
+                        <label data-i18n="proficiency" style="margin-bottom: 15px;">Biegłość</label>
+                        <div class="input-box attributes-box__line-horizontal">
+                            <input type="number" name="attr_professional_main_level" value="0" min="0" max="5">
+                        </div>
                     </div>
-
-                    <div class="attributes-box__line-ver">
-                        <fieldset class="repeating_professional">
-                            <div class="attribute-box__line-horizontal-left"></div>
-                            <button class="flex-1" type="action" name="act_roll" data-attribute="professional" value='&{template:fatum} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{threshold=[[@{professional_main_level} + @{prefix-professional_level}]]}} {{baseDice=[[@{Fatum} + @{professional_main_level} + @{prefix-professional_level}]] }} {{level=[[@{prefix-professional_level}]]}} {{roll-name=@{prefix-professional_name}}}'></button>
-                            <input class="flex-1" type="number" name="attr_professional_level" value="0" min="0" max="5">
-                            <input class="flex-3" type="text" name="attr_professional_name">
-                            <input class="flex-1" type="number" name="attr_professional_skill" value="0" min="0" max="30">
-                            <div class="break"></div>
-                            <textarea name="attr_professional_spec" placeholder="Specjalizacja"></textarea>
-                        </fieldset>
+                    <div>
+                        <div class="fieldset-labels center">
+                            <span class="flex-1 mini-title" style="width: 36px;"><br></span>
+                            <span class="flex-1 mini-title" data-i18n="level">Poziom</span>
+                            <span class="flex-3 mini-title" data-i18n="professional-attributes">Atrybuty Zawodowe</span>
+                            <span class="flex-1 mini-title" data-i18n="skill">Wprawa</span>
+                        </div>
+    
+                        <div class="attributes-box__line-ver">
+                            <fieldset class="repeating_professional">
+                                <div class="attribute-box__line-horizontal-left"></div>
+                                <button class="flex-1" type="action" name="act_roll" data-attribute="professional" value='&{template:fatum} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{threshold=[[@{professional_main_level} + @{prefix-professional_level}]]}} {{baseDice=[[@{Fatum} + @{professional_main_level} + @{prefix-professional_level}]] }} {{level=[[@{prefix-professional_level}]]}} {{roll-name=@{prefix-professional_name}}}'></button>
+                                <input class="flex-1" type="number" name="attr_professional_level" value="0" min="0" max="5">
+                                <input class="flex-3" type="text" name="attr_professional_name">
+                                <input class="flex-1" type="number" name="attr_professional_skill" value="0" min="0" max="30">
+                                <div class="break"></div>
+                                <textarea name="attr_professional_spec" placeholder="Specjalizacja"></textarea>
+                            </fieldset>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="sheet-notes">
+        <div class="row">
+            <div class="col-12">
+                <textarea name="attr_notes" id="" cols="30" rows="20" placeholder="Wprowadź treść notatek" style="border: 1px solid #272626;"></textarea>
             </div>
         </div>
     </div>
 </div>
+<div class="character-sheet__bottom-bg"></div>
+
 
 <rolltemplate class="sheet-rolltemplate-fatum">
 	<div class="template-wrap">
@@ -704,6 +728,16 @@
 
 <script type="text/worker">
 
+    const buttonlist = ["main","notes"];
+
+    buttonlist.forEach(button => {
+        on(`clicked:${button}`, function() {
+            setAttrs({
+                sheetTab: button
+            });
+        });
+    });
+
     on('clicked:roll', async (event) => {
         let rollBase = event.htmlAttributes.value + " {{baseRoll1=[[1d6]] }} {{baseRoll2=[[1d6]] }} {{baseRoll3=[[1d6]] }} {{baseRoll4=[[1d6]] }} {{baseRoll5=[[1d6]] }} {{baseRoll6=[[1d6]] }} {{baseRoll7=[[1d6]] }} {{baseRoll8=[[1d6]] }} {{baseRoll9=[[1d6]] }} {{baseRoll10=[[1d6]] }} {{baseRoll11=[[1d6]] }} {{baseRoll12=[[1d6]] }} {{baseRoll13=[[1d6]] }} {{baseRoll14=[[1d6]] }} {{baseRoll15=[[1d6]] }} {{baseRoll16=[[1d6]] }} {{baseRoll17=[[1d6]] }} {{baseRoll18=[[1d6]] }} {{baseRoll19=[[1d6]] }} {{baseRoll20=[[1d6]] }} {{success=[[1d6]]}} {{fail=[[1d6]]}} {{total_success=[[1d6]]}} {{fatum=[[@{fatum}]]}} {{wound=[[0]]}} {{level=[[0]]}}";
         let rollResult = await startRoll(rollBase);  
@@ -755,11 +789,8 @@
             }
         }
 
-        var fateCalc = dices.unusedFateDice + threshold.unusedFate;
-
-        console.log(fateCalc)
         setAttrs({
-            [`fate_pool`]: fate_pool + fateCalc
+            [`fate_pool`]: fate_pool
         }); 
 
         let computedValues = {
@@ -792,8 +823,7 @@
         if (fate_pool <= moreDice) {
             moreDice = fate_pool;
         }
-        fate_pool -= moreDice;
-
+        
         var baseDice = results.baseDice.result + moreDice;
 
         var unusedFateDice = 0;
@@ -807,6 +837,7 @@
             unusedFateDice = baseDice - 20;
             baseDice = 20;
             moreDice -= unusedFateDice;
+            additionalDice = 0;
         } else {
             baseDice += additionalDice;
 
@@ -827,9 +858,10 @@
             }
         }
 
+        fate_pool -= moreDice;
+
         var obj = {
             table: table,
-            unusedFateDice: unusedFateDice,
             moreDice: moreDice,
             additionalDice: additionalDice,
             fatePoolUpdate: fate_pool
@@ -862,14 +894,13 @@
             if (fate_pool <= largerThreshold) {
                 largerThreshold = fate_pool;
             }
-            fate_pool -= largerThreshold;
-
             threshold += largerThreshold;
     
             if (threshold > 5) {
                 unusedFate = threshold - 5;
                 threshold = 5;
                 largerThreshold -= unusedFate;
+                additionalThreshold = 0;
             } else {
                 threshold += additionalThreshold;
 
@@ -881,9 +912,10 @@
             }
         } 
 
+        fate_pool -= largerThreshold;
+
         var obj = {
             value: threshold,
-            unusedFate: unusedFate,
             largerThreshold: largerThreshold,
             additionalThreshold: additionalThreshold,
             fatePoolUpdate: fate_pool
