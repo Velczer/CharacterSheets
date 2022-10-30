@@ -1,557 +1,852 @@
-<div class="character-sheet">
-    <div class="row">
-        <div class="col-6">
-            <div class="character-details-box">
-                <h2 data-i18n="name">Imię</h2>
-                <label class="character-details-label">
-                    <input type="text" name="attr_character_name" title="@{character_name}" spellcheck="false">
-                </label>
-            </div>
+<div class="character-sheet__container">
+    <input type="hidden" class="sheet-tabstoggle" name="attr_sheetTab" value="profile">
+    <button type="action" name="act_profile" class="sheet-change" data-i18n="profile">Profil</button>
+    <button type="action" name="act_actions" class="sheet-change" data-i18n="investigative-movements">Ruchy śledcze</button>
+    <button type="action" name="act_other" class="sheet-change" data-i18n="other-movements">Pozostałe ruchy</button>
 
-            <div class="character-details-box">
-                <h2 data-i18n="appearance">Wygląd</h2>
-                <label class="character-details-label">
-                    <span data-i18n="face">Twarz</span>
-                    <input type="text" name="attr_face" title="@{face}" spellcheck="false">
-                </label>
-
-                <label class="character-details-label">
-                    <span data-i18n="hair">Włosy</span>
-                    <input type="text" name="attr_hair" title="@{hair}" spellcheck="false">
-                </label>
-
-                <label class="character-details-label">
-                    <span data-i18n="profile">Sylwetka</span>
-                    <input type="text" name="attr_profile" title="@{profile}" spellcheck="false">
-                </label>
-
-                <label class="character-details-label">
-                    <span data-i18n="other">Inne</span>
-                    <textarea name="attr_other" cols="30" rows="2" spellcheck="false"></textarea>
-                </label>
-            </div>
-
-            <div class="character-details-box">
-                <h2 data-i18n="family">Rodzina</h2>
-                <label class="character-details-label">
-                    <span data-i18n="partner">Partner</span>
-                    <input type="text" name="attr_partner" title="@{partner}" spellcheck="false">
-                </label>
-
-                <label class="character-details-label">
-                    <span data-i18n="kids">Dzieci</span>
-                    <input type="text" name="attr_kids" title="@{kids}" spellcheck="false">
-                </label>
-
-                <label class="character-details-label">
-                    <span data-i18n="parents">Rodzice</span>
-                    <input type="text" name="attr_parents" title="@{parents}" spellcheck="false">
-                </label>
-
-                <label class="character-details-label">
-                    <span data-i18n="marital-status">Stan cywilny</span>
-                    <input type="text" name="attr_marital_status" title="@{marital_status}" spellcheck="false">
-                </label>
-            </div>
-
-            <div class="character-details-box">
-                <h2 data-i18n="weakness">Słabość</h2>
-                <input type="text" name="attr_weakness" placeholder="Nazwa słabości.." style="margin-bottom: 10px;">
-                <textarea name="attr_weakness_more" id="" cols="30" rows="4" placeholder="Szczegóły słabości.."></textarea>
-            </div>
-            
-        </div>
-
-        <div class="col-6">
-            <div class="character-details-box">
-                <h2 data-i18n="connections">Znajomości</h2>
-
-                <div class="fieldset-labels center">
-                    <span style="width: 100%;" class="mini-title"><br></span>
-                    <span class="mini-title" data-i18n="value">Wartość</span>
+    <div class="sheet-profile character-sheet">
+        <div class="row">
+            <div class="col-6">
+                <div class="character-details-box">
+                    <h2 data-i18n="name">Imię</h2>
+                    <label class="character-details-label">
+                        <input type="text" name="attr_character_name" title="@{character_name}" spellcheck="false">
+                    </label>
                 </div>
     
-                <fieldset class="repeating_connections">
-                    <input type="text" name="attr_connection">
-                    <input style="width:50px;" type="number" name="attr_connection_value" value="0">
-                </fieldset>
-            </div>
-
-            <div class="character-details-box">
-                <h2 data-i18n="ties">Więzi / Wrogowie</h2>
-                <fieldset class="repeating_ties">
-                    <input class="flex-4" type="text" name="attr_ties"> 
-                    <input class="flex-1" type="number" name="attr_ties_value" value="2">
-                </fieldset>
-            </div>
-
-            <div class="character-details-box">
-                <h2 data-i18n="notes">Notatki służbowe</h2>
-                <textarea name="attr_notes" id="" cols="30" rows="11"></textarea>
-            </div>
-        </div>
-    </div>
-
-</div>
-
-<div class="character-sheet">
-    <div class="row">
-        <div class="col-6">
-            <div class="character-details-box">
-                <h2 data-i18n="attributes">Atrybuty</h2>
-                <table class="custom-table">
-                    <tr>
-                        <th></th>
-                        <th data-i18n="value">Wartość</th>
-                        <th></th>
-                    </tr>
-                    <tr>
-                        <td data-i18n="inteligence">Inteligencja</td>
-                        <td>
-                            <div class="checkbox-line">
-                                <input type="checkbox" name="attr_inteligence" value="3">
-                                <input type="checkbox" name="attr_inteligence" value="2">
-                                <input type="checkbox" name="attr_inteligence" value="1">
-                            </div>
-                        </td>
-                        <td>
-                            <button type="action" name="act_roll" data-attribute="inteligence" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td data-i18n="charisma">Osobowość</td>
-                        <td>
-                            <div class="checkbox-line">
-                                <input type="checkbox" name="attr_charisma" value="3">
-                                <input type="checkbox" name="attr_charisma" value="2">
-                                <input type="checkbox" name="attr_charisma" value="1">
-                            </div>
-                        </td>
-                        <td>
-                            <button type="action" name="act_roll" data-attribute="charisma" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td data-i18n="psyche">Psychika</td>
-                        <td>
-                            <div class="checkbox-line">
-                                <input type="checkbox" name="attr_psyche" value="3">
-                                <input type="checkbox" name="attr_psyche" value="2">
-                                <input type="checkbox" name="attr_psyche" value="1">
-                            </div>
-                        </td>
-                        <td>
-                            <button type="action" name="act_roll" data-attribute="psyche" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td data-i18n="dexterity">Sprawność</td>
-                        <td>
-                            <div class="checkbox-line">
-                                <input type="checkbox" name="attr_dexterity" value="3">
-                                <input type="checkbox" name="attr_dexterity" value="2">
-                                <input type="checkbox" name="attr_dexterity" value="1">
-                            </div>
-                        </td>
-                        <td>
-                            <button type="action" name="act_roll" data-attribute="dexterity" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td data-i18n="senses">Zmysły</td>
-                        <td>
-                            <div class="checkbox-line">
-                                <input type="checkbox" name="attr_senses" value="3">
-                                <input type="checkbox" name="attr_senses" value="2">
-                                <input type="checkbox" name="attr_senses" value="1">
-                            </div>
-                        </td>
-                        <td>
-                            <button type="action" name="act_roll" data-attribute="senses" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-
-            <div class="character-details-box">
-                <h2 data-i18n="job-rank">Stopień służbowy</h2>
-                <table class="custom-table">
-                    <tr>
-                        <th></th>
-                        <th data-i18n="value">Wartość</th>
-                        <th></th>
-                    </tr>
-                    <tr>
-                        <td data-i18n="job-rank">Stopień służbowy</td>
-                        <td>
-                            <div class="checkbox-line">
-                                <input type="checkbox" name="attr_job_rank" value="3">
-                                <input type="checkbox" name="attr_job_rank" value="2">
-                                <input type="checkbox" name="attr_job_rank" value="1">
-                            </div>
-                        </td>
-                        <td>
-                            <button type="action" name="act_roll" data-attribute="job_rank" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-
-            <div class="character-details-box">
-                <h2 data-i18n="investigative-movements">Ruchy śledcze</h2>
-                <table class="custom-table">
-                    <tr>
-                        <th></th>
-                        <th data-i18n="get-lead">Zdobycie tropu</th>
-                        <th></th>
-                    </tr>
-                    <tr>
-                        <td data-i18n="interpersonal-communication">Komunikacja interpersonalna</td>
-                        <td>
-                            <div class="checkbox-line">
-                                <input type="checkbox" name="attr_get_lead_1" value="3">
-                                <input type="checkbox" name="attr_get_lead_1" value="2">
-                                <input type="checkbox" name="attr_get_lead_1" value="1">
-                            </div>
-                        </td>
-                        <td>
-                            <button type="action" name="act_roll" data-attribute="get_lead_1" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td data-i18n="phone-book">Książka telefoniczna</td>
-                        <td>
-                            <div class="checkbox-line">
-                                <input type="checkbox" name="attr_get_lead_2" value="3">
-                                <input type="checkbox" name="attr_get_lead_2" value="2">
-                                <input type="checkbox" name="attr_get_lead_2" value="1">
-                            </div>
-                        </td>
-                        <td>
-                            <button type="action" name="act_roll" data-attribute="get_lead_2" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td data-i18n="paperwork">Papierkowa robota</td>
-                        <td>
-                            <div class="checkbox-line">
-                                <input type="checkbox" name="attr_get_lead_3" value="3">
-                                <input type="checkbox" name="attr_get_lead_3" value="2">
-                                <input type="checkbox" name="attr_get_lead_3" value="1">
-                            </div>
-                        </td>
-                        <td>
-                            <button type="action" name="act_roll" data-attribute="get_lead_3" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td data-i18n="specialists-help">Pomoc specjalistów</td>
-                        <td>
-                            <div class="checkbox-line">
-                                <input type="checkbox" name="attr_get_lead_4" value="3">
-                                <input type="checkbox" name="attr_get_lead_4" value="2">
-                                <input type="checkbox" name="attr_get_lead_4" value="1">
-                            </div>
-                        </td>
-                        <td>
-                            <button type="action" name="act_roll" data-attribute="get_lead_4" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td data-i18n="operational-work">Praca operacyjno-rozpoznawcza</td>
-                        <td>
-                            <div class="checkbox-line">
-                                <input type="checkbox" name="attr_get_lead_5" value="3">
-                                <input type="checkbox" name="attr_get_lead_5" value="2">
-                                <input type="checkbox" name="attr_get_lead_5" value="1">
-                            </div>
-                        </td>
-                        <td>
-                            <button type="action" name="act_roll" data-attribute="get_lead_5" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td data-i18n="violance">Przemoc</td>
-                        <td>
-                            <div class="checkbox-line">
-                                <input type="checkbox" name="attr_get_lead_6" value="3">
-                                <input type="checkbox" name="attr_get_lead_6" value="2">
-                                <input type="checkbox" name="attr_get_lead_6" value="1">
-                            </div>
-                        </td>
-                        <td>
-                            <button type="action" name="act_roll" data-attribute="get_lead_6" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td data-i18n="manipulate">Robienie w wała</td>
-                        <td>
-                            <div class="checkbox-line">
-                                <input type="checkbox" name="attr_get_lead_7" value="3">
-                                <input type="checkbox" name="attr_get_lead_7" value="2">
-                                <input type="checkbox" name="attr_get_lead_7" value="1">
-                            </div>
-                        </td>
-                        <td>
-                            <button type="action" name="act_roll" data-attribute="get_lead_7" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td data-i18n="computer-tech">Techniki komputerowe</td>
-                        <td>
-                            <div class="checkbox-line">
-                                <input type="checkbox" name="attr_get_lead_8" value="3">
-                                <input type="checkbox" name="attr_get_lead_8" value="2">
-                                <input type="checkbox" name="attr_get_lead_8" value="1">
-                            </div>
-                        </td>
-                        <td>
-                            <button type="action" name="act_roll" data-attribute="get_lead_8" value='&{template:glina} {{character_name=@{character_name}}} {{character_id=@{character_id}}}'></button>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-
-            
-        </div>
-
-        <div class="col-6">
-            <div class="character-details-box">
-                <h2 data-i18n="archetype-movements">Ruchy archetypu</h2>
-                <fieldset class="repeating_archetype-movements">
-                    <input class="flex-1" type="text" name="attr_archetype_movement" spellcheck="false"> 
-                    <input class="flex-4" type="text" name="attr_archetype_movement_desc" spellcheck="false">
-                </fieldset>
-            </div>
-
-            <div class="character-details-box">
-                <h2 data-i18n="experience">Punkty doświadczenia</h2>
-                <label class="character-details-label">
-                    <input type="number" name="attr_experience">
-                </label>
-            </div>
-
-            <div class="character-details-box">
-                <h2 data-i18n="status">Status</h2>
-                <input type="hidden" name="attr_stressed" value="false">
-                <label class="checkbox-label">
-                    <span data-i18n="stressed">Zestresowany</span>
-                    <input type="checkbox" name="attr_stressed" value="true">
-                </label>
-            </div>
-            
-            <div class="character-details-box">
-                <h2 data-i18n="label">Etykieta</h2>
-
-                <div class="fieldset-labels center">
-                    <span class="flex-3 mini-title" data-i18n="to-attr">Do atrybutu:</span>
-                    <span class="flex-1 mini-title" data-i18n="modifier">Modyfikator:</span>
+                <div class="character-details-box">
+                    <h2 data-i18n="appearance">Wygląd</h2>
+                    <label class="character-details-label">
+                        <span data-i18n="face">Twarz</span>
+                        <input type="text" name="attr_face" title="@{face}" spellcheck="false">
+                    </label>
+    
+                    <label class="character-details-label">
+                        <span data-i18n="hair">Włosy</span>
+                        <input type="text" name="attr_hair" title="@{hair}" spellcheck="false">
+                    </label>
+    
+                    <label class="character-details-label">
+                        <span data-i18n="figure">Sylwetka</span>
+                        <input type="text" name="attr_figure" title="@{figure}" spellcheck="false">
+                    </label>
+    
+                    <label class="character-details-label">
+                        <span data-i18n="other">Inne</span>
+                        <textarea name="attr_other" cols="30" rows="2" spellcheck="false"></textarea>
+                    </label>
                 </div>
-
-                <div class="repeating-with-textarea">
-                    <fieldset class="repeating_label">
-                        <select class="flex-3" name="attr_label_attribute" id="">
-                            <option value="">Inteligencja</option>
-                            <option value="">Osobowość</option>
-                            <option value="">Psychika</option>
-                            <option value="">Sprawność</option>
-                            <option value="">Zmysły</option>
-                        </select>
-                        <input class="flex-1" type="number" name="attr_label_level" spellcheck="false"> 
-                        <textarea name="attr_label_desc" cols="30" rows="3" placeholder="Opis statusu"></textarea>
+    
+                <div class="character-details-box">
+                    <h2 data-i18n="family">Rodzina</h2>
+                    <label class="character-details-label">
+                        <span data-i18n="partner">Partner</span>
+                        <input type="text" name="attr_partner" title="@{partner}" spellcheck="false">
+                    </label>
+    
+                    <label class="character-details-label">
+                        <span data-i18n="kids">Dzieci</span>
+                        <input type="text" name="attr_kids" title="@{kids}" spellcheck="false">
+                    </label>
+    
+                    <label class="character-details-label">
+                        <span data-i18n="parents">Rodzice</span>
+                        <input type="text" name="attr_parents" title="@{parents}" spellcheck="false">
+                    </label>
+    
+                    <label class="character-details-label">
+                        <span data-i18n="marital-status">Stan cywilny</span>
+                        <input type="text" name="attr_marital_status" title="@{marital_status}" spellcheck="false">
+                    </label>
+                </div>
+    
+                <div class="character-details-box">
+                    <h2 data-i18n="weakness">Słabość</h2>
+                    <input type="text" name="attr_weakness" placeholder="Nazwa słabości.." style="margin-bottom: 10px;">
+                    <textarea name="attr_weakness_more" id="" cols="30" rows="4" placeholder="Szczegóły słabości.."></textarea>
+                </div>
+                
+            </div>
+    
+            <div class="col-6">
+                <div class="character-details-box">
+                    <h2 data-i18n="connections">Znajomości</h2>
+    
+                    <div class="fieldset-labels center">
+                        <span style="width: 100%;" class="mini-title"><br></span>
+                        <span class="mini-title" data-i18n="value">Wartość</span>
+                    </div>
+        
+                    <fieldset class="repeating_connections">
+                        <input type="text" name="attr_connection">
+                        <input style="width:50px;" type="number" name="attr_connection_value" value="0">
                     </fieldset>
                 </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-12">
-            <div class="down-checkboxes-box">
-                <h2>Czas pracy</h2>
-                <div class="down-checkboxes">
-                    <label class="checkbox-label">
-                        <span>0</span>
-                        <input type="checkbox" name="attr_work_time" value="0" checked>
-                        <span>○</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <span>+1</span>
-                        <input type="checkbox" name="attr_work_time" value="1">
-                        <span>→</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <span>+2</span>
-                        <input type="checkbox" name="attr_work_time" value="2">
-                        <span>→</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <span>+3</span>
-                        <input type="checkbox" name="attr_work_time" value="3">
-                        <span>→</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <span>+4</span>
-                        <input type="checkbox" name="attr_work_time" value="4">
-                        <span>→</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <span>+5</span>
-                        <input type="checkbox" name="attr_work_time" value="5">
-                        <span>→</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <span>+6</span>
-                        <input type="checkbox" name="attr_work_time" value="6">
-                        <span>→</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <span>+7</span>
-                        <input type="checkbox" name="attr_work_time" value="7">
-                        <span>→</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <span>+8</span>
-                        <input type="checkbox" name="attr_work_time" value="8">
-                        <span>→</span>
-                    </label>
+    
+                <div class="character-details-box">
+                    <h2 data-i18n="ties">Więzi / Wrogowie</h2>
+                    <fieldset class="repeating_ties">
+                        <input class="flex-4" type="text" name="attr_ties"> 
+                        <input class="flex-1" type="number" name="attr_ties_value" value="2">
+                    </fieldset>
                 </div>
-            </div>
-
-            <div class="down-checkboxes-box">
-                <h2>Stres</h2>
-                <div class="down-checkboxes">
-                    <label class="checkbox-label">
-                        <span>0</span>
-                        <input type="checkbox" name="attr_stress_level" value="0" checked>
-                        <span>○</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <span>+1</span>
-                        <input type="checkbox" name="attr_stress_level" value="1">
-                        <span>→</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <span>+2</span>
-                        <input type="checkbox" name="attr_stress_level" value="2">
-                        <span>→</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <span>+3</span>
-                        <input type="checkbox" name="attr_stress_level" value="3">
-                        <span>→</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <span>+4</span>
-                        <input type="checkbox" name="attr_stress_level" value="4">
-                        <span>→</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <span>+5</span>
-                        <input type="checkbox" name="attr_stress_level" value="5">
-                        <span>→</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="down-checkboxes-box">
-                <h2>Szczęście psa</h2>
-                <div class="down-checkboxes">
-                    <label class="checkbox-label">
-                        <span>-6</span>
-                        <input type="checkbox" name="attr_luck" value="-6">
-                        <span>●</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <span>-5</span>
-                        <input type="checkbox" name="attr_luck" value="-5">
-                        <span>←</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <span>-4</span>
-                        <input type="checkbox" name="attr_luck" value="-4">
-                        <span>←</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <span>-3</span>
-                        <input type="checkbox" name="attr_luck" value="-3">
-                        <span>←</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <span>-2</span>
-                        <input type="checkbox" name="attr_luck" value="-2">
-                        <span>←</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <span>-1</span>
-                        <input type="checkbox" name="attr_luck" value="-1">
-                        <span>←</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <span>0</span>
-                        <input type="checkbox" name="attr_luck" value="0" checked>
-                        <span>○</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <span>+1</span>
-                        <input type="checkbox" name="attr_luck" value="1">
-                        <span>→</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <span>+2</span>
-                        <input type="checkbox" name="attr_luck" value="2">
-                        <span>→</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <span>+3</span>
-                        <input type="checkbox" name="attr_luck" value="3">
-                        <span>→</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <span>+4</span>
-                        <input type="checkbox" name="attr_luck" value="4">
-                        <span>→</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <span>+5</span>
-                        <input type="checkbox" name="attr_luck" value="5">
-                        <span>→</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <span>+6</span>
-                        <input type="checkbox" name="attr_luck" value="6">
-                        <span>→</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <span>+7</span>
-                        <input type="checkbox" name="attr_luck" value="7">
-                        <span>→</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <span>+8</span>
-                        <input type="checkbox" name="attr_luck" value="8">
-                        <span>→</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <span>+9</span>
-                        <input type="checkbox" name="attr_luck" value="9">
-                        <span>→</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <span>+10</span>
-                        <input type="checkbox" name="attr_luck" value="10">
-                        <span>●</span>
-                    </label>
+    
+                <div class="character-details-box">
+                    <h2 data-i18n="notes">Notatki służbowe</h2>
+                    <textarea name="attr_notes" id="" cols="30" rows="11"></textarea>
                 </div>
             </div>
         </div>
+    
+    </div>
+    
+    <div class="sheet-actions character-sheet">
+        <div class="row">
+            <div class="col-5">
+                <div class="character-details-box">
+                    <h2 data-i18n="attributes">Atrybuty</h2>
+                    <table class="custom-table">
+                        <tr>
+                            <th></th>
+                            <th data-i18n="value">Wartość</th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <td data-i18n="inteligence">Inteligencja</td>
+                            <td>
+                                <div class="checkbox-line">
+                                    <input type="checkbox" name="attr_inteligence" value="3">
+                                    <input type="checkbox" name="attr_inteligence" value="2">
+                                    <input type="checkbox" name="attr_inteligence" value="1">
+                                </div>
+                            </td>
+                            <td>
+                                <button type="action" name="act_roll" value='&{template:glina} {{baseRoll=[[1d6 + @{inteligence} + ?{Modyfikator|0}]] }} {{roll-name=^{inteligence}}}'></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="charisma">Osobowość</td>
+                            <td>
+                                <div class="checkbox-line">
+                                    <input type="checkbox" name="attr_charisma" value="3">
+                                    <input type="checkbox" name="attr_charisma" value="2">
+                                    <input type="checkbox" name="attr_charisma" value="1">
+                                </div>
+                            </td>
+                            <td>
+                                <button type="action" name="act_roll" value='&{template:glina} {{baseRoll=[[1d6 + @{charisma} + ?{Modyfikator|0}]] }} {{roll-name=^{charisma}}}'></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="psyche">Psychika</td>
+                            <td>
+                                <div class="checkbox-line">
+                                    <input type="checkbox" name="attr_psyche" value="3">
+                                    <input type="checkbox" name="attr_psyche" value="2">
+                                    <input type="checkbox" name="attr_psyche" value="1">
+                                </div>
+                            </td>
+                            <td>
+                                <button type="action" name="act_roll" value='&{template:glina} {{baseRoll=[[1d6 + @{psyche} + ?{Modyfikator|0}]] }} {{roll-name=^{psyche}}}'></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="dexterity">Sprawność</td>
+                            <td>
+                                <div class="checkbox-line">
+                                    <input type="checkbox" name="attr_dexterity" value="3">
+                                    <input type="checkbox" name="attr_dexterity" value="2">
+                                    <input type="checkbox" name="attr_dexterity" value="1">
+                                </div>
+                            </td>
+                            <td>
+                                <button type="action" name="act_roll" value='&{template:glina} {{baseRoll=[[1d6 + @{dexterity} + ?{Modyfikator|0}]] }} {{roll-name=^{dexterity}}}'></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="senses">Zmysły</td>
+                            <td>
+                                <div class="checkbox-line">
+                                    <input type="checkbox" name="attr_senses" value="3">
+                                    <input type="checkbox" name="attr_senses" value="2">
+                                    <input type="checkbox" name="attr_senses" value="1">
+                                </div>
+                            </td>
+                            <td>
+                                <button type="action" name="act_roll" value='&{template:glina}  {{baseRoll=[[1d6 + @{senses} + ?{Modyfikator|0}]] }} {{roll-name=^{senses}}}'></button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+    
+                <div class="character-details-box">
+                    <h2 data-i18n="job-rank">Stopień służbowy</h2>
+                    <table class="custom-table">
+                        <tr>
+                            <th></th>
+                            <th data-i18n="value">Wartość</th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <td data-i18n="job-rank">Stopień służbowy</td>
+                            <td>
+                                <div class="checkbox-line">
+                                    <input type="checkbox" name="attr_job_rank" value="3">
+                                    <input type="checkbox" name="attr_job_rank" value="2">
+                                    <input type="checkbox" name="attr_job_rank" value="1">
+                                </div>
+                            </td>
+                            <td>
+                                <button type="action" name="act_roll" value='&{template:glina} {{baseRoll=[[1d6 + @{job_rank} + ?{Modyfikator|0}]] }} {{roll-name=^{job-rank}}}'></button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+    
+                <div class="character-details-box">
+                    <h2 data-i18n="investigative-movements">Ruchy śledcze</h2>
+                    <table class="custom-table">
+                        <tr>
+                            <th></th>
+                            <th data-i18n="get-lead">Zdobycie tropu</th>
+                            <th></th>
+                            <th>rzut na atrybut</th>
+                        </tr>
+                        <tr>
+                            <td data-i18n="interpersonal-communication">Komunikacja interpersonalna</td>
+                            <td>
+                                <div class="checkbox-line">
+                                    <input type="checkbox" name="attr_get_lead_1" value="3">
+                                    <input type="checkbox" name="attr_get_lead_1" value="2">
+                                    <input type="checkbox" name="attr_get_lead_1" value="1">
+                                </div>
+                            </td>
+                            
+                            <td>
+                                <button type="action" name="act_roll" value='&{template:glina} {{baseRoll=[[1d6 + @{get_lead_1} + @{get_lead_1_attr_calc} - @{stressed} + ?{Modyfikator|0}]] }} {{roll-name=^{interpersonal-communication}}}'></button>
+                            </td>
+                            <td>
+                                <input type="hidden" name="attr_get_lead_1_attr_calc" value="0">
+                                <select name="attr_get_lead_1_attr" id="">
+                                    <option value="" selected>-</option>
+                                    <option value="inteligence">Inteligencja</option>
+                                    <option value="charisma">Osobowość</option>
+                                    <option value="psyche">Psychika</option>
+                                    <option value="senses">Zmysły</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="phone-book">Książka telefoniczna</td>
+                            <td>
+                                <div class="checkbox-line">
+                                    <input type="checkbox" name="attr_get_lead_2" value="3">
+                                    <input type="checkbox" name="attr_get_lead_2" value="2">
+                                    <input type="checkbox" name="attr_get_lead_2" value="1">
+                                </div>
+                            </td>
+                            <td>
+                                <button type="action" name="act_roll" value='&{template:glina} {{baseRoll=[[1d6 + @{get_lead_2} + @{get_lead_2_attr_calc} - @{stressed} + ?{Modyfikator|0}]] }} {{roll-name=^{phone-book}}}'></button>
+                            </td>
+                            <td>
+                                <input type="hidden" name="attr_get_lead_2_attr_calc" value="0">
+                                <select name="attr_get_lead_2_attr" id="">
+                                    <option value="" selected>-</option>
+                                    <option value="inteligence">Inteligencja</option>
+                                    <option value="charisma">Osobowość</option>
+                                    <option value="psyche">Psychika</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="paperwork">Papierkowa robota</td>
+                            <td>
+                                <div class="checkbox-line">
+                                    <input type="checkbox" name="attr_get_lead_3" value="3">
+                                    <input type="checkbox" name="attr_get_lead_3" value="2">
+                                    <input type="checkbox" name="attr_get_lead_3" value="1">
+                                </div>
+                            </td>
+                            <td>
+                                <button type="action" name="act_roll" value='&{template:glina} {{baseRoll=[[1d6 + @{get_lead_3} + @{senses} - @{stressed} + ?{Modyfikator|0}]] }} {{roll-name=^{paperwork}}}'></button>
+                            </td>
+                            <td>Zmysły</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="specialists-help">Pomoc specjalistów</td>
+                            <td>
+                                <div class="checkbox-line">
+                                    <input type="checkbox" name="attr_get_lead_4" value="3">
+                                    <input type="checkbox" name="attr_get_lead_4" value="2">
+                                    <input type="checkbox" name="attr_get_lead_4" value="1">
+                                </div>
+                            </td>
+                            <td>
+                                <button type="action" name="act_roll" value='&{template:glina} {{baseRoll=[[1d6 + @{get_lead_4} + @{job_rank} - @{stressed} + ?{Modyfikator|0}]] }} {{roll-name=^{specialists-help}}}'></button>
+                            </td>
+                            <td>Stopień służbowy</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="operational-work">Praca operacyjno-rozpoznawcza</td>
+                            <td>
+                                <div class="checkbox-line">
+                                    <input type="checkbox" name="attr_get_lead_5" value="3">
+                                    <input type="checkbox" name="attr_get_lead_5" value="2">
+                                    <input type="checkbox" name="attr_get_lead_5" value="1">
+                                </div>
+                            </td>
+                            <td>
+                                <button type="action" name="act_roll" value='&{template:glina} {{baseRoll=[[1d6 + @{get_lead_5} + @{get_lead_5_attr_calc} - @{stressed} + ?{Modyfikator|0}]] }} {{roll-name=^{operational-work}}}'></button>
+                            </td>
+                            <td>
+                                <input type="hidden" name="attr_get_lead_5_attr_calc" value="0">
+                                <select name="attr_get_lead_5_attr" id="">
+                                    <option value="" selected>-</option>
+                                    <option value="inteligence">Inteligencja</option>
+                                    <option value="charisma">Osobowość</option>
+                                    <option value="psyche">Psychika</option>
+                                    <option value="dexterity">Sprawność</option>
+                                    <option value="senses">Zmysły</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="violance">Przemoc</td>
+                            <td>
+                                <div class="checkbox-line">
+                                    <input type="checkbox" name="attr_get_lead_6" value="3">
+                                    <input type="checkbox" name="attr_get_lead_6" value="2">
+                                    <input type="checkbox" name="attr_get_lead_6" value="1">
+                                </div>
+                            </td>
+                            <td>
+                                <button type="action" name="act_roll" value='&{template:glina} {{baseRoll=[[1d6 + @{get_lead_6} + @{get_lead_6_attr_calc} - @{stressed} + ?{Modyfikator|0}]] }} {{roll-name=^{violance}}}'></button>
+                            </td>
+                            <td>
+                                <input type="hidden" name="attr_get_lead_6_attr_calc" value="0">
+                                <select name="attr_get_lead_6_attr" id="">
+                                    <option value="" selected>-</option>
+                                    <option value="inteligence">Inteligencja</option>
+                                    <option value="psyche">Psychika</option>
+                                    <option value="dexterity">Sprawność</option>
+                                    <option value="senses">Zmysły</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="manipulate">Robienie w wała</td>
+                            <td>
+                                <div class="checkbox-line">
+                                    <input type="checkbox" name="attr_get_lead_7" value="3">
+                                    <input type="checkbox" name="attr_get_lead_7" value="2">
+                                    <input type="checkbox" name="attr_get_lead_7" value="1">
+                                </div>
+                            </td>
+                            <td>
+                                <button type="action" name="act_roll" value='&{template:glina} {{baseRoll=[[1d6 + @{get_lead_7} + @{get_lead_7_attr_calc} - @{stressed} + ?{Modyfikator|0}]] }} {{roll-name=^{manipulate}}}'></button>
+                            </td>
+                            <td>
+                                <input type="hidden" name="attr_get_lead_7_attr_calc" value="0">
+                                <select name="attr_get_lead_7_attr" id="">
+                                    <option value="" selected>-</option>
+                                    <option value="inteligence">Inteligencja</option>
+                                    <option value="psyche">Psychika</option>
+                                    <option value="dexterity">Sprawność</option>
+                                </select>
+                            </td>
+                        </tr>
+    
+                        <tr>
+                            <td data-i18n="computer-tech">Techniki komputerowe</td>
+                            <td>
+                                <div class="checkbox-line">
+                                    <input type="checkbox" name="attr_get_lead_8" value="3">
+                                    <input type="checkbox" name="attr_get_lead_8" value="2">
+                                    <input type="checkbox" name="attr_get_lead_8" value="1">
+                                </div>
+                            </td>
+                            <td>
+                                <button type="action" name="act_roll" value='&{template:glina} {{baseRoll=[[1d6 + @{get_lead_8} + @{get_lead_8_attr_calc} - @{stressed} + ?{Modyfikator|0}]] }} {{roll-name=^{computer-tech}}}'></button>
+                            </td>
+                            <td>
+                                <input type="hidden" name="attr_get_lead_8_attr_calc" value="0">
+                                <select name="attr_get_lead_8_attr" id="">
+                                    <option value="" selected>-</option>
+                                    <option value="inteligence">Inteligencja</option>
+                                    <option value="job_rank">Stopień służbowy</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+    
+            <div class="col-7">
+                <div class="character-details-box">
+                    <h2 data-i18n="archetype-movements">Ruchy archetypu</h2>
+                    <fieldset class="repeating_archetype-movements">
+                        <textarea class="flex-1" name="attr_archetype_movement" spellcheck="false" rows="1"> </textarea>
+                        <textarea class="flex-2" name="attr_archetype_movement_desc" spellcheck="false" cols="30" rows="4"></textarea>
+                    </fieldset>
+                </div>
+    
+                <div class="character-details-box">
+                    <h2><span data-i18n="experience">Punkty doświadczenia</span>
+                        <input type="number" name="attr_experience" style="width: 75px;display: inline-block;">
+                    </h2>
+                </div>
+    
+                <div class="character-details-box">
+                    <h2 data-i18n="status">Status</h2>
+                    <input type="hidden" name="attr_stressed" value="false">
+                    <label class="checkbox-label">
+                        <span data-i18n="stressed">Zestresowany</span>
+                        <input type="checkbox" name="attr_stressed" value="2">
+                    </label>
+                </div>
+                
+                <div class="character-details-box">
+                    <h2 data-i18n="label">Etykieta</h2>
+    
+                    <div class="repeating-with-textarea">
+                        <fieldset class="repeating_label">
+                            <textarea name="attr_label_desc" cols="30" rows="2" placeholder="Opis statusu"></textarea>
+                        </fieldset>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+
+        <br>
+    
+        <div class="row">
+            <div class="col-12">
+                <div class="down-checkboxes-box">
+                    <h2>Czas pracy</h2>
+                    <div class="down-checkboxes">
+                        <label class="checkbox-label">
+                            <span>0</span>
+                            <input type="checkbox" name="attr_work_time" value="0" checked>
+                            <span>○</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <span>+1</span>
+                            <input type="checkbox" name="attr_work_time" value="1">
+                            <span>→</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <span>+2</span>
+                            <input type="checkbox" name="attr_work_time" value="2">
+                            <span>→</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <span>+3</span>
+                            <input type="checkbox" name="attr_work_time" value="3">
+                            <span>→</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <span>+4</span>
+                            <input type="checkbox" name="attr_work_time" value="4">
+                            <span>→</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <span>+5</span>
+                            <input type="checkbox" name="attr_work_time" value="5">
+                            <span>→</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <span>+6</span>
+                            <input type="checkbox" name="attr_work_time" value="6">
+                            <span>→</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <span>+7</span>
+                            <input type="checkbox" name="attr_work_time" value="7">
+                            <span>→</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <span>+8</span>
+                            <input type="checkbox" name="attr_work_time" value="8">
+                            <span>→</span>
+                        </label>
+                    </div>
+                </div>
+    
+                <div class="down-checkboxes-box">
+                    <h2>Stres</h2>
+                    <div class="down-checkboxes">
+                        <label class="checkbox-label">
+                            <span>0</span>
+                            <input type="checkbox" name="attr_stress_level" value="0" checked>
+                            <span>○</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <span>+1</span>
+                            <input type="checkbox" name="attr_stress_level" value="1">
+                            <span>→</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <span>+2</span>
+                            <input type="checkbox" name="attr_stress_level" value="2">
+                            <span>→</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <span>+3</span>
+                            <input type="checkbox" name="attr_stress_level" value="3">
+                            <span>→</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <span>+4</span>
+                            <input type="checkbox" name="attr_stress_level" value="4">
+                            <span>→</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <span>+5</span>
+                            <input type="checkbox" name="attr_stress_level" value="5">
+                            <span>→</span>
+                        </label>
+                    </div>
+                </div>
+    
+                <div class="down-checkboxes-box">
+                    <h2>Szczęście psa</h2>
+                    <div class="down-checkboxes">
+                        <label class="checkbox-label">
+                            <span>-6</span>
+                            <input type="checkbox" name="attr_luck" value="-6">
+                            <span>●</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <span>-5</span>
+                            <input type="checkbox" name="attr_luck" value="-5">
+                            <span>←</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <span>-4</span>
+                            <input type="checkbox" name="attr_luck" value="-4">
+                            <span>←</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <span>-3</span>
+                            <input type="checkbox" name="attr_luck" value="-3">
+                            <span>←</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <span>-2</span>
+                            <input type="checkbox" name="attr_luck" value="-2">
+                            <span>←</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <span>-1</span>
+                            <input type="checkbox" name="attr_luck" value="-1">
+                            <span>←</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <span>0</span>
+                            <input type="checkbox" name="attr_luck" value="0" checked>
+                            <span>○</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <span>+1</span>
+                            <input type="checkbox" name="attr_luck" value="1">
+                            <span>→</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <span>+2</span>
+                            <input type="checkbox" name="attr_luck" value="2">
+                            <span>→</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <span>+3</span>
+                            <input type="checkbox" name="attr_luck" value="3">
+                            <span>→</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <span>+4</span>
+                            <input type="checkbox" name="attr_luck" value="4">
+                            <span>→</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <span>+5</span>
+                            <input type="checkbox" name="attr_luck" value="5">
+                            <span>→</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <span>+6</span>
+                            <input type="checkbox" name="attr_luck" value="6">
+                            <span>→</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <span>+7</span>
+                            <input type="checkbox" name="attr_luck" value="7">
+                            <span>→</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <span>+8</span>
+                            <input type="checkbox" name="attr_luck" value="8">
+                            <span>→</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <span>+9</span>
+                            <input type="checkbox" name="attr_luck" value="9">
+                            <span>→</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <span>+10</span>
+                            <input type="checkbox" name="attr_luck" value="10">
+                            <span>●</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="row">
-        <div class="col-12">
-            
+    <div class="sheet-other character-sheet">
+        <div class="row">
+            <div class="col-5">
+                <div class="character-details-box">
+                    <h2 data-i18n="other-movements">Pozostałe ruchy</h2>
+                    <table class="custom-table">
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th>rzut na atrybut</th>
+                        </tr>
+
+                        <tr>
+                            <td data-i18n="confrontation">Konfrontacja</td>
+                            <td>
+                                <button type="action" name="act_roll" value='&{template:glina} {{baseRoll=[[1d6 + ?{Wpisz różnice w stopniach służbowych|0}]] }} {{roll-name=^{confrontation}}}'></button>
+                            </td>
+                            <td>-</td>
+                        </tr>
+
+                        <tr>
+                            <td data-i18n="after-hours">Po godzinach</td>
+                            <td>
+                                <button type="action" name="act_roll" value='&{template:glina} {{baseRoll=[[1d6 + @{other_moves_2_attr_calc} ?{Modyfikator|0}]] }} {{roll-name=^{after-hours}}}'></button>
+                            </td>
+                            <td>
+                                <input type="hidden" name="attr_other_moves_2_attr_calc" value="0">
+                                <select name="attr_other_moves_2_attr" id="">
+                                    <option value="" selected>-</option>
+                                    <option value="inteligence">Inteligencja</option>
+                                    <option value="charisma">Osobowość</option>
+                                    <option value="psyche">Psychika</option>
+                                    <option value="dexterity">Sprawność</option>
+                                    <option value="senses">Zmysły</option>
+                                </select>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td data-i18n="cop-calls-help">Policjant wzywa pomocy</td>
+                            <td>
+                                <button type="action" name="act_roll" value='&{template:glina} {{baseRoll=[[1d6 + ?{Modyfikator|0}]] }} {{roll-name=^{cop-calls-help}}}'></button>
+                            </td>
+                            <td>-</td>
+                        </tr>
+
+                        <tr>
+                            <td data-i18n="help-or-disturb">Pomóż lub przeszkodź</td>
+                            <td>
+                                <button type="action" name="act_roll" value='&{template:glina} {{baseRoll=[[1d6 + ?{Postaw stres|0}]] }} {{roll-name=^{help-or-disturb}}}'></button>
+                            </td>
+                            <td>-</td>
+                        </tr>
+
+                        <tr>
+                            <td data-i18n="breaking-the-ice">Przełamanie lodów</td>
+                            <td>
+                                <button type="action" name="act_roll" value='&{template:glina} {{baseRoll=[[1d6 + @{other_moves_5_attr_calc} + ?{Modyfikator|0}]] }} {{roll-name=^{breaking-the-ice}}}'></button>
+                            </td>
+                            <td>
+                                <input type="hidden" name="attr_other_moves_5_attr_calc" value="0">
+                                <select name="attr_other_moves_5_attr" id="">
+                                    <option value="" selected>-</option>
+                                    <option value="charisma">Osobowość</option>
+                                    <option value="dexterity">Sprawność</option>
+                                    <option value="senses">Zmysły</option>
+                                </select>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td data-i18n="come-face-to-face-with-a-horror">Stań oko w oko z horrorem</td>
+                            <td>
+                                <button type="action" name="act_roll" value='&{template:glina} {{baseRoll=[[1d6 + @{psyche} + ?{Modyfikator|0}]] }} {{roll-name=^{come-face-to-face-with-a-horror}}}'></button>
+                            </td>
+                            <td>Psychika</td>
+                        </tr>
+                        
+                        <tr>
+                            <td data-i18n="let-the-stress-out">Wyrzuć z siebie stres</td>
+                            <td>
+                                <button type="action" name="act_roll" value='&{template:glina} {{baseRoll=[[1d6 + @{psyche} + @{other_moves_7_attr_calc} + ?{Modyfikator|0}]] }} {{roll-name=^{let-the-stress-out}}}'></button>
+                            </td>
+                            <td>
+                                <input type="hidden" name="attr_other_moves_7_attr_calc" value="0">
+                                <select name="attr_other_moves_7_attr" id="">
+                                    <option value="" selected>-</option>
+                                    <option value="inteligence">Inteligencja</option>
+                                    <option value="charisma">Osobowość</option>
+                                    <option value="psyche">Psychika</option>
+                                    <option value="dexterity">Sprawność</option>
+                                    <option value="senses">Zmysły</option>
+                                </select>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td data-i18n="put-your-friendship-or-bond-to-the-test">Wystaw znajomość lub więź na próbę</td>
+                            <td>
+                                <button type="action" name="act_roll" value='&{template:glina} {{baseRoll=[[1d6 + @{psyche} + @{other_moves_8_attr_calc} + ?{Modyfikator|0}]] }} {{roll-name=^{put-your-friendship-or-bond-to-the-test}}}'></button>
+                            </td>
+                            <td>
+                                <input type="hidden" name="attr_other_moves_8_attr_calc" value="0">
+                                <select name="attr_other_moves_8_attr" id="">
+                                    <option value="" selected>-</option>
+                                    <option value="charisma">Osobowość</option>
+                                    <option value="psyche">Psychika</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
+<rolltemplate class="sheet-rolltemplate-glina">
+	<div class="template-wrap">
+		<div class="template-header">
+			{{#character_name}}
+			{{#character_id}}[{{character_name}}](https://journal.roll20.net/character/{{character_id}}){{/character_id}}
+			{{^character_id}}{{character_name}}{{/character_id}}
+			{{/character_name}}
+		</div>
+
+		<div class="template-subtitle">
+			{{roll-name}}
+		</div>
+
+        <div class="template-roll-results-title">Wynik akcji</div>
+        <div class="template-roll-results">
+            <div class="template-d6">{{baseRoll}}</div>
+            <div>vs</div>
+            <div class="template-d10">
+                {{firstD10}}
+                {{#rollGreater() firstD10 baseRoll}}
+                <img src="https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Glina/Images/circle-xmark-solid.svg" alt="">
+                {{/rollGreater() firstD10 baseRoll}}
+
+                {{#rollGreater() baseRoll firstD10}}
+                <img src="https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Glina/Images/circle-check-solid.svg" alt="">
+                {{/rollGreater() baseRoll firstD10}}
+            </div>
+            <div class="template-d10">
+                {{secondD10}}
+                {{#rollGreater() secondD10 baseRoll}}
+                <img src="https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Glina/Images/circle-xmark-solid.svg" alt="">
+                {{/rollGreater() secondD10 baseRoll}}
+
+                {{#rollGreater() baseRoll secondD10}}
+                <img src="https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Glina/Images/circle-check-solid.svg" alt="">
+                {{/rollGreater() baseRoll secondD10}}
+            </div>
+        </div>
+
+        {{#rollBetween() computed::success 2 2}}
+        <div class="template-roll-results-title blue">Triumf</div>
+        {{/rollBetween() computed::success 2 2}}
+
+        {{#rollBetween() computed::success 1 1}}
+        <div class="template-roll-results-title green">Fuks</div>
+        {{/rollBetween() computed::success 1 1}}
+
+        {{#rollBetween() computed::success 0 0}}
+        <div class="template-roll-results-title red">Skucha</div>
+        {{/rollBetween() computed::success 0 0}}
+
+	</div>
+</rolltemplate>
+
+
+<script type="text/worker">
+
+    const getLeads = ["get_lead_1_attr", "get_lead_2_attr", "get_lead_5_attr", "get_lead_6_attr", "get_lead_7_attr", "get_lead_8_attr", "other_moves_2_attr", "other_moves_5_attr", "other_moves_7_attr", "other_moves_8_attr"];
+
+	getLeads.forEach(getLead => {
+		on(`change:${getLead}`, () => {
+			getAttrs([getLead], values => {
+				const attr = values[getLead]; 
+
+                if (attr === '') {
+                    setAttrs({
+						[`${getLead}_calc`]: 0
+					}); 
+
+                    return;
+                }
+				
+				getAttrs([`${attr}`], value => {
+				    const attr_val = value[attr]; 
+                    
+					setAttrs({
+						[`${getLead}_calc`]: attr_val
+					}); 
+				});
+				
+			});
+		});
+	});
+
+    const buttonlist = ["profile", "actions", "other"];
+
+    buttonlist.forEach(button => {
+        on(`clicked:${button}`, function() {
+            setAttrs({
+                sheetTab: button
+            });
+        });
+    });
+
+    on('clicked:roll', async (event) => {
+        let rollBase = event.htmlAttributes.value + "{{character_name=@{character_name}}} {{character_id=@{character_id}}} {{firstD10=[[1d10]] }} {{secondD10=[[1d10]] }} {{success=[[1d6]]}}";
+        let rollResult = await startRoll(rollBase);  
+        console.log(rollBase)
+        let computedValues = await calcComputedValues(rollResult);
+    
+        finishRoll(
+            rollResult.rollId,
+            computedValues
+        );
+    });
+
+    const calcComputedValues = async (rollResult) => {
+        var results = rollResult.results;
+        var firstD10 = results.firstD10.result;
+        var secondD10 = results.secondD10.result;
+        var baseRoll = results.baseRoll.result;
+        console.log(rollResult)
+
+        var success = 0;
+        if (baseRoll > firstD10) {
+            success += 1;
+        }
+        if (baseRoll > secondD10) {
+            success += 1;
+        }
+
+
+        var obj = {
+            success: success
+        }
+        console.log(obj)
+
+        return obj;
+    };
+</script>

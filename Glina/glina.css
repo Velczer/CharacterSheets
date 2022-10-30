@@ -1,6 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Courier+Prime&family=Open+Sans&display=swap');
 
 /* Defaults  */
+.sheet-darkmode .sheetform {
+    background-color: transparent;
+}
+
 .ui-dialog .charsheet {
     padding: 0;
 }
@@ -33,7 +37,7 @@
 
 .col-7 {
     width: 58%;
-    padding: 0 2px;
+    padding: 0 15px;
 }
 
 .col-6 {
@@ -43,7 +47,7 @@
 
 .col-5 {
     width: 41%;
-    padding: 0 2px;
+    padding: 0 15px;
 }
 
 .col-4 {
@@ -92,9 +96,9 @@
     border-radius: 0;
     transition: .3s all ease;
     display: inline-block;
-    font-size: 16px;
+    font-size: 14px;
     color: #000;
-    line-height: 30px;
+    line-height: 28px;
     height: 32px;
     padding: 0 12px;
     box-sizing: border-box;
@@ -109,7 +113,7 @@
 
 .character-sheet input:focus {
     border: 1px solid #4471c4;
-    border-radius: 25px;
+    border-radius: 2px;
     outline: none;
 }
 
@@ -120,7 +124,7 @@
 .character-sheet textarea {
     background-attachment: local;
     background-color: transparent;
-    font-size: 16px;
+    font-size: 14px;
     padding: 4px 12px;
     box-sizing: border-box;
     height: auto;
@@ -130,12 +134,12 @@
     border: 1px solid transparent;
 	border-bottom: 1px dashed #231f20;
     border-radius: 0;
-    transition: .3s all ease;
+    transition: .3s border ease;
 }
 
 .character-sheet textarea:focus {
     border: 1px solid #4471c4;
-    border-radius: 25px;
+    border-radius: 2px;
     outline: none;
 }
 
@@ -184,7 +188,7 @@
     background-color: transparent;
     padding: 0;
 	border: 1px solid #000;
-    margin-right: 3px;
+    margin-right: 6px;
 }
 
 .charsheet .character-sheet input[type="checkbox"]::after {
@@ -235,6 +239,66 @@
     background-color: #231f20;
 }
 
+.sheet-profile,
+.sheet-actions,
+.sheet-other {
+    display: none;
+}
+
+/*PROFILE Sheet Layout*/
+.sheet-tabstoggle[value="profile"]~div.sheet-profile {
+    display: block;
+}
+
+/*ACTIONS Sheet Layout*/
+.sheet-tabstoggle[value="actions"]~div.sheet-actions {
+    display: block;
+}
+
+/*ACTIONS Sheet Layout*/
+.sheet-tabstoggle[value="other"]~div.sheet-other {
+    display: block;
+}
+
+.charsheet .sheet-change[type="action"] {
+    border: 0;
+    padding: 10px 15px;
+	transition: .3s all ease;
+	background: #d5c48c;
+	font-family: 'Courier Prime', monospace;
+	font-size: 15px;
+	font-weight: bold;
+    position: absolute;
+	top: 7px;
+	z-index: 1;
+}
+
+.charsheet .sheet-change[type="action"]:hover {
+    background-color: #4471c4;
+    color: #fff;
+    top: 0;
+}
+
+.charsheet .sheet-change[type="action"]::before {
+    display: none;
+}
+
+.sheet-tabstoggle[value="profile"] ~ .sheet-change[name="act_profile"],
+.sheet-tabstoggle[value="actions"] ~ .sheet-change[name="act_actions"],
+.sheet-tabstoggle[value="other"] ~ .sheet-change[name="act_other"] {
+    background-color: #4471c4;
+    color: #fff;
+    top: 0;
+}
+
+.charsheet .sheet-change[name="act_actions"] {
+    left: 84px;
+}
+
+.charsheet .sheet-change[name="act_other"] {
+    left: 231px;
+}
+
 /* Custom modules */
 .character-sheet {
     background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Glina/Images/sheet-bg-long.png);
@@ -247,6 +311,11 @@
     position: relative;
     overflow: hidden;
     z-index: 1;
+}
+
+.character-sheet__container {
+    position: relative;
+    padding-top: 38px;
 }
 
 .character-sheet h2 {
@@ -306,8 +375,14 @@
     padding-right: 8px;
     width: 100%;
 }
+
 .custom-table td:nth-child(2) {
     white-space: nowrap;
+}
+
+.custom-table select {
+    width: 110px;
+    padding: 0;
 }
 
 .checkbox-line {
@@ -321,9 +396,19 @@
     text-align: center;
 }
 
+.down-checkboxes-box:last-child {
+    margin: 0;
+}
+
 .down-checkboxes {
     display: flex;
 	margin-bottom: 20px;
+}
+
+.character-sheet .checkbox-label {
+    display: inline-block;
+	cursor: pointer;
+	width: auto;
 }
 
 .down-checkboxes .checkbox-label {
@@ -366,6 +451,7 @@
     background-size: cover;
     opacity: 0;
     transition: .4s all ease;
+    z-index: -1;
 }
 
 .down-checkboxes .checkbox-label input:checked + span:after {
@@ -374,25 +460,23 @@
 }
 
 /* Roll Template */
-.sheet-rolltemplate-fatum .sheet-template-wrap {
-    /* background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/BrokenCompass/Images/roll-bg.jpg?v=2); */
+.sheet-rolltemplate-glina .sheet-template-wrap {
+    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Glina/Images/sheet-bg-long.png);
+	background-position: top left;
     background-color: #e9e4e3;
-    background-position: top center;
-    background-size: cover;
-    border: 2px solid #000;
+    border: 1px solid #000;
     margin: 0;
     margin-bottom: 15px;
-    font-family: 'Courier Prime', monospace;
+    font-family: 'Bebas Neue', cursive;
     padding: 5px;
+	color: #000;
 }
 
-.sheet-rolltemplate-fatum .sheet-template-header,
-.sheet-rolltemplate-fatum .sheet-template-subtitle {
+.sheet-rolltemplate-glina .sheet-template-header,
+.sheet-rolltemplate-glina .sheet-template-subtitle {
     width: 100%;
     padding: 2px 5px;
     line-height: 24px;
-    border: 1px solid #272626;
-    color: #231f20;
     font-family: 'Courier Prime', monospace;
     text-align: center;
     font-size: 18px;
@@ -400,43 +484,32 @@
     margin-bottom: 5px;
 }
 
-.sheet-rolltemplate-fatum .sheet-template-header a,
-.sheet-rolltemplate-coin-flip .sheet-template-header a {
+.sheet-rolltemplate-glina .sheet-template-header {
+    background-color: #d5c48c;
+}
+
+.sheet-rolltemplate-glina .sheet-template-header a {
     color: #231f20;
 }
 
-.sheet-rolltemplate-fatum .sheet-template-grid {
-    text-align: left;
-    padding: 0 5px;
-    padding-bottom: 8px;
+.sheet-rolltemplate-glina .sheet-template-roll-results-title {
+	font-size: 26px;
+    text-align: center;
+	padding: 8px 0px;
 }
 
-.sheet-rolltemplate-fatum .sheet-template-grid-item {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.sheet-rolltemplate-fatum .sheet-template-grid-item-flex {
+.sheet-rolltemplate-glina .sheet-template-roll-results {
     display: flex;
     align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-size: 28px;
+    padding-left: 10px;
+    margin-bottom: 6px;
 }
 
-.sheet-rolltemplate-fatum .sheet-template-roll-between, 
-.sheet-rolltemplate-fatum .sheet-template-roll-success, 
-.sheet-rolltemplate-fatum .sheet-template-roll-fail {
-    height: 36px;
-    width: 36px;
-    border: 1px solid #272626;
-    border-radius: 5px;
-    background-size: cover;
-    margin: 2px 1px;
-    overflow: hidden;
-    display: inline-block;
-}
-
-.sheet-rolltemplate-fatum .sheet-template-roll-between>span,
-.sheet-rolltemplate-fatum .sheet-template-roll-success>span,
-.sheet-rolltemplate-fatum .sheet-template-roll-fail>span {
+.sheet-rolltemplate-glina .sheet-template-roll-results span.inlinerollresult {
     width: 100%;
     display: inline-block;
     margin: 0;
@@ -445,102 +518,44 @@
     text-align: center;
     line-height: 36px;
     background: transparent;
-    font-family: 'Courier Prime', monospace;
     font-size: 26px;
-    color: #231f20;
+    color: #000;
+    padding-right: 5px;
+	width: auto;
 }
 
-.sheet-rolltemplate-fatum .sheet-template-roll-success>span {
-    display: block;
+.sheet-rolltemplate-glina .sheet-template-d6 span.inlinerollresult {
+    font-size: 50px;
+    padding-right: 0;
 }
 
-.sheet-rolltemplate-fatum .sheet-template-roll-success>span {
-    color: #8dc63f;
-}
-.sheet-rolltemplate-fatum .sheet-template-roll-fail>span {
-    color: #f1592a;
-}
-
-.sheet-rolltemplate-fatum .sheet-template-roll-between>span.fullcrit,
-.sheet-rolltemplate-fatum .sheet-template-roll-between>span.fullfail {
-    border: 0;
+.sheet-rolltemplate-glina .sheet-template-d10 {
+    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Glina/Images/d10.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 82px;
+	height: 69px;
+	position: relative;
+	padding-top: 13px;
 }
 
-.sheet-rolltemplate-fatum span.inlinerollresult.fullcrit {
-    border: 0;
-    counter-increment: hit;
+.sheet-rolltemplate-glina .sheet-template-d10 img {
+    position: absolute;
+	width: 23px;
+	bottom: 5px;
+	right: 5px;
 }
 
-.sheet-rolltemplate-fatum span.inlinerollresult.fullfail {
-    border: 0;
+.sheet-rolltemplate-glina .sheet-blue {
+    color: #4471c4;
 }
 
-.sheet-rolltemplate-fatum .sheet-template-dice-stats {
-    display: flex;
-    justify-content: space-between;
-    border: 1px solid #272626;
-    margin-top: -1px;
+.sheet-rolltemplate-glina .sheet-red {
+    color: #e83838;
 }
 
-.sheet-rolltemplate-fatum .sheet-template-dice-stats>div {
-    padding: 6px 8px;
-    color: #231f20;
-    font-size: 16px;
-}
-
-.sheet-rolltemplate-fatum .sheet-template-dice-stats span {
-    display: inline;
-    border: 0;
-    background: transparent;
-    padding: 0;
-}
-
-.sheet-rolltemplate-fatum .sheet-template-dice-stats > .sheet-template-dice-stats-value {
-    padding: 0;
-}
-
-.sheet-rolltemplate-fatum .sheet-template-dice-stats-value span {
-	background: #231f20;
-	width: 36px;
-	color: #fff;
-	display: flex;
-	height: 100%;
-	align-items: center;
-    justify-content: center;
-	font-weight: 400;
-	font-size: 22px;
-}
-
-.sheet-rolltemplate-fatum .sheet-template-dice-stats-value.sheet-success span {
-    background-color: #8dc63f;
-}
-
-.sheet-rolltemplate-fatum .sheet-template-dice-stats-value.sheet-fail span {
-    background-color: #f1592a;
-}
-
-.sheet-rolltemplate-fatum .sheet-template-dice-actions {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 5px;
-}
-
-.sheet-rolltemplate-fatum .sheet-template-dice-actions>div {
-    flex: 1;
-}
-
-.sheet-rolltemplate-fatum .sheet-template-dice-actions>div:last-child {
-    border-left: 1px solid transparent;
-}
-
-.sheet-rolltemplate-fatum .sheet-template-button a {
-    background: #231f20;
-    border: 0;
-    width: 100%;
-    text-align: center;
-    box-sizing: border-box;
-    text-transform: uppercase;
-    padding: 5px 10px;
+.sheet-rolltemplate-glina .sheet-green {
+    color: green;
 }
 
 /* Repeating sections */
@@ -581,9 +596,9 @@
     width: 100%;
     margin: 0;
     margin-top: -1px;
-	padding: 4px 12px;
+	padding: 4px 5px;
 	border: 1px solid transparent;
-	border-bottom: 1px solid #272626;
+	border-bottom: 1px solid #000;
     transition: .3s all ease;
 	line-height: 24px;
     background: transparent;

@@ -3,8 +3,9 @@
     "appearance": "Wygląd",
     "face": "Twarz",
     "hair": "Włosy",
-    "profile": "Sylwetka",
+    "figure": "Sylwetka",
     "other": "Inne",
+    "profile": "Profil",
 
     "family": "Rodzina",
     "partner": "Partner",
@@ -37,6 +38,16 @@
     "violance": "Przemoc",
     "manipulate": "Robienie w wała",
     "computer-tech": "Techniki komputerowe",
+
+    "other-movements": "Pozostałe ruchy",
+    "confrontation": "Konfrontacja",
+    "after-hours": "Po godzinach",
+    "cop-calls-help": "Policjant wzywa pomocy",
+    "help-or-disturb": "Pomóż lub przeszkodź",
+    "breaking-the-ice": "Przełamanie lodów",
+    "come-face-to-face-with-a-horror": "Stań oko w oko z horrorem",
+    "let-the-stress-out": "Wyrzuć z siebie stres",
+    "put-your-friendship-or-bond-to-the-test": "Wystaw znajomość lub więź na próbę",
 
     "archetype-movements": "Ruchy archetypu",
 
