@@ -212,9 +212,14 @@
 
 .charsheet .character-sheet label {
     font-weight: 400;
+    color: #333;
 }
 
 /* Custom modules */
+.sheet-darkmode .sheetform {
+    background-color: transparent;
+}
+
 .character-sheet__top-bg {
     background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/sheet-top-bg.png);
     background-size: contain;
@@ -524,6 +529,7 @@
     padding: 10px;
     position: relative;
     z-index: 1;
+    color: #333;
 }
 
 .sheet-rolltemplate-fatum .sheet-template-wrap::before, .sheet-rolltemplate-fatum .sheet-template-wrap::after {
