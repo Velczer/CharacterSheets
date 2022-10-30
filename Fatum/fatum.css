@@ -88,7 +88,6 @@
 
 .character-sheet input,
 .character-sheet select {
-    /* font-family: 'Girassol', cursive; */
     text-transform: none;
     background: #fff;
     border: 1px solid transparent;
@@ -101,6 +100,12 @@
     padding: 0 6px;
     box-sizing: border-box;
     border-radius: 0;
+}
+
+.sheet-darkmode .character-sheet input,
+.sheet-darkmode .character-sheet select {
+    background: #000;
+    color: #fff;
 }
 
 .character-sheet input.transparent {
@@ -133,6 +138,10 @@
     border-radius: 0;
 }
 
+.sheet-darkmode textarea {
+    color: #fff;
+}
+
 .character-sheet textarea:focus {
     border: 0;
     outline: none;
@@ -152,6 +161,11 @@
     height: 36px;
 }
 
+.sheet-darkmode .charsheet .character-sheet button[type="roll"],
+.sheet-darkmode .charsheet .character-sheet button[type="action"] {
+    color: #fff;
+}
+
 .charsheet .character-sheet button[type="roll"]::before,
 .charsheet .character-sheet button[type="action"]::before {
     content: "";
@@ -161,6 +175,13 @@
     display: block;
     height: 36px;
     width: 36px;
+}
+
+.sheet-darkmode .charsheet .character-sheet button[type="roll"]::before,
+.sheet-darkmode .charsheet .character-sheet button[type="action"]::before {
+    background: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/Dark/dark-dice.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .charsheet .character-sheet button[type="action"].mini-dice {
@@ -176,6 +197,13 @@
 .charsheet .character-sheet button[type="roll"]:hover::before,
 .charsheet .character-sheet button[type="action"]:hover::before {
     background: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/dice-hover.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.sheet-darkmode .charsheet .character-sheet button[type="roll"]:hover::before,
+.sheet-darkmode .charsheet .character-sheet button[type="action"]:hover::before {
+    background: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/Dark/dark-dice-hover.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -215,6 +243,10 @@
     color: #333;
 }
 
+.sheet-darkmode .charsheet .character-sheet label {
+    color: #fff;
+}
+
 /* Custom modules */
 .sheet-darkmode .sheetform {
     background-color: transparent;
@@ -228,6 +260,14 @@
     height: 203px;
     width: 1000px;
 }
+
+.sheet-darkmode .character-sheet__top-bg {
+    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/Dark/dark-sheet-top-bg.png);
+    background-size: contain;
+	background-repeat: no-repeat;
+	background-position: top center;
+}
+
 .character-sheet__bottom-bg {
     background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/sheet-bottom-bg.png);
     background-size: contain;
@@ -239,6 +279,14 @@
     position: relative;
 	z-index: 1;
 }
+
+.sheet-darkmode .character-sheet__bottom-bg {
+    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/Dark/dark-sheet-bottom-bg.png);
+    background-size: contain;
+	background-repeat: no-repeat;
+	background-position: top center;
+}
+
 .character-sheet {
     background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/sheet-repeat-bg.png);
     background-size: contain;
@@ -254,6 +302,14 @@
     position: relative;
     overflow: hidden;
     z-index: 1;
+}
+
+.sheet-darkmode .character-sheet {
+    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/Dark/dark-sheet-repeat-bg.png);
+    background-size: contain;
+	background-repeat: repeat;
+	background-position: top center;
+    color: #fff;
 }
 
 .sheet-main,
@@ -322,11 +378,16 @@
     padding: 7px 6px;
 }
 
-.character-sheet .input-box input, .character-sheet .input-box select {
+.character-sheet .input-box input, 
+.character-sheet .input-box select {
     background-color: transparent;
     border: 0;
     margin: 0;
     width: 100%;
+}
+
+.sheet-darkmode .character-sheet .input-box select {
+    background-color: #000;
 }
 
 .character-sheet .input-box.input-box--hr {
@@ -346,6 +407,12 @@
     top: 29px;
     left: 10px;
 	right: 10px;
+}
+
+.sheet-darkmode .character-sheet .input-box.input-box--hr::before {
+    background: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/Dark/dark-hr.png);
+    background-repeat: no-repeat;
+    background-position: left;
 }
 
 .character-sheet .inline-block {
@@ -416,6 +483,12 @@
     background-size: contain;
 	background-repeat: no-repeat;
     position: relative;
+}
+
+.sheet-darkmode .checkbox-label .checkmark {
+    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/Dark/dark-checkbox.png);
+    background-size: contain;
+	background-repeat: no-repeat;
 }
 
 .checkbox-label .checkmark::after {
@@ -532,6 +605,11 @@
     color: #333;
 }
 
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-fatum .sheet-template-wrap {
+    background: #000;
+    color: #fff;
+}
+
 .sheet-rolltemplate-fatum .sheet-template-wrap::before, .sheet-rolltemplate-fatum .sheet-template-wrap::after {
     content: "";
     background: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/roll-template-line-top-left.png);
@@ -546,8 +624,24 @@
     position: absolute;
     z-index: -1;
 }
+
+
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-fatum .sheet-template-wrap::before, .sheet-rolltemplate-fatum .sheet-template-wrap::after {
+    background: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/Dark/dark-roll-template-line-top-left.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+
 .sheet-rolltemplate-fatum .sheet-template-wrap::after {
     background: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/roll-template-line-bottom-right.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
+
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-fatum .sheet-template-wrap::after {
+    background: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/Dark/dark-roll-template-line-bottom-right.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom right;
@@ -570,14 +664,29 @@
     margin-bottom: 5px;
 }
 
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-fatum .sheet-template-header,
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-fatum .sheet-template-subtitle {
+    color: #fff;
+}
+
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-fatum .sheet-template-header,
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-fatum .sheet-template-subtitle {
+    background: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/Dark/dark-roll-template-name.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
 .sheet-rolltemplate-fatum .sheet-template-header {
     background-color: #c2b59b;
     font-size: 20px;
 }
 
-.sheet-rolltemplate-fatum .sheet-template-header a,
-.sheet-rolltemplate-coin-flip .sheet-template-header a {
+.sheet-rolltemplate-fatum .sheet-template-header a {
     color: #231f20;
+}
+
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-fatum .sheet-template-header a {
+    color: #fff;
 }
 
 .sheet-rolltemplate-fatum .sheet-template-hr {
@@ -589,6 +698,13 @@
     background-repeat: no-repeat;
     background-position: bottom;
     margin-bottom: 10px;
+}
+
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-fatum .sheet-template-hr {
+    background: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/Dark/dark-hr.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
 }
 
 .sheet-rolltemplate-fatum .sheet-template-grid {
@@ -622,6 +738,14 @@
     display: inline-block;
 }
 
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-fatum .sheet-template-roll-between,
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-fatum .sheet-template-roll-success, 
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-fatum .sheet-template-roll-fail {
+    background: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/Dark/dark-dice-result.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .sheet-rolltemplate-fatum .sheet-template-roll-between>span,
 .sheet-rolltemplate-fatum .sheet-template-roll-success>span,
 .sheet-rolltemplate-fatum .sheet-template-roll-fail>span {
@@ -636,6 +760,13 @@
     font-family: 'Girassol', cursive;
     font-size: 26px;
     color: #231f20;
+}
+
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-fatum .sheet-template-roll-between>span,
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-fatum .sheet-template-roll-success>span,
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-fatum .sheet-template-roll-fail>span {
+    color: #fff;
+    font-weight: 400;
 }
 
 .sheet-rolltemplate-fatum .sheet-template-roll-fatum > div {
@@ -687,12 +818,23 @@
     width: 100%;
 }
 
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-fatum .sheet-template-dice-stats > div:first-child  {
+    background: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/Dark/dark-roll-template-frame-1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+
 .sheet-rolltemplate-fatum .sheet-template-dice-stats span {
     display: inline;
     border: 0;
     background: transparent;
     padding: 0;
     font-weight: bold;
+}
+
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-fatum .sheet-template-dice-stats span {
+    font-weight: 400;
 }
 
 .sheet-rolltemplate-fatum .sheet-template-dice-stats > .sheet-template-dice-stats-value {
@@ -703,9 +845,17 @@
     background-repeat: no-repeat;
 }
 
-.sheet-rolltemplate-fatum .sheet-template-dice-stats.sheet-without-bg > div {
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-fatum .sheet-template-dice-stats > .sheet-template-dice-stats-value {
+    background: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/Dark/dark-roll-template-frame-2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-dice-stats.sheet-without-bg > div, 
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-fatum .sheet-template-dice-stats.sheet-without-bg > div {
     background: transparent;
 }
+
 .sheet-rolltemplate-fatum .sheet-template-dice-stats.sheet-without-bg div span {
     font-size: 15px;
 }
@@ -722,6 +872,13 @@
     background-size: contain;
 	background-repeat: no-repeat;
 }
+
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-fatum .sheet-template-dice-stats.sheet-template-dice-additional > div:first-child {
+    background: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/Dark/dark-roll-template-name.png);
+    background-size: contain;
+	background-repeat: no-repeat;
+}
+
 .sheet-rolltemplate-fatum .sheet-template-dice-stats.sheet-template-dice-additional span {
     text-transform: uppercase;
 	font-size: 14px;
