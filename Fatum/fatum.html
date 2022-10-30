@@ -782,8 +782,6 @@
 
         var auto_level = results.level.result;
 
-        console.log(dices.table)
-
         var wound = results.wound.result;
         var woundUpdate = await addWound(dices.table, wound);
         dices.table = woundUpdate.table;
@@ -813,8 +811,6 @@
             additionalPool: dices.additionalDice + threshold.additionalThreshold,
             ...woundUpdate.computedValues
         };
-
-        console.log(computedValues)
 
         return computedValues;
     }
@@ -934,7 +930,9 @@
     const addWound = async (table, wound) => {
         var tableOfPairs = [0,0,0,0,0,0,0];
         var computedValues = {};
-        var obj = {};
+        var obj = {
+            table: table
+        };
 
         if (wound != 2 && wound != 3 && wound != 4) {
             return obj;
@@ -950,7 +948,6 @@
                     var item = {};
     
                     var num = table.indexOf(k)+1;
-                    console.log(table[k])
                     var value = k;
                     var baseRoll = 'baseRoll'+num;
                     computedValues[baseRoll] = value+1;
@@ -958,12 +955,9 @@
                     break;
                 }
             }
-            
-            console.log(table)
-            console.log(computedValues)
 
             obj = {
-                tableUpdate: table,
+                table: table,
                 computedValues: computedValues
             }
 
@@ -984,9 +978,6 @@
                 table[l] = value+1;
             }
         }
-
-        console.log(table)
-        console.log(computedValues)
 
         obj = {
             table: table,
