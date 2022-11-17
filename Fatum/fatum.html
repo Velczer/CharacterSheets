@@ -133,11 +133,21 @@
         <div class="col-3">
             <br>
         </div>
-        <div class="col-9">
+        <div class="col-5">
             <div class="inline-block">
                 <label class="checkbox-label horizontal">
                     <span data-i18n="additional-modifier">Modyfikator z innego źródła</span>
                     <input type="checkbox" name="attr_modifierquery" value="{{additionalThreshold=[[?{O ile z INNEGO źródła chcesz podnieś próg rzutu?|0}]]}} {{additionalDice=[[?{Ile kości z INNEGO źródła chcesz dodać|0}]]}}">
+                    <div class="checkmark"></div>
+                </label>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="inline-block">
+                <label class="checkbox-label horizontal">
+                    <span data-i18n="secret-roll">Sekretny rzut koścmi</span>
+                    <input type="checkbox" name="attr_secret_roll" value="/w gm">
                     <div class="checkmark"></div>
                 </label>
             </div>
@@ -739,7 +749,7 @@
     });
 
     on('clicked:roll', async (event) => {
-        let rollBase = event.htmlAttributes.value + " {{baseRoll1=[[1d6]] }} {{baseRoll2=[[1d6]] }} {{baseRoll3=[[1d6]] }} {{baseRoll4=[[1d6]] }} {{baseRoll5=[[1d6]] }} {{baseRoll6=[[1d6]] }} {{baseRoll7=[[1d6]] }} {{baseRoll8=[[1d6]] }} {{baseRoll9=[[1d6]] }} {{baseRoll10=[[1d6]] }} {{baseRoll11=[[1d6]] }} {{baseRoll12=[[1d6]] }} {{baseRoll13=[[1d6]] }} {{baseRoll14=[[1d6]] }} {{baseRoll15=[[1d6]] }} {{baseRoll16=[[1d6]] }} {{baseRoll17=[[1d6]] }} {{baseRoll18=[[1d6]] }} {{baseRoll19=[[1d6]] }} {{baseRoll20=[[1d6]] }} {{success=[[1d6]]}} {{fail=[[1d6]]}} {{total_success=[[1d6]]}} {{fatum=[[@{fatum}]]}} {{wound=[[0]]}} {{level=[[0]]}}";
+        let rollBase = "@{secret_roll}" + event.htmlAttributes.value + " {{baseRoll1=[[1d6]] }} {{baseRoll2=[[1d6]] }} {{baseRoll3=[[1d6]] }} {{baseRoll4=[[1d6]] }} {{baseRoll5=[[1d6]] }} {{baseRoll6=[[1d6]] }} {{baseRoll7=[[1d6]] }} {{baseRoll8=[[1d6]] }} {{baseRoll9=[[1d6]] }} {{baseRoll10=[[1d6]] }} {{baseRoll11=[[1d6]] }} {{baseRoll12=[[1d6]] }} {{baseRoll13=[[1d6]] }} {{baseRoll14=[[1d6]] }} {{baseRoll15=[[1d6]] }} {{baseRoll16=[[1d6]] }} {{baseRoll17=[[1d6]] }} {{baseRoll18=[[1d6]] }} {{baseRoll19=[[1d6]] }} {{baseRoll20=[[1d6]] }} {{success=[[1d6]]}} {{fail=[[1d6]]}} {{total_success=[[1d6]]}} {{fatum=[[@{fatum}]]}} {{wound=[[0]]}} {{level=[[0]]}}";
         let rollResult = await startRoll(rollBase);  
         let computedValues = await calcComputedValues(rollResult);
     
@@ -756,8 +766,8 @@
         var trigger = event.triggerName.slice(8); // this always starts with 'clicked:'
         var prefix = trigger.split('_').slice(0,3).join('_') + '_'
 
-        let rollBase = event.htmlAttributes.value.replaceAll('prefix-', `${prefix}`) + " {{largerThreshold=[[?{Ile kości z PULI LOSU chcesz poświęcić, aby zwiększyć PRÓG}|0]]}} {{moreDice=[[?{Ile kości z PULI LOSU chcesz dodać do wykonywanego rzutu}|0]]}} {{baseRoll1=[[1d6]] }} {{baseRoll2=[[1d6]] }} {{baseRoll3=[[1d6]] }} {{baseRoll4=[[1d6]] }} {{baseRoll5=[[1d6]] }} {{baseRoll6=[[1d6]] }} {{baseRoll7=[[1d6]] }} {{baseRoll8=[[1d6]] }} {{baseRoll9=[[1d6]] }} {{baseRoll10=[[1d6]] }} {{baseRoll11=[[1d6]] }} {{baseRoll12=[[1d6]] }} {{baseRoll13=[[1d6]] }} {{baseRoll14=[[1d6]] }} {{baseRoll15=[[1d6]] }} {{baseRoll16=[[1d6]] }} {{baseRoll17=[[1d6]] }} {{baseRoll18=[[1d6]] }} {{baseRoll19=[[1d6]] }} {{baseRoll20=[[1d6]] }} {{success=[[1d6]]}} {{fail=[[1d6]]}} {{total_success=[[1d6]]}} {{wound=[[@{wound}]]}} {{fatum=[[@{fatum}]]}} @{modifierquery} {{basicRoll=true}} {{fatePool=[[0]]}} {{additionalPool=[[0]]}}";
-        let rollResult = await startRoll(rollBase);  
+        let rollBase = "@{secret_roll}" + event.htmlAttributes.value.replaceAll('prefix-', `${prefix}`) + " {{largerThreshold=[[?{Ile kości z PULI LOSU chcesz poświęcić, aby zwiększyć PRÓG}|0]]}} {{moreDice=[[?{Ile kości z PULI LOSU chcesz dodać do wykonywanego rzutu}|0]]}} {{baseRoll1=[[1d6]] }} {{baseRoll2=[[1d6]] }} {{baseRoll3=[[1d6]] }} {{baseRoll4=[[1d6]] }} {{baseRoll5=[[1d6]] }} {{baseRoll6=[[1d6]] }} {{baseRoll7=[[1d6]] }} {{baseRoll8=[[1d6]] }} {{baseRoll9=[[1d6]] }} {{baseRoll10=[[1d6]] }} {{baseRoll11=[[1d6]] }} {{baseRoll12=[[1d6]] }} {{baseRoll13=[[1d6]] }} {{baseRoll14=[[1d6]] }} {{baseRoll15=[[1d6]] }} {{baseRoll16=[[1d6]] }} {{baseRoll17=[[1d6]] }} {{baseRoll18=[[1d6]] }} {{baseRoll19=[[1d6]] }} {{baseRoll20=[[1d6]] }} {{success=[[1d6]]}} {{fail=[[1d6]]}} {{total_success=[[1d6]]}} {{wound=[[@{wound}]]}} {{fatum=[[@{fatum}]]}} @{modifierquery} {{basicRoll=true}} {{fatePool=[[0]]}} {{additionalPool=[[0]]}}";
+        let rollResult = await startRoll(rollBase);
 
         var fate_pool = await asw.getAttrs(['fate_pool']);
         fate_pool = Object.values(fate_pool);
@@ -819,7 +829,11 @@
     const calcDice = async (results, fate_pool) => {
         var moreDice = 0;
         if (results.moreDice != null) {
-            moreDice = results.moreDice.result;
+            if (results.moreDice.result > 20) {
+                moreDice = 20;
+            } else {
+                moreDice = results.moreDice.result;
+            }
         }
 
         if (fate_pool <= moreDice) {
@@ -832,7 +846,11 @@
         var unusedAdditional = 0;
         var additionalDice = 0;
         if (results.additionalDice != null) {
-            additionalDice = results.additionalDice.result;
+            if (results.additionalDice.result > 20) {
+                additionalDice = 20;
+            } else {
+                additionalDice = results.additionalDice.result;
+            }
         }
 
         if (baseDice > 20) {
@@ -884,13 +902,21 @@
 
         var additionalThreshold = 0;
         if (results.additionalThreshold != null) {
-            additionalThreshold = results.additionalThreshold.result;
+            if (results.additionalThreshold.result > 20) {
+                additionalThreshold = 20;
+            } else {
+                additionalThreshold = results.additionalThreshold.result;
+            }
         }
     
         if (threshold < 5) {
             var largerThreshold = 0;
             if (results.largerThreshold != null) {
-                largerThreshold = results.largerThreshold.result;
+                if (results.largerThreshold.result > 20) {
+                    largerThreshold = 5;
+                } else {
+                    largerThreshold = results.largerThreshold.result;
+                }
             }
 
             if (fate_pool <= largerThreshold) {

@@ -509,6 +509,10 @@
 	border-color: #000;
 }
 
+.sheet-darkmode .checkbox-label input:checked ~ .checkmark:after {
+	border-color: #fff;
+}
+
 .attributes-box {
     display: flex;
     position: relative;
