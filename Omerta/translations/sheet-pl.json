@@ -1,0 +1,38 @@
+{
+    "character-sheet": "Karta postaci",
+    "wounds": "Rany",
+    "traumas": "Traumy",
+    "level1": "Poziom 1",
+    "level2": "Poziom 2",
+    "level3": "Poziom 3",
+    "respect": "Szacunek",
+    "stress": "Stres",
+
+    "name": "Imię i nazwisko",
+    "archetype": "Archetyp",
+    "nickname": "Ksywa",
+    "origin": "Pochodzenie",
+    "age": "Wiek",
+    "career": "Kariera",
+
+    "attributes": "Atrybuty",
+    "efficiency": "Sprawność",
+    "charisma": "Charyzma",
+    "senses": "Zmysły",
+    "psyche": "Psychika",
+    "mind": "Rozum",
+
+
+    "advantages": "Zalety",
+    "disadvantages": "Wady",
+    "moves": "Ruchy",
+    "description-color": "Opis, koloryt",
+    "equipment": "Ekwipunek",
+    "notes": "Notatki",
+
+    "action-result": "Wynik akcji",
+    "success": "Sukces",
+    "partial-success": "Częściowy sukces",
+    "lose": "Porażka",
+    "swindle": "Afera!"
+}
