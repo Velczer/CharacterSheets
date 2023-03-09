@@ -22,7 +22,6 @@
     "psyche": "Psychika",
     "mind": "Rozum",
 
-
     "advantages": "Zalety",
     "disadvantages": "Wady",
     "moves": "Ruchy",
@@ -33,6 +32,10 @@
     "action-result": "Wynik akcji",
     "success": "Sukces",
     "partial-success": "Częściowy sukces",
+    "nervous": "Nerwowa",
     "lose": "Porażka",
-    "swindle": "Afera!"
+    "swindle": "Afera!",
+
+    "summodifier": "Modyfikator do sumy działania",
+    "d10modifier": "Modyfikator do k10"
 }
