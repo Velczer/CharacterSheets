@@ -37,10 +37,6 @@
 	max-width: calc(100% + 8px);
 }
 
-.character-sheet .hide {
-    display: none;
-}
-
 .col-12 {
     width: 100%;
     padding: 0 2px;
