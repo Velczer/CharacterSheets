@@ -2,10 +2,9 @@
     "character-sheet": "Karta postaci",
     "wounds": "Rany",
     "traumas": "Traumy",
-    "level1": "Poziom 1",
-    "level2": "Poziom 2",
-    "level3": "Poziom 3",
+    "level": "Poziom",
     "respect": "Szacunek",
+    "arouses-admiration": "Budzi podziw",
     "stress": "Stres",
 
     "name": "Imię i nazwisko",
