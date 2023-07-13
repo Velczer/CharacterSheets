@@ -769,9 +769,9 @@
 }
 
 .sheet-rolltemplate-warlock .sheet-template-roll-results-title {
-	font-size: 26px;
-    text-align: center;
-	padding: 8px 0px;
+    font-size: 24px;
+	text-align: center;
+	padding: 4px 0px;
     margin-bottom: 8px;
 }
 
@@ -806,12 +806,12 @@
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
-	padding: 30px 45px;
+	padding: 42px 45px;
 	margin: auto;
 }
 
 .sheet-rolltemplate-warlock .sheet-template-d20 span.inlinerollresult {
-	font-size: 36px;
+	font-size: 32px;
 	padding-right: 0;
 	font-weight: normal;
 }
