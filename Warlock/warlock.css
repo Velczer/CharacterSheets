@@ -383,6 +383,17 @@
     vertical-align: bottom;
 }
 
+.charsheet button[type="roll"].dice-only,
+.charsheet button[type="action"].dice-only {
+    margin: 0;
+    border: 0;
+}
+
+.charsheet button[type="roll"].dice-only::before,
+.charsheet button[type="action"].dice-only::before {
+    margin: 0;
+}
+
 .charsheet .character-details__label input[type="number"] {
     width: 52px;
 	max-width: 52px;
@@ -474,6 +485,10 @@
 	background-position: top center;
 	background-size: contain;
 	background-repeat: no-repeat;
+}
+
+.sheet-darkmode  .character-details__avatar::before {
+	background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Warlock/Images/avatar-darkmode.png);
 }
 
 .books-img {

@@ -60,10 +60,12 @@
                 <input type="number" name="attr_health_points_max" value="0">
             </div>
             <div class="character-details__num-label">
+                <button type="action" class="dice-only" name="act_roll" value='&{template:warlock} {{baseRoll=[[1d20]] }} {{roll-name=^{luck}}}' data-attribute=""></button>
                 <label data-i18n="luck">Szczęście</label>
                 <input type="number" name="attr_luck_points" value="0">
             </div>
             <div class="character-details__num-label">
+                <button type="action" class="dice-only" name="act_roll" value='&{template:warlock} {{baseRoll=[[2d6 + @{courage_points}]] }} {{roll-name=^{courage}}}' data-attribute=""></button>
                 <label data-i18n="courage">Odwaga</label>
                 <input type="number" name="attr_courage_points" value="0">
             </div>
@@ -777,24 +779,11 @@
 
     on('clicked:roll', async (event) => {
         let rollBase = event.htmlAttributes.value + "{{character_name=@{character_name}}} {{character_id=@{character_id}}}";
-        console.log(rollBase)
         let rollResult = await startRoll(rollBase);
-        let computedValues = await calcComputedValues(rollResult);
     
         finishRoll(
-            rollResult.rollId,
-            computedValues
+            rollResult.rollId
         );
     });
 
-    const calcComputedValues = async (rollResult) => {
-        var results = rollResult.results;
-        var baseRoll = results.baseRoll.result;
-
-        var obj = {
-            //baseRoll: baseRoll,
-        }
-
-        return obj;
-    };
 </script>
