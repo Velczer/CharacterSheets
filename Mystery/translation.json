@@ -1,0 +1,56 @@
+{
+	"attributes": "Cechy",
+	"strength": "Siła",
+	"agility": "Zwinność",
+	"wits": "Rozum",
+	"empathy": "Empatia",
+
+	"skills": "Umiejetnosci",
+	"make-the-roll-secret": "Rzuć kośćmi sekretnie",
+	"endure": "Wytrzymałość",
+	"force": "Wytwarzanie",
+	"fight": "Walka wręcz",
+	"sneak": "Skradanie się",
+	"move": "Ruch",
+	"shoot": "Walka na dystans",
+	"scout": "Spostrzegawczość",
+	"comprehend": "Pojmowanie",
+	"know_the_zone": "Znajomość otoczenia",
+	"sense_emotion": "Wyczucie emocji",
+	"manipulate": "Manipulacja",
+	"heal": "Leczenie",
+
+	"attributes-damage": "Obrazenia cech",
+	"character-details": "Szczegoly postaci",
+	"ch-name": "Imię i nazwisko",
+	"age": "Wiek",
+	"archetype": "Zawód",
+	"motivation": "Motywacja",
+	"trauma": "Trauma",
+
+	"gear": "Wyposazenie",
+	"name": "Nazwa",
+	"skill": "Umiejętność",
+	"bonus": "Bonus",
+    "damage": "Uszkodzenia",
+	"use": "Użyj",
+
+
+	"talents": "Talenty",
+	"description": "Opis",
+
+	"notes": "Notatki",
+
+
+	"personal-agenda": "Osobisty cel",
+	"conditions": "Kondycja",
+	"supplies": "Zapasy",
+
+	"critical-injuries": "Obrazenia krytyczne",
+	"effect": "Efekt",
+	"time-to-recover": "Powrót do zdrowia",
+
+	"additional-eq": "Pozostaly ekwipunek"
+
+
+}

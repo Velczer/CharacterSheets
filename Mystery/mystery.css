@@ -1,0 +1,570 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+@font-face {
+	font-family: 'Belgrad';
+	src: url('https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Frostpunk/Fonts/Belgrad.ttf');
+}
+
+/* Defaults  */
+.ui-dialog .charsheet {
+	padding: 0;
+}
+
+.character-sheet .row {
+	display: flex;
+	max-width: 100%;
+	margin: 0;
+}
+.col-10 {
+	width: 83%;
+	padding: 0 10px;
+}
+.col-8 {
+	width: 66%;
+	padding: 0 10px;
+}
+.col-7 {
+	width: 58%;
+	padding: 0 10px;
+}
+.col-6 {
+	width: 50%;
+	padding: 0 10px;
+}
+.col-5 {
+	width: 41%;
+	padding: 0 10px;
+}
+.col-4 {
+	width: 33%;
+	padding: 0 10px;
+}
+.col-3 {
+	width: 25%;
+	padding: 0 10px;
+}
+.col-2 {
+	width: 17%;
+	padding: 0 10px;
+}
+.flex {
+	display: flex;
+	flex-wrap: nowrap;
+}
+.flex-1 {
+	flex: 1;
+}
+.flex-2 {
+	flex: 2;
+}
+.flex-3 {
+	flex: 3;
+}
+.flex-4 {
+	flex: 4;
+}
+
+.character-sheet input, .character-sheet select {
+	font-family: 'Josefin Sans', sans-serif;
+	background:#Fff;
+	border: 3px solid #3e5f76;
+	box-shadow: 4px 4px 0px 0px #00000057;
+	display: inline-block;
+	font-size: 16px;
+	color: #000;
+	border-radius: 5px;
+	line-height: 22px;
+	height: 36px;
+}
+.character-sheet input[type="checkbox"] {
+	box-shadow: 2px 2px 0px 0px #00000057;
+}
+.margin-b-10 {
+	margin-bottom: 10px;
+}
+
+.character-sheet .attribute-box input {
+	font-size: 20px;
+}
+
+.charsheet .character-sheet button[type="roll"], .charsheet .character-sheet button[type="action"] {
+  /* background-color: #b9dff3; */
+	background-image: none;
+	/* background: linear-gradient(-90deg,#3e5f76 0%, #ffffff 100%); */
+	background: linear-gradient(90deg,#3e5f76 30%, #ffffff 100%);
+	font-size: 16px;
+	text-align: left;
+	padding: 9px 12px;
+	line-height: normal;
+	/* border: 3px solid #3e5f76; */
+	border: 0;
+	box-shadow: 4px 4px 0px 0px #00000057;
+	color: #fff;
+	width: 72%;
+	overflow: hidden;
+	text-shadow: none;
+	text-shadow: 1px 1px 3px #000;
+}
+.charsheet .character-sheet .attribute-box input[type="number"] {
+	width: 55px;
+}
+.charsheet .character-sheet button[type="roll"] span, .charsheet .character-sheet button[type="action"] span {
+	font-size: 13px;
+    margin-right: 5px;
+}
+.charsheet .character-sheet button[type="roll"]::before, .charsheet .character-sheet button[type="action"]::before {
+	color: #fff;
+	font-size: 20px;
+	vertical-align: bottom;
+	margin-right: 5px;
+}
+.attribute-box button span.small {
+    font-size: 13px;
+}
+.charsheet .character-sheet button[type="roll"] span:last-child, .charsheet .character-sheet button[type="action"] span:last-child {
+    margin: 0;
+}
+
+.charactersheet {
+  	padding: 0;
+}
+
+.character-sheet textarea {
+	background-attachment: local;
+	background-color: #Fff;
+	background-image:
+		linear-gradient(to right, white 5px, transparent 5px),
+		linear-gradient(to left, white 5px, transparent 5px),
+		repeating-linear-gradient(white, white 35px, #3e5f76 35px, #3e5f76 36px, white 36px);
+	line-height: 36px;
+	font-size: 16px;
+	padding: 5px;
+	border: 3px solid #3e5f76;
+	width: calc(100% - 15px);
+	box-shadow: 4px 4px 0px 0px #00000057;
+	height: 179px;
+	resize: vertical;
+	margin: 0;
+}
+
+/* Custom modules */
+
+.logo {
+	position: absolute;
+	right: -10px;
+	top: -70px;
+	z-index: 10;
+}
+.logo img {
+	width: 200px;
+}
+
+.character-sheet {
+	background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Frostpunk/Images/sheet-bg.jpg);
+	background-size: cover;
+	background-position: top center;
+	padding: 20px 10px;
+	font-family: 'Josefin Sans', sans-serif;
+	border: 3px solid #000000;
+	min-width: 1500px;
+	position: relative;
+	z-index: 1; 
+}
+
+/* Repeating sections */
+
+.repcontrol {
+    display: flex;
+    margin-top: 3px;
+}
+  
+.repcontrol .repcontrol_edit {
+    margin-left: auto;
+    order: 1;
+}
+  
+.repcontrol button {
+    background: #fff;
+    color: #3e5f76;
+    border-radius: 0;
+	border-color: #3e5f76;
+    transition: all 0.2s;
+    font-family: pictos;
+    font-size: 0;
+    font-weight: bold;
+    line-height: 8px;
+	padding: 6px 4px 1px;
+}
+  
+.repcontrol button:hover {
+    color: green;
+    border-color: green;
+    background: #ddd;
+}
+  
+.repcontrol button.repcontrol_edit::after {
+    content: "(";
+}
+  
+.repcontrol button.repcontrol_add::after {
+    content: "&";
+}
+  
+.repcontrol button.repcontrol_edit::after, .repcontrol button.repcontrol_add::after {
+    font-size: 20px;
+}
+  
+.repcontainer.editmode + .repcontrol button.repcontrol_edit::after {
+    content: ")";
+}
+
+.itemcontrol {
+    z-index: 20;
+}
+
+.fieldset-labels {
+	display: flex;
+	flex-wrap: nowrap;
+}
+.fieldset-labels .mini-title {
+	justify-content: flex-start;
+	padding-left: 5px;
+	height: 14px;
+}
+.repitem {
+	display: flex;
+    align-items: flex-start;
+}
+.repitem input, .repitem select {
+	width: 96%;
+	margin-right: 6px;
+	margin-bottom: 7px;
+}
+.charsheet .repitem input[type="number"] {
+    width: 88%;
+    text-align: center;
+}
+.character-sheet .repitem textarea {
+	height: 76px;
+}
+.repitem input[type="checkbox"] {
+    width: auto;
+	transform: scale(1.5);
+	flex: unset;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+.rep-box-vertical .repitem {
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+.rep-box-vertical .repitem label {
+    margin-bottom: 0;
+}
+.rep-box-vertical .repitem input {
+    margin-bottom: 0;
+    border-radius: 0;
+}
+.rep-box-vertical .repitem textarea {
+    height: 78px;
+    border-radius: 0;
+    border-top: 0;
+    border-bottom: 0;
+}
+.critical-injures .repitem {
+	display: block;
+}
+.critical-injures .repitem label {
+	color: #fff;
+	margin: 0;
+}
+.critical-injures .repitem textarea {
+	width: calc(100% - 15px);
+}
+
+
+/* Roll Template */
+.sheet-rolltemplate-frostpunk .sheet-template-wrap {
+	background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Frostpunk/Images/roll-bg.jpg);
+	background-position: top center;
+	background-size: cover;
+	border: 3px solid #3e5f76;
+	margin: 0;
+	margin-bottom: 15px;
+}
+
+.sheet-rolltemplate-frostpunk .sheet-template-header {
+	width: 100%;
+	padding: 7px 5px;
+	color: #fff;
+	background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(62,95,118,1) 60%, rgba(0,181,255,0) 100%);
+	font-family: 'Belgrad';
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 18px;
+}
+.sheet-rolltemplate-frostpunk .sheet-template-header a {
+	color: #fff;
+}
+.sheet-rolltemplate-frostpunk .sheet-template-subtitle {
+	color: #000000;
+	font-size: 20px;
+	padding: 10px 0;
+	padding-bottom: 6px;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight: bold;
+}
+
+.sheet-rolltemplate-frostpunk .sheet-template-grid {
+	text-align: center;
+	padding: 0 5px;
+	padding-bottom: 8px;
+}
+.sheet-rolltemplate-frostpunk .sheet-template-grid-item {
+  	display: inline-block;
+	vertical-align: middle;
+}
+
+.sheet-rolltemplate-frostpunk .sheet-template-roll-between {
+	height: 30px;
+	width: 30px;
+	background-color: rgb(255 255 255 / 50%);
+	border: 1px solid #3e5f76;
+	border-radius: 5px;
+	background-size: cover;
+	box-shadow: 4px 4px 0px 0px rgb(0 0 0 / 60%);
+	margin: 3px 0;
+	overflow: hidden;
+
+}
+.sheet-rolltemplate-frostpunk .sheet-template-roll-between > span, .sheet-rolltemplate-frostpunk .sheet-template-roll-success > span {
+	width: 100%;
+	display: inline-block;
+	margin: 0;
+	border: 0;
+	padding: 0;
+	text-align: center;
+	line-height: 30px;
+	background: transparent;
+	font-family: 'Belgrad';
+	font-size: 0;
+	/* color: #3e5f76; */
+	color: #fff;
+}
+.sheet-rolltemplate-frostpunk .sheet-template-roll-success > span {
+	display: block;
+}
+.sheet-rolltemplate-frostpunk .sheet-template-roll-success {
+	height: 30px;
+	width: 30px;
+	border-radius: 5px;
+	border: 1px solid #3e5f76;
+	background-color: #f1f0ee;
+ 	box-shadow: 4px 4px 0px 0px rgb(0 0 0 / 60%);
+	/* background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Frostpunk/Images/Snowflake-icon.png); */
+	background-size: 149%;
+	background-repeat: no-repeat;
+	background-position: center;
+	overflow: hidden;
+}
+
+.sheet-rolltemplate-frostpunk span.inlinerollresult.fullcrit {
+	background: radial-gradient(circle at center, rgb(62 95 118), #009f0c);
+ 	border: 0;
+	font-size: 18px;
+}
+.sheet-rolltemplate-frostpunk span.inlinerollresult.fullfail {
+ 	border: 0;
+	background: radial-gradient(circle at center, rgb(0 0 0 / 50%), #000000);
+	font-size: 18px;
+}
+
+.sheet-rolltemplate-frostpunk .sheet-template-label {
+	font-size: 14px;
+	padding: 5px;
+	text-align: left;
+	background: rgb(0 0 0 / 80%);
+	color: #fff;
+	background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(62,95,118,1) 60%, rgba(0,181,255,0) 100%);
+	font-family: 'Josefin Sans', sans-serif;
+}
+.sheet-rolltemplate-frostpunk .sheet-template-label span {
+	background: none;
+	border: 0;
+	padding:0;
+	display: inline;
+	font-size: 14px;
+	margin: 0;
+}
+
+
+/* Progress effect  */
+
+.character-sheet .bar {
+	display: flex;
+	flex-direction: row-reverse;
+	margin: 0;
+	width: 300px;
+	max-width: calc(100% - 30px);
+	padding: 3px 0;
+	justify-content: flex-end;
+}
+.character-sheet  .bar-input {
+	opacity: 0;
+	pointer-events: none;
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+}
+.bar-input:checked ~ .bar-view:nth-child(10):after {
+	transition-delay: -0.05s;
+}
+.bar-input:checked ~ .bar-view:nth-child(10) .bar-button:before {
+	transition-delay: 0.01s;
+}
+.bar-input:checked ~ .bar-view:nth-child(8):after {
+	transition-delay: 0.05s;
+}
+.bar-input:checked ~ .bar-view:nth-child(8) .bar-button:before {
+	transition-delay: 0.11s;
+}
+.bar-input:checked ~ .bar-view:nth-child(6):after {
+	transition-delay: 0.15s;
+}
+.bar-input:checked ~ .bar-view:nth-child(6) .bar-button:before {
+	transition-delay: 0.21s;
+}
+
+.bar-input:checked ~ .bar-view:nth-child(4):after {
+	transition-delay: 0.25s;
+}
+.bar-input:checked ~ .bar-view:nth-child(4) .bar-button:before {
+	transition-delay: 0.31s;
+}
+.bar-input:checked ~ .bar-view:nth-child(2):after {
+	transition-delay: 0.35s;
+}
+.bar-input:checked ~ .bar-view:nth-child(2) .bar-button:before {
+	transition-delay: 0.41s;
+}
+.character-sheet .bar-input:checked ~ .bar-view:after {
+	transform: scaleX(1);
+}
+.bar-input:checked ~ .bar-view .bar-button:before {
+	transform: none;
+	opacity: 1;
+}
+.bar-input:checked + .bar-view .bar-button:after {
+	opacity: 1;
+	-webkit-animation: bouncing 0.6s cubic-bezier(0, 0, 0.74, 1.04) infinite;
+					animation: bouncing 0.6s cubic-bezier(0, 0, 0.74, 1.04) infinite;
+}
+.bar-view {
+	display: none;
+	flex-grow: 1;
+	position: relative;
+	padding: 0 10px;
+	max-width: 38px;
+}
+.character-sheet .bar-view:after {
+	height: 2px;
+	top: calc(50% - 1px);
+	transition: transform 0.06s cubic-bezier(0, 0.72, 0.58, 1);
+	transform: scaleX(0);
+	background: #000;
+	transform-origin: left;
+	z-index: 1;
+}
+.bar-view:not(:last-child):before, .bar-view:not(:last-child):after {
+	content: "";
+	width: calc(100% - 24px);
+	position: absolute;
+	right: calc(50% + 12px);
+}
+.bar-view:not(:last-child):before {
+	height: 6px;
+	top: calc(50% - 3px);
+	background: #3e5f76;
+}
+.bar-view:not(:last-child):nth-child(2):after {
+	transition-delay: 0s;
+}
+.bar-view:not(:last-child):nth-child(2) .bar-button:before {
+	transition-delay: 0.06s;
+	background: radial-gradient(circle at center, #051ae9, #5e27ce);
+}
+.bar-view:not(:last-child):nth-child(4):after {
+	transition-delay: 0.1s;
+}
+.bar-view:not(:last-child):nth-child(4) .bar-button:before {
+	transition-delay: 0.16s;
+	background: radial-gradient(circle at center, #2e65c4, #051ae9);
+}
+.bar-view:not(:last-child):nth-child(6):after {
+	transition-delay: 0.2s;
+}
+.bar-view:not(:last-child):nth-child(6) .bar-button:before {
+	transition-delay: 0.26s;
+	background: radial-gradient(circle at center, #1ea297, #2e65c4);
+}
+.bar-view:not(:last-child):nth-child(8):after {
+	transition-delay: 0.3s;
+}
+.bar-view:not(:last-child):nth-child(8) .bar-button:before {
+	transition-delay: 0.36s;
+	background: radial-gradient(circle at center, #6f8899, #1ea297);
+}
+.bar-view:not(:last-child):nth-child(10):after {
+	transition-delay: 0.4s;
+}
+.bar-view:not(:last-child):nth-child(10) .bar-button:before {
+	transition-delay: 0.46s;
+}
+.character-sheet .bar-button {
+	display: block;
+	width: 24px;
+	height: 24px;
+	margin: auto;
+	border-radius: 50%;
+	border: 3px solid #3e5f76;
+	position: relative;
+	cursor: pointer;
+	box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.3), 2px 2px 8px rgba(0, 0, 0, 0.1);
+	padding:0;
+}
+.character-sheet .bar-button:before {
+	content: "";
+	position: absolute;
+	pointer-events: none;
+}
+.bar-button:before {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	background: radial-gradient(circle at center, #ffffff, #6f8899);
+	transform: scale(0.3);
+	opacity: 0;
+	transition-property: transform, opacity;
+	transition-duration: 0.2s;
+	transition-timing-function: cubic-bezier(0, 0.72, 0.58, 1);
+}
+
+
+input.bar-calc-view[value="1"] ~ .bar .bar-view:nth-child(n+10) {
+	display: flex;
+}
+input.bar-calc-view[value="2"] ~ .bar .bar-view:nth-child(n+8) {
+	display: flex;
+}
+input.bar-calc-view[value="3"] ~ .bar .bar-view:nth-child(n+6) {
+	display: flex;
+}
+input.bar-calc-view[value="4"] ~ .bar .bar-view:nth-child(n+4) {
+	display: flex;
+}
+input.bar-calc-view[value="5"] ~ .bar .bar-view:nth-child(n+2) {
+	display: flex;
+}
