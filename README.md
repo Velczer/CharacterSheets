@@ -4,12 +4,14 @@ Jeśli jesteś zainteresowany/a dowolną kartą postaci i chcesz jej użyć, pam
 
 Lista oficjalnie dodanych kart postaci do rolla:
 - Vaesen
+- Popsuty kompas
+- Fatum
+- Warlock polska edycja
+- Omerta
 
 Lista nieoficjalnych kart postaci:
 - Frostpunk (nakładka na YZE)
 - Glina
-- Popsuty kompas
-- Fatum
 
 # Jak ich użyć?
 1. Musisz zalogować się na swoje konto w roll20 i upewnić się że posiadasz subskrypcję PRO.
@@ -34,12 +36,14 @@ If you are interested in any custom sheet and want to use it, please be adviced 
 
 List of oficially added sheets:
 - Vaesen
+- BrokenCompass
+- Fatum
+- Warlock polish edition
+- Omerta
 
 List of custom sheets:
 - Frostpunk
 - Glina
-- BrokenCompass
-- Fatum
 
 # How to use it?
 1. You need to log in on your roll20 account with PRO subscription.
