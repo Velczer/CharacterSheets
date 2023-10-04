@@ -1,0 +1,119 @@
+{
+    "dragon-rider": "Smoczy jeździec",
+    "name": "Imię",
+    "nickname": "Przydomek",
+    "archetype": "Archetyp",
+    "age": "Wiek / Staż",
+
+    "pick": "Wybierz",
+    "hero": "Bohaterka",
+    "aristocrat": "Arystokrata",
+    "rebel": "Buntowniczka",
+    "dodger": "Spryciarz",
+    "hunter": "Łowczyni",
+    "sage": "Mędrzec",
+    "fraud": "Oszustka",
+    "avenger": "Mściciel",
+    "alumnus-of-order": "Wychowanka Zakonu",
+
+    "motivation": "Motywacja",
+    "pick-or-enter": "Wybierz lub wpisz",
+    "faith-in-aslaug": "Wiara w Aslauga",
+    "hatred-of-chimeras": "Nienawiść do chimer",
+    "desire-for-fame": "Pragnienie sławy",
+    "good-of-empire":"Dobro ludzi Imperium",
+    "private-interests": "Prywatne interesy",
+    "desire-for-adventure": "Pragnienie przygód",
+    "gratitude": "Wdzięczność",
+    "call-of-duty": "Poczucie obowiązku",
+    "desire-for-revenge": "Żądza zemsty",
+    "penance": "Pokuta",
+    "feeling-guilty": "Poczucie winy",
+    "desire-for-power": "Pragnienie władzy",
+
+    "dragon": "Smok",
+    "level-of-connection": "Poziom Więzi",
+    "character": "Charakter",
+
+    "dream-dragon": "Twój Wymarzony Smok",
+    "majestic-giant": "Majestatyczny Olbrzym",
+    "terror-from-space": "Terror z Przestworzy",
+    "gentle-beauty": "Łagodna Piękność",
+    "insidious-predator": "Podstępny Drapieżca",
+    "dark-secret": "Mroczna Tajemnica",
+    "winged-trouble": "Skrzydlate Tarapaty",
+    "repository-of-knowledge": "Skarbnica Wiedzy",
+    "untamed-beast": "Nieokiełznana Bestia",
+
+    "relation": "Relacja",
+    "guardian": "Opiekun",
+    "rival": "Rywalka",
+    "friend": "Przyjaciel",
+    "siblings": "Rodzeństwo",
+    "subordinate": "Podwładny",
+    "mentor": "Mentorka",
+    "beloved": "Ukochana",
+    "despot": "Despota",
+    "problem": "Problem",
+
+    "size": "Wielkość",
+    "connection-cost": "Cena Więzi",
+    "aslaug-words": "Słowa Aslauga",
+
+    "bravery": "Waleczność",
+    "willpower": "Siła Woli",
+    "fight": "Walka",
+    "resilence": "Wytrzymałość",
+
+    "flair": "Spryt",
+    "cunning": "Przebiegłość",
+    "observation": "Spostrzegawczość",
+    "dexterity": "Zręczność",
+
+    "wisdom": "Mądrość",
+    "magic-arena": "Arena Magii",
+    "perspicacity": "Przenikliwość",
+    "understanding": "Rozumienie",
+
+    "sophistication": "Obycie",
+    "history": "Historia",
+    "inspiration": "Inspiracja",
+    "persuasion": "Przekonywanie",
+
+    "talents": "Talenty",
+    "talent-name": "Nazwa talentu",
+    "description": "Opis",
+
+    "dragon-powers": "Moce smoka",
+    "dragon-power-name": "Nazwa",
+    "dragon-power-lvl": "Poziom",
+
+    "zest": "Animusz",
+    "throws": "Rzuty",
+    "combat": "Zwarcie",
+    "range": "Dystans",
+    "dodge": "Unik",
+    "bond": "Więź",
+
+
+    "experience-points": "Punkty doświadczenia",
+
+    "rider": "Jeździec",
+    "states": "Stany",
+    "scratched": "Draśnięty",
+    "battered": "Poturbowany",
+    "injured": "Ranny",
+    "massacred": "Zmasakrowany",
+    "dead": "Martwy",
+
+
+    "dragon-look": "Opis wyglądu",
+
+    "chessboard-mode": "Tryb szachownicy",
+    "personal-goal": "Cel osobisty",
+    "influence-points": "Punkty Wpływu"
+
+
+
+
+}

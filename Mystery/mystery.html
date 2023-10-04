@@ -1,388 +1,602 @@
-<div class="character-sheet">
-    <div class="row">
-        <div class="col-12">
-            <img src="https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Mystery/Images/logo.png" alt="">
+<div class="character-sheet__wrapper">
+    <input type="hidden" class="sheet-tabstoggle" name="attr_sheetTab" value="main">
+    <button type="action" class="sheet-change" name="act_main">Postać</button>
+    <button type="action" class="sheet-change" name="act_mainSecond">Notatki</button>
+    <button type="action" class="sheet-change" name="act_mystery">Karta Tajemnicy</button>
+    <button type="action" class="sheet-change" name="act_pact">Mroczny Pakt</button>
+
+    <div class="character-sheet sheet-main">
+        <div class="row diamonds-start">
+            <div class="col-6">
+                <h2 class="title right-hr"><span data-i18n="description">Opis</span></h2>
+                <div class="input-with-label">
+                    <label data-i18n="form">Forma</label>
+                    <input type="text" name="attr_form">
+                </div>
+    
+                <div class="input-with-label">
+                    <label data-i18n="name">Imię</label>
+                    <input type="text" name="attr_character_name">
+                </div>
+    
+                <div class="input-with-label">
+                    <label data-i18n="body">Ciało</label>
+                    <input type="text" name="attr_body">
+                </div>
+    
+                <div class="input-with-label">
+                    <label data-i18n="singularity">Osobliwość</label>
+                    <input type="text" name="attr_singularity">
+                </div>
+    
+                <div class="input-with-label">
+                    <label data-i18n="death">Śmierć</label>
+                    <textarea name="attr_death" rows="3"></textarea>
+                </div>
+            </div>
+    
+            <div class="col-6">
+                <h2 class="title left-hr"><span data-i18n="portrait">Portret</span></h2>
+                <div class="character-sheet__avatar">
+                    <div class="character-sheet__avatar-inner">
+                        <img name="attr_character_avatar">
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="row diamonds-start">
+            <div class="col-6">
+                <h2 class="title right-hr"><span data-i18n="attributes">Atrybuty</span></h2>
+                <div class="input-with-label">
+                    <label data-i18n="title">Tytuł</label>
+                    <input type="text" name="attr_title">
+                </div>
+    
+                <div class="margin-20"></div>
+    
+                <div class="attr-row">
+                    <div class="attr-label">
+                        <button class="label-roll" type="action" name="act_roll" value='&{template:mystery} {{baseRoll=[[2d6 + @{power}]]}} {{roll-name=^{power}}}' data-attribute="power" data-i18n="power">Moc</button>
+                        <div class="attr-label__input">
+                            <input type="number" name="attr_power" value="0">
+                        </div>
+                    </div>
+                    <div class="attr-label">
+                        <div class="attr-label__input">
+                            <input type="number" name="attr_durability" value="0">
+                        </div>
+                        <button class="label-roll" type="action" name="act_roll" value='&{template:mystery} {{baseRoll=[[2d6 + @{durability}]]}} {{roll-name=^{durability}}}' data-attribute="durability" data-i18n="durability">Budowa</button>
+                    </div>
+                </div>
+    
+                <div class="attr-row">
+                    <div class="attr-label">
+                        <button class="label-roll" type="action" name="act_roll" value='&{template:mystery} {{baseRoll=[[2d6 + @{speed}]]}} {{roll-name=^{speed}}}' data-attribute="speed" data-i18n="speed">Szybkość</button>
+                        <div class="attr-label__input">
+                            <input type="number" name="attr_speed" value="0">
+                        </div>
+                    </div>
+                    <div class="attr-label">
+                        <div class="attr-label__input">
+                            <input type="number" name="attr_sense" value="0">
+                        </div>
+                        <button class="label-roll" type="action" name="act_roll" value='&{template:mystery} {{baseRoll=[[2d6 + @{sense}]]}} {{roll-name=^{sense}}}' data-attribute="sense" data-i18n="sense">Rozsądek</button>
+                    </div>
+                </div>
+    
+                <div class="attr-row">
+                    <div class="attr-label">
+                        <button class="label-roll" type="action" name="act_roll" value='&{template:mystery} {{baseRoll=[[2d6 + @{memories}]]}} {{roll-name=^{memories}}}' data-attribute="memories"><span data-i18n="memories">Wspomnienia</span> <span class="label-hover">Wspomnienia...</span></button>
+                        <div class="attr-label__input">
+                            <input type="number" name="attr_memories" value="0">
+                        </div>
+                    </div>
+                    <div class="attr-label">
+                        <div class="attr-label__input">
+                            <input type="number" name="attr_charisma" value="0">
+                        </div>
+                        <button class="label-roll" type="action" name="act_roll" value='&{template:mystery} {{baseRoll=[[2d6 + @{charisma}]]}} {{roll-name=^{charisma}}}' data-attribute="charisma"><span data-i18n="charisma">Charyzma</span> <span class="label-hover">Charyzma...</span></button>
+                    </div>
+                </div>
+    
+                <div class="attr-row">
+                    <div class="attr-label attr-label--small">
+                        <div class="attr-label__input">
+                            <input type="number" name="attr_damage" value="0">
+                        </div>
+                        <label>KO <span class="label-hover" data-i18n="damage-dices">Kości obrażeń</span></label>
+                    </div>
+                    <div class="attr-label attr-label--small">
+                        <div class="attr-label__input">
+                            <input type="number" name="attr_health" value="0">
+                        </div>
+                        <label>PŻ <span class="label-hover" data-i18n="health-points">Punkty życia</span></label>
+                    </div>
+                </div>
+    
+                <div class="subtitle-box right-hr">
+                    <h3 class="subtitle"><span data-i18n="resources">Zasoby</span></h3>
+                </div>
+    
+                <div class="attr-row">
+                    <div class="attr-label">
+                        <button class="label-roll" type="action" name="act_roll" value='&{template:mystery} {{baseRoll=[[2d6 + @{essence}]]}} {{roll-name=^{essence}}}' data-attribute="essence"><span data-i18n="essence">Esencja</span> <span class="label-hover">Esencja...</span></button>
+                        <div class="attr-label__input">
+                            <input type="number" name="attr_essence" value="0">
+                        </div>
+                    </div>
+                    <div class="attr-label">
+                        <div class="attr-label__input">
+                            <input type="number" name="attr_hints" value="0">
+                        </div>
+                        <button class="label-roll" type="action" name="act_roll" value='&{template:mystery} {{baseRoll=[[2d6 + @{hints}]]}} {{roll-name=^{hints}}}' data-attribute="hints"><span data-i18n="hints">Wskazówki</span> <span class="label-hover">Wskazówki...</span></button>
+                    </div>
+                </div>
+    
+                <div class="margin-20"></div>
+            </div>
+            <div class="col-6">
+                <h2 class="title left-hr"><span data-i18n="ways">Drogi</span></h2>
+    
+                <div class="center">
+                    <button class="label-roll" type="action" name="act_roll" value='&{template:mystery} {{baseRoll=[[2d6 + @{secret}]]}} {{roll-name=^{secrets}}}' data-attribute="secret" data-i18n="secrets">Sekrety</button>
+                </div>
+    
+                <div class="diamonds-radio">
+                    <input type="radio" value="0" name="attr_secret" id="secret-0" checked>
+                    <label class="bar-button" for="secret-0">0</label>
+    
+                    <input type="radio" value="1" name="attr_secret" id="secret-1">
+                    <label class="bar-button" for="secret-1">1</label>
+    
+                    <input type="radio" value="2" name="attr_secret" id="secret-2">
+                    <label class="bar-button" for="secret-2">2</label>
+    
+                    <input type="radio" value="3" name="attr_secret" id="secret-3">
+                    <label class="bar-button" for="secret-3">3</label>
+                </div>
+    
+                <div class="input-with-label-textarea">
+                    <label data-i18n="way-of-secret">Droga sekretu</label>
+                    <textarea name="attr_way_of_secret" rows="3" style="text-indent: 93px;"></textarea>
+                </div>
+    
+                <div class="margin-20"></div>
+    
+                <div class="center">
+                    <label data-i18n="oblivion">Zapomnienie</label>
+                </div>
+    
+                <div class="diamonds-radio">
+                    <input type="radio" value="0" name="attr_oblivion" id="oblivion-0" checked>
+                    <label class="bar-button" for="oblivion-0">0</label>
+    
+                    <input type="radio" value="1" name="attr_oblivion" id="oblivion-1">
+                    <label class="bar-button" for="oblivion-1">1</label>
+    
+                    <input type="radio" value="2" name="attr_oblivion" id="oblivion-2">
+                    <label class="bar-button" for="oblivion-2">2</label>
+    
+                    <input type="radio" value="3" name="attr_oblivion" id="oblivion-3">
+                    <label class="bar-button" for="oblivion-3">3</label>
+    
+                    <input type="radio" value="4" name="attr_oblivion" id="oblivion-4">
+                    <label class="bar-button" for="oblivion-4">4</label>
+    
+                    <input type="radio" value="5" name="attr_oblivion" id="oblivion-5">
+                    <label class="bar-button" for="oblivion-5">5</label>
+    
+                    <input type="radio" value="6" name="attr_oblivion" id="oblivion-6">
+                    <label class="bar-button" for="oblivion-6">6</label>
+    
+                    <input type="radio" value="7" name="attr_oblivion" id="oblivion-7">
+                    <label class="bar-button" for="oblivion-7">7</label>
+    
+                    <input type="radio" value="8" name="attr_oblivion" id="oblivion-8">
+                    <label class="bar-button" for="oblivion-8">8</label>
+    
+                    <input type="radio" value="9" name="attr_oblivion" id="oblivion-9">
+                    <label class="bar-button" for="oblivion-9">9</label>
+    
+                    <input type="radio" value="10" name="attr_oblivion" id="oblivion-10">
+                    <label class="bar-button" for="oblivion-10">10</label>
+                </div>
+                
+    
+                <div class="input-with-label-textarea">
+                    <label data-i18n="way-of-oblivion">Droga zapomniania</label>
+                    <textarea name="attr_way_of_oblivion" rows="3" style="text-indent: 125px;"></textarea>
+                </div>
+            </div>
+        </div>
+    
+        <div class="row diamonds-start">
+            <div class="col-6">
+                <h2 class="title right-hr"><span data-i18n="equipment">Ekwipunek</span></h2>
+                <div class="input-with-label-textarea">
+                    <label data-i18n="disposable">Jednorazowego użytku</label>
+                    <textarea name="attr_disposable" rows="2" style="text-indent: 149px;"></textarea>
+                </div>
+    
+                <div class="input-with-label-textarea">
+                    <label data-i18n="tools-of-the-wanderer">Narzędzia tułacza</label>
+                    <textarea name="attr_tools_of_the_wanderer" rows="2" style="text-indent: 114px;"></textarea>
+                </div>
+    
+                <div class="input-with-label-textarea">
+                    <label data-i18n="weapons-attacks">Oręż / Ataki (nazwa, cechy)</label>
+                    <textarea name="attr_weapons_attacks" rows="3" style="text-indent: 172px;"></textarea>
+                </div>
+    
+                <div class="input-with-label">
+                    <label data-i18n="armor">Pancerz</label>
+                    <input type="text" name="attr_armor">
+                </div>
+    
+                <div class="input-with-label-inside">
+                    <label data-i18n="shield">Tarcza</label>
+                    <input type="text" name="attr_shield" style="text-indent: 40px;">
+                </div>
+    
+                <div class="input-with-label-inside">
+                    <label data-i18n="soul-gem">Klejnot Duszy</label>
+                    <input type="text" name="attr_soul_gem" style="text-indent: 78px;">
+                </div>
+    
+                <div class="input-with-label-inside">
+                    <label data-i18n="armour">Zbroja</label>
+                    <input type="text" name="attr_armour" style="text-indent: 39px;">
+                </div>
+            </div>
+    
+            <div class="col-6">
+                <h2 class="title left-hr"><span data-i18n="artefact">Artefakt</span></h2>
+                <div class="input-with-label-textarea">
+                    <label data-i18n="artefact-name">Nazwa</label>
+                    <textarea name="attr_artefact_name" rows="2" style="text-indent: 46px;"></textarea>
+                </div>
+    
+                <div class="input-with-label-textarea">
+                    <label data-i18n="artefact-use">Zastosowanie</label>
+                    <textarea name="attr_artefact_use" rows="3" style="text-indent: 92px;"></textarea>
+                </div>
+    
+                <div class="input-with-label-textarea">
+                    <label data-i18n="artefact-upgrade-1">Ulepszenie I</label>
+                    <textarea name="attr_artefact_upgrade_1" rows="2" style="text-indent: 81px;"></textarea>
+                </div>
+    
+                <div class="input-with-label-textarea">
+                    <label data-i18n="artefact-upgrade-2">Ulepszenie II</label>
+                    <textarea name="attr_artefact_upgrade_2" rows="2" style="text-indent: 84px;"></textarea>
+                </div>
+    
+                <div class="input-with-label-textarea">
+                    <label data-i18n="artefact-secret">Sekret</label>
+                    <textarea name="attr_artefact_secret" rows="2" style="text-indent: 45px;"></textarea>
+                </div>
+            </div>
+        </div>
+    
+        <div class="margin-20"></div>
+        <div class="margin-20"></div>
+    
+    
+        <div class="row">
+            <div class="col-12 center">
+                <img class="logo" src="https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Mystery/Images/logo.png" alt="logo">
+            </div>
         </div>
     </div>
-	<div class="row">
-		<div class="col-6">
-            <h2 class="title right-hr" data-i18n="description">Opis</h2>
-            <div class="input-with-label">
-                <label>Forma</label>
-                <input type="text" name="attr_form">
+    
+    <div class="character-sheet sheet-mainSecond">
+        <div class="row diamonds-start">
+            <div class="col-6">
+                <h2 class="title right-hr"><span data-i18n="death-essence-moves">Ruchy esencji śmierci</span></h2>
+                <div class="input-with-label">
+                    <textarea name="attr_death_essence_moves" rows="20"></textarea>
+                </div>
             </div>
+    
+            <div class="col-6">
+                <h2 class="title left-hr"><span data-i18n="relationships">Relacje</span></h2>
+                
+                <div class="input-with-label-textarea">
+                    <label data-i18n="relationships-with-other-wanderers">Relacje z innymi Tułaczami</label>
+                    <textarea name="attr_relationships" rows="6" style="text-indent: 172px;"></textarea>
+                </div>
 
-            <div class="input-with-label">
-                <label>Imię</label>
-                <input type="text" name="attr_character_name">
-            </div>
-		</div>
+                <div class="input-with-label-textarea">
+                    <label data-i18n="relationships-with-mystery">Relacja z Tajemnicą</label>
+                    <textarea name="attr_relationships_mystery" rows="2" style="text-indent: 127px;"></textarea>
+                </div>
 
-        <div class="col-6">
-            <h2 class="title left-hr" data-i18n="portrait">Portret</h2>
-            <div class="avatar">
-                <img name="attr_character_avatar">
+                <div class="input-with-label-textarea">
+                    <label data-i18n="relationships-with-choir">Relacja z Chórem Anielskim</label>
+                    <textarea name="attr_relationships_angels" rows="3" style="text-indent: 179px;"></textarea>
+                </div>
+
+                <div class="subtitle-box left-hr">
+                    <h3 class="subtitle"><span data-i18n="notes">Notatki</span></h3>
+                </div>
+
+                <div class="input-with-label-textarea">
+                    <textarea name="attr_notes" rows="6"></textarea>
+                </div>
             </div>
-		</div>
-	</div>
+        </div>
+    
+        <div class="margin-20"></div>
+        <div class="margin-20"></div>
+    
+    
+        <div class="row">
+            <div class="col-12 center">
+                <img class="logo" src="https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Mystery/Images/logo.png" alt="logo">
+            </div>
+        </div>
+    </div>
+
+    <div class="character-sheet sheet-mystery">
+        <div class="row">
+            <div class="col-12">
+                <div class="diamonds-hr"><span></span></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="input-with-label-textarea">
+                    <label data-i18n="mystery-name">Nazwa Tajemnicy / Scenariusza</label>
+                    <textarea name="attr_mystery_name" rows="3" style="text-indent: 172px;"></textarea>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="input-with-label-textarea">
+                    <label data-i18n="wanderers-in-game">Tułacze w grze</label>
+                    <textarea name="attr_wanderers_in_game" rows="3" style="text-indent: 172px;"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="row diamonds-start">
+            <div class="col-6">
+                <h2 class="title right-hr"><span data-i18n="locations">Lokacje</span><span class="title__page-num">(str. 200)</span></h2>
+                <div class="input-with-label-textarea">
+                    <textarea name="attr_locations" rows="3"></textarea>
+                </div>
+            </div>
+    
+            <div class="col-6">
+                <h2 class="title left-hr"><span data-i18n="phenomenon">Zjawiska</span><span class="title__page-num">(str. 202)</span></h2>
+               
+                <div class="input-with-label-textarea">
+                    <textarea name="attr_phenomenon" rows="3"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="row diamonds-start">
+            <div class="col-6">
+                <h2 class="title right-hr"><span data-i18n="society">Społeczności</span><span class="title__page-num">(str. 205)</span></h2>
+                <div class="input-with-label-textarea">
+                    <textarea name="attr_society" rows="3"></textarea>
+                </div>
+            </div>
+    
+            <div class="col-6">
+                <h2 class="title left-hr"><span data-i18n="awards">Nagrody</span><span class="title__page-num">(str. 211)</span></h2>
+               
+                <div class="input-with-label-textarea">
+                    <textarea name="attr_awards" rows="3"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="row diamonds-start">
+            <div class="col-6">
+                <h2 class="title right-hr"><span data-i18n="pool-of-secrets">Pula sekretów</span><span class="title__page-num">(str. 213)</span></h2>
+                <div class="input-with-label-textarea">
+                    <textarea name="attr_pool_of_secrets" rows="3"></textarea>
+                </div>
+            </div>
+    
+            <div class="col-6">
+                <h2 class="title left-hr"><span data-i18n="enemies">Wrogowie</span><span class="title__page-num">(str. 242)</span></h2>
+               
+                <div class="input-with-label-textarea">
+                    <textarea name="attr_enemies" rows="3"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="row diamonds-start">
+            <div class="col-6">
+                <h2 class="title right-hr"><span data-i18n="countdown">Odliczanie</span><span class="title__page-num">(str. 213)</span></h2>
+                <div class="input-with-label-textarea">
+                    <textarea name="attr_countdown" rows="6"></textarea>
+                </div>
+            </div>
+    
+            <div class="col-6">
+                <h2 class="title left-hr"><span data-i18n="mystery-moves">Ruchy Tajemnic</span><span class="title__page-num">(str. 215)</span></h2>
+               
+                <div class="input-with-label-textarea">
+                    <textarea name="attr_mystery_moves" rows="6"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="row diamonds-start">
+            <div class="col-6">
+                <h2 class="title right-hr"><span data-i18n="arena-moves">Ruchy Areny</span><span class="title__page-num">(str. 269)</span></h2>
+                <div class="input-with-label-textarea">
+                    <textarea name="attr_arena_moves" rows="5"></textarea>
+                </div>
+            </div>
+    
+            <div class="col-6">
+                <h2 class="title left-hr"><span data-i18n="key-words">Słowa kluczowe</span><span class="title__page-num">(str. 282)</span></h2>
+               
+                <div class="input-with-label-textarea">
+                    <textarea name="attr_key_words" rows="5"></textarea>
+                </div>
+            </div>
+        </div>
+    
+        <div class="margin-20"></div>
+        <div class="margin-20"></div>
+    
+        <div class="row">
+            <div class="col-12 center">
+                <img class="logo" src="https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Mystery/Images/logo.png" alt="logo">
+            </div>
+        </div>
+    </div>
+    
+    <div class="character-sheet sheet-pact">
+        <div class="row">
+            <div class="col-12">
+                <div class="diamonds-hr"><span></span></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <div class="input-with-label">
+                    <label data-i18n="convention-name">Nazwa konwencji</label>
+                    <input type="text" name="attr_convention_name">
+                </div>
+    
+                <div class="input-with-label">
+                    <label data-i18n="universe-name">Nazwa uniwersum</label>
+                    <input type="text" name="attr_universe_name">
+                </div>
+    
+                <div class="input-with-label">
+                    <label data-i18n="scenario-name">Nazwa scenariusza</label>
+                    <input type="text" name="attr_scenario_name">
+                </div>
+            </div>
+    
+            <div class="col-6">
+                <div class="input-with-label">
+                    <label data-i18n="chapel-location">Gdzie znajduje się Kaplica?</label>
+                    <input type="text" name="attr_chapel_location">
+                </div>
+
+                <div class="input-with-label">
+                    <label data-i18n="caregiver-look">Jak wygląda opiekun?</label>
+                    <textarea name="attr_caregiver_look" rows="2"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="row diamonds-start">
+            <div class="col-6">
+                <h2 class="title right-hr"><span data-i18n="forbidden-topics">Zakazane tematy</span></h2>
+                <div class="input-with-label-textarea">
+                    <textarea name="attr_forbidden_topics" rows="6"></textarea>
+                </div>
+            </div>
+    
+            <div class="col-6">
+                <h2 class="title left-hr"><span data-i18n="interesting-topics">Ciekawe tematy</span></h2>
+               
+                <div class="input-with-label-textarea">
+                    <textarea name="attr_interesting_topics" rows="6"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="row diamonds-start">
+            <div class="col-6">
+                <h2 class="title right-hr"><span data-i18n="permanent-elements">Stałe elementy</span><span class="title__page-num">(Te fakty mogą być wprowadzone przez graczy i MG, ale nie zmienione!)</span></h2>
+                <div class="input-with-label-textarea">
+                    <textarea name="attr_permamnent_elements" rows="9"></textarea>
+                </div>
+            </div>
+    
+            <div class="col-6">
+                <h2 class="title left-hr"><span data-i18n="important-facts">Ważne fakty</span><span class="title__page-num">(wydarzenia, frakcje, zjawiska i fakty z trwającej już przygody)</span></h2>
+               
+                <div class="input-with-label-textarea">
+                    <textarea name="attr_important_facts" rows="9"></textarea>
+                </div>
+            </div>
+        </div>
+    
+        <div class="margin-20"></div>
+        <div class="margin-20"></div>
+    
+    
+        <div class="row">
+            <div class="col-12 center">
+                <img class="logo" src="https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Mystery/Images/logo.png" alt="logo">
+            </div>
+        </div>
+    </div>
 </div>
 
-
-
 <!-- Roll Templates -->
-
-<rolltemplate class="sheet-rolltemplate-frostpunk">
+<rolltemplate class="sheet-rolltemplate-mystery">
+    <div class="template-margin-10"></div>
 	<div class="template-wrap">
+        <div class="template-diamonds-hr"><span></span></div>
 		<div class="template-header">
-			{{#character_name}}
-			{{#character_id}}[{{character_name}}](https://journal.roll20.net/character/{{character_id}}){{/character_id}}
-			{{^character_id}}{{character_name}}{{/character_id}}
-			{{/character_name}}
+            <span>
+                {{#character_name}}
+                {{#character_id}}[{{character_name}}](https://journal.roll20.net/character/{{character_id}}){{/character_id}}
+                {{^character_id}}{{character_name}}{{/character_id}}
+                {{/character_name}}
+            </span>
 		</div>
 
-		<div class="template-subtitle">
-			{{roll-name}}
-		</div>
+        <div class="template-roll-results-title">{{roll-name}}</div>
 
-		<label class="template-label">Kości podstawowe: {{base-dice}}</label>
-		<div class="template-grid">
-			{{#rollGreater() base-dice 0}}
-			<!-- BASE DIE ONE -->
-			<div class="template-grid-item">
-				{{#rollBetween() base-roll-one 1 5}}
-				<div class="template-roll-between">{{base-roll-one}}</div>
-				{{/rollBetween() base-roll-one 1 5}}
-				{{#rollWasCrit() base-roll-one}}
-				<div class="template-roll-success">{{base-roll-one}}</div>
-				{{/rollWasCrit() base-roll-one}}
-			</div>
-			{{/rollGreater() base-dice 0}}
+        <div class="template-roll-results">
+            <div class="template-d6">{{baseRoll}}</div>
+        </div>
 
-			{{#rollGreater() base-dice 1}}
-			<!-- BASE DIE TWO -->
-			<div class="template-grid-item">
-				{{#rollBetween() base-roll-two 1 5}}
-				<div class="template-roll-between">{{base-roll-two}}</div>
-				{{/rollBetween() base-roll-two 1 5}}
-				{{#rollWasCrit() base-roll-two}}
-				<div class="template-roll-success">{{base-roll-two}}</div>
-				{{/rollWasCrit() base-roll-two}}
-			</div>
-			{{/rollGreater() base-dice 1}}
+        <!-- {{#rollGreater() baseRoll 9}}
+        <div class="template-roll-results-title green" data-i18n="success">Sukces</div>
+        {{/rollGreater() baseRoll 9}}
 
-			{{#rollGreater() base-dice 2}}
-			<!-- BASE DIE THREE -->
-			<div class="template-grid-item">
-				{{#rollBetween() base-roll-three 1 5}}
-				<div class="template-roll-between">{{base-roll-three}}</div>
-				{{/rollBetween() base-roll-three 1 5}}
-				{{#rollWasCrit() base-roll-three}}
-				<div class="template-roll-success hit">{{base-roll-three}}</div>
-				{{/rollWasCrit() base-roll-three}}
-			</div>
-			{{/rollGreater() base-dice 2}}
+        {{#rollBetween() baseRoll 7 9}}
+        <div class="template-roll-results-title green" data-i18n="success-with-complication">Sukces z komplikacjami</div>
+        {{/rollBetween() baseRoll 7 9}}
 
-			{{#rollGreater() base-dice 3}}
-			<!-- BASE DIE FOUR -->
-			<div class="template-grid-item">
-				{{#rollBetween() base-roll-four 1 5}}
-				<div class="template-roll-between">{{base-roll-four}}</div>
-				{{/rollBetween() base-roll-four 1 5}}
-				{{#rollWasCrit() base-roll-four}}
-				<div class="template-roll-success hit">{{base-roll-four}}</div>
-				{{/rollWasCrit() base-roll-four}}
-			</div>
-			{{/rollGreater() base-dice 3}}
-
-			{{#rollGreater() base-dice 4}}
-			<!-- BASE DIE FIVE -->
-			<div class="template-grid-item">
-				{{#rollBetween() base-roll-five 1 5}}
-				<div class="template-roll-between">{{base-roll-five}}</div>
-				{{/rollBetween() base-roll-five 1 5}}
-				{{#rollWasCrit() base-roll-five}}
-				<div class="template-roll-success hit">{{base-roll-five}}</div>
-				{{/rollWasCrit() base-roll-five}}
-			</div>
-			{{/rollGreater() base-dice 4}}
-
-			{{#rollGreater() base-dice 5}} <!-- BASE DIE SIX -->
-			<div class="template-grid-item">
-				{{#rollBetween() base-roll-six 1 5}}
-					<div class="template-roll-between">{{base-roll-six}}</div>
-				{{/rollBetween() base-roll-six 1 5}}
-				{{#rollWasCrit() base-roll-six}}
-					<div class="template-roll-success hit">{{base-roll-six}}</div>
-				{{/rollWasCrit() base-roll-six}}
-			</div>
-			{{/rollGreater() base-dice 5}}
-			
-			{{#rollGreater() base-dice 6}} <!-- BASE DIE SEVEN -->
-			<div class="template-grid-item">
-				{{#rollBetween() base-roll-seven 1 5}}
-					<div class="template-roll-between">{{base-roll-seven}}</div>
-				{{/rollBetween() base-roll-seven 1 5}}
-				{{#rollWasCrit() base-roll-seven}}
-					<div class="template-roll-success hit">{{base-roll-seven}}</div>
-				{{/rollWasCrit() base-roll-seven}}
-			</div>
-			{{/rollGreater() base-dice 6}}
-			
-			{{#rollGreater() base-dice 7}} <!-- BASE DIE EIGHT -->
-			<div class="template-grid-item">
-				{{#rollBetween() base-roll-eight 1 5}}
-					<div class="template-roll-between">{{base-roll-eight}}</div>
-				{{/rollBetween() base-roll-eight 1 5}}
-				{{#rollWasCrit() base-roll-eight}}
-					<div class="template-roll-success hit">{{base-roll-eight}}</div>
-				{{/rollWasCrit() base-roll-eight}}
-			</div>
-			{{/rollGreater() base-dice 7}}
-			
-			{{#rollGreater() base-dice 8}} <!-- BASE DIE NINE -->
-			<div class="template-grid-item">
-				{{#rollBetween() base-roll-nine 1 5}}
-					<div class="template-roll-between">{{base-roll-nine}}</div>
-				{{/rollBetween() base-roll-nine 1 5}}
-				{{#rollWasCrit() base-roll-nine}}
-					<div class="template-roll-success hit">{{base-roll-nine}}</div>
-				{{/rollWasCrit() base-roll-nine}}
-			</div>
-			{{/rollGreater() base-dice 8}}
-			
-			{{#rollGreater() base-dice 9}} <!-- BASE DIE TEN -->
-			<div class="template-grid-item">
-				{{#rollBetween() base-roll-ten 1 5}}
-					<div class="template-roll-between">{{base-roll-ten}}</div>
-				{{/rollBetween() base-roll-ten 1 5}}
-				{{#rollWasCrit() base-roll-ten}}
-					<div class="template-roll-success hit">{{base-roll-ten}}</div>
-				{{/rollWasCrit() base-roll-ten}}
-			</div>
-			{{/rollGreater() base-dice 9}}
-			
-			{{#rollGreater() base-dice 10}} <!-- BASE DIE ELEVEN -->
-			<div class="template-grid-item">
-				{{#rollBetween() base-roll-eleven 1 5}}
-					<div class="template-roll-between">{{base-roll-eleven}}</div>
-				{{/rollBetween() base-roll-eleven 1 5}}
-				{{#rollWasCrit() base-roll-eleven}}
-					<div class="template-roll-success hit">{{base-roll-eleven}}</div>
-				{{/rollWasCrit() base-roll-eleven}}
-			</div>
-			{{/rollGreater() base-dice 10}}
-			
-			{{#rollGreater() base-dice 11}} <!-- BASE DIE TWELVE -->
-			<div class="template-grid-item">
-				{{#rollBetween() base-roll-twelve 1 5}}
-					<div class="template-roll-between">{{base-roll-twelve}}</div>
-				{{/rollBetween() base-roll-twelve 1 5}}
-				{{#rollWasCrit() base-roll-twelve}}
-					<div class="template-roll-success hit">{{base-roll-twelve}}</div>
-				{{/rollWasCrit() base-roll-twelve}}
-			</div>
-			{{/rollGreater() base-dice 11}}
-			
-			{{#rollGreater() base-dice 12}} <!-- BASE DIE THIRTEEN -->
-			<div class="template-grid-item">
-				{{#rollBetween() base-roll-thirteen 1 5}}
-					<div class="template-roll-between">{{base-roll-thirteen}}</div>
-				{{/rollBetween() base-roll-thirteen 1 5}}
-				{{#rollWasCrit() base-roll-thirteen}}
-					<div class="template-roll-success hit">{{base-roll-thirteen}}</div>
-				{{/rollWasCrit() base-roll-thirteen}}
-			</div>
-			{{/rollGreater() base-dice 12}}
-			
-			{{#rollGreater() base-dice 13}} <!-- BASE DIE FOURTEEN -->
-			<div class="template-grid-item">
-				{{#rollBetween() base-roll-fourteen 1 5}}
-					<div class="template-roll-between">{{base-roll-fourteen}}</div>
-				{{/rollBetween() base-roll-fourteen 1 5}}
-				{{#rollWasCrit() base-roll-fourteen}}
-					<div class="template-roll-success hit">{{base-roll-fourteen}}</div>
-				{{/rollWasCrit() base-roll-fourteen}}
-			</div>
-			{{/rollGreater() base-dice 13}}
-			
-			{{#rollGreater() base-dice 14}} <!-- BASE DIE FIFTEEN -->
-			<div class="template-grid-item">
-				{{#rollBetween() base-roll-fifteen 1 5}}
-					<div class="template-roll-between">{{base-roll-fifteen}}</div>
-				{{/rollBetween() base-roll-fifteen 1 5}}
-				{{#rollWasCrit() base-roll-fifteen}}
-					<div class="template-roll-success hit">{{base-roll-fifteen}}</div>
-				{{/rollWasCrit() base-roll-fifteen}}
-			</div>
-			{{/rollGreater() base-dice 14}}
-
-			{{#rollGreater() base-dice 15}} <!-- BASE DIE SIXTEEN -->
-			<div class="template-grid-item">
-				{{#rollBetween() base-roll-sixteen 1 5}}
-					<div class="template-roll-between">{{base-roll-sixteen}}</div>
-				{{/rollBetween() base-roll-sixteen 1 5}}
-				{{#rollWasCrit() base-roll-sixteen}}
-					<div class="template-roll-success hit">{{base-roll-sixteen}}</div>
-				{{/rollWasCrit() base-roll-sixteen}}
-			</div>
-			{{/rollGreater() base-dice 15}}
-			
-			{{#rollGreater() base-dice 16}} <!-- BASE DIE SEVENTEEN -->
-			<div class="template-grid-item">
-				{{#rollBetween() base-roll-seventeen 1 5}}
-					<div class="template-roll-between">{{base-roll-seventeen}}</div>
-				{{/rollBetween() base-roll-seventeen 1 5}}
-				{{#rollWasCrit() base-roll-seventeen}}
-					<div class="template-roll-success hit">{{base-roll-seventeen}}</div>
-				{{/rollWasCrit() base-roll-seventeen}}
-			</div>
-			{{/rollGreater() base-dice 16}}
-
-			{{#rollGreater() base-dice 17}} <!-- BASE DIE EIGHTEEN -->
-			<div class="template-grid-item">
-				{{#rollBetween() base-roll-eighteen 1 5}}
-					<div class="template-roll-between">{{base-roll-eighteen}}</div>
-				{{/rollBetween() base-roll-eighteen 1 5}}
-				{{#rollWasCrit() base-roll-eighteen}}
-					<div class="template-roll-success hit">{{base-roll-eighteen}}</div>
-				{{/rollWasCrit() base-roll-eighteen}}
-			</div>
-			{{/rollGreater() base-dice 17}}
-
-			{{#rollGreater() base-dice 18}} <!-- BASE DIE NINETEEN -->
-			<div class="template-grid-item">
-				{{#rollBetween() base-roll-nineteen 1 5}}
-					<div class="template-roll-between">{{base-roll-nineteen}}</div>
-				{{/rollBetween() base-roll-nineteen 1 5}}
-				{{#rollWasCrit() base-roll-nineteen}}
-					<div class="template-roll-success hit">{{base-roll-nineteen}}</div>
-				{{/rollWasCrit() base-roll-nineteen}}
-			</div>
-			{{/rollGreater() base-dice 18}}
-
-			{{#rollGreater() base-dice 19}} <!-- BASE DIE TWENTY -->
-			<div class="template-grid-item">
-				{{#rollBetween() base-roll-twenty 1 5}}
-					<div class="template-roll-between">{{base-roll-twenty}}</div>
-				{{/rollBetween() base-roll-twenty 1 5}}
-				{{#rollWasCrit() base-roll-twenty}}
-					<div class="template-roll-success hit">{{base-roll-twenty}}</div>
-				{{/rollWasCrit() base-roll-twenty}}
-			</div>
-			{{/rollGreater() base-dice 19}}
-		</div>
-
-		{{#gear-dice}}
-		<label class="template-label">Kości wyposażenia: {{gear-dice}}</label>
-		<div class="template-grid">
-			{{#rollGreater() gear-dice 0}}
-			<!-- GEAR DIE ONE -->
-			<div class="template-grid-item">
-				{{#rollBetween() gear-roll-one 1 5}}
-				<div class="template-roll-between">{{gear-roll-one}}</div>
-				{{/rollBetween() gear-roll-one 1 5}}
-				{{#rollWasCrit() gear-roll-one}}
-				<div class="template-roll-success">{{gear-roll-one}}</div>
-				{{/rollWasCrit() gear-roll-one}}
-			</div>
-			{{/rollGreater() gear-dice 0}}
-
-			{{#rollGreater() gear-dice 1}}
-			<!-- GEAR DIE TWO -->
-			<div class="template-grid-item">
-				{{#rollBetween() gear-roll-two 1 5}}
-				<div class="template-roll-between">{{gear-roll-two}}</div>
-				{{/rollBetween() gear-roll-two 1 5}}
-				{{#rollWasCrit() gear-roll-two}}
-				<div class="template-roll-success">{{gear-roll-two}}</div>
-				{{/rollWasCrit() gear-roll-two}}
-			</div>
-			{{/rollGreater() gear-dice 1}}
-
-			{{#rollGreater() gear-dice 2}}
-			<!-- GEAR DIE THREE -->
-			<div class="template-grid-item">
-				{{#rollBetween() gear-roll-three 1 5}}
-				<div class="template-roll-between">{{gear-roll-three}}</div>
-				{{/rollBetween() gear-roll-three 1 5}}
-				{{#rollWasCrit() gear-roll-three}}
-				<div class="template-roll-success hit">{{gear-roll-three}}</div>
-				{{/rollWasCrit() gear-roll-three}}
-			</div>
-			{{/rollGreater() gear-dice 2}}
-
-			{{#rollGreater() gear-dice 3}}
-			<!-- GEAR DIE FOUR -->
-			<div class="template-grid-item">
-				{{#rollBetween() gear-roll-four 1 5}}
-				<div class="template-roll-between">{{gear-roll-four}}</div>
-				{{/rollBetween() gear-roll-four 1 5}}
-				{{#rollWasCrit() gear-roll-four}}
-				<div class="template-roll-success hit">{{gear-roll-four}}</div>
-				{{/rollWasCrit() gear-roll-four}}
-			</div>
-			{{/rollGreater() gear-dice 3}}
-
-			{{#rollGreater() gear-dice 4}}
-			<!-- GEAR DIE FIVE -->
-			<div class="template-grid-item">
-				{{#rollBetween() gear-roll-five 1 5}}
-				<div class="template-roll-between">{{gear-roll-five}}</div>
-				{{/rollBetween() gear-roll-five 1 5}}
-				{{#rollWasCrit() gear-roll-five}}
-				<div class="template-roll-success hit">{{gear-roll-five}}</div>
-				{{/rollWasCrit() gear-roll-five}}
-			</div>
-			{{/rollGreater() gear-dice 4}}
-		</div>
-		{{/gear-dice}}
-
+        {{#rollBetween() baseRoll 0 6}}
+        <div class="template-roll-results-title red" data-i18n="lose">Porażka</div>
+        {{/rollBetween() baseRoll 0 6}} -->
 	</div>
 </rolltemplate>
 
+
 <script type="text/worker">
-
-
-	const stats = ["strength", "agility", "wits", "empathy"];
-
-	stats.forEach(stat => {
-		on(`change:${stat}`, () => {
-			getAttrs([stat], values => {
-				const stat_base = values[stat]; 
-				
-				getAttrs([`${stat}_calc`], function(test) {
-					setAttrs({
-						[`${stat}_calc`]: stat_base
-					}); 
-				});
-				
-			});
-		});
-	});
-
+    on("sheet:opened", function(eventInfo){
+        setAttrs({
+            summodifier: getTranslationByKey("summodifier"),
+            d10modifier: getTranslationByKey("d10modifier")
+        });     
+    });
 
     on('clicked:roll', async (event) => {
-        var attribute = event.htmlAttributes['data-attribute'];
-        var skill = event.htmlAttributes['data-skill'];
-
-        var rollName = attribute;
-
-        if (skill != undefined) {
-            rollName = skill;
-			skill = '+ @{'+skill+'}';
-		} else {
-            skill = '';
-        }
-
-        var baseDiceTotal = '@{'+attribute+'} - @{'+attribute+'_damage}'+skill+' + ?{Modifiers|0} - (@{condition})';
-
-        const rollBase = '@{secret_roll} &{template:frostpunk} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{name=^{dice-pool}}} {{roll-name=^{'+rollName+'} }} {{base-dice=[[ '+baseDiceTotal+' ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }} {{base-roll-eighteen=[[1d6]] }} {{base-roll-nineteen=[[1d6]] }} {{base-roll-twenty=[[1d6]] }}';
-
+        let rollBase = event.htmlAttributes.value + "{{character_name=@{character_name}}} {{character_id=@{character_id}}}";
         let rollResult = await startRoll(rollBase);
-
+    
         finishRoll(
             rollResult.rollId
         );
     });
 
+    const buttonlist = ["main", "mainSecond", "mystery", "pact"];
+
+    buttonlist.forEach(button => {
+        on(`clicked:${button}`, function() {
+            setAttrs({
+                sheetTab: button
+            });
+        });
+        });
 </script>

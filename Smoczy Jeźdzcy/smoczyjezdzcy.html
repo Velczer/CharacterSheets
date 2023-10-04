@@ -1,0 +1,522 @@
+<div class="character-sheet">
+    <div class="row">
+        <div class="col-12 center">
+            <img src="https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Smoczy%20Jeźdzcy/Images/logo.png" class="logo" alt="">
+        </div>
+    </div>
+    <div class="row col-hr">
+        <div class="col-6">
+            <h2 class="title" data-i18n="dragon-rider">Smoczy jeździec</h2>
+            <div class="input-with-label">
+                <label data-i18n="name">Imię</label>
+                <input type="text" name="attr_character_name">
+            </div>
+
+            <div class="input-with-label">
+                <label data-i18n="nickname">Przydomek</label>
+                <input type="text" name="attr_nickname">
+            </div>
+
+            <div class="input-with-label">
+                <label data-i18n="archetype">Archetyp</label>
+                <select name="attr_achertype">
+                    <option value="pick" data-i18n="pick" selected>Wybierz</option>
+                    <option value="hero" data-i18n="hero">Bohaterka</option>
+                    <option value="aristocrat" data-i18n="aristocrat">Arystokrata</option>
+                    <option value="rebel" data-i18n="rebel">Buntowniczka</option>
+                    <option value="dodger" data-i18n="dodger">Spryciarz</option>
+                    <option value="hunter" data-i18n="hunter">Łowczyni</option>
+                    <option value="sage" data-i18n="sage">Mędrzec</option>
+                    <option value="fraud" data-i18n="fraud">Oszustka</option>
+                    <option value="avenger" data-i18n="avenger">Mściciel</option>
+                    <option value="alumnus-of-order" data-i18n="alumnus-of-order">Wychowanka Zakonu</option>
+                </select>
+            </div>
+
+            <div class="input-with-label">
+                <label data-i18n="age">Wiek / Staż</label>
+                <input type="text" name="attr_age">
+            </div>
+
+            <div class="input-with-label">
+                <label data-i18n="motivation">Motywacja</label>
+                <select name="attr_motivation">
+                    <option value="pick-or-enter" data-i18n="pick-or-enter" selected>Wybierz lub wpisz</option>
+                    <option value="faith-in-aslaug" data-i18n="faith-in-aslaug">Wiara w Aslauga</option>
+                    <option value="hatred-of-chimeras" data-i18n="hatred-of-chimeras">Nienawiść do chimer</option>
+                    <option value="desire-for-fame" data-i18n="desire-for-fame">Pragnienie sławy</option>
+                    <option value="good-of-empire" data-i18n="good-of-empire">Dobro ludzi Imperium</option>
+                    <option value="private-interests" data-i18n="private-interests">Prywatne interesy</option>
+                    <option value="desire-for-adventure" data-i18n="desire-for-adventure">Pragnienie przygód</option>
+                    <option value="gratitude" data-i18n="gratitude">Wdzięczność</option>
+                    <option value="call-of-duty" data-i18n="call-of-duty">Poczucie obowiązku</option>
+                    <option value="desire-for-revenge" data-i18n="desire-for-revenge">Żądza zemsty</option>
+                    <option value="penance" data-i18n="penance">Pokuta</option>
+                    <option value="feeling-guilty" data-i18n="feeling-guilty">Poczucie winy</option>
+                    <option value="desire-for-power" data-i18n="desire-for-power">Pragnienie władzy</option>
+                </select>
+                <input type="text" name="attr_motivation_text">
+            </div>
+
+            <div class="margin-20"></div>
+
+            <div class="sygnet-background__wrapper">
+                <div class="sygnet-background" style="left: -220px; top: 20px;"></div>
+            </div>
+
+            <div class="attr-row__wrapper" style="margin-left: 20px;">
+                <h3 class="subtitle" data-i18n="bravery">Waleczność</h3>
+
+                <div class="attr-row" style="margin-left: 30px;">
+                    <div class="main-attr">
+                        <label class="checkbox-label">
+                            <input type="radio" name="attr_connection_attr" value="bravery">
+                        </label>
+                        <input type="number" name="attr_bravery" value="0">
+                    </div>
+    
+                    <div class="flex-column">
+                        <div class="attr-label">
+                            <input type="number" name="attr_willpower" value="0">
+                            <button class="label-roll" type="action" name="act_roll" value='&{template:dragonriders} {{baseRoll=[[@{willpower}d6 + @{bravery}d6 ]]}} {{roll-name=^{willpower}}}' data-attribute="willpower" data-i18n="willpower">Siła Woli</button>
+                        </div>
+                        <div class="attr-label">
+                            <input type="number" name="attr_fight" value="0">
+                            <label data-i18n="fight">Walka</label>
+                        </div>
+                        <div class="attr-label">
+                            <input type="number" name="attr_resilence" value="0">
+                            <label data-i18n="resilence">Wytrzymałość</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="attr-row__wrapper" style="margin-left: 90px;">
+                <h3 class="subtitle" data-i18n="flair">Spryt</h3>
+                <div class="attr-row">
+                    <div class="main-attr">
+                        <label class="checkbox-label">
+                            <input type="radio" name="attr_connection_attr" value="flair">
+                        </label>
+                        <input type="number" name="attr_flair" value="0">
+                    </div>
+    
+                    <div class="flex-column">
+                        <div class="attr-label">
+                            <input type="number" name="attr_cunning" value="0">
+                            <label data-i18n="cunning">Przebiegłość</label>
+                        </div>
+                        <div class="attr-label">
+                            <input type="number" name="attr_observation" value="0">
+                            <label data-i18n="observation">Spostrzegawczość</label>
+                        </div>
+                        <div class="attr-label">
+                            <input type="number" name="attr_dexterity" value="0">
+                            <label data-i18n="dexterity">Zręczność</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="attr-row__wrapper" style="margin-left: 120px;">
+                <h3 class="subtitle" data-i18n="wisdom">Mądrość</h3>
+                <div class="attr-row">
+                    <div class="main-attr">
+                        <label class="checkbox-label">
+                            <input type="radio" name="attr_connection_attr" value="wisdom">
+                        </label>
+                        <input type="number" name="attr_wisdom" value="0">
+                    </div>
+    
+                    <div class="flex-column">
+                        <div class="attr-label">
+                            <input type="number" name="attr_magic_arena" value="0">
+                            <label data-i18n="magic-arena">Arena Magii</label>
+                        </div>
+                        <div class="attr-label">
+                            <input type="number" name="attr_perspicacity" value="0">
+                            <label data-i18n="perspicacity">Przenikliwość</label>
+                        </div>
+                        <div class="attr-label">
+                            <input type="number" name="attr_understanding" value="0">
+                            <label data-i18n="understanding">Rozumienie</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="attr-row__wrapper" style="margin-left: 70px;">
+                <h3 class="subtitle" data-i18n="sophistication">Obycie</h3>
+                <div class="attr-row">
+                    <div class="main-attr">
+                        <label class="checkbox-label">
+                            <input type="radio" name="attr_connection_attr" value="sophistication">
+                        </label>
+                        <input type="number" name="attr_sophistication" value="0">
+                    </div>
+    
+                    <div class="flex-column">
+                        <div class="attr-label">
+                            <input type="number" name="attr_history" value="0">
+                            <label data-i18n="history">Historia</label>
+                        </div>
+                        <div class="attr-label">
+                            <input type="number" name="attr_inspiration" value="0">
+                            <label data-i18n="inspiration">Inspiracja</label>
+                        </div>
+                        <div class="attr-label">
+                            <input type="number" name="attr_persuasion" value="0">
+                            <label data-i18n="persuasion">Przekonywanie</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="margin-20"></div>
+
+            <h3 class="subtitle" data-i18n="talents">Talenty</h3>
+            <div class="fieldset-labels">
+                <span class="flex-1 mini-title" data-i18n="talent-name">Nazwa talentu</span>
+                <span class="flex-4 mini-title" data-i18n="description">Opis</span>
+            </div>
+            <fieldset class="repeating_talents">
+                <input class="flex-1" type="text" name="attr_talent_name">
+                <textarea class="flex-4" name="attr_talent_desc" rows="2"></textarea>
+            </fieldset>
+        </div>
+
+        <div class="col-6 sygnet-background__wrapper">
+            <div class="sygnet-background" style="right: -130px;top:50px"></div>
+            <div class="row">
+                <div class="col-8">
+                    <h2 class="title" data-i18n="dragon">Smok</h2>
+                    <div class="input-with-label">
+                        <label data-i18n="name">Imię</label>
+                        <input type="text" name="attr_dragon_name">
+                    </div>
+
+                    <div class="input-with-label">
+                        <label data-i18n="character">Charakter</label>
+                        <input type="text" name="attr_dragon_character">
+                    </div>
+
+                    <div class="input-with-label">
+                        <label data-i18n="archetype">Archetyp</label>
+                        <select name="attr_dragon_archetype">
+                            <option value="pick" data-i18n="pick" selected>Wybierz</option>
+                            <option value="dream-dragon" data-i18n="dream-dragon">Twój Wymarzony Smok</option>
+                            <option value="majestic-giant" data-i18n="majestic-giant">Majestatyczny Olbrzym</option>
+                            <option value="terror-from-space" data-i18n="terror-from-space">Terror z Przestworzy</option>
+                            <option value="gentle-beauty" data-i18n="gentle-beauty">Łagodna Piękność</option>
+                            <option value="insidious-predator" data-i18n="insidious-predator">Podstępny Drapieżca</option>
+                            <option value="dark-secret" data-i18n="dark-secret">Mroczna Tajemnica</option>
+                            <option value="winged-trouble" data-i18n="winged-trouble">Skrzydlate Tarapaty</option>
+                            <option value="repository-of-knowledge" data-i18n="repository-of-knowledge">Skarbnica Wiedzy</option>
+                            <option value="untamed-beast" data-i18n="untamed-beast">Nieokiełznana Bestia</option>
+                        </select>
+                    </div>
+
+                    <div class="input-with-label">
+                        <label data-i18n="relation">Relacja</label>
+                        <select name="attr_dragon_relation">
+                            <option value="pick" data-i18n="pick" selected>Wybierz</option>
+                            <option value="guardian" data-i18n="guardian">Opiekun</option>
+                            <option value="rival" data-i18n="rival">Rywalka</option>
+                            <option value="friend" data-i18n="friend">Przyjaciel</option>
+                            <option value="siblings" data-i18n="siblings">Rodzeństwo</option>
+                            <option value="subordinate" data-i18n="subordinate">Podwładny</option>
+                            <option value="mentor" data-i18n="mentor">Mentorka</option>
+                            <option value="beloved" data-i18n="beloved">Ukochana</option>
+                            <option value="despot" data-i18n="despot">Despota</option>
+                            <option value="problem" data-i18n="problem">Problem</option>
+                        </select>
+                    </div>
+
+                    <div class="input-with-label">
+                        <label data-i18n="size">Wielkość</label>
+                        <input type="text" name="attr_dragon_size">
+                    </div>
+
+                </div>
+                <div class="col-4">
+                    <h3 class="subtitle" data-i18n="level-of-connection">Poziom Więzi</h3>
+
+                    <div class="attr-row" style="justify-content: flex-start;">
+                        <div class="main-attr">
+                            <input type="number" name="attr_level_of_connection" value="0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="margin-20"></div>
+
+            <h3 class="subtitle" data-i18n="connection-cost">Cena Więzi</h3>
+            <textarea name="attr_connection_cost" rows="3"></textarea>
+
+            <h3 class="subtitle" data-i18n="aslaug-words">Słowa Aslauga</h3>
+            <textarea name="attr_aslaug_words" rows="3"></textarea>
+
+            <div class="margin-20"></div>
+
+            <h3 class="subtitle" data-i18n="dragon-powers">Moce smoka</h3>
+            <div class="fieldset-labels">
+                <span class="flex-3 mini-title" data-i18n="dragon-power-name">Nazwa</span>
+                <span class="flex-1 mini-title" data-i18n="dragon-power-lvl">Poziom</span>
+                <span class="flex-4 mini-title" data-i18n="description">Opis</span>
+            </div>
+            <fieldset class="repeating_dragonpowers">
+                <input class="flex-3" type="text" name="attr_dragon_power_name">
+                <input class="flex-1" type="number" name="attr_dragon_power_lvl" value="0">
+                <textarea class="flex-4" name="attr_dragon_power_desc" rows="2"></textarea>
+            </fieldset>
+            
+        </div>
+    </div>
+
+    <div class="margin-20"></div>
+
+    <div class="row">
+        <div class="col-4">
+            <h3 class="subtitle" data-i18n="zest">Animusz</h3>
+            <div class="inputs-box">
+                <input type="number" name="attr_zest_lvl">
+                <input type="text" name="attr_zest_desc">
+            </div>
+
+            <div class="margin-10"></div>
+
+            <h3 class="subtitle" data-i18n="throws">Rzuty</h3>
+
+            <button class="label-roll" type="action" name="act_roll" value='&{template:dragonriders} {{baseRoll=[[2d6 + @{combat}]]}} {{roll-name=^{combat}}}' data-attribute="combat" data-i18n="combat">Zwarcie</button>
+
+            <button class="label-roll" type="action" name="act_roll" value='&{template:dragonriders} {{baseRoll=[[2d6 + @{range}]]}} {{roll-name=^{range}}}' data-attribute="range" data-i18n="range">Dystans</button>
+
+            <button class="label-roll" type="action" name="act_roll" value='&{template:dragonriders} {{baseRoll=[[2d6 + @{dodge}]]}} {{roll-name=^{dodge}}}' data-attribute="dodge" data-i18n="dodge">Unik</button>
+
+            <button class="label-roll" type="action" name="act_roll" value='&{template:dragonriders} {{baseRoll=[[2d6 + @{bond}]]}} {{roll-name=^{bond}}}' data-attribute="bond" data-i18n="bond">Więź</button>
+
+            <div class="margin-10"></div>
+
+            <h3 class="subtitle" data-i18n="experience-points">Punkty Doświadczenia</h3>
+            <input type="text" name="attr_experience" class="input-with-border" style="width: 100%;">
+        </div>
+
+        <div class="col-4">
+            <table class="states-table">
+                <thead>
+                    <tr>
+                        <th data-i18n="rider">Jeździec</th>
+                        <th data-i18n="states" class="states-table__main-title">Stany</th>
+                        <th data-i18n="dragon">Smok</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="attr_scratched" value="1">
+                                <span></span>
+                            </label>
+                        </td>
+                        <td data-i18n="scratched">Draśnięty</td>
+                        <td>
+                            <div class="double-checkboxes">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="attr_dragon_scratched_1" value="1">
+                                    <span></span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="attr_dragon_scratched_2" value="1">
+                                    <span></span>
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="attr_battered" value="1">
+                                <span></span>
+                            </label>
+                        </td>
+                        <td data-i18n="battered">Poturbowany</td>
+                        <td>
+                            <div class="double-checkboxes">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="attr_dragon_battered_1" value="1">
+                                    <span></span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="attr_dragon_battered_2" value="1">
+                                    <span></span>
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="attr_injured" value="1">
+                                <span></span>
+                            </label>
+                        </td>
+                        <td data-i18n="injured">Ranny</td>
+                        <td>
+                            <div class="double-checkboxes">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="attr_dragon_injured_1" value="1">
+                                    <span></span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="attr_dragon_injured_2" value="1">
+                                    <span></span>
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="attr_massacred" value="1">
+                                <span></span>
+                            </label>
+                        </td>
+                        <td data-i18n="massacred">Zmasakrowany</td>
+                        <td>
+                            <div class="double-checkboxes">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="attr_dragon_massacred_1" value="1">
+                                    <span></span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="attr_dragon_massacred_2" value="1">
+                                    <span></span>
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="attr_dead" value="1">
+                                <span>M</span>
+                            </label>
+                        </td>
+                        <td data-i18n="dead">Martwy</td>
+                        <td>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="attr_dragon_dead" value="1">
+                                <span>M</span>
+                            </label>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-4">
+            <h3 class="subtitle" data-i18n="dragon-look">Opis wyglądu</h3>
+            <textarea name="attr_dragon_look" rows="10"></textarea>
+        </div>
+    </div>
+
+    <div class="margin-20"></div>
+
+    <div class="row">
+        <div class="col-6">
+            <h3 class="subtitle center">Twoja prowincja</h3>
+            <textarea name="attr_province" rows="10"></textarea>
+        </div>
+        <div class="col-6">
+            <h3 class="subtitle center">Twoje skrzydło</h3>
+            <textarea name="attr_wing" rows="10"></textarea>
+        </div>
+    </div>
+
+    <div class="margin-20"></div>
+
+    <div class="row">
+        <div class="col-12">
+            <h3 class="subtitle center" data-i18n="chessboard-mode">Tryb szachownicy</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-9">
+            <div class="input-with-label">
+                <label data-i18n="personal-goal">Cel osobisty</label>
+                <input type="text" name="attr_personal_goal">
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="attr-row" style="justify-content: flex-start;">
+                <div class="attr-label">
+                    <label data-i18n="influence-points">Punkty Wpływu</label>
+                    <input type="number" name="attr_influence_points" value="0">
+                </div>
+            </div>
+            <!-- <div class="attr-row" style="justify-content: flex-start;">
+                <div class="main-attr">
+                    <input type="number" name="attr_influence_points" value="0">
+                </div>
+            </div> -->
+        </div>
+    </div>
+
+</div>
+
+<!-- Roll Templates -->
+<rolltemplate class="sheet-rolltemplate-dragonriders">
+    <div class="template-margin-10"></div>
+	<div class="template-wrap">
+        <div class="template-diamonds-hr"><span></span></div>
+		<div class="template-header">
+            <span>
+                {{#character_name}}
+                {{#character_id}}[{{character_name}}](https://journal.roll20.net/character/{{character_id}}){{/character_id}}
+                {{^character_id}}{{character_name}}{{/character_id}}
+                {{/character_name}}
+            </span>
+		</div>
+
+        <div class="template-roll-results-title">{{roll-name}}</div>
+
+        <div class="template-roll-results">
+            <div class="template-d6">{{baseRoll}}</div>
+        </div>
+
+        {{#rollGreater() baseRoll 9}}
+        <div class="template-roll-results-title green" data-i18n="success">Sukces</div>
+        {{/rollGreater() baseRoll 9}}
+
+        {{#rollBetween() baseRoll 7 9}}
+        <div class="template-roll-results-title green" data-i18n="success-with-complication">Sukces z komplikacjami</div>
+        {{/rollBetween() baseRoll 7 9}}
+
+        {{#rollBetween() baseRoll 0 6}}
+        <div class="template-roll-results-title red" data-i18n="lose">Porażka</div>
+        {{/rollBetween() baseRoll 0 6}}
+	</div>
+</rolltemplate>
+
+
+<script type="text/worker">
+    on("sheet:opened", function(eventInfo){
+        setAttrs({
+            summodifier: getTranslationByKey("summodifier"),
+            d10modifier: getTranslationByKey("d10modifier")
+        });     
+    });
+
+    on('clicked:roll', async (event) => {
+        let rollBase = event.htmlAttributes.value + "{{character_name=@{character_name}}} {{character_id=@{character_id}}}";
+        let rollResult = await startRoll(rollBase);
+    
+        finishRoll(
+            rollResult.rollId
+        );
+    });
+
+</script>
