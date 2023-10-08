@@ -20,7 +20,7 @@
     "health-points": "Punkty życia",
 
     "resources": "Zasoby",
-    "essence": "Esencja",
+    "energy": "Energia",
     "hints": "Wskazówki",
     "ways": "Drogi",
     "secrets": "Sekrety",
@@ -75,5 +75,14 @@
     "forbidden-topics": "Zakazane tematy",
     "interesting-topics": "Ciekawe tematy",
     "permanent-elements": "Stałe elementy",
-    "important-facts": "Ważne fakty"
+    "important-facts": "Ważne fakty",
+    "throw-on-relationship-with-mystery":"Rzuć na relację z Tajemnicą",
+    "throw-on-relationship-with-angels": "Rzuć na relację z Chórem",
+    "power-desc": "Moc to miara siły i  umiejętności walki bronią. Wysoki bonus oznacza Tułacza z naprawdę dobrą krzepą. Niski przyniesie na myśl słabowitość. Moc zostanie wykorzystana do Ruchu - Atakuj oraz przy Ruchu - przetrwaj, kiedy będzie trzeba wykazać się siłą mięśni.",
+    "durability-desc": "Budowa określa wytrzymałość formy na uderzenia oraz odporności na inne czynniki zewnętrzne. Wysoki bonus oznacza niesamowitą kondycję, a niski - kruchość ciała. Budowa zostanie wykorzystana w trakcie uruchomienia Ruchu - Przetrwaj, kiedy będzie trzeba wykazać się wytrzymałością",
+    "speed-desc": "Szybkość opisuje sprawność, zwinność i finezję postaci. Wysoki bonus oznacza gibkość, zdolność do akrobacji i wspinaczki. Niski bonus z kolei symbolizuje ślamazarność i  niezdarność. Szybkość zostanie wykorzystana w Ruchu - Strzelaj, a także podczas uruchomienia Ruchu - Przetrwaj, np. kiedy będzie trzeba wykazać się szybkim unikiem przed smoczym oddechem.",
+    "sense-desc": "Rozsądek przywodzi na myśl zmysły, czujność i rozwagę. Wysoki bonus symbolizuje Tułacza baczącego na otoczenie, przygotowanego na każdą ewentualność. Natomiast niski bonus oznacza znaczne roztargnienie. Rozsądek zostanie wykorzystany w  Ruchu - Szukaj, aby znaleźć ukryte na miejscu wskazówki na temat Tajemnicy. Ruch - Przetrwaj także może wymagać użycia tego atrybutu, tym bardziej, jeśli od spostrzegawczości będzie zależało bezpieczeństwo Tułacza.",
+    "memories-desc": "Wspomnienia to siła umysłu oraz wiedza na temat dawnych dziejów, jeszcze sprzed nastania mrocznego wieku. Wysoki bonus oznacza łatwość przyswajania informacji, szeroką gamę wiadomości oraz znamienną pamięć o przeszłości. Niski bonus symbolizuje trudności w  nauce, a także zupełne zapomnienie o faktach z  przeszłości. Wspomnienia zostaną wykorzystane podczas aktywowania Ruchu - Badaj, aby dowiedzieć się czegoś więcej na temat znalezionych tropów. Ruch - Przetrwaj wykorzysta ten atrybut np. w  trudnych chwilach zagubienia w miejscach, które odwiedziliśmy za życia..",
+    "charisma-desc": "Charakter to siła woli. Moc ducha, jaki jeszcze tli się w  wątłej formie. Wysoki bonus oznacza krasomówcze zdolności oraz niezłomność, natomiast niski powie o słabych predyspozycjach w interakcjach społecznych, a  także podatności na naciski innych istot. Charakter zostanie wykorzystany podczas uruchomienia Ruchu - Spiskuj, np. gdy będzie trzeba zdobyć jakiś przedmiot od tubylców. Ruch - Przetrwaj może wymagać Charakteru, np. w momencie duchowego starcia z agresywnym obcym"
+
 }

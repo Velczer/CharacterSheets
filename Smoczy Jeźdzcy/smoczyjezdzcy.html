@@ -6,62 +6,70 @@
     </div>
     <div class="row col-hr">
         <div class="col-6">
-            <h2 class="title" data-i18n="dragon-rider">Smoczy jeździec</h2>
-            <div class="input-with-label">
-                <label data-i18n="name">Imię</label>
-                <input type="text" name="attr_character_name">
+            <div>
+                <h2 class="title" data-i18n="dragon-rider">Smoczy jeździec</h2>
+                <div class="input-with-label">
+                    <label data-i18n="name">Imię</label>
+                    <input type="text" name="attr_character_name">
+                </div>
+    
+                <div class="input-with-label">
+                    <label data-i18n="nickname">Przydomek</label>
+                    <input type="text" name="attr_nickname">
+                </div>
+    
+                <div class="input-with-label">
+                    <label data-i18n="archetype">Archetyp</label>
+                    <select name="attr_achertype">
+                        <option value="pick" data-i18n="pick" selected>Wybierz</option>
+                        <option value="hero" data-i18n="hero">Bohaterka</option>
+                        <option value="aristocrat" data-i18n="aristocrat">Arystokrata</option>
+                        <option value="rebel" data-i18n="rebel">Buntowniczka</option>
+                        <option value="dodger" data-i18n="dodger">Spryciarz</option>
+                        <option value="hunter" data-i18n="hunter">Łowczyni</option>
+                        <option value="sage" data-i18n="sage">Mędrzec</option>
+                        <option value="fraud" data-i18n="fraud">Oszustka</option>
+                        <option value="avenger" data-i18n="avenger">Mściciel</option>
+                        <option value="alumnus-of-order" data-i18n="alumnus-of-order">Wychowanka Zakonu</option>
+                    </select>
+                </div>
+    
+                <div class="input-with-label">
+                    <label data-i18n="age">Wiek / Staż</label>
+                    <input type="text" name="attr_age">
+                </div>
+    
+                <div class="input-with-label">
+                    <label data-i18n="motivation">Motywacja</label>
+                    <select name="attr_motivation">
+                        <option value="pick-or-enter" data-i18n="pick-or-enter" selected>Wybierz lub wpisz</option>
+                        <option value="faith-in-aslaug" data-i18n="faith-in-aslaug">Wiara w Aslauga</option>
+                        <option value="hatred-of-chimeras" data-i18n="hatred-of-chimeras">Nienawiść do chimer</option>
+                        <option value="desire-for-fame" data-i18n="desire-for-fame">Pragnienie sławy</option>
+                        <option value="good-of-empire" data-i18n="good-of-empire">Dobro ludzi Imperium</option>
+                        <option value="private-interests" data-i18n="private-interests">Prywatne interesy</option>
+                        <option value="desire-for-adventure" data-i18n="desire-for-adventure">Pragnienie przygód</option>
+                        <option value="gratitude" data-i18n="gratitude">Wdzięczność</option>
+                        <option value="call-of-duty" data-i18n="call-of-duty">Poczucie obowiązku</option>
+                        <option value="desire-for-revenge" data-i18n="desire-for-revenge">Żądza zemsty</option>
+                        <option value="penance" data-i18n="penance">Pokuta</option>
+                        <option value="feeling-guilty" data-i18n="feeling-guilty">Poczucie winy</option>
+                        <option value="desire-for-power" data-i18n="desire-for-power">Pragnienie władzy</option>
+                    </select>
+                    <input type="text" name="attr_motivation_text">
+                </div>
             </div>
-
-            <div class="input-with-label">
-                <label data-i18n="nickname">Przydomek</label>
-                <input type="text" name="attr_nickname">
-            </div>
-
-            <div class="input-with-label">
-                <label data-i18n="archetype">Archetyp</label>
-                <select name="attr_achertype">
-                    <option value="pick" data-i18n="pick" selected>Wybierz</option>
-                    <option value="hero" data-i18n="hero">Bohaterka</option>
-                    <option value="aristocrat" data-i18n="aristocrat">Arystokrata</option>
-                    <option value="rebel" data-i18n="rebel">Buntowniczka</option>
-                    <option value="dodger" data-i18n="dodger">Spryciarz</option>
-                    <option value="hunter" data-i18n="hunter">Łowczyni</option>
-                    <option value="sage" data-i18n="sage">Mędrzec</option>
-                    <option value="fraud" data-i18n="fraud">Oszustka</option>
-                    <option value="avenger" data-i18n="avenger">Mściciel</option>
-                    <option value="alumnus-of-order" data-i18n="alumnus-of-order">Wychowanka Zakonu</option>
-                </select>
-            </div>
-
-            <div class="input-with-label">
-                <label data-i18n="age">Wiek / Staż</label>
-                <input type="text" name="attr_age">
-            </div>
-
-            <div class="input-with-label">
-                <label data-i18n="motivation">Motywacja</label>
-                <select name="attr_motivation">
-                    <option value="pick-or-enter" data-i18n="pick-or-enter" selected>Wybierz lub wpisz</option>
-                    <option value="faith-in-aslaug" data-i18n="faith-in-aslaug">Wiara w Aslauga</option>
-                    <option value="hatred-of-chimeras" data-i18n="hatred-of-chimeras">Nienawiść do chimer</option>
-                    <option value="desire-for-fame" data-i18n="desire-for-fame">Pragnienie sławy</option>
-                    <option value="good-of-empire" data-i18n="good-of-empire">Dobro ludzi Imperium</option>
-                    <option value="private-interests" data-i18n="private-interests">Prywatne interesy</option>
-                    <option value="desire-for-adventure" data-i18n="desire-for-adventure">Pragnienie przygód</option>
-                    <option value="gratitude" data-i18n="gratitude">Wdzięczność</option>
-                    <option value="call-of-duty" data-i18n="call-of-duty">Poczucie obowiązku</option>
-                    <option value="desire-for-revenge" data-i18n="desire-for-revenge">Żądza zemsty</option>
-                    <option value="penance" data-i18n="penance">Pokuta</option>
-                    <option value="feeling-guilty" data-i18n="feeling-guilty">Poczucie winy</option>
-                    <option value="desire-for-power" data-i18n="desire-for-power">Pragnienie władzy</option>
-                </select>
-                <input type="text" name="attr_motivation_text">
-            </div>
-
+            
             <div class="margin-20"></div>
 
             <div class="sygnet-background__wrapper">
                 <div class="sygnet-background" style="left: -220px; top: 20px;"></div>
+
+                <label class="checkbox-label small-checkbox" style="position: absolute; right:0">
+                    <input type="hidden" name="attr_dragon_presence" value="0">
+                    <input type="checkbox" name="attr_dragon_presence" value="1">
+                    <span data-i18n="dragon-presence">Obecność smoka</span>
+                </label>
             </div>
 
             <div class="attr-row__wrapper" style="margin-left: 20px;">
@@ -69,6 +77,7 @@
 
                 <div class="attr-row" style="margin-left: 30px;">
                     <div class="main-attr">
+                        <input type="hidden" name="attr_bravery_calc" value="0">
                         <label class="checkbox-label">
                             <input type="radio" name="attr_connection_attr" value="bravery">
                         </label>
@@ -78,15 +87,15 @@
                     <div class="flex-column">
                         <div class="attr-label">
                             <input type="number" name="attr_willpower" value="0">
-                            <button class="label-roll" type="action" name="act_roll" value='&{template:dragonriders} {{baseRoll=[[@{willpower}d6 + @{bravery}d6 ]]}} {{roll-name=^{willpower}}}' data-attribute="willpower" data-i18n="willpower">Siła Woli</button>
+                            <button class="label-roll" type="action" name="act_roll" value='&{template:dragonriders} {{roll-name=^{willpower}}}' data-main-attribute="bravery" data-attribute="willpower" data-i18n="willpower">Siła Woli</button>
                         </div>
                         <div class="attr-label">
                             <input type="number" name="attr_fight" value="0">
-                            <label data-i18n="fight">Walka</label>
+                            <button class="label-roll" type="action" name="act_roll" value='&{template:dragonriders} {{roll-name=^{fight}}}' data-main-attribute="bravery" data-attribute="fight" data-i18n="fight">Walka</button>
                         </div>
                         <div class="attr-label">
                             <input type="number" name="attr_resilence" value="0">
-                            <label data-i18n="resilence">Wytrzymałość</label>
+                            <button class="label-roll" type="action" name="act_roll" value='&{template:dragonriders} {{roll-name=^{resilence}}}' data-main-attribute="bravery" data-attribute="resilence" data-i18n="resilence">Wytrzymałość</button>
                         </div>
                     </div>
                 </div>
@@ -96,6 +105,7 @@
                 <h3 class="subtitle" data-i18n="flair">Spryt</h3>
                 <div class="attr-row">
                     <div class="main-attr">
+                        <input type="hidden" name="attr_flair_calc" value="0">
                         <label class="checkbox-label">
                             <input type="radio" name="attr_connection_attr" value="flair">
                         </label>
@@ -105,15 +115,15 @@
                     <div class="flex-column">
                         <div class="attr-label">
                             <input type="number" name="attr_cunning" value="0">
-                            <label data-i18n="cunning">Przebiegłość</label>
+                            <button class="label-roll" type="action" name="act_roll" value='&{template:dragonriders} {{roll-name=^{cunning}}}' data-main-attribute="flair" data-attribute="cunning" data-i18n="cunning">Przebiegłość</button>
                         </div>
                         <div class="attr-label">
                             <input type="number" name="attr_observation" value="0">
-                            <label data-i18n="observation">Spostrzegawczość</label>
+                            <button class="label-roll" type="action" name="act_roll" value='&{template:dragonriders} {{roll-name=^{observation}}}' data-main-attribute="flair" data-attribute="observation" data-i18n="observation">Spostrzegawczość</button>
                         </div>
                         <div class="attr-label">
                             <input type="number" name="attr_dexterity" value="0">
-                            <label data-i18n="dexterity">Zręczność</label>
+                            <button class="label-roll" type="action" name="act_roll" value='&{template:dragonriders} {{roll-name=^{dexterity}}}' data-main-attribute="flair" data-attribute="dexterity" data-i18n="dexterity">Zręczność</button>
                         </div>
                     </div>
                 </div>
@@ -123,6 +133,7 @@
                 <h3 class="subtitle" data-i18n="wisdom">Mądrość</h3>
                 <div class="attr-row">
                     <div class="main-attr">
+                        <input type="hidden" name="attr_wisdom_calc" value="0">
                         <label class="checkbox-label">
                             <input type="radio" name="attr_connection_attr" value="wisdom">
                         </label>
@@ -132,15 +143,15 @@
                     <div class="flex-column">
                         <div class="attr-label">
                             <input type="number" name="attr_magic_arena" value="0">
-                            <label data-i18n="magic-arena">Arena Magii</label>
+                            <button class="label-roll" type="action" name="act_roll" value='&{template:dragonriders} {{roll-name=^{magic-arena}}}' data-main-attribute="wisdom" data-attribute="magic_arena" data-i18n="magic-arena">Arena Magii</button>
                         </div>
                         <div class="attr-label">
                             <input type="number" name="attr_perspicacity" value="0">
-                            <label data-i18n="perspicacity">Przenikliwość</label>
+                            <button class="label-roll" type="action" name="act_roll" value='&{template:dragonriders} {{roll-name=^{perspicacity}}}' data-main-attribute="wisdom" data-attribute="perspicacity" data-i18n="perspicacity">Arena Magii</button>
                         </div>
                         <div class="attr-label">
                             <input type="number" name="attr_understanding" value="0">
-                            <label data-i18n="understanding">Rozumienie</label>
+                            <button class="label-roll" type="action" name="act_roll" value='&{template:dragonriders} {{roll-name=^{understanding}}}' data-main-attribute="wisdom" data-attribute="understanding" data-i18n="understanding">Rozumienie</button>
                         </div>
                     </div>
                 </div>
@@ -150,6 +161,7 @@
                 <h3 class="subtitle" data-i18n="sophistication">Obycie</h3>
                 <div class="attr-row">
                     <div class="main-attr">
+                        <input type="hidden" name="attr_sophistication_calc" value="0">
                         <label class="checkbox-label">
                             <input type="radio" name="attr_connection_attr" value="sophistication">
                         </label>
@@ -159,15 +171,16 @@
                     <div class="flex-column">
                         <div class="attr-label">
                             <input type="number" name="attr_history" value="0">
-                            <label data-i18n="history">Historia</label>
+                            <button class="label-roll" type="action" name="act_roll" value='&{template:dragonriders} {{roll-name=^{history}}}' data-main-attribute="sophistication" data-attribute="history" data-i18n="history">Historia</button>
+
                         </div>
                         <div class="attr-label">
                             <input type="number" name="attr_inspiration" value="0">
-                            <label data-i18n="inspiration">Inspiracja</label>
+                            <button class="label-roll" type="action" name="act_roll" value='&{template:dragonriders} {{roll-name=^{inspiration}}}' data-main-attribute="sophistication" data-attribute="inspiration" data-i18n="inspiration">Inspiracja</button>
                         </div>
                         <div class="attr-label">
                             <input type="number" name="attr_persuasion" value="0">
-                            <label data-i18n="persuasion">Przekonywanie</label>
+                            <button class="label-roll" type="action" name="act_roll" value='&{template:dragonriders} {{roll-name=^{persuasion}}}' data-main-attribute="sophistication" data-attribute="persuasion" data-i18n="persuasion">Przekonywanie</button>
                         </div>
                     </div>
                 </div>
@@ -289,13 +302,13 @@
 
             <h3 class="subtitle" data-i18n="throws">Rzuty</h3>
 
-            <button class="label-roll" type="action" name="act_roll" value='&{template:dragonriders} {{baseRoll=[[2d6 + @{combat}]]}} {{roll-name=^{combat}}}' data-attribute="combat" data-i18n="combat">Zwarcie</button>
+            <button class="label-roll" type="action" name="act_roll" value='&{template:dragonriders} {{roll-name=^{combat}}}' data-main-attribute="bravery" data-attribute="fight" data-i18n="combat">Zwarcie</button>
 
-            <button class="label-roll" type="action" name="act_roll" value='&{template:dragonriders} {{baseRoll=[[2d6 + @{range}]]}} {{roll-name=^{range}}}' data-attribute="range" data-i18n="range">Dystans</button>
+            <button class="label-roll" type="action" name="act_roll" value='&{template:dragonriders} {{roll-name=^{range}}}' data-main-attribute="flair" data-attribute="dexterity" data-i18n="range">Dystans</button>
 
-            <button class="label-roll" type="action" name="act_roll" value='&{template:dragonriders} {{baseRoll=[[2d6 + @{dodge}]]}} {{roll-name=^{dodge}}}' data-attribute="dodge" data-i18n="dodge">Unik</button>
+            <button class="label-roll" type="action" name="act_roll" value='&{template:dragonriders} {{baseRoll=[[@{level_of_connection}d6 + @{dragon_presence}d8 + ?{@{d6modifier}|0}d6 ]]}} {{roll-name=^{dodge}}}' data-attribute="dodge" data-main-attribute="baseroll" data-i18n="dodge">Unik</button>
 
-            <button class="label-roll" type="action" name="act_roll" value='&{template:dragonriders} {{baseRoll=[[2d6 + @{bond}]]}} {{roll-name=^{bond}}}' data-attribute="bond" data-i18n="bond">Więź</button>
+            <button class="label-roll" type="action" name="act_roll" value='&{template:dragonriders} {{roll-name=^{bond}}}' data-attribute="bond" data-main-attribute="bond" data-i18n="bond">Więź</button>
 
             <div class="margin-10"></div>
 
@@ -457,11 +470,6 @@
                     <input type="number" name="attr_influence_points" value="0">
                 </div>
             </div>
-            <!-- <div class="attr-row" style="justify-content: flex-start;">
-                <div class="main-attr">
-                    <input type="number" name="attr_influence_points" value="0">
-                </div>
-            </div> -->
         </div>
     </div>
 
@@ -469,9 +477,7 @@
 
 <!-- Roll Templates -->
 <rolltemplate class="sheet-rolltemplate-dragonriders">
-    <div class="template-margin-10"></div>
 	<div class="template-wrap">
-        <div class="template-diamonds-hr"><span></span></div>
 		<div class="template-header">
             <span>
                 {{#character_name}}
@@ -480,24 +486,29 @@
                 {{/character_name}}
             </span>
 		</div>
-
+        
         <div class="template-roll-results-title">{{roll-name}}</div>
 
+
+        <div class="template-roll-success-small-text" data-i18n="amount-of-success">Liczba sukcesów:</div>
         <div class="template-roll-results">
-            <div class="template-d6">{{baseRoll}}</div>
+            <div class="template-circle"><span class="template-base-roll">{{baseRoll}}</span> <span class="template-roll-success">{{computed::success}}</span></div>
         </div>
 
-        {{#rollGreater() baseRoll 9}}
-        <div class="template-roll-results-title green" data-i18n="success">Sukces</div>
-        {{/rollGreater() baseRoll 9}}
+        <div class="template-dragon-presence">
+            <div>
+                {{#rollBetween() computed::connectionWithDragon 1 1}}
+                <div class="template-roll-results-small-text" data-i18n="connection-with-dragon">Więź ze smokiem</div>
+                {{/rollBetween() computed::connectionWithDragon 1 1}}
+            </div>
 
-        {{#rollBetween() baseRoll 7 9}}
-        <div class="template-roll-results-title green" data-i18n="success-with-complication">Sukces z komplikacjami</div>
-        {{/rollBetween() baseRoll 7 9}}
+            <div>
+                {{#rollBetween() dragonPresence 1 1}}
+                <div class="template-roll-results-small-text" data-i18n="dragon-presence">Obecność smoka</div>
+                {{/rollBetween() dragonPresence 1 1}}
+            </div>
+        </div>
 
-        {{#rollBetween() baseRoll 0 6}}
-        <div class="template-roll-results-title red" data-i18n="lose">Porażka</div>
-        {{/rollBetween() baseRoll 0 6}}
 	</div>
 </rolltemplate>
 
@@ -505,18 +516,133 @@
 <script type="text/worker">
     on("sheet:opened", function(eventInfo){
         setAttrs({
-            summodifier: getTranslationByKey("summodifier"),
-            d10modifier: getTranslationByKey("d10modifier")
+            d6modifier: getTranslationByKey("d6modifier")
         });     
     });
 
     on('clicked:roll', async (event) => {
-        let rollBase = event.htmlAttributes.value + "{{character_name=@{character_name}}} {{character_id=@{character_id}}}";
+        var mainAttribute = event.htmlAttributes['data-main-attribute'];
+
+        if (mainAttribute == 'baseroll') {
+            var rollBase = event.htmlAttributes.value + "{{character_name=@{character_name}}} {{character_id=@{character_id}}} {{success=[[0]]}} {{dragonPresence=[[@{dragon_presence}]]}} {{connectionWithDragon=[[0]]}}";
+
+        } else if (mainAttribute == 'bond') {
+            var connectionAttr = await asw.getAttrs(['connection_attr']);
+            connectionAttr = Object.values(connectionAttr)[0];
+
+            console.log(connectionAttr)
+
+            var mainAttributeNum = await asw.getAttrs([connectionAttr]);
+
+            console.log(mainAttributeNum)
+            mainAttributeNum = Number(Object.values(mainAttributeNum)[0]);
+
+            console.log(mainAttributeNum)
+
+            var rollBase = event.htmlAttributes.value + "{{baseRoll=[[ "+mainAttributeNum+"d6 + @{level_of_connection}d6 + ?{@{d6modifier}|0}d6 ]]}} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{success=[[0]]}} {{dragonPresence=[[@{dragon_presence}]]}} {{connectionWithDragon=[[0]]}}";
+
+        } else {
+            var attribute = event.htmlAttributes['data-attribute'];
+
+            var mainAttributeNum = await asw.getAttrs([mainAttribute]);
+            mainAttributeNum = Number(Object.values(mainAttributeNum)[0]);
+    
+            var attributeNum = await asw.getAttrs([attribute]);
+            attributeNum = Number(Object.values(attributeNum)[0]);
+    
+            var d6 = mainAttributeNum + attributeNum;
+            var d8 = 0;
+    
+            var connectionAttr = await asw.getAttrs(['connection_attr']);
+            connectionAttr = Object.values(connectionAttr);
+    
+            var dragonPresence = await asw.getAttrs(['dragon_presence']);
+            dragonPresence = Number(Object.values(dragonPresence)[0]);
+    
+            d8 += dragonPresence;
+    
+            var connectionWithDragon = connectionAttr[0] == mainAttribute ? 1 : 0;
+            if (connectionWithDragon == 1) {
+                var levelOfConnection = await asw.getAttrs(['level_of_connection']);
+                levelOfConnection = Number(Object.values(levelOfConnection)[0]);
+    
+                d6 -= levelOfConnection;
+    
+                if (dragonPresence == 1) {
+                    d8 += levelOfConnection;
+                }
+            }
+    
+            var rollBase = event.htmlAttributes.value + "{{baseRoll=[[ "+d6+"d6 + "+d8+"d8 + ?{@{d6modifier}|0}d6 ]]}} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{success=[[0]]}} {{dragonPresence=[[@{dragon_presence}]]}} {{connectionWithDragon=[["+connectionWithDragon+"]]}}";
+        }
+
         let rollResult = await startRoll(rollBase);
+
+        console.log(rollResult)
+
+        let computedValues = await calcComputedValues(rollResult);
+
+        if (mainAttribute != 'baseroll') {
+            computedValues.connectionWithDragon = connectionWithDragon;
+        }
+
+        console.log(computedValues)
     
         finishRoll(
-            rollResult.rollId
+            rollResult.rollId,
+            computedValues
         );
     });
+
+    const calcComputedValues = async (rollResult) => {
+        var results = rollResult.results;
+
+        var dices = results.baseRoll.dice
+        var success = 0;
+        for (var i = 0; i < dices.length; i++) {
+            if (dices[i] == 6 || dices[i] == 7) {
+                success++
+            } else if (dices[i] == 8 || dices[i] == 9) {
+                success += 2
+            } else if (dices[i] >= 10) {
+                success += 3
+            }
+        }
+
+        let computedValues = {
+            success: success,
+        };
+
+        return computedValues;
+    };
+
+    // Get attr helper
+    const asw = (() => {
+        const setActiveCharacterId = function(charId){
+            let oldAcid=getActiveCharacterId();
+            let ev = new CustomEvent("message");
+            ev.data={"id":"0", "type":"setActiveCharacter", "data":charId};
+            self.dispatchEvent(ev);
+            return oldAcid;
+        };
+        const promisifyWorker = (worker, parameters) => {
+            let acid=getActiveCharacterId();
+            let prevAcid=null;
+            return new Promise((res,rej)=>{
+                prevAcid=setActiveCharacterId(acid);
+                try {if (worker===0) getAttrs(parameters[0]||[],(v)=>res(v));
+                    else if (worker===1) setAttrs(parameters[0]||{}, parameters[1]||{},(v)=>res(v));
+                    else if (worker===2) getSectionIDs(parameters[0]||'',(v)=>res(v));
+                } catch(err) {rej(console.error(err))}
+            }).finally(()=>setActiveCharacterId(prevAcid));
+        }
+        
+        return {
+            getAttrs(attrArray) {return promisifyWorker(0, [attrArray])},
+            setAttrs(attrObj, options) {return promisifyWorker(1, [attrObj, options])},
+            getSectionIDs(section) {return promisifyWorker(2, [section])},
+            setActiveCharacterId,
+        }
+    })();
 
 </script>

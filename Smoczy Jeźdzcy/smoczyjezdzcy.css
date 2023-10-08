@@ -3,11 +3,12 @@
     src: url('https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Smoczy%20Jeźdzcy/Fonts/im-fell-english-roman.ttf');
 }
 
-/* Defaults  */
-.sheet-darkmode .sheetform {
-    background-color: transparent;
+@font-face {
+    font-family: 'IMFE';
+    src: url('https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Smoczy%20Jeźdzcy/Fonts/IMFE.ttf');
 }
 
+/* Defaults  */
 .ui-dialog .charsheet {
     padding: 0;
 }
@@ -20,37 +21,6 @@
 
 .character-sheet .flex {
     display: flex;
-}
-
-.character-sheet .flex--space-between {
-    justify-content: space-between;
-}
-
-.character-sheet .flex--align-center {
-    align-items: center;
-}
-
-.character-sheet .row--col-no-padding div:first-child {
-    padding-left: 0;
-}
-
-.character-sheet .row--col-no-padding div:last-child {
-    padding-right: 0;
-}
-
-.character-sheet .row--textarea-box {
-    border: 2px solid #000;
-    background: #fff;
-}
-
-.sheet-darkmode .character-sheet .row--textarea-box {
-    border: 2px solid #606060;
-    background: #000;
-}
-
-.character-sheet .row.row--margin {
-    margin: 0 -8px;
-    max-width: calc(100% + 8px);
 }
 
 .col-12 {
@@ -161,6 +131,7 @@
     border: 1px solid transparent;
     border-bottom: 1px solid #fff;
     color: #fff;
+    font-family: 'ImFellEnglishRoman';
 }
 
 .character-sheet input.transparent {
@@ -204,6 +175,7 @@
     background-attachment: local;
     background-color: #f1f4ff;
     border: 2px solid #e07072;
+    font-family: 'ImFellEnglishRoman';
     font-size: 14px;
     line-height: 24px;
     padding: 0 8px;
@@ -306,7 +278,7 @@
 
 .charsheet .character-sheet input[type="checkbox"]::after,
 .charsheet .character-sheet input[type="radio"]::after {
-    content: "\292B";
+    content: "⤫";
     position: absolute;
     transform: scale(0);
     color: #000;
@@ -358,7 +330,7 @@
     box-sizing: border-box;
     padding: 8px 12px;
     color: #000;
-    font-family: 'ImFellEnglishRoman';
+    font-family: 'IMFE';
     margin-bottom: 15px;
     position: relative;
     overflow: hidden;
@@ -440,10 +412,11 @@
 }
 
 .title {
-    font-size: 20px;
-    line-height: 28px;
-    font-weight: normal;
-    position: relative;
+	font-size: 20px;
+	line-height: 32px;
+	font-weight: normal;
+	position: relative;
+	margin-bottom: 4px;
 }
 
 .title::after {
@@ -452,7 +425,7 @@
     height: 2px;
     background-color: #e07072;
     position: absolute;
-    bottom: 2px;
+    bottom: 0;
     left: 0;
 }
 
@@ -531,18 +504,19 @@
 
 .charsheet .character-sheet .main-attr input[type="radio"] {
     border-radius: 100%;
-    width: 24px;
-    height: 24px;
+	width: 26px;
+	height: 26px;
+	background: #f1f4ff;
 }
 
 .charsheet .character-sheet .main-attr input[type="radio"]::after {
-    content: "";
-    background: #414141;
-    top: 3px;
-    left: 3px;
-    width: 14px;
-    height: 14px;
-    border-radius: 100%;
+	content: "";
+	background: #414141;
+	top: 4px;
+	left: 4px;
+	width: 14px;
+	height: 14px;
+	border-radius: 100%;
 }
 
 .attr-label {
@@ -602,7 +576,17 @@
     padding-top: 0;
 }
 
-.charsheet .character-sheet .checkbox-label {
+.charsheet .character-sheet .checkbox-label.small-checkbox input[type="checkbox"] {
+    width: 28px;
+	height: 28px;
+}
+
+.charsheet .character-sheet .checkbox-label.small-checkbox input[type="checkbox"]::after {
+    font-size: 28px;
+    line-height: 28px;
+}
+
+.charsheet .character-sheet .states-table .checkbox-label {
     position: relative;
     background-color: #f1f4ff;
     padding: 0;
@@ -612,7 +596,7 @@
     box-shadow: 2px 2px 6px rgb(0 0 0 / 60%);
 }
 
-.charsheet .character-sheet .checkbox-label span {
+.charsheet .character-sheet .states-table .checkbox-label span {
     position: absolute;
     top: 2px;
     bottom: 0px;
@@ -685,7 +669,6 @@
 
 
 
-
 .label-hover {
     display: block;
     position: absolute;
@@ -715,17 +698,6 @@ button:hover .label-hover {
     transition-delay: .5s;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 /* Chrome, Safari, Edge, Opera */
 .character-sheet .attr-row input::-webkit-outer-spin-button,
 .character-sheet .attr-row input::-webkit-inner-spin-button {
@@ -741,15 +713,15 @@ button:hover .label-hover {
 
 /* Roll Template */
 .sheet-rolltemplate-dragonriders .sheet-template-wrap {
-    font-family: 'ImFellEnglishRoman';
-    background: #ede9e6;
+    font-family: 'IMFE';
+    background-color: #fefefe;
     color: #000;
     position: relative;
-    padding: 20px 5px 5px;
+    padding: 6px;
     margin-top: 38px;
     margin: 0 auto 10px;
-    border: 2px solid #000;
-    border-top: none;
+    border: 2px solid #e07072;
+    box-shadow: 2px 2px 6px rgb(0 0 0 / 60%);
 }
 
 .sheet-rolltemplate-darkmode.sheet-rolltemplate-dragonriders .sheet-template-wrap {
@@ -758,23 +730,13 @@ button:hover .label-hover {
     border: 2px solid #606060;
 }
 
-.sheet-rolltemplate-dragonriders .sheet-template-margin-10 {
-    height: 10px;
-}
-
 .sheet-rolltemplate-dragonriders .sheet-template-header {
     font-size: 16px;
     text-align: center;
     background-position: center top;
     background-size: contain;
     background-repeat: no-repeat;
-}
-
-.sheet-rolltemplate-dragonriders .sheet-template-diamonds-hr {
-    position: absolute;
-    top: -18px;
-    left: -2px;
-    right: -2px;
+    margin-bottom: 4px;
 }
 
 .sheet-rolltemplate-dragonriders .sheet-template-header span {
@@ -799,10 +761,19 @@ button:hover .label-hover {
     justify-content: space-between;
     text-transform: uppercase;
     font-size: 28px;
-    margin: 18px 0;
+    margin: 6px 0;
 }
 
-.sheet-rolltemplate-dragonriders .sheet-template-roll-results span.inlinerollresult {
+.sheet-rolltemplate-dragonriders .sheet-template-roll-success-small-text {
+    text-align: center;
+}
+
+.sheet-rolltemplate-dragonriders .sheet-template-roll-results span.sheet-template-base-roll {
+    opacity: 0;
+    position: absolute;
+}
+
+.sheet-rolltemplate-dragonriders .sheet-template-roll-results .sheet-template-roll-success span.inlinerollresult {
     width: 100%;
     display: inline-block;
     margin: 0;
@@ -816,7 +787,7 @@ button:hover .label-hover {
     width: auto;
 }
 
-.sheet-rolltemplate-dragonriders .sheet-template-d6 {
+.sheet-rolltemplate-dragonriders .sheet-template-circle {
     position: relative;
     height: 50px;
     width: 50px;
@@ -825,44 +796,23 @@ button:hover .label-hover {
     align-items: center;
     justify-content: center;
     z-index: 1;
+    border: 2px solid #e07072;
+    box-shadow: 2px 2px 6px rgb(0 0 0 / 60%);
+    background: #f1f4ff;
+    border-radius: 100%;
 }
 
-.sheet-rolltemplate-dragonriders .sheet-template-d6::before {
-    content: "";
-    display: block;
-    width: 44px;
-    height: 44px;
-    transform: rotate(45deg);
-    position: absolute;
-    border: 2px solid #000;
-    z-index: -1;
-    left: 2px;
+.sheet-rolltemplate-dragonriders .sheet-template-dragon-presence {
+    display: flex;
+    min-height: 17px;
 }
 
-.sheet-rolltemplate-dragonriders .sheet-template-6 span.inlinerollresult {
-    font-size: 32px;
-    padding-right: 0;
-    font-weight: normal;
+.sheet-rolltemplate-dragonriders .sheet-template-dragon-presence > div {
+    width: 50%;
 }
 
-.sheet-rolltemplate-darkmode.sheet-rolltemplate-dragonriders .sheet-template-d6 span.inlinerollresult {
-    color: #fff;
-}
-
-.sheet-rolltemplate-darkmode.sheet-rolltemplate-dragonriders .sheet-template-d6 {
-    filter: invert(.3);
-}
-
-.sheet-rolltemplate-dragonriders .sheet-blue {
-    color: #4471c4;
-}
-
-.sheet-rolltemplate-dragonriders .sheet-red {
-    color: #e83838;
-}
-
-.sheet-rolltemplate-dragonriders .sheet-green {
-    color: green;
+.sheet-rolltemplate-dragonriders .sheet-template-dragon-presence > div:last-child {
+    text-align: right;
 }
 
 /* Repeating sections */

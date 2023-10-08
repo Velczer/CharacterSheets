@@ -95,7 +95,6 @@
     "dodge": "Unik",
     "bond": "Więź",
 
-
     "experience-points": "Punkty doświadczenia",
 
     "rider": "Jeździec",
@@ -106,14 +105,14 @@
     "massacred": "Zmasakrowany",
     "dead": "Martwy",
 
-
     "dragon-look": "Opis wyglądu",
 
     "chessboard-mode": "Tryb szachownicy",
     "personal-goal": "Cel osobisty",
-    "influence-points": "Punkty Wpływu"
-
-
-
+    "influence-points": "Punkty Wpływu",
+    "amount-of-success": "Liczba sukcesów:",
+    "d6modifier": "Modyfikator do K6",
+    "connection-with-dragon": "Więź ze smokiem",
+    "dragon-presence": "Obecność smoka"
 
 }

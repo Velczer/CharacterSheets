@@ -57,7 +57,10 @@
     
                 <div class="attr-row">
                     <div class="attr-label">
-                        <button class="label-roll" type="action" name="act_roll" value='&{template:mystery} {{baseRoll=[[2d6 + @{power}]]}} {{roll-name=^{power}}}' data-attribute="power" data-i18n="power">Moc</button>
+                        <button class="label-roll" type="action" name="act_roll" value='&{template:mystery} {{baseRoll=[[2d6 + @{power}]]}} {{roll-name=^{power}}}' data-attribute="power">
+                            <span data-i18n="power">Moc</span>
+                            <span data-i18n="power-desc" class="label-hover">Moc to miara siły i  umiejętności walki bronią. Wysoki bonus oznacza Tułacza z naprawdę dobrą krzepą. Niski przyniesie na myśl słabowitość. Moc zostanie wykorzystana do Ruchu - Atakuj oraz przy Ruchu - przetrwaj, kiedy będzie trzeba wykazać się siłą mięśni.</span>
+                        </button>
                         <div class="attr-label__input">
                             <input type="number" name="attr_power" value="0">
                         </div>
@@ -66,13 +69,19 @@
                         <div class="attr-label__input">
                             <input type="number" name="attr_durability" value="0">
                         </div>
-                        <button class="label-roll" type="action" name="act_roll" value='&{template:mystery} {{baseRoll=[[2d6 + @{durability}]]}} {{roll-name=^{durability}}}' data-attribute="durability" data-i18n="durability">Budowa</button>
+                        <button class="label-roll" type="action" name="act_roll" value='&{template:mystery} {{baseRoll=[[2d6 + @{durability}]]}} {{roll-name=^{durability}}}' data-attribute="durability">
+                            <span data-i18n="durability">Budowa</span>
+                            <span data-i18n="durability-desc" class="label-hover">Budowa określa wytrzymałość formy na uderzenia oraz odporności na inne czynniki zewnętrzne. Wysoki bonus oznacza niesamowitą kondycję, a niski - kruchość ciała. Budowa zostanie wykorzystana w trakcie uruchomienia Ruchu - Przetrwaj, kiedy będzie trzeba wykazać się wytrzymałością</span>
+                        </button>
                     </div>
                 </div>
     
                 <div class="attr-row">
                     <div class="attr-label">
-                        <button class="label-roll" type="action" name="act_roll" value='&{template:mystery} {{baseRoll=[[2d6 + @{speed}]]}} {{roll-name=^{speed}}}' data-attribute="speed" data-i18n="speed">Szybkość</button>
+                        <button class="label-roll" type="action" name="act_roll" value='&{template:mystery} {{baseRoll=[[2d6 + @{speed}]]}} {{roll-name=^{speed}}}' data-attribute="speed">
+                            <span data-i18n="speed">Szybkość</span>
+                            <span data-i18n="speed-desc" class="label-hover">Szybkość opisuje sprawność, zwinność i finezję postaci. Wysoki bonus oznacza gibkość, zdolność do akrobacji i wspinaczki. Niski bonus z kolei symbolizuje ślamazarność i  niezdarność. Szybkość zostanie wykorzystana w Ruchu - Strzelaj, a także podczas uruchomienia Ruchu - Przetrwaj, np. kiedy będzie trzeba wykazać się szybkim unikiem przed smoczym oddechem.</span>
+                        </button>
                         <div class="attr-label__input">
                             <input type="number" name="attr_speed" value="0">
                         </div>
@@ -81,13 +90,19 @@
                         <div class="attr-label__input">
                             <input type="number" name="attr_sense" value="0">
                         </div>
-                        <button class="label-roll" type="action" name="act_roll" value='&{template:mystery} {{baseRoll=[[2d6 + @{sense}]]}} {{roll-name=^{sense}}}' data-attribute="sense" data-i18n="sense">Rozsądek</button>
+                        <button class="label-roll" type="action" name="act_roll" value='&{template:mystery} {{baseRoll=[[2d6 + @{sense}]]}} {{roll-name=^{sense}}}' data-attribute="sense">
+                            <span data-i18n="sense">Rozsądek</span>
+                            <span data-i18n="sense-desc" class="label-hover">Rozsądek przywodzi na myśl zmysły, czujność i rozwagę. Wysoki bonus symbolizuje Tułacza baczącego na otoczenie, przygotowanego na każdą ewentualność. Natomiast niski bonus oznacza znaczne roztargnienie. Rozsądek zostanie wykorzystany w  Ruchu - Szukaj, aby znaleźć ukryte na miejscu wskazówki na temat Tajemnicy. Ruch - Przetrwaj także może wymagać użycia tego atrybutu, tym bardziej, jeśli od spostrzegawczości będzie zależało bezpieczeństwo Tułacza.</span>
+                        </button>
                     </div>
                 </div>
     
                 <div class="attr-row">
                     <div class="attr-label">
-                        <button class="label-roll" type="action" name="act_roll" value='&{template:mystery} {{baseRoll=[[2d6 + @{memories}]]}} {{roll-name=^{memories}}}' data-attribute="memories"><span data-i18n="memories">Wspomnienia</span> <span class="label-hover">Wspomnienia...</span></button>
+                        <button class="label-roll" type="action" name="act_roll" value='&{template:mystery} {{baseRoll=[[2d6 + @{memories}]]}} {{roll-name=^{memories}}}' data-attribute="memories">
+                            <span data-i18n="memories">Wspomnienia</span>
+                            <span data-i18n="memories-desc" class="label-hover">Wspomnienia to siła umysłu oraz wiedza na temat dawnych dziejów, jeszcze sprzed nastania mrocznego wieku. Wysoki bonus oznacza łatwość przyswajania informacji, szeroką gamę wiadomości oraz znamienną pamięć o przeszłości. Niski bonus symbolizuje trudności w  nauce, a także zupełne zapomnienie o faktach z  przeszłości. Wspomnienia zostaną wykorzystane podczas aktywowania Ruchu - Badaj, aby dowiedzieć się czegoś więcej na temat znalezionych tropów. Ruch - Przetrwaj wykorzysta ten atrybut np. w  trudnych chwilach zagubienia w miejscach, które odwiedziliśmy za życia..</span>
+                        </button>
                         <div class="attr-label__input">
                             <input type="number" name="attr_memories" value="0">
                         </div>
@@ -96,7 +111,10 @@
                         <div class="attr-label__input">
                             <input type="number" name="attr_charisma" value="0">
                         </div>
-                        <button class="label-roll" type="action" name="act_roll" value='&{template:mystery} {{baseRoll=[[2d6 + @{charisma}]]}} {{roll-name=^{charisma}}}' data-attribute="charisma"><span data-i18n="charisma">Charyzma</span> <span class="label-hover">Charyzma...</span></button>
+                        <button class="label-roll" type="action" name="act_roll" value='&{template:mystery} {{baseRoll=[[2d6 + @{charisma}]]}} {{roll-name=^{charisma}}}' data-attribute="charisma">
+                            <span data-i18n="charisma">Charyzma</span> 
+                            <span data-i18n="charisma-desc" class="label-hover">Charakter to siła woli. Moc ducha, jaki jeszcze tli się w  wątłej formie. Wysoki bonus oznacza krasomówcze zdolności oraz niezłomność, natomiast niski powie o słabych predyspozycjach w interakcjach społecznych, a  także podatności na naciski innych istot. Charakter zostanie wykorzystany podczas uruchomienia Ruchu - Spiskuj, np. gdy będzie trzeba zdobyć jakiś przedmiot od tubylców. Ruch - Przetrwaj może wymagać Charakteru, np. w momencie duchowego starcia z agresywnym obcym</span>
+                        </button>
                     </div>
                 </div>
     
@@ -121,9 +139,9 @@
     
                 <div class="attr-row">
                     <div class="attr-label">
-                        <button class="label-roll" type="action" name="act_roll" value='&{template:mystery} {{baseRoll=[[2d6 + @{essence}]]}} {{roll-name=^{essence}}}' data-attribute="essence"><span data-i18n="essence">Esencja</span> <span class="label-hover">Esencja...</span></button>
+                        <button class="label-roll" type="action" name="act_roll" value='&{template:mystery} {{baseRoll=[[2d6 + @{energy}]]}} {{roll-name=^{energy}}}' data-attribute="energy"><span data-i18n="energy">Energia</span> <span class="label-hover">Esencja...</span></button>
                         <div class="attr-label__input">
-                            <input type="number" name="attr_essence" value="0">
+                            <input type="number" name="attr_energy" value="0">
                         </div>
                     </div>
                     <div class="attr-label">
@@ -295,7 +313,7 @@
             <div class="col-6">
                 <h2 class="title right-hr"><span data-i18n="death-essence-moves">Ruchy esencji śmierci</span></h2>
                 <div class="input-with-label">
-                    <textarea name="attr_death_essence_moves" rows="20"></textarea>
+                    <textarea name="attr_death_essence_moves" rows="26"></textarea>
                 </div>
             </div>
     
@@ -307,11 +325,33 @@
                     <textarea name="attr_relationships" rows="6" style="text-indent: 172px;"></textarea>
                 </div>
 
+                <div class="margin-20"></div>
+
+                <div class="attr-row">
+                    <div class="attr-label attr-label--small" style="justify-content: flex-start;flex-direction: row;">
+                        <div class="attr-label__input">
+                            <input type="number" name="attr_relationships_mystery_level" value="0">
+                        </div>
+                        <button class="label-roll" type="action" name="act_roll" value='&{template:mystery} {{baseRoll=[[2d6 + @{relationships_mystery_level}]]}} {{roll-name=^{relationships-with-mystery}}}' data-attribute="relationships_mystery_level" data-i18n="throw-on-relationship-with-mystery">Rzuć na relację z tajemnicą</button>  
+                    </div>
+                </div>
+                
                 <div class="input-with-label-textarea">
                     <label data-i18n="relationships-with-mystery">Relacja z Tajemnicą</label>
                     <textarea name="attr_relationships_mystery" rows="2" style="text-indent: 127px;"></textarea>
                 </div>
 
+                <div class="margin-20"></div>
+
+                <div class="attr-row">
+                    <div class="attr-label attr-label--small" style="justify-content: flex-start;flex-direction: row;">
+                        <div class="attr-label__input">
+                            <input type="number" name="attr_relationships_angels_level" value="0">
+                        </div>
+                        <button class="label-roll" type="action" name="act_roll" value='&{template:mystery} {{baseRoll=[[2d6 + @{relationships_angels_level}]]}} {{roll-name=^{relationships-with-choir}}}' data-attribute="relationships_angels_level" data-i18n="throw-on-relationship-with-angels">Rzuć na relację z Chórem</button>
+                    </div>
+                </div>
+                
                 <div class="input-with-label-textarea">
                     <label data-i18n="relationships-with-choir">Relacja z Chórem Anielskim</label>
                     <textarea name="attr_relationships_angels" rows="3" style="text-indent: 179px;"></textarea>
@@ -557,30 +597,11 @@
         <div class="template-roll-results">
             <div class="template-d6">{{baseRoll}}</div>
         </div>
-
-        <!-- {{#rollGreater() baseRoll 9}}
-        <div class="template-roll-results-title green" data-i18n="success">Sukces</div>
-        {{/rollGreater() baseRoll 9}}
-
-        {{#rollBetween() baseRoll 7 9}}
-        <div class="template-roll-results-title green" data-i18n="success-with-complication">Sukces z komplikacjami</div>
-        {{/rollBetween() baseRoll 7 9}}
-
-        {{#rollBetween() baseRoll 0 6}}
-        <div class="template-roll-results-title red" data-i18n="lose">Porażka</div>
-        {{/rollBetween() baseRoll 0 6}} -->
 	</div>
 </rolltemplate>
 
 
 <script type="text/worker">
-    on("sheet:opened", function(eventInfo){
-        setAttrs({
-            summodifier: getTranslationByKey("summodifier"),
-            d10modifier: getTranslationByKey("d10modifier")
-        });     
-    });
-
     on('clicked:roll', async (event) => {
         let rollBase = event.htmlAttributes.value + "{{character_name=@{character_name}}} {{character_id=@{character_id}}}";
         let rollResult = await startRoll(rollBase);
@@ -598,5 +619,5 @@
                 sheetTab: button
             });
         });
-        });
+    });
 </script>

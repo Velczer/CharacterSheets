@@ -1,7 +1,4 @@
-/* @font-face {
-	font-family: 'Mops';
-	src: url('https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Warlock/Fonts/Mops.ttf');
-} */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Spectral&display=swap');
 
 /* Defaults  */
 .sheet-darkmode .sheetform {
@@ -48,36 +45,6 @@
 
 .character-sheet .flex {
     display: flex;
-}
-
-.character-sheet .flex--space-between {
-    justify-content: space-between;
-}
-
-.character-sheet .flex--align-center {
-    align-items: center;
-}
-
-.character-sheet .row--col-no-padding div:first-child {
-    padding-left: 0;
-}
-.character-sheet .row--col-no-padding div:last-child {
-    padding-right: 0;
-}
-
-.character-sheet .row--textarea-box {
-    border: 2px solid #000;
-    background: #fff;
-}
-
-.sheet-darkmode .character-sheet .row--textarea-box {
-    border: 2px solid #606060;
-    background: #000;
-}
-
-.character-sheet .row.row--margin {
-	margin: 0 -8px;
-	max-width: calc(100% + 8px);
 }
 
 .col-12 {
@@ -140,7 +107,7 @@
 
 .character-sheet input,
 .character-sheet select {
-    /* font-family: 'Mops', cursive; */
+    font-family: 'Spectral', serif;
     text-transform: none;
     background: transparent;
     border: 1px solid transparent;
@@ -159,7 +126,6 @@
 
 .sheet-darkmode .character-sheet input,
 .sheet-darkmode .character-sheet select {
-    background: #000;
     border: 1px solid transparent;
     border-bottom: 1px solid #fff;
     color: #fff;
@@ -225,16 +191,15 @@
 
 .sheet-darkmode textarea {
     background-image:
-    linear-gradient(to right, #000 12px, transparent 12px),
-    linear-gradient(to left, #000 12px, transparent 12px),
-    repeating-linear-gradient(#000, #000 35px, #606060 35px, #606060 36px, #000 36px);
+    linear-gradient(to right, transparent 12px, transparent 12px),
+    linear-gradient(to left, transparent 12px, transparent 12px),
+    repeating-linear-gradient(#1f1f1f, #1f1f1f 23px, #fff 23px, #fff 24px, #1f1f1f 24px);
     color: #fff;
 }
 
 .charsheet .character-sheet button[type="roll"],
 .charsheet .character-sheet button[type="action"] {
 	position: relative;
-    z-index: 6;
     cursor: pointer;
     text-shadow: none;
     padding: 4px 8px;
@@ -273,25 +238,24 @@
 
 .sheet-darkmode .charsheet .character-sheet button[type="roll"],
 .sheet-darkmode .charsheet .character-sheet button[type="action"] {
-    background-color: #000;
     color: #fff;
-    border-color: #6a6a6a;
+    font-weight: normal;
 }
 
 .sheet-darkmode .charsheet .character-sheet button[type="roll"]::before,
 .sheet-darkmode .charsheet .character-sheet button[type="action"]::before {
-    color: #fff;
+    font-weight: bold;
+    color: #d10000;
 }
 
 .sheet-darkmode .charsheet .character-sheet button[type="roll"]:hover,
 .sheet-darkmode .charsheet .character-sheet button[type="action"]:hover {
-    background-color: #fff;
-    color: #000;
+    color: #d10000;
 }
 
 .sheet-darkmode .charsheet .character-sheet button[type="roll"]:hover::before,
 .sheet-darkmode .charsheet .character-sheet button[type="action"]:hover::before {
-    color: #000;
+    color: #d10000;
 }
 
 .charsheet .character-sheet input[type="checkbox"] {
@@ -343,13 +307,13 @@
 .character-sheet {
     /* background: #fff;
     background-size: cover; */
-    /* background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Mystery/Images/strona.png); */
+    /* background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Mystery/Images/mystery-bg-l.png); */
 	/* background-size: cover; */
-    background-color: #ede9e6;
+    /* background-color: #ede9e6; */
     box-sizing: border-box;
     padding: 8px 12px;
     color: #000;
-    /* font-family: 'Mops', cursive; */
+    font-family: 'Spectral', serif;
     margin-bottom: 15px;
     position: relative;
     overflow: hidden;
@@ -360,25 +324,14 @@
     text-align: left;
 }
 
-/* .character-sheet::before {
-	content: "";
-	z-index: -1;
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background: rgba(0,0,0, 0.2);
-} */
-
-.sheet-darkmode .character-sheet {
-    background: #000;
+.sheet-darkmode .character-sheet__wrapper {
+    background: #1f1f1f;
     color: #fff;
 }
 
 .character-sheet__wrapper {
-    background-color: #ede9e6;
     text-align: center;
+    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Mystery/Images/mystery-bg-l.png);
 }
 
 .sheet-tabstoggle[value="main"] ~ .sheet-change[name="act_main"],
@@ -389,11 +342,19 @@
     border-color: #000;
 }
 
+
+.sheet-darkmode .sheet-tabstoggle[value="main"] ~ .sheet-change[name="act_main"],
+.sheet-darkmode .sheet-tabstoggle[value="mainSecond"] ~ .sheet-change[name="act_mainSecond"],
+.sheet-darkmode .sheet-tabstoggle[value="mystery"] ~ .sheet-change[name="act_mystery"],
+.sheet-darkmode .sheet-tabstoggle[value="pact"] ~ .sheet-change[name="act_pact"] {
+    border-color: #fff;
+}
+
 .charsheet .sheet-change[type="action"] {
     border: 0;
 	padding: 4px 8px;
 	transition: .3s all ease;
-	background: #ede9e6;
+	background: transparent;
 	font-size: 12px;
 	font-weight: bold;
     border-bottom: 2px solid transparent;
@@ -437,6 +398,11 @@
 	top: 6px;
 }
 
+.sheet-darkmode .diamonds-start::before,
+.sheet-darkmode .diamonds-start::after {
+    border-color: #fff;
+}
+
 .diamonds-start::before {
     left: calc(50% - 18px);
 }
@@ -465,6 +431,11 @@
     width: 20px;
     position: absolute;
 	top: 6px;
+}
+
+.sheet-darkmode .diamonds-hr::before,
+.sheet-darkmode .diamonds-hr::after {
+    border-color: #fff;
 }
 
 .diamonds-hr::before,
@@ -497,6 +468,11 @@
 	top: calc(50% - 1px);
 }
 
+.sheet-darkmode .diamonds-hr span::before,
+.sheet-darkmode .diamonds-hr span::after {
+    background-color: #fff;
+}
+
 .diamonds-hr span::before,
 .sheet-rolltemplate-mystery .sheet-template-diamonds-hr span::before {
     right: 100%;
@@ -521,6 +497,10 @@
     color: #000;
 }
 
+.sheet-darkmode .character-sheet .title span:first-child {
+    color: #fff;
+}
+
 .character-sheet .title__page-num {
 	position: absolute;
 	font-size: 12px;
@@ -540,6 +520,11 @@
     background-color: #000;
     width: 50vw;
     top: calc(50% - 1px);
+}
+
+.sheet-darkmode .character-sheet .title span:first-child::before, 
+.sheet-darkmode .character-sheet .title span:first-child::after {
+    background-color: #fff;
 }
 
 .character-sheet .title span:first-child::before {
@@ -573,6 +558,10 @@
 	top: 6px;
 }
 
+.sheet-darkmode .subtitle-box::before {
+    border-color: #fff;
+}
+
 .subtitle-box.right-hr::before {
     right: -15px;
 }
@@ -587,6 +576,10 @@
     color: #000;
 }
 
+.sheet-darkmode .subtitle span {
+    color: #fff;
+}
+
 .subtitle span::before, 
 .subtitle span::after {
     position: absolute;
@@ -595,6 +588,11 @@
     background-color: #000;
     width: 50vw;
     top: calc(50% - 1px);
+}
+
+.sheet-darkmode .subtitle span::before, 
+.sheet-darkmode .subtitle span::after {
+    background-color: #fff;
 }
 
 .subtitle span::before {
@@ -632,6 +630,11 @@
     overflow: hidden;
 	height: 100%;
 	width: 100%;
+}
+
+.sheet-darkmode .character-sheet__avatar,
+.sheet-darkmode .character-sheet__avatar-inner {
+    border-color: #fff;
 }
 
 .input-with-label {
@@ -724,7 +727,8 @@
     font-size: 12px;
 }
 
-.attr-label input {
+.attr-label input,
+.sheet-darkmode .attr-label input {
     border: none;
 }
 
@@ -762,6 +766,10 @@
 	border: 2px solid #000;
 }
 
+.sheet-darkmode .attr-label__input::before {
+    border-color: #fff;
+}
+
 .attr-label--small .attr-label__input {
     width: 36px;
 	height: 36px;
@@ -779,6 +787,7 @@
 	background: white;
     color: #000;
     font-weight: normal;
+    border: 1px solid transparent;
 	z-index: 10;
 	padding: 20px;
 	width: 400px;
@@ -793,6 +802,12 @@
 	white-space: normal;
 	text-overflow: ellipsis;
 	overflow: visible;
+}
+
+.sheet-darkmode .label-hover {
+    background: #1f1f1f;
+    color: #fff;
+    border-color: #fff;
 }
 
 label:hover .label-hover,
@@ -824,6 +839,10 @@ button:hover .label-hover {
     color: #fff;
 }
 
+.sheet-darkmode .diamonds-radio label {
+    color: #000;
+}
+
 .diamonds-radio label::before {
     content: "";
 	display: block;
@@ -838,8 +857,17 @@ button:hover .label-hover {
     background-color: #000;
 }
 
+.sheet-darkmode .diamonds-radio label::before {
+    background-color: #fff;
+    border-color: #fff;
+}
+
 .diamonds-radio input:checked ~ label {
     color: #000;
+}
+
+.sheet-darkmode .diamonds-radio input:checked ~ label  {
+    color: #fff;
 }
 
 .diamonds-radio input:checked ~ label::before {
@@ -850,27 +878,21 @@ button:hover .label-hover {
     color: #fff;
 }
 
+.sheet-darkmode .diamonds-radio input:checked + label  {
+    color: #000;
+}
+
 .diamonds-radio input:checked + label::before {
 	background: #000;
+}
+
+.sheet-darkmode .diamonds-radio input:checked + label::before {
+    background: #fff;
 }
 
 .diamonds-radio input {
     display: none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* Chrome, Safari, Edge, Opera */
@@ -888,11 +910,12 @@ button:hover .label-hover {
 
 /* Roll Template */
 .sheet-rolltemplate-mystery .sheet-template-wrap {
-    /* font-family: 'Mops', cursive; */
-    background: #ede9e6;
+    font-family: 'Spectral', serif;
+    background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Mystery/Images/roll-bg.jpg);
+    background-size: cover;
 	color: #000;
     position: relative;
-	padding: 20px 5px 5px;
+	padding: 24px 5px 5px;
 	margin-top: 38px;
 	margin: 0 auto 10px;
     border: 2px solid #000;
@@ -900,9 +923,8 @@ button:hover .label-hover {
 }
 
 .sheet-rolltemplate-darkmode.sheet-rolltemplate-mystery .sheet-template-wrap {
-    background: #000;
     color: #fff;
-    border: 2px solid #606060;
+    border-color: #000;
 }
 
 .sheet-rolltemplate-mystery .sheet-template-margin-10 {
@@ -929,7 +951,8 @@ button:hover .label-hover {
 }
 
 .sheet-rolltemplate-mystery .sheet-template-header a {
-    color: #000;
+    color: #e6dcd2;
+	text-shadow: 1px 1px 10px #000;
 }
 
 .sheet-rolltemplate-mystery .sheet-template-roll-results-title {
@@ -937,6 +960,8 @@ button:hover .label-hover {
 	text-align: center;
 	padding: 4px 0px;
     margin-bottom: 12px;
+    color: #e6dcd2;
+	text-shadow: 1px 1px 10px #000;
 }
 
 .sheet-rolltemplate-mystery .sheet-template-roll-results {
@@ -984,32 +1009,14 @@ button:hover .label-hover {
 	border: 2px solid #000;
     z-index: -1;
     left: 2px;
+    background: rgb(232 224 217 / 60%);
+    box-shadow: 1px 1px 10px #000;
 }
 
 .sheet-rolltemplate-mystery .sheet-template-6 span.inlinerollresult {
 	font-size: 32px;
 	padding-right: 0;
 	font-weight: normal;
-}
-
-.sheet-rolltemplate-darkmode.sheet-rolltemplate-mystery .sheet-template-d6 span.inlinerollresult {
-    color: #fff;
-}
-
-.sheet-rolltemplate-darkmode.sheet-rolltemplate-mystery .sheet-template-d6 {
-    filter: invert(.3);
-}
-
-.sheet-rolltemplate-mystery .sheet-blue {
-    color: #4471c4;
-}
-
-.sheet-rolltemplate-mystery .sheet-red {
-    color: #e83838;
-}
-
-.sheet-rolltemplate-mystery .sheet-green {
-    color: green;
 }
 
 /* Repeating sections */
