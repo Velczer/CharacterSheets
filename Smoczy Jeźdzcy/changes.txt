@@ -1,0 +1,26 @@
+1. Dodać pole select pod obecność smoka do wyboru umiejętności z którą jest połączona
+----- done
+
+2. Forsowanie rzutu, 1 i powyzej 6 zostają, warunek animusz musi być większy niż 0.
++ forsowanie z talentu
+----- done
+
+3. dodanie inputów do tabeli rzutów + checkbox jeśli faktycznie gracz chce z nich skorzystać.
+----- done
+
+4. Draśnięty wysarzony + dashed
+----- done
+
+5. Pod stanami jeźdzca dodać pole numeryczne, plus checkbox i popup z pytaniem ile chce wykorzystać k8 ze stanów + aktualizować pole ile wykorzystał
+----- done
+
+6. Pod obecność smoka dodać checkbox że rzucasz z mocą smoka, k8, k10, k12
+------ done
+
+7. Magiczny przedmiot - checkbox na select umiejętności + rodzaj kości k10, k12.
+jeżeli gracz rzuca na umiejętność to definiuje ilosć tych kostek.
+------ done
+
+8. Punkty rozmachu - max 2, wybór cechy + umiejętności na rzut
++ 6k6 jeśli mamy checkbox zaznaczony
+

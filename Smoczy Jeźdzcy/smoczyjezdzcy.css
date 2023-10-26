@@ -82,6 +82,11 @@
     flex-wrap: nowrap;
 }
 
+.flex-center {
+    align-items: center;
+    justify-content: center;
+}
+
 .flex-1 {
     flex: 1;
 }
@@ -202,7 +207,6 @@
 .charsheet .character-sheet button[type="roll"],
 .charsheet .character-sheet button[type="action"] {
     position: relative;
-    z-index: 6;
     cursor: pointer;
     text-shadow: none;
     padding: 4px 8px;
@@ -322,10 +326,6 @@
 
 /* Custom modules */
 .character-sheet {
-    /* background: #fff;
-    background-size: cover; */
-    /* background-image: url(https://raw.githubusercontent.com/Velczer/CharacterSheets/master/Mystery/Images/strona.png); */
-    /* background-size: cover; */
     background-color: #fefefe;
     box-sizing: border-box;
     padding: 8px 12px;
@@ -335,12 +335,11 @@
     position: relative;
     overflow: hidden;
     z-index: 1;
-    min-width: 930px;
+    min-width: 1000px;
     max-width: 1150px;
     margin: auto;
     text-align: left;
 }
-
 
 .sheet-darkmode .character-sheet {
     background: #000;
@@ -596,6 +595,11 @@
     box-shadow: 2px 2px 6px rgb(0 0 0 / 60%);
 }
 
+.charsheet .character-sheet .states-table .checkbox-label--dashed input[type="checkbox"]  {
+	border-style: dashed;
+	opacity: .6;
+}
+
 .charsheet .character-sheet .states-table .checkbox-label span {
     position: absolute;
     top: 2px;
@@ -608,6 +612,32 @@
     opacity: .4;
     z-index: 0;
     font-size: 24px;
+}
+
+.charsheet .character-sheet input[type="checkbox"].states-table__small-checkbox {
+    width: 24px;
+	height: 24px;
+	display: inline-block;
+	margin-right: 4px;
+}
+
+.charsheet .character-sheet input[type="checkbox"].states-table__small-checkbox::after {
+    font-size: 24px;
+	line-height: 24px;
+}
+
+.states-table__attr-label {
+    justify-content: center;
+}
+
+.states-table__attr-label input[type="checkbox"],
+.states-table__attr-label input[type="checkbox"] + input {
+    opacity: .4;
+}
+
+.states-table__attr-label input[type="checkbox"]:checked,
+.states-table__attr-label input[type="checkbox"]:checked + input {
+    opacity: 1;
 }
 
 .charsheet .character-sheet .double-checkboxes {
@@ -623,6 +653,11 @@
     padding: 0;
     margin: 0;
     display: inherit;
+}
+
+.charsheet .character-sheet .double-checkboxes--dashed {
+    border-style: dashed;
+    opacity: .6;
 }
 
 .charsheet .character-sheet .double-checkboxes::before {
@@ -664,10 +699,31 @@
     font-size: 18px;
 }
 
+.throws-table {
+    width: 100%;
+}
 
+.charsheet .character-sheet input[type="checkbox"].throws-table__checkbox {
+    width: 24px;
+	height: 24px;
+    display: inline-block;
+    margin-right: 4px;
+}
 
+.charsheet .character-sheet input[type="checkbox"].throws-table__checkbox::after {
+	font-size: 24px;
+	line-height: 24px;
+}
 
+.throws-table__checkbox + input[type="number"],
+.throws-table__checkbox {
+    opacity: .4;
+}
 
+.throws-table__checkbox:checked + input[type="number"],
+.throws-table__checkbox:checked {
+    opacity: 1;
+}
 
 .label-hover {
     display: block;
@@ -680,6 +736,7 @@
     width: 400px;
     height: fit-content;
     visibility: hidden;
+    font-family: 'ImFellEnglishRoman';
     opacity: 0;
     box-shadow: 0 3px 15px rgba(0, 0, 0, .1);
     transition: visibility 0s linear 0.3s, opacity 0.3s linear;
@@ -700,13 +757,19 @@ button:hover .label-hover {
 
 /* Chrome, Safari, Edge, Opera */
 .character-sheet .attr-row input::-webkit-outer-spin-button,
-.character-sheet .attr-row input::-webkit-inner-spin-button {
+.character-sheet .attr-row input::-webkit-inner-spin-button,
+.character-sheet .throws-table input::-webkit-outer-spin-button,
+.character-sheet .throws-table input::-webkit-inner-spin-button,
+.character-sheet .states-table input::-webkit-outer-spin-button,
+.character-sheet .states-table input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
 /* Firefox */
-.character-sheet .attr-row input[type=number] {
+.character-sheet .attr-row input[type=number],
+.character-sheet .throws-table input[type=number],
+.character-sheet .states-table input[type=number] {
     -moz-appearance: textfield;
 }
 
@@ -796,22 +859,28 @@ button:hover .label-hover {
     align-items: center;
     justify-content: center;
     z-index: 1;
+    font-family: 'Proxima Nova';
     border: 2px solid #e07072;
     box-shadow: 2px 2px 6px rgb(0 0 0 / 60%);
     background: #f1f4ff;
     border-radius: 100%;
 }
 
-.sheet-rolltemplate-dragonriders .sheet-template-dragon-presence {
+.sheet-rolltemplate-dragonriders .sheet-template-dragon-presence,
+.sheet-rolltemplate-dragonriders .sheet-template-dragon-powers {
     display: flex;
-    min-height: 17px;
+}
+
+.sheet-rolltemplate-dragonriders .sheet-template-dragon-powers {
+    justify-content: space-between;
 }
 
 .sheet-rolltemplate-dragonriders .sheet-template-dragon-presence > div {
     width: 50%;
 }
 
-.sheet-rolltemplate-dragonriders .sheet-template-dragon-presence > div:last-child {
+.sheet-rolltemplate-dragonriders .sheet-template-dragon-presence > div:last-child,
+.sheet-rolltemplate-dragonriders .sheet-template-dragon-powers > div:last-child {
     text-align: right;
 }
 
