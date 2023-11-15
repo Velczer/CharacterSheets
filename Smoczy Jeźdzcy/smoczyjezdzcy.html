@@ -860,7 +860,7 @@
     });
 
     on('clicked:roll', async (event) => {
-        var attribute = event.htmlAttributes['data-skill'];
+        var attribute = event.htmlAttributes['data-attribute'];
         var skill = event.htmlAttributes['data-skill'];
         var rolltype = event.htmlAttributes['data-rolltype'];
         var connectionWithDragon = 0;
@@ -920,7 +920,6 @@
             }
             
             rerollSuccess = Number(rerollInfo[7]);
-            console.log(rerollInfo[8])
             zestDamage = Number(rerollInfo[8]);
 
             rollBase = "&{template:dragonriders} {{roll-name=^{"+skill+"}}} {{baseRoll=[[" + rerollD6 + rerollD8 + rerollD10 + rerollD12 + "]]}}";
@@ -949,7 +948,7 @@
         
                 var skillNum = await asw.getAttrs([skill]);
                 skillNum = Number(Object.values(skillNum)[0]);
-        
+                
                 var d6 = attributeNum + skillNum;
                 var d8 = 0;
     
