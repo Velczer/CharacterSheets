@@ -80,8 +80,8 @@
     "dexterity-desc": "Odpowiada za kontrolę nad ciałem i zdolności manualne. Zręczność testujemy podczas walki na dystans i wyzwań fizycznych niezwiązanych z wytrzymałością.",
 
     "wisdom": "Mądrość",
-    "magic-arkana": "Arkana Magii",
-    "magic-arkana-desc": "Odpowiada za zrozumienie magii, jej zasad i sposobów obrony przed nią. Arkana Magii testujemy, gdy postać chce zrozumieć działanie artefaktu albo dowiedzieć się, jaką mocą dysponuje mag na podstawie jego zachowania lub śladów jego działalności.",
+    "magicarkana": "Arkana Magii",
+    "magicarkana-desc": "Odpowiada za zrozumienie magii, jej zasad i sposobów obrony przed nią. Arkana Magii testujemy, gdy postać chce zrozumieć działanie artefaktu albo dowiedzieć się, jaką mocą dysponuje mag na podstawie jego zachowania lub śladów jego działalności.",
     "perspicacity": "Przenikliwość",
     "perspicacity-desc": "Odpowiada za rozpoznawanie ukrytych znaczeń i motywacji. Przenikliwość testujemy, kiedy postać chce zrozumieć na podstawie obserwacji, co ktoś czuje lub planuje zrobić.",
     "understanding": "Rozumienie",
@@ -135,15 +135,19 @@
     "d12powermodifier": "Modyfikator z mocy do K12",
     "d10itemmodifier": "Modyfikator z magicznego przedmiotu do K10",
     "d12itemmodifier": "Modyfikator z magicznego przedmiotu do K12",
-    "statesmodifier": "Ile K8 chcesz dodać z puli punktów stanów?",
 
     "connection-with-dragon": "Więź ze smokiem",
     "dragon-presence": "Obecność smoka",
+    "connection-price": "Cena więzi",
     "throw-with-dragon-power": "Rzucam z mocą smoka",
     "with-dragon-power": "Z mocą smoka",
     "with-magic-item": "Z magicznym przedmiotem",
-    "with-states-dice": "Z kostkami z puli stanów",
+    "with-momentum": "Z rozmachem",
+    "use-momentum-points-to-throw": "Użyj rozmachu, by połączyć dowolną cechę I umiejętność",
+    "use-momentum-points-to-add-d6": "Użyj rozmachu aby dodać 6 kostek do rzutu",
 
+    "throw": "Rzuć",
+    "momentum-throw": "Rzut łączony",
     "force": "Forsuj",
     "force-with-talent": "Forsuj z talentu",
 

@@ -132,9 +132,7 @@
 
 .sheet-darkmode .character-sheet input,
 .sheet-darkmode .character-sheet select {
-    background: #000;
-    border: 1px solid transparent;
-    border-bottom: 1px solid #fff;
+    background: #2b2b2b;
     color: #fff;
     font-family: 'ImFellEnglishRoman';
 }
@@ -194,6 +192,11 @@
     box-shadow: 2px 2px 6px rgb(0 0 0 / 60%);
 }
 
+.sheet-darkmode .character-sheet textarea {
+    background: #2b2b2b;
+    color: #fff;
+}
+
 .character-sheet textarea:focus {
     border-color: transparent;
     outline: none;
@@ -245,9 +248,7 @@
 
 .sheet-darkmode .charsheet .character-sheet button[type="roll"],
 .sheet-darkmode .charsheet .character-sheet button[type="action"] {
-    background-color: #000;
     color: #fff;
-    border-color: #6a6a6a;
 }
 
 .sheet-darkmode .charsheet .character-sheet button[type="roll"]::before,
@@ -257,13 +258,12 @@
 
 .sheet-darkmode .charsheet .character-sheet button[type="roll"]:hover,
 .sheet-darkmode .charsheet .character-sheet button[type="action"]:hover {
-    background-color: #fff;
-    color: #000;
+    color: #d10000;
 }
 
 .sheet-darkmode .charsheet .character-sheet button[type="roll"]:hover::before,
 .sheet-darkmode .charsheet .character-sheet button[type="action"]:hover::before {
-    color: #000;
+    color: #d10000;
 }
 
 .charsheet .character-sheet input[type="checkbox"],
@@ -298,12 +298,8 @@
     transition: .3s all ease;
 }
 
-.sheet-darkmode .charsheet .character-sheet input[type="checkbox"] {
-    border: 2px solid #606060;
-}
-
 .sheet-darkmode .charsheet .character-sheet input[type="checkbox"]:after {
-    background: #606060;
+    color: #fff;
 }
 
 .charsheet .character-sheet input[type="checkbox"]:checked::after,
@@ -342,8 +338,12 @@
 }
 
 .sheet-darkmode .character-sheet {
-    background: #000;
+    background: #1f1f1f;
     color: #fff;
+}
+
+.sheet-darkmode .sheetform {
+    background-color: transparent;
 }
 
 .character-sheet .logo {
@@ -433,6 +433,11 @@
     font-size: 20px;
 }
 
+.sheet-darkmode .title,
+.sheet-darkmode .subtitle {
+    color: #fff;
+}
+
 .input-with-label {
     display: flex;
     align-items: flex-start;
@@ -518,6 +523,14 @@
 	border-radius: 100%;
 }
 
+.sheet-darkmode .charsheet .character-sheet .main-attr input[type="radio"] {
+    background: #1f1f1f;
+}
+
+.sheet-darkmode .charsheet .character-sheet .main-attr input[type="radio"]::after {
+    background: #fff;
+}
+
 .attr-label {
     display: flex;
     align-items: center;
@@ -589,6 +602,10 @@
     position: relative;
     background-color: #f1f4ff;
     padding: 0;
+}
+
+.sheet-darkmode .charsheet .character-sheet .states-table .checkbox-label {
+    background-color: #1f1f1f;
 }
 
 .charsheet .character-sheet .checkbox-label input[type="checkbox"] {
@@ -755,6 +772,44 @@ button:hover .label-hover {
     transition-delay: .5s;
 }
 
+.attr-buttons {
+   display: flex;
+   flex-direction: column; 
+}
+
+.charsheet .character-sheet button[type="action"].button-up::before,
+.charsheet .character-sheet button[type="action"].button-down::before  {
+    display: none;
+}
+
+.charsheet .character-sheet button[type="action"].button-up,
+.charsheet .character-sheet button[type="action"].button-down {
+    padding: 0;
+    color: #e07072;
+}
+
+.button-up::after,
+.button-down::after {
+    position:relative;
+    font-family:"Pictos";
+    content: "4"; 
+    font-size: 24px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.button-up::after {
+    -ms-transform: rotate(-90deg); /* IE 9 */
+    -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+    transform: rotate(-90deg);
+}
+
+.button-down::after {
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+    transform: rotate(90deg);
+}
+
 /* Chrome, Safari, Edge, Opera */
 .character-sheet .attr-row input::-webkit-outer-spin-button,
 .character-sheet .attr-row input::-webkit-inner-spin-button,
@@ -785,12 +840,41 @@ button:hover .label-hover {
     margin: 0 auto 10px;
     border: 2px solid #e07072;
     box-shadow: 2px 2px 6px rgb(0 0 0 / 60%);
+    overflow: hidden;
+    z-index: 1;
+}
+
+.sheet-rolltemplate-dragonriders .sheet-template-wrap::before {
+    content: "";
+	background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/Velczer/CharacterSheets/master/Smoczy%2520Je%u017Adzcy/Images/sygnet-red.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	opacity: .25;
+    left: -40%;
+	top: 47%;
+    z-index: -1;
+}
+
+.sheet-rolltemplate-dragonriders .sheet-template-wrap::after {
+    content: "";
+	background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/Velczer/CharacterSheets/master/Smoczy%2520Je%u017Adzcy/Images/sygnet-red.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	opacity: .25;
+	right: -60%;
+	top: -24%;
+    z-index: -1;
 }
 
 .sheet-rolltemplate-darkmode.sheet-rolltemplate-dragonriders .sheet-template-wrap {
-    background: #000;
+    background: #1f1f1f;
     color: #fff;
-    border: 2px solid #606060;
 }
 
 .sheet-rolltemplate-dragonriders .sheet-template-header {
@@ -810,11 +894,20 @@ button:hover .label-hover {
     color: #000;
 }
 
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-dragonriders .sheet-template-wrap .sheet-template-header a {
+    color: #fff;
+}
+
 .sheet-rolltemplate-dragonriders .sheet-template-roll-results-title {
     font-size: 20px;
     text-align: center;
     padding: 4px 0px;
     margin-bottom: 12px;
+    text-shadow: 1px 1px 10px #ababab;
+}
+
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-dragonriders .sheet-template-roll-results-title {
+    text-shadow: 1px 1px 10px #000000;
 }
 
 .sheet-rolltemplate-dragonriders .sheet-template-roll-results {
@@ -898,7 +991,7 @@ button:hover .label-hover {
 
 .repcontrol button {
     background: #fff;
-    color: #0075b9;
+    color: #e07072;
     border-radius: 0;
     border-color: #000;
     transition: all 0.2s;
@@ -907,12 +1000,18 @@ button:hover .label-hover {
     font-weight: bold;
     line-height: 8px;
     padding: 6px 4px 1px;
+    text-shadow: none;
+}
+
+.sheet-darkmode .repcontrol button {
+    background-color: #2b2b2b;
+    border-color: #e07072;
+
 }
 
 .repcontrol button:hover {
     color: green;
     border-color: green;
-    background: #ddd;
 }
 
 .repcontrol button.repcontrol_edit::after {
